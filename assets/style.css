@@ -12,13 +12,13 @@ body {
     flex-wrap: wrap;
     padding: 20px;
     background-color: gainsboro;
-  }
+}
   
 .box1 {
     flex: 1 0 30%; 
     text-align: left;
     margin-left: 10px;
-  }
+}
 
 .box2 {
     flex: 1 0 50%; 
@@ -26,8 +26,36 @@ body {
     margin-top: 15px;
 }
 
+.box12 {
+    flex: 1 0 30%; 
+    text-align: left;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.box22 {
+    flex: 1 0 30%; 
+    text-align: left;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.box12 h2, .box22 h2 {
+    margin-top: -25px;
+    position: absolute;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    padding: 2px;
+}
+
 .text-center {
     text-align: center;
+}
+
+.text-center h1 {
+    padding: 30px;
+    margin-top: 50px;
 }
 
 .space {
@@ -58,13 +86,13 @@ body {
 
 .navbar {
     padding: 10px 15px;
-    background-color: #1E1E1E;
-    color: white;
+    background-color: gainsboro;
+    color: black;
     font-family: "Century Gothic";
 }
 
 .navbar a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
