@@ -28,6 +28,8 @@
 
 
 
+
+
 body {
     color: #1E1E1E;
     background-color: #efefef;
@@ -40,12 +42,10 @@ body {
     scroll-behavior: smooth;
 }
 
-header {
-    background-color: #eaeaea;
-}
 
 div.bordure {
-    border-bottom: 3px solid grey;
+    border: 2px solid grey;;
+    margin: 20px;
 }
 
 .logo img {
@@ -116,11 +116,21 @@ div.bordure {
 
 .container {
     display: flex;
+    justify-content: space-between;
+    /* Add this line */
     flex-wrap: wrap;
     padding: 20px;
-    /* background-color: gainsboro; */
+    position: relative;
 }
   
+.login {
+    padding: 20px;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 .box1 {
     flex: 1 0 30%; 
     text-align: left;
@@ -128,17 +138,12 @@ div.bordure {
 }
 
 .box2 {
-    flex: 1 0 50%; 
-    text-align: left;
+    /* flex: 1 0 50%;  */
+    /* text-align: left; */
     margin-top: 15px;
 }
 
-.box3 {
-    margin-top: 25px;
-    margin-right: 20px;
-    flex: 1 0 30%;
-    text-align: right;
-}
+
 
 .box12 {
     flex: 1 0 30%; 
