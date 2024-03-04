@@ -1,7 +1,19 @@
+@font-face {
+    font-family: "GothamSSm-Book";
+    src: url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.eot");
+    src: url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.svg#GothamSSm-Book")format("svg");
+}
+
+
+
 body {
     color: #1E1E1E;
     background-color: #efefef;
-    font-family: Helvetica;
+    font-family: "GothamSSm-Book";
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -77,7 +89,7 @@ body {
     margin-top: 10%;
     text-align: center;
     font-size: 1.5em;
-    font-family: "Arial nova" ;
+    font-family: "GothamSSm-Book" ;
 }
 
 .bando {
@@ -88,7 +100,7 @@ body {
 .navbar {
     background-color: gainsboro;
     color: black;
-    font-family: "Century Gothic";
+    font-family: "GothamSSm-Book";
 }
 
 .navbar a {
@@ -165,9 +177,8 @@ input, select {
     
     padding: 10px 20px;
     margin-top: 10px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow:  -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
     outline: none;
-    
 }
 
 
@@ -175,12 +186,13 @@ input, select {
 /* On mouse-over, add a grey background color */
 input:hover {
     background-color: #e0e0e0;
+    /* box-shadow: inset -2px -2px 5px rgba(193, 84, 33, 0), inset 2px 2px 5px rgba(240, 119, 63, 0); */
 }
 
 /* When the input is focused, add a blue background */
 input:focus {
     background-color: #f56a2a0f;
-    box-shadow: inset -2px -2px 5px #c15421, inset 2px 2px 5px #f0773f;
+    box-shadow: inset -2px -2px 3px rgba( 193, 84, 33, 0.4), inset 2px 2px 3px rgba(240, 119, 63, 0.4); 
 }
 
 textarea {
@@ -302,8 +314,8 @@ input[type="radio"] {
     transform: rotate(45deg);
 }
 
-button, label, br, form, input, select, textarea, .navbar a, .categories-list a, .checkbox-container{
-    transition: transform 0.1s ease-in-out, background-color 0.2s ease-in-out;
+button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
+    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease;
 }
 
 footer {
