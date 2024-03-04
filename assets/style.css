@@ -1,7 +1,19 @@
+@font-face {
+    font-family: "GothamSSm-Book";
+    src: url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.eot");
+    src: url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.eot?#iefix")format("embedded-opentype"),
+        url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.woff2")format("woff2"),
+        url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.woff")format("woff"),
+        url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.ttf")format("truetype"),
+        url("https://db.onlinewebfonts.com/t/3ad5698dd1177785b94e84f04fd1632f.svg#GothamSSm-Book")format("svg");
+}
+
+
+
 body {
     color: #1E1E1E;
     background-color: #efefef;
-    font-family: Helvetica;
+    font-family: "GothamSSm-Book";
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -77,7 +89,7 @@ body {
     margin-top: 10%;
     text-align: center;
     font-size: 1.5em;
-    font-family: "Arial nova" ;
+    font-family: "GothamSSm-Book" ;
 }
 
 .bando {
@@ -89,7 +101,7 @@ body {
     padding: 10px 15px;
     background-color: gainsboro;
     color: black;
-    font-family: "Century Gothic";
+    font-family: "GothamSSm-Book";
 }
 
 .navbar a {
