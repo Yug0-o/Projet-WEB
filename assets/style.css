@@ -250,7 +250,9 @@ textarea {
 }
 
 
-
+button {
+    font-family: "GothamSSm-Book";
+}
 
 button[type="submit"] {
     background-color: #F85F6A;
