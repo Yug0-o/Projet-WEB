@@ -1,0 +1,280 @@
+body {
+    color: #1E1E1E;
+    background-color: #efefef;
+    font-family: Helvetica;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: gainsboro;
+  }
+  
+.box1 {
+    flex: 1 0 30%; 
+    text-align: left;
+    margin-left: 10px;
+  }
+
+.box2 {
+    flex: 1 0 50%; 
+    text-align: left;
+    margin-top: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.space {
+    padding: 1em;
+}
+
+.horizontal-line {
+    border-top: 1px solid #fff;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.garde {
+    color: #1E1E1E;
+    margin-top: 10%;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: "Arial nova" ;
+}
+
+.bando {
+    padding: 20px;
+    background-color: gainsboro;
+}
+
+.navbar {
+    padding: 10px 15px;
+    background-color: #1E1E1E;
+    color: white;
+    font-family: "Century Gothic";
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    /* text-decoration: underline; */
+    /* font-weight: bold; */
+    color: #F56B2A;
+}
+
+.navbar .active {
+    font-weight: bold;
+    color: #F56B2A;
+}
+
+
+
+
+/* CSS for the "Categories" list */
+.categories-list {
+    list-style-type: none;  /* Remove bullets */
+    display: flex; /* Put elements side by side */
+    justify-content: space-between; /* Center the items */
+    padding-left: 10em;
+    padding-right: 10em; /* Remove padding */
+    color: white; /* Make the text color white */
+}
+
+
+.categories-list a {
+    color: #DDDDDD; /* Make the link color white */
+    text-decoration: none;
+}
+
+.categories-list a:hover {
+    text-decoration: underline;
+    color: #F56B2A;
+    /* font-weight: bold; */
+}
+
+
+
+/* CSS for the "Derniers articles ajoutÃ©s" table */
+.table-articles thead {
+    background-color: #0d0d0d;
+    color: white;
+}
+
+.table-articles {
+    border-collapse: collapse; /* Remove border */
+}
+
+.table-articles tr:nth-child(even) {
+    background-color: #181818; /* Change color of every other row */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, select {
+    border: none;
+    border-radius: 10px;
+    width : 200px;
+    background-color: #f0f0f0;
+    border: none;
+    
+    padding: 10px 20px;
+    margin-top: 10px;
+    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    outline: none;
+    
+}
+
+
+
+/* On mouse-over, add a grey background color */
+input:hover {
+    background-color: #e0e0e0;
+}
+
+/* When the input is focused, add a blue background */
+input:focus {
+    background-color: #f56a2a0f;
+    box-shadow: inset -2px -2px 5px #c15421, inset 2px 2px 5px #f0773f;
+}
+
+textarea {
+    resize: none;
+}
+
+
+button[type="submit"] {
+    background-color: #F85F6A;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 120px;
+    border: none;
+    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    outline: none;
+}
+button[type="submit"]:hover {
+    transform: scale(1.05);
+    background-color: #df555f;
+}
+button[type="submit"]:active {
+    transform: scale(0.95);
+}
+
+
+input[type="reset"] {
+    background-color: #998E8E;
+    color: white;
+    padding: 10px 20px;
+    z-index: 0;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 120px;
+    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    outline: none;
+}
+input[type="reset"]:hover {
+    transform: scale(1.05);
+    background-color: #8E9999;
+}
+input[type="reset"]:active {
+    transform: scale(0.95);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    height: auto;
+}
+
+/* Customize the container */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    user-select: none;
+}
+
+/* Hide the default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkbox-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input~.checkmark {
+    background-color: #e0e0e0;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked~.checkmark {
+    background-color: #2196F3;
+    box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+
+footer {
+    width: 100%;
+    padding: 20px;
+    background-color: gainsboro;
+    position: absolute; 
+    bottom: 0;
+}
