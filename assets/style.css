@@ -5,6 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    user-select: none;
 }
 
 .container {
@@ -96,12 +97,14 @@ body {
 .categories-list a {
     color: #DDDDDD; /* Make the link color white */
     text-decoration: none;
+    transition: transform 0.1s ease-in-out
 }
 
 .categories-list a:hover {
     text-decoration: underline;
     color: #F56B2A;
     /* font-weight: bold; */
+    transition: transform 0.1s ease-in-out
 }
 
 
@@ -156,6 +159,8 @@ input:focus {
 textarea {
     resize: none;
 }
+
+
 
 
 button[type="submit"] {
@@ -270,6 +275,9 @@ input[type="radio"] {
     transform: rotate(45deg);
 }
 
+button, label, br, form, input, select, textarea, .navbar a, .categories-list a, .checkbox-container{
+    transition: transform 0.1s ease-in-out, background-color 0.2s ease-in-out;
+}
 
 footer {
     width: 100%;
