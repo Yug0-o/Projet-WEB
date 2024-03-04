@@ -138,9 +138,8 @@ input, select {
     
     padding: 10px 20px;
     margin-top: 10px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow:  -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
     outline: none;
-    
 }
 
 
@@ -148,12 +147,13 @@ input, select {
 /* On mouse-over, add a grey background color */
 input:hover {
     background-color: #e0e0e0;
+    /* box-shadow: inset -2px -2px 5px rgba(193, 84, 33, 0), inset 2px 2px 5px rgba(240, 119, 63, 0); */
 }
 
 /* When the input is focused, add a blue background */
 input:focus {
     background-color: #f56a2a0f;
-    box-shadow: inset -2px -2px 5px #c15421, inset 2px 2px 5px #f0773f;
+    box-shadow: inset -2px -2px 3px rgba( 193, 84, 33, 0.4), inset 2px 2px 3px rgba(240, 119, 63, 0.4); 
 }
 
 textarea {
@@ -275,8 +275,8 @@ input[type="radio"] {
     transform: rotate(45deg);
 }
 
-button, label, br, form, input, select, textarea, .navbar a, .categories-list a, .checkbox-container{
-    transition: transform 0.1s ease-in-out, background-color 0.2s ease-in-out;
+button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
+    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease;
 }
 
 footer {
