@@ -98,7 +98,6 @@ body {
 }
 
 .navbar {
-    padding: 10px 15px;
     background-color: gainsboro;
     color: black;
     font-family: "GothamSSm-Book";
@@ -110,14 +109,14 @@ body {
 }
 
 .navbar a:hover {
-    /* text-decoration: underline; */
+    text-decoration: underline;
     /* font-weight: bold; */
-    color: #F56B2A;
+    color: #F85F6A;
 }
 
 .navbar .active {
     font-weight: bold;
-    color: #F56B2A;
+    color: #F85F6A;
 }
 
 
