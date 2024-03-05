@@ -173,7 +173,6 @@ div.bordure {
 
 .garde {
     color: #1E1E1E;
-    margin-top: 10%;
     text-align: center;
     font-size: 1.5em;
     font-family: "Gotham SSm A" ;
@@ -280,9 +279,11 @@ button[type="submit"], button[type="reset"] {
 }
 
 form label {
+    color: #5c5e62;
+    font-weight: 500;
+    font-size: 14px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
     margin-bottom: 15px;
 }
@@ -291,11 +292,11 @@ input, select {
     font-family: "Gotham SSm A";
     border: none;
     border-radius: 10px;
-    width : 200px;
+    width : 240px;
     background-color: #f0f0f0;
     border: none;
     
-    padding: 10px 20px;
+    padding: 10px;
     margin-top: 10px;
     box-shadow:  -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
     outline: none;
@@ -335,12 +336,12 @@ button {
 
 button[type="submit"] {
     background-color: #F85F6A;
-    width: 110px;
+    width: 120px;
 }
 
 button[type="reset"] {
     background-color: #998E8E;
-    width: 110px;
+    width: 80px;
 }
 
 button:hover {
