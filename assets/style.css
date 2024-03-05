@@ -60,34 +60,7 @@ div.bordure {
 }
 
 
-.navbar a {
-    color: black;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.15s ease-in-out;
-}
 
-.navbar a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #F85F6A;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.15s ease-in-out 0s;
-}
-
-.navbar a:hover {
-    color: #F85F6A;
-}
-
-.navbar a:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-}
 
 
 .bouton {
@@ -95,7 +68,6 @@ div.bordure {
     background-color: white;
     color: black;
     padding: 8px 20px;
-    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 50px;
@@ -169,7 +141,18 @@ div.bordure {
 }
 
 .text-center {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.8em;
+}
+
+@media screen and (max-width: 650px) {
+    .text-center {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .text-center h1 {
@@ -209,38 +192,51 @@ div.bordure {
     font-family: "Gotham SSm A";
 }
 
+
+
 .navbar a {
     color: black;
     text-decoration: none;
+    position: relative;
+    transition: color 0.15s ease-in-out;
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #F85F6A;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.15s ease-in-out 0s;
 }
 
 .navbar a:hover {
-    /* text-decoration: underline; */
     color: #F85F6A;
 }
 
-.navbar .active {
-    font-weight: bold;
-    /* text-decoration: underline; */
-    color: #F85F6A;
+.navbar a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
 }
-
-
 
 
 /* CSS for the "Categories" list */
 .categories-list {
-    list-style-type: none;  /* Remove bullets */
-    display: flex; /* Put elements side by side */
-    justify-content: space-between; /* Center the items */
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
     padding-left: 10em;
-    padding-right: 10em; /* Remove padding */
-    color: white; /* Make the text color white */
+    padding-right: 10em;
+    color: white;
 }
 
 
 .categories-list a {
-    color: #DDDDDD; /* Make the link color white */
+    color: #DDDDDD;
     text-decoration: none;
     transition: transform 0.1s ease-in-out
 }
@@ -248,24 +244,22 @@ div.bordure {
 .categories-list a:hover {
     text-decoration: underline;
     color: #F56B2A;
-    /* font-weight: bold; */
     transition: transform 0.1s ease-in-out
 }
 
 
 
-/* CSS for the "Derniers articles ajoutÃ©s" table */
 .table-articles thead {
     background-color: #0d0d0d;
     color: white;
 }
 
 .table-articles {
-    border-collapse: collapse; /* Remove border */
+    border-collapse: collapse;
 }
 
 .table-articles tr:nth-child(even) {
-    background-color: #181818; /* Change color of every other row */
+    background-color: #181818;
 }
 
 form {
@@ -357,7 +351,6 @@ input[type="radio"] {
     height: auto;
 }
 
-/* Customize the container */
 .checkbox-container {
     display: block;
     position: relative;
@@ -368,7 +361,6 @@ input[type="radio"] {
     user-select: none;
 }
 
-/* Hide the default checkbox */
 .checkbox-container input {
     position: absolute;
     opacity: 0;
@@ -377,7 +369,6 @@ input[type="radio"] {
     width: 0;
 }
 
-/* Create a custom checkbox */
 .checkbox-container .checkmark {
     position: absolute;
     top: 0;
@@ -428,9 +419,16 @@ button, label, br, form, input, select, textarea, .navbar, .categories-list a, .
 }
 
 footer {
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     padding: 20px;
+    flex-direction: column;
     box-sizing: border-box;
-    text-align: center;
     margin-top: auto;
 }
+
+footer .text-center a {
+    color: gray;
+    }
+
