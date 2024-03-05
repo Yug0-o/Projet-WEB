@@ -266,6 +266,27 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+form .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button[type="submit"], button[type="reset"] {
+    width: auto;
+    margin: 5px 0px;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 input, select {
@@ -303,53 +324,46 @@ textarea {
 
 button {
     font-family: "Gotham SSm A";
+    color: white;
+    filter: brightness(95%);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 120px;
+    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    outline: none;
 }
 
 button[type="submit"] {
     background-color: #F85F6A;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    width: 120px;
-    border: none;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
-    outline: none;
-}
-button[type="submit"]:hover {
-    transform: scale(1.05);
-    background-color: #df555f;
-}
-button[type="submit"]:active {
-    transform: scale(0.95);
+    width: 110px;
 }
 
-
-input[type="reset"] {
+button[type="reset"] {
     background-color: #998E8E;
-    color: white;
-    padding: 10px 20px;
-    z-index: 0;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    width: 120px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
-    outline: none;
-}
-input[type="reset"]:hover {
-    transform: scale(1.05);
-    background-color: #8E9999;
-}
-input[type="reset"]:active {
-    transform: scale(0.95);
+    width: 110px;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+button:hover {
+    transform: scale(1.05);
+    filter: brightness(100%);
+}
+button:active {
+    transform: scale(0.95);
+    filter: brightness(90%);
+}
+
+
+
+
+
+input[type="checkbox"], input[type="radio"] {
     width: auto;
     height: auto;
 }
+
+
 
 .checkbox-container {
     display: block;

@@ -19,15 +19,21 @@
 	   <section>
 	   
 			<div class="garde"><h1>Connexion</h1></div>
-
+ 
 			
 			<article>	
 				<form>
-					<label>Courriel<br><input name="email" type="email" size="30" value="" required ></label>
+                    <div class="login-form">
+                        <label>Courriel<input name="email" type="email" size="30" value="" required ></label>
 
-					<label>Mot de passe<br><input name="password" type="password" size="30" value="" required ></label>
+                        <label>Mot de passe<input name="password" type="password" size="30" value="" required ></label>
 
-					<button type="submit">Connexion</button>&nbsp;<input type="reset" value="Effacer" >
+                        
+                        <div class="button-container">
+                            <button type="reset">Reset</button>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
 				</form>
 				
 			</article>					
