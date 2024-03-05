@@ -69,10 +69,9 @@ div.bordure {
     color: black;
     padding: 8px 20px;
     font-weight: bold;
-    cursor: pointer;
     border-radius: 50px;
-    font-size: 1.2em;
 }
+
 
 .bouton:hover {
     background-color: #fefee0;
@@ -81,15 +80,14 @@ div.bordure {
 
 .bouton:active {
     box-shadow:
-        inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
     transform: scale(0.95);
 }
 
 .container {
     display: flex;
     justify-content: space-between;
-    /* Add this line */
     flex-wrap: wrap;
     padding: 20px;
     position: relative;
