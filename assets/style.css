@@ -271,10 +271,7 @@ form .button-container {
     gap: 20px;
 }
 
-button[type="submit"], button[type="reset"] {
-    width: auto;
-    margin: 5px 0px;
-}
+
 
 form label {
     color: #5c5e62;
@@ -319,10 +316,12 @@ textarea {
 }
 
 
+
 button {
     font-family: "Gotham SSm";
     color: white;
     filter: brightness(95%);
+    margin: 10px 0px;
     padding: 12px 20px;
     border: none;
     border-radius: 15px;
@@ -339,19 +338,22 @@ button[type="submit"] {
 
 button[type="reset"] {
     background-color: #998E8E;
-    width: 80px;
+    width: 95px;
 }
 
-button:hover {
+button:hover.enabled {
     transform: scale(1.05);
     filter: brightness(100%);
 }
-button:active {
+button:active.enabled {
     transform: scale(0.95);
     filter: brightness(90%);
 }
 
-
+.disabled {
+    cursor: not-allowed;
+    filter: opacity(50%);
+}
 
 
 
