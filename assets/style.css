@@ -124,21 +124,14 @@ div.bordure {
 
 
 
-.box12 {
+.boxlegalmention {
     flex: 1 0 30%; 
     text-align: left;
     margin-left: 10px;
     padding: 10px;
 }
 
-.box22 {
-    flex: 1 0 30%; 
-    text-align: left;
-    margin-left: 10px;
-    padding: 10px;
-}
-
-.box12 h2, .box22 h2 {
+.boxlegalmention h2 {
     margin-top: -25px;
     position: absolute;
     color: black;
@@ -475,4 +468,11 @@ footer .text-center a {
 .align p
 {
     text-align: justify;
+}
+
+.img_legalmentions{
+    width:200px;
+    height:200px;
+    margin-right: 80px;
+    margin-top: 30px;
 }
