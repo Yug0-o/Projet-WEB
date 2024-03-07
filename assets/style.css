@@ -27,6 +27,7 @@
 
 body {
     color: #1E1E1E;
+    opacity: 1;
     background-color: #efefef;
     font-family: "Gotham SSm";
     display: flex;
@@ -35,12 +36,14 @@ body {
     user-select: none;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+    transition: all 0.2s ease-in-out;
+
 }
 
 
 
 div.bordure {
-    border: 2px solid grey;;
+    border: 2px solid grey;
     margin: 20px;
 }
 
@@ -88,7 +91,17 @@ div.bordure {
     padding: 20px;
     position: relative;
 }
-  
+
+.container-bando {
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-between;
+    /* Add this line */
+    flex-wrap: wrap;
+    padding: 20px;
+    position: relative;
+}
+
 .login {
     padding: 20px;
     text-align: right;
@@ -138,10 +151,11 @@ div.bordure {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
     font-size: 12px;
     font-weight: 500;
 }
+
 
 @media screen and (max-width: 650px) {
     .text-center {
@@ -153,6 +167,11 @@ div.bordure {
 .text-center h1 {
     padding: 30px;
     margin-top: 50px;
+    font-size: 7.5em;
+}
+
+article h2 {
+    font-size: 2em;
 }
 
 .space {
@@ -280,19 +299,19 @@ form label {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 input, select {
-    font-family: initial;
+    font-family: inherit;
     border: none;
     border-radius: 10px;
     width : 240px;
     background-color: #f0f0f0;
     border: none;
-    
     padding: 10px;
     margin-top: 10px;
+    margin-bottom: 10px;
     box-shadow:  -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
     outline: none;
 }
@@ -302,13 +321,13 @@ input, select {
 /* On mouse-over, add a grey background color */
 input:hover {
     background-color: #e0e0e0;
-    /* box-shadow: inset -2px -2px 5px rgba(193, 84, 33, 0), inset 2px 2px 5px rgba(240, 119, 63, 0); */
+    box-shadow: inset -2px -2px 3px #e0e0e0, inset 2px 2px #e0e0e0, -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
 }
 
 /* When the input is focused, add a blue background */
 input:focus {
     background-color: #f56a2a0f;
-    box-shadow: inset -2px -2px 3px rgba( 193, 84, 33, 0.4), inset 2px 2px 3px rgba(240, 119, 63, 0.4); 
+    box-shadow: inset -2px -2px 3px rgba( 193, 84, 33, 0.4), inset 2px 2px 3px rgba(240, 119, 63, 0.4), -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0; 
 }
 
 textarea {
@@ -319,6 +338,7 @@ textarea {
 
 button {
     font-family: "Gotham SSm";
+    font-weight: 500;
     color: white;
     filter: brightness(95%);
     margin: 10px 0px;
@@ -428,21 +448,24 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
-    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease;
+    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease, color 0.2s ease, filter 0.2s ease;
 }
 
 footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
     flex-direction: column;
     box-sizing: border-box;
     margin-top: auto;
 }
 
+
 footer .text-center a {
     color: #5C5E62;
+    font-weight: 500;
 }
 
 .img_accueil{
