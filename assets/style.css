@@ -141,8 +141,7 @@ div.bordure {
 .box12 h2, .box22 h2 {
     margin-top: -25px;
     position: absolute;
-    background-color: black;
-    color: white;
+    color: black;
     border-radius: 5px;
     padding: 2px;
 }
@@ -202,7 +201,7 @@ article h2 {
 
 .navbar {
     /* background-color: gainsboro; */
-    color: black;
+    color: grey;
     font-family: "Gotham SSm";
 }
 
@@ -473,3 +472,7 @@ footer .text-center a {
     height: 400px;
 }
 
+.align p
+{
+    text-align: justify;
+}
