@@ -23,17 +23,16 @@
 			<article>	
 				<form>
                     <div class="login-form">
-                        <label>E-mail</label><input name="email" type="email" size="30" value="" required >
+                        <label name="email">E-mail</label><input name="email" type="email" size="30" value="" required >
 
-                        <label>Mot de passe</label><input name="password" type="password" size="30" value="" required >
-                        <!-- forgot-password -->
+                        <label name="password">Mot de passe</label><input name="password" type="password" size="30" value="" required >
                         <div class="forgot-password">
                             <a href="password-recovery.html" >Mot de passe oublié ?</a>
                         </div>
                         
                         <div class="button-container">
-                            <button class="disabled" type="reset" disabled>Reset</button>  <!-- todo -->
-                            <button class="disabled" type="submit" disabled>Connexion</button> <!-- todo -->
+                            <button class="disabled" type="reset" disabled>Reset</button>
+                            <button class="disabled" type="submit" disabled>Connexion</button> 
                         </div>
                     </div>
 				</form>
@@ -47,13 +46,14 @@
         <footer>
             <div class="navbar">
                 <div class="text-center">
-                    <a href="homepage.html"> Internship Etendard &copy; 2024 </a>&nbsp;|&nbsp;
-                    <a href="about.html">Tous droits réservés</a>&nbsp;|&nbsp;
-                    <a href="">Mentions légales</a>&nbsp;|&nbsp;
+                    <a href="homepage.html"> Internship Etendard &copy; 2024 </a><span class="desktop">&nbsp;|&nbsp;</span><span class="mobile">&nbsp;-&nbsp;</span>
+                    <a href="about.html">Tous droits réservés</a><span class="desktop">&nbsp;|&nbsp;</span><span class="mobile">&nbsp;-&nbsp;</span>
+                    <a href="">Mentions légales</a><span class="desktop">&nbsp;|&nbsp;</span><span class="mobile">&nbsp;-&nbsp;</span>
                     <a href="contact.html">Contact</a>
                 </div>
             </div>
         </footer>
     <script src="assets\JS\global.js"></script>
+    <script src="assets\JS\login.js"></script>
    </body> 
 </html> 

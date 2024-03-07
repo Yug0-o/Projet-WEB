@@ -36,6 +36,26 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
+
+.animate {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: slideIn 0.3s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 div.bordure {
     border: 2px solid grey;
     margin: 20px;
@@ -146,11 +166,21 @@ div.bordure {
     font-size: 5em;
 }
 
+.mobile {
+    display: none;
+}
+
 @media screen and (max-width: 650px) {
     .text-center {
         flex-direction: column;
         align-items: center;
         gap: 0px;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: inline;
     }
 }
 
@@ -197,10 +227,23 @@ article h2 {
     padding: 10px;
 }
 
-section .email-sent {
+.email-entry, .email-sent{
+    opacity: 0;
     font-size: 0.8em;
     text-align: center;
     margin-bottom: 10px;
+    transition: opacity 0.1s ease-in-out;
+    
+}
+
+.email-entry.visible, .email-sent.visible {
+    opacity: 1;
+    transition: opacity 0.05s ease-in-out;
+}
+
+.email-entry.hidden, .email-sent.hidden {
+    opacity: 0;
+    transition: opacity 0.05s ease-in-out;   
 }
 
 .navbar {

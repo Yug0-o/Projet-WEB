@@ -1,6 +1,14 @@
 // Select the input fields and the buttons
 const emailInput = document.querySelector('input[type="email"]');
 const submit = document.querySelector('button[type="submit"]');
+const emailSentDiv = document.querySelector('.email-sent');
+const emailEntryDiv = document.querySelector('.email-entry');
+
+console.log("SKILL ISSUE")
+
+// Make the email-sent div not visible initially
+emailSentDiv.classList.add('hidden');
+emailEntryDiv.classList.add('visible');
 
 function validateEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
@@ -20,6 +28,28 @@ function updateButtons() {
 // Add event listeners to the input fields
 emailInput.addEventListener('input', updateButtons);
 
+// Select the h4 element with the class 'garde'
+const email_sent_to = document.querySelector('h4.email');
+
+// Add event listener to the submit button
+submit.addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent the form from being submitted
+    emailEntryDiv.classList.replace('visible', 'hidden'); // Make the email-entry div not visible
+
+    // Delay the visibility change of the email-sent div by 0.2 seconds
+    setTimeout(function () {
+        emailSentDiv.classList.remove('animate'); // Remove the animation class
+        void emailSentDiv.offsetWidth; // Trigger a reflow, flushing the CSS changes
+        emailSentDiv.classList.add('animate'); // Re-add the animation class
+        
+        emailSentDiv.classList.replace('hidden', 'visible'); // Make the email-sent div visible
+
+        // Add the email to the h4 element
+        email_sent_to.textContent = emailInput.value.trim();
+        email_sent_to.style.textDecoration = "underline";
+
+    }, 200);
+});
 
 // Call the function initially to set the initial state of the buttons
 updateButtons();
