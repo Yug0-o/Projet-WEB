@@ -18,16 +18,22 @@
 	 
 	   <section>
 	   
-			<div class="garde"><h1>Connexion</h1></div>
-			<br>
+            <div> <h1 class="garde">Connexion</h1> </div>
+ 
 			
 			<article>	
 				<form>
-					<label>Courriel<br><input name="email" type="email" size="30" value="" required ></label>
-					<br><br>
-					<label>Mot de passe<br><input name="password" type="password" size="30" value="" required ></label>
-					<br><br>
-					<button type="submit">Connexion</button>&nbsp;<input type="reset" value="Effacer" >
+                    <div class="login-form">
+                        <label>E-mail<input name="email" type="email" size="30" value="" required ></label>
+
+                        <label>Mot de passe<input name="password" type="password" size="30" value="" required ></label>
+
+                        
+                        <div class="button-container">
+                            <button class="disabled" type="reset" disabled>Reset</button>  <!-- todo -->
+                            <button class="disabled" type="submit" disabled>Connexion</button> <!-- todo -->
+                        </div>
+                    </div>
 				</form>
 				
 			</article>					
@@ -36,10 +42,13 @@
 	   
 	 </main>
 
-	 <br>
         <footer>
             <div class="navbar">
-                <div class="text-center"> <a href="page_accueil.html"> Internship Etendard &copy; 2024 </a>- <a href="a-propos.html">Tous droits réservés</a> - Mentions légales - <a href="contact.html">Contact</a>
+                <div class="text-center">
+                    <a href="page_accueil.html"> Internship Etendard &copy; 2024 </a>
+                    <a href="a-propos.html">Tous droits réservés</a>
+                    <a href="">Mentions légales</a>
+                    <a href="contact.html">Contact</a>
                 </div>
             </div>
         </footer>
