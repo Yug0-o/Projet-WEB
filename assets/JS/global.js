@@ -13,13 +13,5 @@ window.onload = function () {
     });
 };
 
-
-function updateFooter() {
-    // update the footer to use a - instead of a | when the screen width is too small
-    const footer = document.querySelector('footer');
-    if (window.innerWidth <= 650) {
-        footer.innerHTML = footer.innerHTML.replace(/&nbsp;\|&nbsp;/g, '&nbsp;-&nbsp;');
-    } else {
-        footer.innerHTML = footer.innerHTML.replace(/&nbsp;-&nbsp;/g, '&nbsp;|&nbsp;');
-    }
-}   
+// auto update the year in the footer
+document.getElementById('year').textContent = new Date().getFullYear();
