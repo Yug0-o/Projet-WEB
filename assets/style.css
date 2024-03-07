@@ -24,17 +24,16 @@
 
 body {
     color: #1E1E1E;
-    opacity: 1;
+    opacity: 0;
     background-color: #efefef;
     font-family: "Gotham SSm";
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 98vh;
     user-select: none;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
     transition: all 0.2s ease-in-out;
-
 }
 
 div.bordure {
@@ -115,25 +114,19 @@ div.bordure {
     margin-top: 15px;
 }
 
-.box12 {
+
+
+.boxlegalmention {
     flex: 1 0 30%; 
     text-align: left;
     margin-left: 10px;
     padding: 10px;
 }
 
-.box22 {
-    flex: 1 0 30%; 
-    text-align: left;
-    margin-left: 10px;
-    padding: 10px;
-}
-
-.box12 h2, .box22 h2 {
+.boxlegalmention h2 {
     margin-top: -25px;
     position: absolute;
-    background-color: black;
-    color: white;
+    color: black;
     border-radius: 5px;
     padding: 2px;
 }
@@ -147,6 +140,11 @@ div.bordure {
     font-weight: 500;
 }
 
+.text-center h1 {
+    padding: 30px;
+    margin-top: 50px;
+    font-size: 5em;
+}
 
 @media screen and (max-width: 650px) {
     .text-center {
@@ -155,11 +153,7 @@ div.bordure {
     }
 }
 
-.text-center h1 {
-    padding: 30px;
-    margin-top: 50px;
-    font-size: 7.5em;
-}
+
 
 article h2 {
     font-size: 2em;
@@ -181,7 +175,7 @@ article h2 {
 .garde {
     color: #1E1E1E;
     text-align: center;
-    font-size: 34px;
+    font-size: 3em;
     font-family: "Gotham SSm" ;
     font-weight: 500;
 }
@@ -191,20 +185,36 @@ article h2 {
     background-color: gainsboro;
 }
 
-.navbar {
-    /* background-color: gainsboro; */
-    color: black;
-    font-family: "Gotham SSm";
+.forgot-password {
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-.navbar a {
-    color: black;
+.password-recovery-form button {
+    width:260px;
+    padding: 10px;
+}
+
+section .email-sent {
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.navbar {
+    /* background-color: gainsboro; */
+    color: grey;
+    font-family: "Gotham SSm";
+}
+.navbar a, .forgot-password a {
+    color: grey;
     text-decoration: none;
     position: relative;
     transition: color 0.15s ease-in-out;
 }
 
-.navbar a::before {
+.navbar a::before, .forgot-password a::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -217,11 +227,11 @@ article h2 {
     transition: all 0.15s ease-in-out 0s;
 }
 
-.navbar a:hover {
+.navbar a:hover, .forgot-password a:hover {
     color: #F85F6A;
 }
 
-.navbar a:hover::before {
+.navbar a:hover::before, .forgot-password a:hover::before {
     visibility: visible;
     transform: scaleX(1);
 }
@@ -333,21 +343,19 @@ button {
     margin: 10px 0px;
     padding: 12px 20px;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer;
-    width: 120px;
+    width: 115px;
     box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
     outline: none;
 }
 
 button[type="submit"] {
     background-color: #F85F6A;
-    width: 120px;
 }
 
 button[type="reset"] {
     background-color: #998E8E;
-    width: 95px;
 }
 
 button:hover.enabled {
@@ -448,6 +456,7 @@ footer {
     padding-bottom: 10px;
     flex-direction: column;
     box-sizing: border-box;
+    /* footer at the bottom  */
     margin-top: auto;
 }
 
@@ -462,6 +471,17 @@ footer .text-center a {
     height: 400px;
 }
 
+.align p
+{
+    text-align: justify;
+}
+
+.img_legalmentions{
+    width:200px;
+    height:200px;
+    margin-right: 80px;
+    margin-top: 30px;
+}
 .textcontainer_accueil {
     width: 300px;
     height: 100px;
