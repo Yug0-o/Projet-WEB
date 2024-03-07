@@ -1,5 +1,5 @@
 // Liste des textes à faire défiler
-var texts = ["Ici le nombre stage défile comme un rafale, 7.5kN de pousée par moteur, ca va vite.", "Chez Internship Etendard nous placons nos espoir en vous et les génération future.", "Le stage est l'une des meilleurs façons de se lancer dans le monde actif tout en continuant à aprofondir ses connaissances."];
+var texts = ["Ici vous trouverez facilement le stage dont vous avez besoin, grâce à notre interface facile d'utilisation qui regroupe plus d'une centaine de stages dans chaque domaine et région", "Codé par des étudiants pour des étudiants, Internship Etendard regroupe plus d'une centaine d'entreprises et vous permet de postuler facilement à celle de votre choix.", "Le stage est l'une des meilleurs façons de se lancer dans le monde professionnel tout en approfondissant ses connaissances. Pour beaucoup de cursus, un stage est nécessaire pour valider une année d'études et c'est pour cela que notre entreprise vous permet d'en trouver un facilement."];
 var index = 0;
 
 var textcontainer_accueil = document.getElementById("textcontainer_accueil");

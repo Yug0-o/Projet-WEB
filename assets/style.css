@@ -146,8 +146,6 @@ div.bordure {
 }
 
 .boxlegalmention h2 {
-    margin-top: -25px;
-    position: absolute;
     color: black;
     border-radius: 5px;
     padding: 2px;
@@ -166,7 +164,8 @@ div.bordure {
 .text-center h1 {
     padding: 30px;
     margin-top: 50px;
-    font-size: 5em;
+    font-size: 4.8em;
+    text-decoration: underline;
 }
 
 
@@ -546,8 +545,8 @@ footer .text-center a {
 .img_legalmentions{
     width:200px;
     height:200px;
-    margin-right: 80px;
-    margin-top: 30px;
+    margin-top: 15px;
+    margin-left : 35%;
 }
 .textcontainer_accueil {
     width: 300px;
@@ -585,10 +584,16 @@ footer .text-center a {
 
 .box1-accueil h3{
     margin-top: 100px;
-    margin-left: 100px;
 }
 
 .box1-accueil p{
     margin-left: 500px;
 }
 
+
+.vertical-line{
+    border-left: 2px solid #000;
+    display: inline-block;
+    height: 260px;
+    margin: 20px 20px;
+}
