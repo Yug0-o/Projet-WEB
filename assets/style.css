@@ -150,6 +150,7 @@ div.bordure {
     .text-center {
         flex-direction: column;
         align-items: center;
+        gap: 0px;
     }
 }
 
@@ -186,8 +187,8 @@ article h2 {
 }
 
 .forgot-password {
-    font-size: 0.8em;
-    text-align: center;
+    font-size: 0.7em;
+    text-align: left;
     margin-bottom: 10px;
 }
 
@@ -506,6 +507,7 @@ footer .text-center a {
 
 .box1-accueil {
     flex: 1 0 30%; 
+    padding: 10px;
     text-align: left;
     margin-top: 50px;
     margin-bottom: 50px;
