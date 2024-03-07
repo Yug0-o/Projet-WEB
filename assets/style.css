@@ -44,7 +44,7 @@ body {
 
 
 div.bordure {
-    border: 2px solid grey;;
+    border: 2px solid grey;
     margin: 20px;
 }
 
@@ -122,7 +122,17 @@ div.bordure {
     padding: 20px;
     position: relative;
 }
-  
+
+.container-bando {
+    background-color: gainsboro;
+    display: flex;
+    justify-content: space-between;
+    /* Add this line */
+    flex-wrap: wrap;
+    padding: 20px;
+    position: relative;
+}
+
 .login {
     padding: 20px;
     text-align: right;
@@ -175,6 +185,11 @@ div.bordure {
 .text-center h1 {
     padding: 30px;
     margin-top: 50px;
+    font-size: 7.5em;
+}
+
+article h2 {
+    font-size: 2em;
 }
 
 .space {
