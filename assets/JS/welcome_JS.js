@@ -2,7 +2,7 @@
 var texts = ["Ici le nombre stage défile comme un rafale.", "Chez Internship Etendard nous placons nos espoir en vous et les génération future.", "Le stage est l'une des meilleurs façons de se lancer dans le monde actif tout en continuant à aprofondir ses connaissances."];
 var index = 0;
 
-var textContainer = document.getElementById("textContainer");
+var textcontainer_accueil = document.getElementById("textcontainer_accueil");
 var scrollingText = document.getElementById("scrollingText");
 
 // Fonction pour changer le texte toutes les x secondes
