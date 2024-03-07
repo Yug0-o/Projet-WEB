@@ -506,6 +506,7 @@ footer .text-center a {
 
 .box1-accueil {
     flex: 1 0 30%; 
+    padding: 10px;
     text-align: left;
     margin-top: 50px;
     margin-bottom: 50px;

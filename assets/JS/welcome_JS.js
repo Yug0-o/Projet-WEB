@@ -1,5 +1,5 @@
 // Liste des textes à faire défiler
-var texts = ["Ici le nombre stage défile comme un rafale.", "Chez Internship Etendard nous placons nos espoir en vous et les génération future.", "Le stage est l'une des meilleurs façons de se lancer dans le monde actif tout en continuant à aprofondir ses connaissances."];
+var texts = ["Ici le nombre stage défile comme un rafale, 7.5kN de pousée par moteur, ca va vite.", "Chez Internship Etendard nous placons nos espoir en vous et les génération future.", "Le stage est l'une des meilleurs façons de se lancer dans le monde actif tout en continuant à aprofondir ses connaissances."];
 var index = 0;
 
 var textcontainer_accueil = document.getElementById("textcontainer_accueil");
