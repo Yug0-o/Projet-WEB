@@ -27,17 +27,16 @@
 
 body {
     color: #1E1E1E;
-    opacity: 1;
+    opacity: 0;
     background-color: #efefef;
     font-family: "Gotham SSm";
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 98vh;
     user-select: none;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
     transition: all 0.2s ease-in-out;
-
 }
 
 
@@ -156,6 +155,11 @@ div.bordure {
     font-weight: 500;
 }
 
+.text-center h1 {
+    padding: 30px;
+    margin-top: 50px;
+    font-size: 5em;
+}
 
 @media screen and (max-width: 650px) {
     .text-center {
@@ -164,11 +168,7 @@ div.bordure {
     }
 }
 
-.text-center h1 {
-    padding: 30px;
-    margin-top: 50px;
-    font-size: 7.5em;
-}
+
 
 article h2 {
     font-size: 2em;
@@ -190,7 +190,7 @@ article h2 {
 .garde {
     color: #1E1E1E;
     text-align: center;
-    font-size: 34px;
+    font-size: 3em;
     font-family: "Gotham SSm" ;
     font-weight: 500;
 }
@@ -200,6 +200,23 @@ article h2 {
     background-color: gainsboro;
 }
 
+.forgot-password {
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.password-recovery-form button {
+    width:260px;
+    padding: 10px;
+}
+
+section .email-sent {
+    font-size: 0.8em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .navbar {
     /* background-color: gainsboro; */
     color: black;
@@ -207,15 +224,14 @@ article h2 {
 }
 
 
-
-.navbar a {
-    color: black;
+.navbar a, .forgot-password a {
+    color: grey;
     text-decoration: none;
     position: relative;
     transition: color 0.15s ease-in-out;
 }
 
-.navbar a::before {
+.navbar a::before, .forgot-password a::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -228,11 +244,11 @@ article h2 {
     transition: all 0.15s ease-in-out 0s;
 }
 
-.navbar a:hover {
+.navbar a:hover, .forgot-password a:hover {
     color: #F85F6A;
 }
 
-.navbar a:hover::before {
+.navbar a:hover::before, .forgot-password a:hover::before {
     visibility: visible;
     transform: scaleX(1);
 }
@@ -344,21 +360,19 @@ button {
     margin: 10px 0px;
     padding: 12px 20px;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     cursor: pointer;
-    width: 120px;
+    width: 115px;
     box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
     outline: none;
 }
 
 button[type="submit"] {
     background-color: #F85F6A;
-    width: 120px;
 }
 
 button[type="reset"] {
     background-color: #998E8E;
-    width: 95px;
 }
 
 button:hover.enabled {
@@ -459,6 +473,7 @@ footer {
     padding-bottom: 10px;
     flex-direction: column;
     box-sizing: border-box;
+    /* footer at the bottom  */
     margin-top: auto;
 }
 
