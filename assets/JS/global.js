@@ -1,17 +1,17 @@
-Promise.all([
-    document.fonts.ready,
-    new Promise((resolve) => window.onload = resolve)
-]).then(() => {
-    document.body.style.opacity = "1";
-    updateFooter();
-    window.addEventListener('resize', updateFooter);
-});
+window.onload = function () {
+    // Select all the elements you want to animate
+    const elements = document.querySelectorAll('body > *:not(footer)');
 
-function updateFooter() {
-    const footer = document.querySelector('footer');
-    if (window.innerWidth <= 650) {
-        footer.innerHTML = footer.innerHTML.replace(/&nbsp;\|&nbsp;/g, '&nbsp;-&nbsp;');
-    } else {
-        footer.innerHTML = footer.innerHTML.replace(/&nbsp;-&nbsp;/g, '&nbsp;|&nbsp;');
-    }
-}
+    // Add the animate class to these elements
+    elements.forEach(element => {
+        element.classList.add('animate');
+    });
+
+    // Load the fonts and then update the body opacity
+    Promise.all([document.fonts.ready]).then(() => {
+        document.body.style.opacity = "1";
+    });
+};
+
+// auto update the year in the footer
+document.getElementById('year').textContent = new Date().getFullYear();

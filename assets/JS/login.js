@@ -4,6 +4,7 @@ const passwordInput = document.querySelector('input[type="password"]');
 const reset = document.querySelector('button[type="reset"]');
 const submit = document.querySelector('button[type="submit"]');
 
+
 function validateEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }
@@ -42,6 +43,7 @@ reset.addEventListener('click', () => {
     // Delay the call to updateButtons until after the form is reset
     setTimeout(updateButtons, 0);
 });
+
 
 // Call the function initially to set the initial state of the buttons
 updateButtons();
