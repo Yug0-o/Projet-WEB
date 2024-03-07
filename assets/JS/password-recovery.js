@@ -3,6 +3,7 @@ const emailInput = document.querySelector('input[type="email"]');
 const submit = document.querySelector('button[type="submit"]');
 const emailSentDiv = document.querySelector('.email-sent');
 const emailEntryDiv = document.querySelector('.email-entry');
+const buttonDiv = document.querySelector('.password-recovery-form');
 
 console.log("SKILL ISSUE")
 
@@ -43,6 +44,8 @@ submit.addEventListener('click', function (event) {
         emailSentDiv.classList.add('animate'); // Re-add the animation class
         
         emailSentDiv.classList.replace('hidden', 'visible'); // Make the email-sent div visible
+        // Make the button div not accessible
+        buttonDiv.style.pointerEvents = "none";
 
         // Add the email to the h4 element
         email_sent_to.textContent = emailInput.value.trim();

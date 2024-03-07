@@ -22,6 +22,8 @@
     src: url(fonts/GothamSSm-Light_Web.woff2) format("woff2")
 }
 
+
+
 body {
     color: #1E1E1E;
     opacity: 0;
@@ -158,6 +160,7 @@ div.bordure {
     gap: 15px;
     font-size: 12px;
     font-weight: 500;
+    transition: gap 0.2s ease-in-out, font-size 0.2s ease-in-out, flex 0.2s ease-in-out;
 }
 
 .text-center h1 {
@@ -166,21 +169,36 @@ div.bordure {
     font-size: 5em;
 }
 
+
 .mobile {
     display: none;
 }
 
+a {
+    transition: padding 0.2s ease-in-out;
+}
+
 @media screen and (max-width: 650px) {
     .text-center {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
-        gap: 0px;
+        gap: 10px;
     }
     .desktop {
         display: none;
     }
     .mobile {
         display: inline;
+    }
+    .email-entry, .email-sent {
+        font-size: 0.5em;
+    }
+    .garde {
+        font-size: 2em !important;
+    }
+    a {
+        padding: 5px;
+        transition: padding 0.2s ease-in-out;
     }
 }
 
@@ -209,6 +227,7 @@ article h2 {
     font-size: 3em;
     font-family: "Gotham SSm" ;
     font-weight: 500;
+    transition: opacity 0.1s ease-in-out, font-size 0.5s ease-in-out;
 }
 
 .bando {
@@ -227,23 +246,24 @@ article h2 {
     padding: 10px;
 }
 
-.email-entry, .email-sent{
+.email-entry, .email-sent {
     opacity: 0;
     font-size: 0.8em;
     text-align: center;
     margin-bottom: 10px;
-    transition: opacity 0.1s ease-in-out;
-    
+    transition: opacity 0.1s ease-in-out, font-size 0.5s ease-in-out;
 }
 
 .email-entry.visible, .email-sent.visible {
     opacity: 1;
-    transition: opacity 0.05s ease-in-out;
+    position: relative;
+    top: 40% !important;
 }
 
 .email-entry.hidden, .email-sent.hidden {
+    transform: translateY(-10px);
     opacity: 0;
-    transition: opacity 0.05s ease-in-out;   
+    pointer-events: none;
 }
 
 .navbar {
@@ -251,6 +271,9 @@ article h2 {
     color: grey;
     font-family: "Gotham SSm";
 }
+
+
+
 .navbar a, .forgot-password a {
     color: grey;
     text-decoration: none;
@@ -568,3 +591,4 @@ footer .text-center a {
 .box1-accueil p{
     margin-left: 500px;
 }
+
