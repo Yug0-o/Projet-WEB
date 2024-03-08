@@ -58,6 +58,8 @@ body {
 }
 
 
+
+
 div.bordure {
     border: 2px solid grey;
     margin: 20px;
@@ -74,28 +76,6 @@ div.bordure {
     margin-top: 25px;
 }
 
-.bouton {
-    border: 2px solid #F85F6A;
-    background-color: white;
-    color: black;
-    padding: 8px 20px;
-    font-weight: bold;
-    border-radius: 50px;
-    margin-top: -20px;
-}
-
-
-.bouton:hover {
-    background-color: #ccc;
-    transform: scale(1.05);
-}
-
-.bouton:active {
-    box-shadow:
-    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
-    transform: scale(0.95);
-}
 
 .container {
     display: flex;
@@ -266,11 +246,17 @@ article h2 {
 }
 
 .navbar {
-    /* background-color: gainsboro; */
     color: grey;
     font-family: "Gotham SSm";
 }
 
+.homeNav{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 
 .navbar a, .forgot-password a {
@@ -303,7 +289,6 @@ article h2 {
 }
 
 
-/* CSS for the "Categories" list */
 .categories-list {
     list-style-type: none;
     display: flex;
@@ -414,6 +399,24 @@ button {
     width: 115px;
     box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
     outline: none;
+}
+
+button[type="login"] {
+    border: 2px solid #F85F6A;
+    background-color: white;
+    color: black;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: -20px;
+}
+
+
+button[type="login"]:active {
+    box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    transform: scale(0.95);
 }
 
 button[type="submit"] {
