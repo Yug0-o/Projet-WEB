@@ -207,13 +207,11 @@ class CardCarousel extends DraggingEvent {
   }
   
   calcPos(x, scale) {
-    let formula;
+    let formula = 100 - (scale * 100 + this.cardWidth) / 2;
     
     if (x < 0) {
       formula = (scale * 100 - this.cardWidth) / 2;
     } else if (x > 0) {
-      formula = 100 - (scale * 100 + this.cardWidth) / 2;
-    } else {
       formula = 100 - (scale * 100 + this.cardWidth) / 2;
     }
     
