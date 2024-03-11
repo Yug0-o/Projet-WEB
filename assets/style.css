@@ -137,7 +137,7 @@ textarea {
 }
 
 .horizontal-line {
-    border-top: 1px solid black;
+    border-top: 1px solid #fff;
 }
 
 .mobile {
@@ -165,24 +165,13 @@ textarea {
     padding: 0;
   }
   
-  .visuallyhidden {
+.visuallyhidden {
     position: absolute;
     z-index: -1;
     right: 0;
     opacity: 0;
-    
-  }
-  
-  .container {
-    overflow: hidden;
-    padding: 3%;
-    margin-top: 2em;
-    background: rgba(0,0,0,.1);
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-  }
 
+}
 /*---------------------------------------------------------------*/
 
 /* All buttons */
@@ -198,7 +187,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     width: 115px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
     outline: none;
 }
 
@@ -314,7 +303,7 @@ button:active.enabled {
     border: 2px solid #F85F6A;
     border-radius: 30px;
     font-size: 4.8em;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .text-center-accueil {
@@ -332,19 +321,15 @@ button:active.enabled {
     font-size: 300%;
 }
 
-.contact h2 {
-    width: 100%; 
-    text-align: center; 
-    border-bottom: 1px solid #000; 
-    line-height: 0.1em;
-    margin: 30px 0 20px; 
- } 
- 
- .contact h2 span { 
-     background:#efefef; 
-     padding:0px 10px; 
- }
-
+.text-center h2{
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    margin-left: 10px;
+    font-size: 3em;
+    text-decoration: underline;
+}
 
 /*---------------------------------------------------------------*/
 
@@ -352,7 +337,7 @@ button:active.enabled {
 
 * img {
     border-radius: 50px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
 }
 
 .logo {
@@ -385,11 +370,17 @@ button:active.enabled {
 .container {
     display: flex;
     justify-content: space-between;
+    background: rgba(0, 0, 0, .1);
     flex-wrap: wrap;
     padding: 20px;
+    margin: 20px;
     position: relative;
     border-radius: 40px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+
 }
+
+
 
 .container-bando {
     background-color: gainsboro;
@@ -398,6 +389,8 @@ button:active.enabled {
     /* Add this line */
     flex-wrap: wrap;
     padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     position: relative;
     border-radius: 50px;
 }
@@ -550,68 +543,6 @@ button:active.enabled {
 
 /*---------------------------------------------------------------*/
 
-/* Searchbar */
-
-.searchbar {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    position: absolute;
-    width: 30%;
-    height: 20px;
-    margin-left: 35%;
-    min-width: 150px;
-    transition: all 0.2s ease-in-out;
-}
-
-.searchbar input[type="text"] {
-    width: 100%; 
-    padding: 10px;
-    padding-right: 40px;
-    border: none;
-    border-radius: 20px;
-}
-
-.searchbar:focus-within {
-    transform: scale(1.01);
-}
-
-.searchbar button {
-    display: flex; /* Add this line */
-    justify-content: center; /* Add this line */
-    align-items: center; /* Add this line */
-    position: absolute;
-    width: 40px;
-    height: 36px;
-    right: 0;
-    border: none;
-    background: #F85F6A;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px 20px 20px 5px;
-    font-size: 17px;
-}
-
-.searchlogo {
-    /* make sure it's centered */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(-1px);
-}
-
-.SearchHidden {
-    position: fixed;
-    top: -100px;
-    transition: top 0.5s;
-}
-
-.SearchHidden.show {
-    top: 0;
-}
-
-/*---------------------------------------------------------------*/
-
 /* Categories list */
 
 .categories-list {
@@ -685,7 +616,7 @@ form label {
 
 /* Input (+ select)*/
 
-input, select {
+input, select, textarea {
     font-family: inherit;
     border: none;
     border-radius: 10px;
@@ -695,8 +626,13 @@ input, select {
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    box-shadow:  -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
     outline: none;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -746,7 +682,7 @@ input[type="checkbox"], input[type="radio"] {
     width: 25px;
     background-color: #f0f0f0;
     border-radius: 5px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
 }
 
 /* On mouse-over, add a grey background color */
@@ -808,6 +744,7 @@ footer .text-center a {
 
 /* Carousel */
 
+
 .card-carousel {
   --card-width: 80%;
   --card-max-width: 280px;
@@ -847,9 +784,9 @@ footer .text-center a {
   margin: 0 auto;
   color: rgba(0,0,0,.5);
   transition: inherit;
-  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
-  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
   border-radius: 3em;
   filter: brightness(.9);
   display: flex;
@@ -906,4 +843,6 @@ footer .text-center a {
   top: calc(-10% - 3px);
   left: calc(-10% - 3px);
 }
+
+
 /*---------------------------------------------------------------*/

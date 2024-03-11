@@ -22,7 +22,7 @@ window.onload = function () {
     });
 
     window.addEventListener("scroll", function() {
-        if (window.scrollY > 200) { 
+        if (window.scrollY > 100) { 
             scrollButton.style.display = "block";
         } else {
             scrollButton.style.display = "none";
@@ -32,3 +32,4 @@ window.onload = function () {
 
 // auto update the year in the footer
 document.getElementById('year').textContent = new Date().getFullYear();
+
