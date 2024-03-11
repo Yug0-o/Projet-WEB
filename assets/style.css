@@ -358,6 +358,7 @@ button:active.enabled {
     flex-wrap: wrap;
     padding: 20px;
     position: relative;
+    border-radius: 40px;
 }
 
 .container-bando {
