@@ -1,3 +1,5 @@
+/* Loading of the different fonts*/
+
 @font-face {
     font-display: swap;
     font-family: Gotham SSm;
@@ -21,6 +23,10 @@
     font-weight: 300;
     src: url(fonts/GothamSSm-Light_Web.woff2) format("woff2")
 }
+
+/*---------------------------------------------------------------*/
+
+/* For all pages */
 
 
 
@@ -65,9 +71,142 @@ div.bordure {
     margin: 20px;
 }
 
+article h2 {
+    font-size: 2em;
+}
+
+.space {
+    padding: 1em;
+}
+
+.horizontal-line {
+    border-top: 1px solid #fff;
+}
+
+.align p
+{
+    text-align: justify;
+}
+
+.vertical-line{
+    border-left: 2px solid #000;
+    display: inline-block;
+    height: 260px;
+    margin: 20px 20px;
+}
+
+/*---------------------------------------------------------------*/
+
+/* All buttons */
+
+button {
+    font-family: "Gotham SSm";
+    font-weight: 500;
+    color: white;
+    filter: brightness(95%);
+    margin: 10px 0px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 115px;
+    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #F85F6A;
+}
+
+button[type="reset"] {
+    background-color: #998E8E;
+}
+
+button:hover.enabled {
+    transform: scale(1.05);
+    filter: brightness(100%);
+}
+button:active.enabled {
+    transform: scale(0.95);
+    filter: brightness(90%);
+}
+
+.bouton {
+    border: 2px solid #F85F6A;
+    background-color: white;
+    color: black;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: -20px;
+}
+
+.bouton:hover {
+    background-color: #ccc;
+    transform: scale(1.05);
+}
+
+.bouton:active {
+    box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    transform: scale(0.95);
+}
+
+/*---------------------------------------------------------------*/
+
+/* Text-center*/
+
+.text-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.text-center h1 {
+    padding: 30px;
+    margin-top: 50px;
+    font-size: 4.8em;
+    text-decoration: underline;
+}
+
+.text-center-accueil {
+    width: 1000px;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: gainsboro;
+    border-radius: 50px;
+}
+
+.text-center-accueil h1{
+    font-size: 300%;
+}
+
+/*---------------------------------------------------------------*/
+
+/* Images */
+
 .logo img {
     width: 100px;
     height: 100px;
+}
+
+.img_accueil{
+    width: 600px;
+    height: 400px;
+}
+
+.img_legalmentions{
+    width:200px;
+    height:200px;
+    margin-top: 15px;
+    margin-left : 35%;
 }
 
 .nom img {
@@ -76,6 +215,9 @@ div.bordure {
     margin-top: 25px;
 }
 
+/*---------------------------------------------------------------*/
+
+/* Container*/
 
 .container {
     display: flex;
@@ -96,13 +238,21 @@ div.bordure {
     border-radius: 50px;
 }
 
-.login {
-    padding: 20px;
-    text-align: right;
-    position: absolute;
-    top: 0;
-    right: 0;
+.flex-container {
+    display: flex;
+    justify-content: space-between;
 }
+
+.textcontainer_accueil {
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+/*---------------------------------------------------------------*/
+
+/* Boxes */
 
 .box1 {
     flex: 1 0 30%; 
@@ -115,8 +265,6 @@ div.bordure {
     /* text-align: left; */
     margin-top: 15px;
 }
-
-
 
 .boxlegalmention {
     flex: 1 0 30%; 
@@ -131,6 +279,10 @@ div.bordure {
     padding: 2px;
 }
 
+.box1-accueil {
+    flex: 1 0 30%; 
+    padding: 10px;
+    text-align: left;
 .text-center {
     display: flex;
     justify-content: center;
@@ -144,6 +296,11 @@ div.bordure {
 .text-center h1 {
     padding: 30px;
     margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    margin-left: 10px;
+    border: 2px solid #F85F6A;
+    border-radius: 30px;
     font-size: 4.8em;
     text-decoration: underline;
 }
@@ -209,10 +366,13 @@ article h2 {
     transition: opacity 0.1s ease-in-out, font-size 0.5s ease-in-out;
 }
 
-.bando {
-    padding: 20px;
-    background-color: gainsboro;
+.box1-accueil p{
+    margin-left: 500px;
 }
+
+/*---------------------------------------------------------------*/
+
+/* Login */
 
 .forgot-password {
     font-size: 0.7em;
@@ -223,6 +383,14 @@ article h2 {
 .password-recovery-form button {
     width:260px;
     padding: 10px;
+}
+
+.login {
+    padding: 20px;
+    text-align: right;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .email-entry, .email-sent {
@@ -244,6 +412,10 @@ article h2 {
     opacity: 0;
     pointer-events: none;
 }
+
+/*---------------------------------------------------------------*/
+
+/* Navbar */
 
 .navbar {
     color: grey;
@@ -288,6 +460,9 @@ article h2 {
     transform: scaleX(1);
 }
 
+/*---------------------------------------------------------------*/
+
+/* Categories list */
 
 .categories-list {
     list-style-type: none;
@@ -311,7 +486,9 @@ article h2 {
     transition: transform 0.1s ease-in-out
 }
 
+/*---------------------------------------------------------------*/
 
+/* Table-articles */
 
 .table-articles thead {
     background-color: #0d0d0d;
@@ -325,6 +502,10 @@ article h2 {
 .table-articles tr:nth-child(even) {
     background-color: #181818;
 }
+
+/*---------------------------------------------------------------*/
+
+/* Form */
 
 form {
     display: flex;
@@ -351,6 +532,10 @@ form label {
     width: 100%;
     margin-top: 10px;
 }
+
+/*---------------------------------------------------------------*/
+
+/* Input (+ select)*/
 
 input, select {
     font-family: inherit;
@@ -448,7 +633,9 @@ input[type="checkbox"], input[type="radio"] {
     height: auto;
 }
 
+/*---------------------------------------------------------------*/
 
+/* Checkbox */
 
 .checkbox-container {
     display: block;
@@ -513,9 +700,9 @@ input[type="checkbox"], input[type="radio"] {
     transform: rotate(45deg);
 }
 
-button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
-    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease, color 0.2s ease, filter 0.2s ease;
-}
+/*---------------------------------------------------------------*/
+
+/* Footer */
 
 footer {
     display: flex;
@@ -529,68 +716,75 @@ footer {
     margin-top: auto;
 }
 
-
 footer .text-center a {
     color: #5C5E62;
     font-weight: 500;
 }
 
-.img_accueil{
-    width: 600px;
-    height: 400px;
+/*---------------------------------------------------------------*/
+
+/* Others */
+
+button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
+    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease, color 0.2s ease, filter 0.2s ease;
 }
 
-.align p
-{
-    text-align: justify;
+.mobile {
+    display: none;
 }
 
-.img_legalmentions{
-    width:200px;
-    height:200px;
-    margin-top: 15px;
-    margin-left : 35%;
-}
-.textcontainer_accueil {
-    width: 300px;
-    height: 100px;
-    overflow: hidden;
-    border: 1px solid #ccc;
+@media screen and (max-width: 650px) {
+    .text-center {
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: inline;
+    }
 }
 
-.text-center-accueil {
-    width: 1000px;
-    padding: 10px;
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
+.animate {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: slideIn 0.3s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.garde {
+    color: #1E1E1E;
     text-align: center;
+    font-size: 3em;
+    font-family: "Gotham SSm" ;
+    font-weight: 500;
+}
+
+.bando {
+    padding: 20px;
     background-color: gainsboro;
-    border-radius: 50px;
 }
 
-.text-center-accueil h1{
-    font-size: 300%;
+textarea {
+    resize: none;
 }
 
-.box1-accueil {
-    flex: 1 0 30%; 
-    padding: 10px;
-    text-align: left;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 100px;
-    margin-left: 10px;
-    border: 2px solid #F85F6A;
-    border-radius: 30px;
-}
-
-.box1-accueil h3{
-    margin-top: 100px;
-}
-
-.box1-accueil p{
-    margin-left: 500px;
+.disabled {
+    cursor: not-allowed;
+    filter: opacity(50%);
 }
 
 
