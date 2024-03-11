@@ -28,6 +28,8 @@
 
 /* For all pages */
 
+
+
 body {
     color: #1E1E1E;
     opacity: 0;
@@ -41,6 +43,28 @@ body {
     scroll-behavior: smooth;
     transition: all 0.2s ease-in-out;
 }
+
+
+.animate {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: slideIn 0.3s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
 
 div.bordure {
     border: 2px solid grey;
@@ -259,16 +283,87 @@ button:active.enabled {
     flex: 1 0 30%; 
     padding: 10px;
     text-align: left;
+.text-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: gap 0.2s ease-in-out, font-size 0.2s ease-in-out, flex 0.2s ease-in-out;
+}
+
+.text-center h1 {
+    padding: 30px;
     margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 100px;
     margin-left: 10px;
     border: 2px solid #F85F6A;
     border-radius: 30px;
+    font-size: 4.8em;
+    text-decoration: underline;
 }
 
-.box1-accueil h3{
-    margin-top: 100px;
+
+.mobile {
+    display: none;
+}
+
+a {
+    transition: padding 0.2s ease-in-out;
+}
+
+@media screen and (max-width: 650px) {
+    .text-center {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 10px;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: inline;
+    }
+    .email-entry, .email-sent {
+        font-size: 0.5em;
+    }
+    .garde {
+        font-size: 2em !important;
+    }
+    a {
+        padding: 5px;
+        transition: padding 0.2s ease-in-out;
+    }
+}
+
+
+
+article h2 {
+    font-size: 2em;
+}
+
+.space {
+    padding: 1em;
+}
+
+.horizontal-line {
+    border-top: 1px solid #fff;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.garde {
+    color: #1E1E1E;
+    text-align: center;
+    font-size: 3em;
+    font-family: "Gotham SSm" ;
+    font-weight: 500;
+    transition: opacity 0.1s ease-in-out, font-size 0.5s ease-in-out;
 }
 
 .box1-accueil p{
@@ -298,23 +393,24 @@ button:active.enabled {
     right: 0;
 }
 
-.email-entry, .email-sent{
+.email-entry, .email-sent {
     opacity: 0;
     font-size: 0.8em;
     text-align: center;
     margin-bottom: 10px;
-    transition: opacity 0.1s ease-in-out;
-    
+    transition: opacity 0.1s ease-in-out, font-size 0.5s ease-in-out;
 }
 
 .email-entry.visible, .email-sent.visible {
     opacity: 1;
-    transition: opacity 0.05s ease-in-out;
+    position: relative;
+    top: 40% !important;
 }
 
 .email-entry.hidden, .email-sent.hidden {
+    transform: translateY(-10px);
     opacity: 0;
-    transition: opacity 0.05s ease-in-out;   
+    pointer-events: none;
 }
 
 /*---------------------------------------------------------------*/
@@ -322,10 +418,19 @@ button:active.enabled {
 /* Navbar */
 
 .navbar {
-    /* background-color: gainsboro; */
     color: grey;
     font-family: "Gotham SSm";
 }
+
+.homeNav{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
 .navbar a, .forgot-password a {
     color: grey;
     text-decoration: none;
@@ -459,6 +564,69 @@ input:focus {
     background-color: #f56a2a0f;
     box-shadow: inset -2px -2px 3px rgba( 193, 84, 33, 0.4), inset 2px 2px 3px rgba(240, 119, 63, 0.4), -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0; 
 }
+
+textarea {
+    resize: none;
+}
+
+
+
+button {
+    font-family: "Gotham SSm";
+    font-weight: 500;
+    color: white;
+    filter: brightness(95%);
+    margin: 10px 0px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 115px;
+    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    outline: none;
+}
+
+button[type="login"] {
+    border: 2px solid #F85F6A;
+    background-color: white;
+    color: black;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: -20px;
+}
+
+
+button[type="login"]:active {
+    box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    transform: scale(0.95);
+}
+
+button[type="submit"] {
+    background-color: #F85F6A;
+}
+
+button[type="reset"] {
+    background-color: #998E8E;
+}
+
+button:hover.enabled {
+    transform: scale(1.05);
+    filter: brightness(100%);
+}
+button:active.enabled {
+    transform: scale(0.95);
+    filter: brightness(90%);
+}
+
+.disabled {
+    cursor: not-allowed;
+    filter: opacity(50%);
+}
+
+
 
 input[type="checkbox"], input[type="radio"] {
     width: auto;
