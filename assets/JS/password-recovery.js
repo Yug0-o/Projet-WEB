@@ -9,7 +9,7 @@ console.log("SKILL ISSUE")
 
 // Make the email-sent div not visible initially
 emailSentDiv.classList.add('hidden');
-emailEntryDiv.classList.add('visible');
+emailEntryDiv.classList.add('visible', 'animate');
 
 function validateEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
@@ -22,7 +22,10 @@ function updateButtons() {
     const isEmailValid = validateEmail(email);
 
     submit.classList.toggle('enabled', isEmailValid);
+    submit.classList.toggle('animate', isEmailValid);
+
     submit.classList.toggle('disabled', !(isEmailValid));
+
     submit.disabled = !(isEmailValid);
 }
 
