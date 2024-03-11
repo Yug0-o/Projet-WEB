@@ -130,7 +130,7 @@ textarea {
 }
 
 .horizontal-line {
-    border-top: 1px solid black;
+    border-top: 1px solid #fff;
 }
 
 .mobile {
@@ -325,19 +325,15 @@ button:active.enabled {
     font-size: 300%;
 }
 
-.contact h2 {
-    width: 100%; 
-    text-align: center; 
-    border-bottom: 1px solid #000; 
-    line-height: 0.1em;
-    margin: 30px 0 20px; 
- } 
- 
- .contact h2 span { 
-     background:#efefef; 
-     padding:0px 10px; 
- }
-
+.text-center h2{
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    margin-left: 10px;
+    font-size: 3em;
+    text-decoration: underline;
+}
 
 /*---------------------------------------------------------------*/
 
@@ -538,68 +534,6 @@ button:active.enabled {
 .navbar a:hover::before, .forgot-password a:hover::before {
     visibility: visible;
     transform: scaleX(1);
-}
-
-/*---------------------------------------------------------------*/
-
-/* Searchbar */
-
-.searchbar {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    position: absolute;
-    width: 30%;
-    height: 20px;
-    margin-left: 35%;
-    min-width: 150px;
-    transition: all 0.2s ease-in-out;
-}
-
-.searchbar input[type="text"] {
-    width: 100%; 
-    padding: 10px;
-    padding-right: 40px;
-    border: none;
-    border-radius: 20px;
-}
-
-.searchbar:focus-within {
-    transform: scale(1.01);
-}
-
-.searchbar button {
-    display: flex; /* Add this line */
-    justify-content: center; /* Add this line */
-    align-items: center; /* Add this line */
-    position: absolute;
-    width: 40px;
-    height: 36px;
-    right: 0;
-    border: none;
-    background: #F85F6A;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px 20px 20px 5px;
-    font-size: 17px;
-}
-
-.searchlogo {
-    /* make sure it's centered */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(-1px);
-}
-
-.SearchHidden {
-    position: fixed;
-    top: -100px;
-    transition: top 0.5s;
-}
-
-.SearchHidden.show {
-    top: 0;
 }
 
 /*---------------------------------------------------------------*/
