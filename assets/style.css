@@ -130,7 +130,7 @@ textarea {
 }
 
 .horizontal-line {
-    border-top: 1px solid #fff;
+    border-top: 1px solid black;
 }
 
 .mobile {
@@ -314,15 +314,19 @@ button:active.enabled {
     font-size: 300%;
 }
 
-.text-center h2{
-    padding: 30px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 100px;
-    margin-left: 10px;
-    font-size: 3em;
-    text-decoration: underline;
-}
+.contact h2 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 30px 0 20px; 
+ } 
+ 
+ .contact h2 span { 
+     background:#efefef; 
+     padding:0px 10px; 
+ }
+
 
 /*---------------------------------------------------------------*/
 
@@ -440,7 +444,8 @@ button:active.enabled {
 }
 
 .boxbutton {
-    padding: 40%;
+    padding : 10% 10% 0% 0%;
+    display : flex;
 }
 
 
