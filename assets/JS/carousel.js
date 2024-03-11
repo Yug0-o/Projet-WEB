@@ -333,6 +333,40 @@ class CardCarousel extends DraggingEvent {
       })
     }
   }
+    autoSlide() {
+        setInterval(() => {
+            requestAnimationFrame(() => {
+                const temp = { ...this.xScale };
+
+                for (let x in this.xScale) {
+                    const newX = parseInt(x) - 1;
+
+                    if (newX < -this.centerIndex) {
+                        temp[this.centerIndex] = this.xScale[x];
+                    } else {
+                        temp[newX] = this.xScale[x];
+                    }
+                }
+
+                this.xScale = temp;
+
+                for (let x in temp) {
+                    const scale = this.calcScale(x),
+                        scale2 = this.calcScale2(x),
+                        leftPos = this.calcPos(x, scale2),
+                        zIndex = -Math.abs(x);
+
+                    this.updateCards(this.xScale[x], {
+                        x: x,
+                        scale: scale,
+                        leftPos: leftPos,
+                        zIndex: zIndex,
+                    });
+                }
+            });
+        }, 1000); // 5000 milliseconds = 5 seconds
+    }
 }
 
-const carousel = new CardCarousel(cardsContainer)
+const carousel = new CardCarousel(cardsContainer);
+carousel.autoSlide();
