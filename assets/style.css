@@ -50,6 +50,13 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
+body.loginbackground{
+    background-image: url('background.gif');
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* ou scroll si vous souhaitez que l'image défile avec le contenu */
+    background-size: cover;  /* ou contain selon vos préférences */
+}
+
 button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
     transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease, color 0.2s ease, filter 0.2s ease;
 }
