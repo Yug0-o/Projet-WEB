@@ -330,9 +330,9 @@ button:active.enabled {
     box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
 }
 
-.logo img {
-    width: 100px;
-    height: 100px;
+.logo {
+    border-radius: 0px;
+    box-shadow: none;
 }
 
 .img_accueil{
