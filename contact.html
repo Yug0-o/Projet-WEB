@@ -11,22 +11,65 @@
    <body>
      <header>
 		<div class="container-bando">
-			<img src="./images/name-logo.png" width="500">
+                <div class="box1">
+                    <a href="homepage.html"><img src="./images/name-logo.png" height="20"></a>
+                </div>
+                <div class="box1">
+                    <div class="homeNav navbar">
+                        <a href="about.html">A propos</a>&nbsp;|&nbsp;
+                        <a href="">Recherche</a>&nbsp;|&nbsp;
+                        <a href="">Favoris</a>&nbsp;|&nbsp;
+                        <a href="contact.html">Nous contacter</a>
+                    </div>
+                </div>
 		</div>
 	 </header>
 	 <main>
 	   <section>
-			<div class="text-center"><h1>Nous sommes à votre écoute</h1></div>
-			
-			<p>Vous pouvez nous contacter directement via <a href="mailto:info@lebonplan.fr">notre adresse de courriel</a> ou utilisez le formulaire ci-dessous. Nous vous répondrons dans tous les cas dans les délais les plus bref.</p>
+			<h1>Contactez-nous</h1>
 			
 			<article>
-			
-				<h2>Vous avez la parole</h2>
 				
 				<form>
-					<label>Courriel<input name="fullname" type="text" value="" size="100" required ></label>
-					<label>Votre message<textarea name="feedbacks" rows="5" cols="100" ></textarea></label>
+                    <div class="container">
+                        <div class="box1">
+                            <div class="container">
+                                <div class="box1">
+					                <label>Nom<input name="lastname" type="text" value="" size="100" required ></label>
+                                </div>
+                                <div class="box2">
+                                    <label>Prénom<input name="firstname" type="text" value="" size="100" required ></label>
+                                </div>
+                            </div>
+                            <div class="container">
+                                <div class="box1">
+                                    <label>Adresse mail<input name="email" type="text" value="" size="100" required ></label>
+                                </div>
+                                <div class="box2">
+                                    <label>Téléphone<input name="tel" type="text" value="" size="100" required ></label>
+                                </div>
+                            <label>Votre message<textarea name="feedbacks" rows="5" cols="100" ></textarea></label>
+                            </div>
+                        </div>
+
+                        <div class="vertical-line"></div>
+
+                        <div class="box2">
+                            <h3> Ou venez nous rencontrer pour prendre un café !</h3>
+                            <p> Intership Etendard</p>
+                            <p> 80 avenue Edmund Halley Rouen Madrillet Innovation</p>
+                            <p> Saint-Etienne du Rouvray</p>
+                            <p> 76800 </p>
+                            <p> <a href="hugo.boudry@viacesi.fr">hugo.boudry@viacesi.fr</a></p>
+
+                            <img src="./images/logo.png" class="img_legalmentions">
+                        </div>
+                    </div>
+
+                    
+
+
+
 					<button class="enabled" type="submit">Envoyer</button>
                     <button class="enabled" type="reset" >Effacer</button>
 				</form>
