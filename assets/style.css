@@ -519,6 +519,68 @@ button:active.enabled {
 
 /*---------------------------------------------------------------*/
 
+/* Searchbar */
+
+.searchbar {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    position: absolute;
+    width: 30%;
+    height: 20px;
+    margin-left: 35%;
+    min-width: 150px;
+    transition: all 0.2s ease-in-out;
+}
+
+.searchbar input[type="text"] {
+    width: 100%; 
+    padding: 10px;
+    padding-right: 40px;
+    border: none;
+    border-radius: 20px;
+}
+
+.searchbar:focus-within {
+    transform: scale(1.01);
+}
+
+.searchbar button {
+    display: flex; /* Add this line */
+    justify-content: center; /* Add this line */
+    align-items: center; /* Add this line */
+    position: absolute;
+    width: 40px;
+    height: 36px;
+    right: 0;
+    border: none;
+    background: #F85F6A;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px 20px 20px 5px;
+    font-size: 17px;
+}
+
+.searchlogo {
+    /* make sure it's centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-1px);
+}
+
+.SearchHidden {
+    position: fixed;
+    top: -100px;
+    transition: top 0.5s;
+}
+
+.SearchHidden.show {
+    top: 0;
+}
+
+/*---------------------------------------------------------------*/
+
 /* Categories list */
 
 .categories-list {
