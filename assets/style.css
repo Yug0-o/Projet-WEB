@@ -158,24 +158,13 @@ textarea {
     padding: 0;
   }
   
-  .visuallyhidden {
+.visuallyhidden {
     position: absolute;
     z-index: -1;
     right: 0;
     opacity: 0;
-    
-  }
-  
-  .container {
-    overflow: hidden;
-    padding: 3%;
-    margin-top: 2em;
-    background: rgba(0,0,0,.1);
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-  }
 
+}
 /*---------------------------------------------------------------*/
 
 /* All buttons */
@@ -191,7 +180,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     width: 115px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
     outline: none;
 }
 
@@ -307,7 +296,7 @@ button:active.enabled {
     border: 2px solid #F85F6A;
     border-radius: 30px;
     font-size: 4.8em;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .text-center-accueil {
@@ -341,7 +330,7 @@ button:active.enabled {
 
 * img {
     border-radius: 50px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
 }
 
 .logo {
@@ -374,11 +363,17 @@ button:active.enabled {
 .container {
     display: flex;
     justify-content: space-between;
+    background: rgba(0, 0, 0, .1);
     flex-wrap: wrap;
     padding: 20px;
+    margin: 20px;
     position: relative;
     border-radius: 40px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+
 }
+
+
 
 .container-bando {
     background-color: gainsboro;
@@ -387,6 +382,8 @@ button:active.enabled {
     /* Add this line */
     flex-wrap: wrap;
     padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     position: relative;
     border-radius: 50px;
 }
@@ -673,7 +670,7 @@ form label {
 
 /* Input (+ select)*/
 
-input, select {
+input, select, textarea {
     font-family: inherit;
     border: none;
     border-radius: 10px;
@@ -683,8 +680,13 @@ input, select {
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    box-shadow:  -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
     outline: none;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -734,7 +736,7 @@ input[type="checkbox"], input[type="radio"] {
     width: 25px;
     background-color: #f0f0f0;
     border-radius: 5px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
 }
 
 /* On mouse-over, add a grey background color */
@@ -796,6 +798,7 @@ footer .text-center a {
 
 /* Carousel */
 
+
 .card-carousel {
   --card-width: 80%;
   --card-max-width: 280px;
@@ -835,9 +838,9 @@ footer .text-center a {
   margin: 0 auto;
   color: rgba(0,0,0,.5);
   transition: inherit;
-  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
-  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.3);
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+  -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
   border-radius: 3em;
   filter: brightness(.9);
   display: flex;
@@ -894,4 +897,6 @@ footer .text-center a {
   top: calc(-10% - 3px);
   left: calc(-10% - 3px);
 }
+
+
 /*---------------------------------------------------------------*/
