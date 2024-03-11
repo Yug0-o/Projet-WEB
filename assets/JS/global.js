@@ -11,6 +11,23 @@ window.onload = function () {
     Promise.all([document.fonts.ready]).then(() => {
         document.body.style.opacity = "1";
     });
+
+    var scrollButton = document.querySelector(".scroll-top-button");
+    
+    scrollButton.addEventListener("click", function() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 200) { 
+            scrollButton.style.display = "block";
+        } else {
+            scrollButton.style.display = "none";
+        }	
+    });
 };
 
 // auto update the year in the footer
