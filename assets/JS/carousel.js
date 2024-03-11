@@ -1,15 +1,15 @@
-$(document).ready(function(){
-  $('.news-carousel').slick({
-      autoplay: true, // Pour activer le défilement automatique
-      autoplaySpeed: 3000, // Délai entre chaque diapositive (en millisecondes)
-      dots: true, // Pour afficher les points de navigation
-      arrows: false, // Pour cacher les flèches de navigation
-      infinite: true, // Pour permettre le défilement infini
-      speed: 500, // Vitesse de transition (en millisecondes)
-      slidesToShow: 1, // Nombre de diapositives à afficher à la fois
-      slidesToScroll: 1 // Nombre de diapositives à faire défiler à la fois
-  });
-});
+// $(document).ready(function(){
+//   $('.news-carousel').slick({
+//       autoplay: true, // Pour activer le défilement automatique
+//       autoplaySpeed: 3000, // Délai entre chaque diapositive (en millisecondes)
+//       dots: true, // Pour afficher les points de navigation
+//       arrows: false, // Pour cacher les flèches de navigation
+//       infinite: true, // Pour permettre le défilement infini
+//       speed: 500, // Vitesse de transition (en millisecondes)
+//       slidesToShow: 1, // Nombre de diapositives à afficher à la fois
+//       slidesToScroll: 1 // Nombre de diapositives à faire défiler à la fois
+//   });
+// });
 
 const cardsContainer = document.querySelector(".card-carousel");
 const cardsController = document.querySelector(".card-carousel + .card-controller")

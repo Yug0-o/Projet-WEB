@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Internship Etendard">
+        <meta name="description" content="Internship Etendard est une plateforme de recherche de stage pour les étudiants.">
         <title>Accueil</title>
         <link rel="stylesheet" href="assets/style.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" async></script>
@@ -14,7 +15,7 @@
         <header>
             <div class="container-bando">
                 <div class="box1">
-                    <a href="homepage.html"><img src="./images/name-logo.png" class="logo" height="20"></a>
+                    <a href="homepage.html"><img src="./images/name-logo.png" class="logo" height="20" alt="Logo"></a>
                 </div>
                 <div class="box1">
                     <div class="homeNav navbar">
@@ -32,13 +33,11 @@
             </div>   
         </header>
 
-        <div class="text-center-accueil">
-        <h1>Votre stage n'est plus un mirage</h1>
-        </div>
+        <h1 class="text-center-accueil">Votre stage n'est plus un mirage</h1>
 
         <div class="container">
             <div class="box1-accueil">
-            <h3> La manière la plus simple de trouver un stage</h3>
+            <h2> La manière la plus simple de trouver un stage</h2>
             <div id="textcontainer_accueil">
                 <p><div id="scrollingText"></div></p>
             </div>
@@ -91,7 +90,21 @@
             </div>
         </footer>
         <button class="scroll-top-button"></button>
+        <script>
+            window.addEventListener('pageshow', function (event) {
+                if (event.persisted) {
+                    // The page was loaded from the bfcache
+                    // Add code here to restore the page state
+                }
+            });
 
+            window.addEventListener('pagehide', function (event) {
+                if (event.persisted) {
+                    // The page is being stored in the bfcache
+                    // Add code here to save the current page state
+                }
+            });
+        </script>
         <script src="assets/JS/homepage.js" async></script>
         <script src="assets/JS/global.js" async></script>
         <script src="assets/JS/carousel.js" async></script>

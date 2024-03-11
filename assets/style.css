@@ -511,7 +511,8 @@ button:active.enabled {
 
 
 .navbar a, .forgot-password a {
-    color: grey;
+    color: #454545;
+    font-weight: 500;
     text-decoration: none;
     position: relative;
     transition: color 0.15s ease-in-out;
@@ -729,13 +730,12 @@ footer {
     padding-bottom: 10px;
     flex-direction: column;
     box-sizing: border-box;
-    /* footer at the bottom  */
     margin-top: auto;
 }
 
 footer .text-center a {
-    color: #5C5E62;
-    font-weight: 500;
+    color: #454545;
+    font-weight: 550;
 }
 
 /*---------------------------------------------------------------*/
@@ -780,7 +780,7 @@ footer .text-center a {
   height: var(--card-height);
   position: absolute;
   margin: 0 auto;
-  color: rgba(0,0,0,.5);
+  color: #454545;
   transition: inherit;
   -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
   -moz-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
@@ -799,21 +799,19 @@ footer .text-center a {
 
 
 .card:nth-of-type(1) .image-container {
-    background-image: url("rzeatgz rebteztbrzegtzzetgzezeztb");
+    background-image: url("/images/404.jpg")
 }
- 
 .card:nth-of-type(2) .image-container {
-  background-image: url("rzeatgz rebteztbrzegtzzetgzezeztb")
+    background-image: url("/images/404.jpg")
 }
-
 .card:nth-of-type(3) .image-container {
-  background-image: url("rzeatgz rebteztbrzegtzzetgzezeztb")
+    background-image: url("/images/404.jpg")
 }
 .card:nth-of-type(4) .image-container {
-  background-image: url("rzeatgz rebteztbrzegtzzetgzezeztb")
+    background-image: url("/images/404.jpg")
 }
 .card:nth-of-type(5) .image-container {
-  background-image: url("rzeatgz rebteztbrzegtzzetgzezeztb")
+    background-image: url("/images/404.jpg")
 }
 
 .image-container {
