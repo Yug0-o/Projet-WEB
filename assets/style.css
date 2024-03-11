@@ -26,9 +26,15 @@
 
 /*---------------------------------------------------------------*/
 
-/* For all pages */
+/* Others */
 
+a {
+    transition: padding 0.2s ease-in-out;
+}
 
+article h2 {
+    font-size: 2em;
+}
 
 body {
     color: #1E1E1E;
@@ -44,11 +50,17 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
+button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
+    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease, color 0.2s ease, filter 0.2s ease;
+}
 
-.animate {
-    opacity: 0;
-    transform: translateY(5px);
-    animation: slideIn 0.3s ease-in-out forwards;
+div.bordure {
+    border: 2px solid grey;
+    margin: 20px;
+}
+
+textarea {
+    resize: none;
 }
 
 @keyframes slideIn {
@@ -63,29 +75,70 @@ body {
     }
 }
 
-
-
-
-div.bordure {
-    border: 2px solid grey;
-    margin: 20px;
+@media screen and (max-width: 650px) {
+    .text-center {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 10px;
+    }
+    .desktop {
+        display: none;
+    }
+    .mobile {
+        display: inline;
+    }
+    .email-entry, .email-sent {
+        font-size: 0.5em;
+    }
+    .garde {
+        font-size: 2em !important;
+    }
+    a {
+        padding: 5px;
+        transition: padding 0.2s ease-in-out;
+    }
 }
 
-article h2 {
-    font-size: 2em;
+.align p
+{
+    text-align: justify;
 }
 
-.space {
-    padding: 1em;
+.animate {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: slideIn 0.3s ease-in-out forwards;
+}
+
+.bando {
+    padding: 20px;
+    background-color: gainsboro;
+}
+
+.disabled {
+    cursor: not-allowed;
+    filter: opacity(50%);
+}
+
+.garde {
+    color: #1E1E1E;
+    text-align: center;
+    font-size: 3em;
+    font-family: "Gotham SSm" ;
+    font-weight: 500;
+    transition: opacity 0.1s ease-in-out, font-size 0.5s ease-in-out;
 }
 
 .horizontal-line {
     border-top: 1px solid #fff;
 }
 
-.align p
-{
-    text-align: justify;
+.mobile {
+    display: none;
+}
+
+.space {
+    padding: 1em;
 }
 
 .vertical-line{
@@ -94,6 +147,34 @@ article h2 {
     height: 260px;
     margin: 20px 20px;
 }
+
+/*---------------------------------------------------------------*/
+
+/* All pages*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .visuallyhidden {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    opacity: 0;
+    
+  }
+  
+  .container {
+    overflow: hidden;
+    padding: 3%;
+    margin-top: 2em;
+    background: rgba(0,0,0,.1);
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+  }
 
 /*---------------------------------------------------------------*/
 
@@ -112,6 +193,23 @@ button {
     width: 115px;
     box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
     outline: none;
+}
+
+button[type="login"] {
+    border: 2px solid #F85F6A;
+    background-color: white;
+    color: black;
+    padding: 8px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    margin-top: -20px;
+}
+
+button[type="login"]:active {
+    box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    transform: scale(0.95);
 }
 
 button[type="submit"] {
@@ -164,11 +262,17 @@ button:active.enabled {
     gap: 15px;
     font-size: 12px;
     font-weight: 500;
+    transition: gap 0.2s ease-in-out, font-size 0.2s ease-in-out, flex 0.2s ease-in-out;
 }
 
 .text-center h1 {
     padding: 30px;
     margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 100px;
+    margin-left: 10px;
+    border: 2px solid #F85F6A;
+    border-radius: 30px;
     font-size: 4.8em;
     text-decoration: underline;
 }
@@ -283,87 +387,6 @@ button:active.enabled {
     flex: 1 0 30%; 
     padding: 10px;
     text-align: left;
-.text-center {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: 12px;
-    font-weight: 500;
-    transition: gap 0.2s ease-in-out, font-size 0.2s ease-in-out, flex 0.2s ease-in-out;
-}
-
-.text-center h1 {
-    padding: 30px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 100px;
-    margin-left: 10px;
-    border: 2px solid #F85F6A;
-    border-radius: 30px;
-    font-size: 4.8em;
-    text-decoration: underline;
-}
-
-
-.mobile {
-    display: none;
-}
-
-a {
-    transition: padding 0.2s ease-in-out;
-}
-
-@media screen and (max-width: 650px) {
-    .text-center {
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 10px;
-    }
-    .desktop {
-        display: none;
-    }
-    .mobile {
-        display: inline;
-    }
-    .email-entry, .email-sent {
-        font-size: 0.5em;
-    }
-    .garde {
-        font-size: 2em !important;
-    }
-    a {
-        padding: 5px;
-        transition: padding 0.2s ease-in-out;
-    }
-}
-
-
-
-article h2 {
-    font-size: 2em;
-}
-
-.space {
-    padding: 1em;
-}
-
-.horizontal-line {
-    border-top: 1px solid #fff;
-}
-
-.flex-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.garde {
-    color: #1E1E1E;
-    text-align: center;
-    font-size: 3em;
-    font-family: "Gotham SSm" ;
-    font-weight: 500;
-    transition: opacity 0.1s ease-in-out, font-size 0.5s ease-in-out;
 }
 
 .box1-accueil p{
@@ -521,8 +544,6 @@ form .button-container {
     gap: 20px;
 }
 
-
-
 form label {
     color: #5c5e62;
     font-weight: 500;
@@ -551,8 +572,6 @@ input, select {
     outline: none;
 }
 
-
-
 /* On mouse-over, add a grey background color */
 input:hover {
     background-color: #e0e0e0;
@@ -564,69 +583,6 @@ input:focus {
     background-color: #f56a2a0f;
     box-shadow: inset -2px -2px 3px rgba( 193, 84, 33, 0.4), inset 2px 2px 3px rgba(240, 119, 63, 0.4), -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0; 
 }
-
-textarea {
-    resize: none;
-}
-
-
-
-button {
-    font-family: "Gotham SSm";
-    font-weight: 500;
-    color: white;
-    filter: brightness(95%);
-    margin: 10px 0px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 115px;
-    box-shadow: -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
-    outline: none;
-}
-
-button[type="login"] {
-    border: 2px solid #F85F6A;
-    background-color: white;
-    color: black;
-    padding: 8px 20px;
-    font-weight: bold;
-    border-radius: 50px;
-    margin-top: -20px;
-}
-
-
-button[type="login"]:active {
-    box-shadow:
-    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
-    transform: scale(0.95);
-}
-
-button[type="submit"] {
-    background-color: #F85F6A;
-}
-
-button[type="reset"] {
-    background-color: #998E8E;
-}
-
-button:hover.enabled {
-    transform: scale(1.05);
-    filter: brightness(100%);
-}
-button:active.enabled {
-    transform: scale(0.95);
-    filter: brightness(90%);
-}
-
-.disabled {
-    cursor: not-allowed;
-    filter: opacity(50%);
-}
-
-
 
 input[type="checkbox"], input[type="radio"] {
     width: auto;
@@ -723,102 +679,8 @@ footer .text-center a {
 
 /*---------------------------------------------------------------*/
 
-/* Others */
+/* Carousel */
 
-button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
-    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease, color 0.2s ease, filter 0.2s ease;
-}
-
-.mobile {
-    display: none;
-}
-
-@media screen and (max-width: 650px) {
-    .text-center {
-        flex-direction: column;
-        align-items: center;
-        gap: 0px;
-    }
-    .desktop {
-        display: none;
-    }
-    .mobile {
-        display: inline;
-    }
-}
-
-.animate {
-    opacity: 0;
-    transform: translateY(5px);
-    animation: slideIn 0.3s ease-in-out forwards;
-}
-
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(5px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.garde {
-    color: #1E1E1E;
-    text-align: center;
-    font-size: 3em;
-    font-family: "Gotham SSm" ;
-    font-weight: 500;
-}
-
-.bando {
-    padding: 20px;
-    background-color: gainsboro;
-}
-
-textarea {
-    resize: none;
-}
-
-.disabled {
-    cursor: not-allowed;
-    filter: opacity(50%);
-}
-
-
-.vertical-line{
-    border-left: 2px solid #000;
-    display: inline-block;
-    height: 260px;
-    margin: 20px 20px;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .visuallyhidden {
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    opacity: 0;
-    
-  }
-  
-  .container {
-    overflow: hidden;
-    padding: 3%;
-    margin-top: 2em;
-    background: rgba(0,0,0,.1);
-    display: flex; 
-    flex-direction: row;
-    justify-content: center;
-  }
-  
   .card-carousel {
     --card-width: 80%;
     --card-max-width: 280px;
@@ -917,3 +779,5 @@ textarea {
     top: calc(-10% - 3px);
     left: calc(-10% - 3px);
   }
+
+  /*---------------------------------------------------------------*/
