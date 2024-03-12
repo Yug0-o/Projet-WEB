@@ -317,15 +317,20 @@ h1.text-center-accueil{
     color : white;
 }
 
-.text-center h2{
-    padding: 30px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 100px;
-    margin-left: 10px;
-    font-size: 3em;
-    text-decoration: underline;
-}
+
+
+.contact h2 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 30px 0 20px; 
+ } 
+
+ .contact h2 span { 
+     background:#e6f6ff; 
+     padding:0px 10px; 
+ }
 
 /*---------------------------------------------------------------*/
 
