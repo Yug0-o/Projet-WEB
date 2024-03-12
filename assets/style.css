@@ -929,6 +929,98 @@ footer .text-center a {
 }
 
 
+
+/*---------------------------------------------------------------*/
+
+/* Research */
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters button {
+    background-color: #F85F6A;
+}
+
+.filters button:hover {
+    background-color: #f0f0f0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+}
+
+.job-list {
+    margin-bottom: 20px;
+    width: 80%;
+    min-width: 300px;
+}
+
+.job {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #F85F6A;
+    color: white;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+    flex-direction: row;
+    filter: brightness(1);
+    transition: all 0.2s ease-in-out;
+}
+
+
+.job:hover {
+    filter: brightness(1.1);
+}
+
+.job h3,
+.job p {
+    margin: 5px 0;
+}
+
+
+
+.job-info {
+    max-width: 20%;
+    min-width: 150px;
+    flex: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.job-description {
+    background-color: whitesmoke;
+    color: #1E1E1E;
+    border-radius: 10px;
+    padding: 5px;
+    flex: 1;
+    margin-left: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination button {
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #F85F6A;
+    color: gainsboro;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .1);
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    border-radius: 40px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+}
+
 /*---------------------------------------------------------------*/
 
 /* Responsive */
@@ -969,6 +1061,23 @@ footer .text-center a {
         height: auto;
     }
 
+    .job {
+        flex-direction: column !important;
+    }
+
+    .job-info {
+        max-width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .job-description {
+        margin-left: 0px !important;
+    }
+
+    .job-list {
+        width: 100%;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -1005,93 +1114,5 @@ footer .text-center a {
         display: block;
     }
 
-    .job {
-        flex-direction: column!important;
-    }
-}
-
-/*---------------------------------------------------------------*/
-
-/* Research */
-.filters {
-    margin-bottom: 20px;
-}
-
-.filters button {
-    background-color: #F85F6A;
-}
-
-.filters button:hover {
-    background-color: #f0f0f0;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
-}
-
-.job-list {
-    margin-bottom: 20px;
-    width: 80%;
-    min-width: 300px;
-}
-
-.job {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #F85F6A;
-    color: white;
-    border-radius: 20px;
-    display: flex;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
-    flex-direction: row;
-    filter: brightness(1);
-    transition: filter 0.2s ease-in-out;
-}
-
-
-.job:hover {
-    filter: brightness(1.1);
-}
-
-.job h3, .job p {
-    margin: 5px 0;
-}
-
-
-
-.job-info {
-    max-width: 20%;
-    flex: 1;
-}
-
-.job-description {
-    background-color: whitesmoke;
-    color: #1E1E1E;
-    border-radius: 10px;
-    flex: 1; 
-    margin-left: 20px;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-}
-
-.pagination button {
-    margin: 0 5px;
-    cursor: pointer;
-    padding: 5px 10px;
-    background-color: #F85F6A;
-    color: gainsboro;
-}
-
-.center-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, .1);
-    flex-wrap: wrap;
-    padding: 20px;
-    margin: 20px;
-    position: relative;
-    border-radius: 40px;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+    
 }
