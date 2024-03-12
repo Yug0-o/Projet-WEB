@@ -10,7 +10,7 @@ const jobData = [
     { title: 'Spécialiste en marketing 8', company: 'MarketXpert', location: 'Bordeaux' },
     { title: 'Développeur mobile 9', company: 'MobileTech', location: 'Lille' },
     { title: 'Analyste financier 10', company: 'FinCorp', location: 'Rennes' },
-    // Ajoutez plus d'annonces ici
+
 ];
 
 const jobsPerPage = 6;

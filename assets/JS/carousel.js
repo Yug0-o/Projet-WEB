@@ -11,14 +11,20 @@
 //   });
 // });
 
+
+// Define the container and controller elements for the card carousel
 const cardsContainer = document.querySelector(".card-carousel");
 const cardsController = document.querySelector(".card-carousel + .card-controller")
 
+
+// Class for handling dragging events
 class DraggingEvent {
+  // Constructor to set the target element for dragging events
   constructor(target = undefined) {
     this.target = target;
   }
   
+  // Method to attach dragging event listeners
   event(callback) {
     let handler;
     
@@ -99,7 +105,7 @@ class DraggingEvent {
   }
 }
 
-
+// Class for the Card Carousel, extending the DraggingEvent class
 class CardCarousel extends DraggingEvent {
   constructor(container, controller = undefined) {
     super(container)
@@ -109,6 +115,13 @@ class CardCarousel extends DraggingEvent {
     this.controllerElement = controller
     this.cards = container.querySelectorAll(".card")
     
+    // Ajoute une propriété pour suivre l'état du survol
+    this.hovered = false;
+
+    // Ajoute des écouteurs d'événements pour gérer le survol
+    this.container.addEventListener("mouseenter", () => this.hovered = true);
+    this.container.addEventListener("mouseleave", () => this.hovered = false);
+
     // Carousel data
     this.centerIndex = (this.cards.length - 1) / 2;
     this.cardWidth = this.cards[0].offsetWidth / this.container.offsetWidth * 100
@@ -135,6 +148,7 @@ class CardCarousel extends DraggingEvent {
     this.build()
   }
   
+  // Method to build the initial state of the carousel
   build(fix = 0) {
     const visibleCardsPercentage = 100;
     const visibleCardsScale = visibleCardsPercentage / 100;
@@ -167,7 +181,7 @@ class CardCarousel extends DraggingEvent {
     }
   }
   
-  
+  // Method to handle keyboard controls for card navigation
   controller(e) {
     const temp = {...this.xScale};
       
@@ -206,6 +220,7 @@ class CardCarousel extends DraggingEvent {
       }
   }
   
+  // Method to calculate card position based on scale
   calcPos(x, scale) {
     let formula = 100 - (scale * 100 + this.cardWidth) / 2;
     
@@ -218,6 +233,7 @@ class CardCarousel extends DraggingEvent {
     return formula * 2.2 - 24;
   }
   
+  // Method to update card styling based on data
   updateCards(card, data) {
     if (data.x || data.x == 0) {
       card.setAttribute("data-x", data.x)
@@ -248,6 +264,7 @@ class CardCarousel extends DraggingEvent {
     }
   }
   
+  // Method to calculate scale for animation
   calcScale2(x) {
     let formula;
    
@@ -262,6 +279,7 @@ class CardCarousel extends DraggingEvent {
     }
   }
   
+  // Method to calculate scale for card transformation
   calcScale(x) {
     const formula = 1 - 1 / 5 * Math.pow(x, 2)
     
@@ -272,6 +290,7 @@ class CardCarousel extends DraggingEvent {
     }
   }
   
+  // Method to check and update card ordering
   checkOrdering(card, x, xDist) {    
     const original = parseInt(card.dataset.x)
     const rounded = Math.round(xDist)
@@ -300,6 +319,7 @@ class CardCarousel extends DraggingEvent {
     return newX;
   }
   
+  // Method to move cards during dragging
   moveCards(data) {
     let xDist;
     
@@ -333,8 +353,11 @@ class CardCarousel extends DraggingEvent {
       })
     }
   }
+
+  // Method to automatically slide cards at regular intervals
     autoSlide() {
         setInterval(() => {
+          if (!this.hovered) {
             requestAnimationFrame(() => {
                 const temp = { ...this.xScale };
 
@@ -364,9 +387,11 @@ class CardCarousel extends DraggingEvent {
                     });
                 }
             });
+          }
         }, 5000); // 5000 milliseconds = 5 seconds
     }
 }
 
+// Initialize the card carousel and bind the dragging event
 const carousel = new CardCarousel(cardsContainer);
 carousel.autoSlide();
