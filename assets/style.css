@@ -40,7 +40,7 @@ article h2 {
 body {
     color: #1E1E1E;
     opacity: 0;
-    background-color: #e6f6ff;
+    background-color: white;
     font-family: "Gotham SSm";
     display: flex;
     min-width: 350px;
@@ -847,7 +847,7 @@ footer .text-center a {
 }
 
 .card-carousel .card {
-  background: whitesmoke;
+  background: #fff;
   width: var(--card-width);
   max-width: var(--card-max-width);
   text-align: center;
