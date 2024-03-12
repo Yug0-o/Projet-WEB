@@ -3,14 +3,17 @@ const passwordInput = document.querySelector('input[type="password"]');
 const reset = document.querySelector('button[type="reset"]');
 const submit = document.querySelector('button[type="submit"]');
 
+//Check if the email is correct (contains @ and a dot)
 function validateEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }
 
+//Check if the password is long enough
 function validatePassword(password) {
     return password.length >= 8;
 }
 
+// Function to enable or disable the buttons
 function updateButtons() {
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
