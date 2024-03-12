@@ -1,62 +1,58 @@
 <!doctype html> 
 <html lang="fr"> 
-   <head> 
-		<link rel="stylesheet" href="assets/style.css">
-		<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="Internship Etendard">
-		<meta name="description" content="Connectez-vous à votre espace.">
-		<title>Connexion - Internship Etendard</title> 
-   </head> 
-   <body class="loginbackground">
-     <header>
-		<div class="container-bando">
-            <a href="homepage.html"><img src="./images/name-logo.png" class="logo" height="20"></a>
-		</div>
-	 </header>
-	 <main>
-	 
-	   <section>
-	   
-            <div> <h1 class="garde">Connexion</h1> </div>
- 
-			<article>	
-				<form>
+<head> 
+    <link rel="stylesheet" href="assets/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Internship Etendard">
+    <meta name="description" content="Connectez-vous à votre espace.">
+    <title>Connexion - Internship Etendard</title> 
+</head>
+<body class="loginbackground">
+    <header>
+        <div class="container-bando">
+            <a href="homepage.html"><img src="./images/name-logo.webp" class="logo" height="20" alt="name-logo"></a>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div>
+                <h1 class="garde">Connexion</h1>
+            </div>
+            <article>	
+                <form>
                     <div class="login-form">
-                        <label name="email">E-mail</label><input name="email" type="email" size="30" value="" required >
-
-                        <label name="password">Mot de passe</label><input name="password" type="password" size="30" value="" required >
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" size="30" value="" required autocomplete="email">
+                        <label for="password">Mot de passe</label>
+                        <input id="password" name="password" type="password" size="30" value="" required autocomplete="current-password">
                         <div class="forgot-password">
-                            <a href="password-recovery.html" >Mot de passe oublié ?</a>
+                            <a href="password-recovery.html">Mot de passe oublié ?</a>
                         </div>
-                        
                         <div class="button-container">
                             <button class="disabled" type="reset" disabled>Reset</button>
-                            <button class="disabled" type="submit" disabled>Connexion</button> 
+                            <button class="disabled" type="submit" disabled>Connexion</button>
                         </div>
                     </div>
-				</form>
-				
-			</article>					
-			
-	   </section>
-	   
-	 </main>
-
-        <footer>
-            <div class="navbar">
-                <div class="text-center">
-                    <a href="homepage.html"> Internship Etendard &copy; <span id="year"></span> </a>
-                    <span class="desktop">•</span>
-                    <a href="about.html">Tous droits réservés</a>
-                    <span class="desktop">•</span>
-                    <a href="">Mentions légales</a>
-                    <span class="desktop">•</span>
-                    <a href="contact.html">Contact</a>
-                </div>
+                </form>
+            </article>					
+        </section>
+    </main>
+    <footer>
+        <div class="navbar">
+            <div class="text-center">
+                <a href="homepage.html"> Internship Etendard &copy; <span id="year"></span> </a>
+                <span class="desktop">•</span>
+                <a href="about.html">Tous droits réservés</a>
+                <span class="desktop">•</span>
+                <a href="">Mentions légales</a>
+                <span class="desktop">•</span>
+                <a href="contact.html">Contact</a>
             </div>
-        </footer>
+        </div>
+    </footer>
+    <button class="scroll-top-button"></button>
     <script src="assets\JS\global.js"></script>
     <script src="assets\JS\login.js"></script>
-   </body> 
-</html> 
+</body> 
+</html>

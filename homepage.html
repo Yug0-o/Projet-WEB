@@ -7,75 +7,72 @@
         <meta name="description" content="Internship Etendard est une plateforme de recherche de stage pour les étudiants.">
         <title>Accueil</title>
         <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" async></script>
     </head>
-
     <body>
-        
         <header>
-            <div class="container-bando">
-                <div class="box1">
-                    <a href="homepage.html"><img src="./images/name-logo.png" class="logo" height="20" alt="Logo"></a>
-                </div>
-                <div class="box1">
-                    <div class="homeNav navbar">
-                        <a href="about.html">A propos</a>&nbsp;|&nbsp;
-                        <a href="search.html">Recherche</a>&nbsp;|&nbsp;
-                        <a href="">Favoris</a>&nbsp;|&nbsp;
-                        <a href="contact.html">Nous contacter</a>
-                    </div>
-                </div>
-                <div class="login">
-                    <a href="login.html">
-                    <button class="enabled" type="login"> Connexion</button>
+            <form class="searchbar" method="get">
+                <a href="homepage.html">
+                    <img src="./images/Name-logo.webp" class="logo" height="20" alt="name-logo">
                 </a>
-                </div>   
-            </div>   
+                <div class="search">
+                    <input type="text" placeholder="Rechercher un stage" name="search_query">
+                    <button class="searchbutton" aria-label="Rechercher">
+                        <svg class="tds-icon-search animate" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m20.267 19.207-4.818-4.818A6.967 6.967 0 0 0 17 10a7 7 0 1 0-7 7 6.967 6.967 0 0 0 4.389-1.55l4.818 4.817a.748.748 0 0 0 1.06 0 .75.75 0 0 0 0-1.06zM4.5 10c0-3.033 2.467-5.5 5.5-5.5s5.5 2.467 5.5 5.5-2.467 5.5-5.5 5.5-5.5-2.467-5.5-5.5z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <a href="login.html">
+                    <button class="enabled" type="login" aria-label="Connexion">
+                        <svg class="tds-icon-person animate" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM6.858 18.752c.605-1.868 2.722-3.24 5.142-3.24 2.42 0 4.537 1.372 5.142 3.24C15.712 19.844 13.933 20.5 12 20.5s-3.712-.656-5.142-1.748zm11.469-1.095c-1.02-2.165-3.483-3.645-6.327-3.645s-5.307 1.48-6.327 3.645A8.456 8.456 0 0 1 3.5 12c0-4.687 3.813-8.5 8.5-8.5 4.687 0 8.5 3.813 8.5 8.5a8.456 8.456 0 0 1-2.173 5.657zM12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 5.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z">
+                            </path>
+                        </svg>
+                        <span class="connexion-text animate" style="text-decoration: none;">Connexion</span>
+                    </button>
+                </a>
+            </form>
         </header>
-
         <h1 class="text-center-accueil">Votre stage n'est plus un mirage</h1>
-
         <div class="container">
             <div class="box1-accueil">
-            <h2> La manière la plus simple de trouver un stage</h2>
-            <div id="textcontainer_accueil">
-                <p><div id="scrollingText"></div></p>
+                <h2> La manière la plus simple de trouver un stage</h2>
+                <div id="textcontainer_accueil">
+                    <p><div id="scrollingText"></div></p>
+                </div>
             </div>
-            </div>
-
             <div class="box2"> 
             </div>
         </div>
-
-            <div class="container">
-                <div class="card-carousel">
-                    <div class="card" id="1">
+        <div class="container">
+            <div class="card-carousel">
+                <div class="card" id="1">
                     <div class="image-container"></div>
                     <p>1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
-                    </div>
-                    <div class="card" id="2">
+                </div>
+                <div class="card" id="2">
                     <div class="image-container"></div>
                     <p>2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
-                    </div>
-                    <div class="card" id="3">
+                </div>
+                <div class="card" id="3">
                     <div class="image-container"></div>
                     <p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
-                    </div>  
-                    <div class="card" id="4">
+                </div>  
+                <div class="card" id="4">
                     <div class="image-container"></div>
                     <p>4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
-                    </div>
-                    <div class="card" id="5">
+                </div>
+                <div class="card" id="5">
                     <div class="image-container"></div>
                     <p>5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
-                    </div>
                 </div>
             </div>
-
-            
-
-        </body>
-
+        </div>
         <footer>
             <div class="navbar">
                 <div class="text-center">
@@ -90,21 +87,6 @@
             </div>
         </footer>
         <button class="scroll-top-button"></button>
-        <!-- <script>
-            window.addEventListener('pageshow', function (event) {
-                if (event.persisted) {
-                    // The page was loaded from the bfcache
-                    // Add code here to restore the page state
-                }
-            });
-
-            window.addEventListener('pagehide', function (event) {
-                if (event.persisted) {
-                    // The page is being stored in the bfcache
-                    // Add code here to save the current page state
-                }
-            });
-        </script> -->
         <script src="assets/JS/homepage.js" async></script>
         <script src="assets/JS/global.js" async></script>
         <script src="assets/JS/carousel.js" async></script>
