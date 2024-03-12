@@ -50,6 +50,7 @@ function displayJobs(jobsToDisplay = jobData) {
         const job = jobsToDisplay[i];
         const jobElement = document.createElement('div');
         jobElement.classList.add('job');
+        jobElement.classList.add('animate');
 
         const jobInfoElement = document.createElement('div');
         jobInfoElement.classList.add('job-info');
@@ -75,6 +76,8 @@ function searchJobs() {
     displayJobs(filteredJobs);
     displayPagination();
 }
+
+
 
 // Get the search input element
 const search = document.querySelector("input[type='text']");

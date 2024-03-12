@@ -11,6 +11,7 @@ console.log("SKILL ISSUE")
 emailSentDiv.classList.add('hidden');
 emailEntryDiv.classList.add('visible', 'animate');
 
+//Check if the email is correct (contains @ and a dot)
 function validateEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }
