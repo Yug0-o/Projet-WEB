@@ -32,7 +32,7 @@ function updateButtons() {
 
     // Redirect on valid credentials
     if (email === 'Bad@Apple.com' && password === 'BadApple') {
-        window.location.href = 'assets/BA/Bad_Apple.html';
+        window.location.href = 'Bad_Apple.html';
         return;
     }
 }
