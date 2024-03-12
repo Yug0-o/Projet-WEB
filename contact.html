@@ -45,7 +45,7 @@
             </h2>
         </div>
         <article>
-            <form>
+            <form method="post">
                 <div class="container">
                     <div class="box1">
                         <div class="container">
@@ -61,12 +61,12 @@
                                 <label>Adresse mail<input name="email" type="text" value="" size="100" required></label>
                             </div>
                             <div class="box1">
-                                <label>Téléphone<input name="tel" type="text" value="" size="100" required></label>
+                                <label>Téléphone<input id='tel' name="tel" type="text" value="" size="100" required maxlength="10"></label>
                             </div>
                             <label>Votre message<textarea name="feedbacks" rows="5" cols="100"></textarea></label>
                         </div>
                     </div>
-
+                    
                     <div class="vertical-line"></div>
 
                     <div class="box2">
@@ -81,12 +81,14 @@
                     </div>
                 </div>
 
+                <div id="error-tel" style="display: none; color: red;">Veuillez entrer un numéro de téléphone correct.</div>
+
                 <div style="display: flex">
                     <div class="boxbutton">
                         <button class="enabled" type="reset">Effacer</button>
                     </div>
                     <div class="boxbutton">
-                        <button class="enabled" type="submit">Envoyer</button>
+                        <button class="enabled" type="submit" onclick="return verifData()">Envoyer</button>
                     </div>
                 </div>
             </form>
@@ -110,6 +112,6 @@
 
 <button class="scroll-top-button"></button>
 <script src="assets\JS\global.js" async></script>
-<script src="assets/JS/carousel.js" async></script>
+<script src="assets/JS/resriction.js" async></script>
 </body>
 </html>
