@@ -142,6 +142,8 @@ textarea {
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 0.33s ease-in-out;
   }
   
 .visuallyhidden {
@@ -376,7 +378,7 @@ button:active.enabled {
     margin: 20px;
     position: relative;
     border-radius: 40px;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
 
 }
 
@@ -695,7 +697,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .searchbutton:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.2);
 }
 
 .searchbutton:active {
@@ -705,8 +707,8 @@ input[type="checkbox"], input[type="radio"] {
 .tds-icon-search {
     transform: scale(20);
     fill: #000;
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
 }
 
 
@@ -946,7 +948,7 @@ footer .text-center a {
 @media screen and (max-width: 500px) {
     .logo{
         content: url("/images/logo-classic.webp");
-        width: 30px;
+        margin-inline: 10px;
     }
 
     .searchbar {
