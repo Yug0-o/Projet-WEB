@@ -15,4 +15,4 @@ function changeText() {
 changeText();
 
 // Définir l'intervalle pour changer le texte toutes les 2 secondes (ajustez selon vos besoins)
-setInterval(changeText, 2000);
+setInterval(changeText, 5000);

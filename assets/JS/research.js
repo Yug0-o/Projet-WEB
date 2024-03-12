@@ -13,7 +13,7 @@ const jobData = [
     // Ajoutez plus d'annonces ici
 ];
 
-const jobsPerPage = 5;
+const jobsPerPage = 6;
 let currentPage = 1;
 
 function displayJobs() {
