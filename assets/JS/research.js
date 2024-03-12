@@ -65,6 +65,7 @@ function displayJobs() {
         const job = jobData[i];
         const jobElement = document.createElement('div');
         jobElement.classList.add('job');
+        jobElement.classList.add('animate');
 
         const jobInfoElement = document.createElement('div');
         jobInfoElement.classList.add('job-info');
@@ -89,6 +90,8 @@ function searchJobs() {
     displayJobs();
     displayPagination();
 }
+
+
 
 // Affichez les offres d'emploi lors du chargement initial de la page
 displayJobs();

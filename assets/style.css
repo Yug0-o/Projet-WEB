@@ -696,6 +696,7 @@ input[type="checkbox"], input[type="radio"] {
 
 .searchbar input[type="text"] {
     height: 40px;
+    min-width: 150px;
     margin-right: 40px;
     flex: 1;
     
@@ -1005,7 +1006,7 @@ footer .text-center a {
     }
 
     .job {
-        flex-direction: column;
+        flex-direction: column!important;
     }
 }
 
@@ -1035,28 +1036,37 @@ footer .text-center a {
     padding: 10px;
     margin-bottom: 10px;
     background-color: #F85F6A;
-    color: gainsboro;
+    color: white;
     border-radius: 20px;
     display: flex;
     box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
     flex-direction: row;
+    filter: brightness(1);
+    transition: filter 0.2s ease-in-out;
+}
+
+
+.job:hover {
+    filter: brightness(1.1);
 }
 
 .job h3, .job p {
     margin: 5px 0;
 }
 
+
+
 .job-info {
     max-width: 20%;
-    flex: 1; /* La boîte de l'information du poste occupe toute la largeur disponible */
+    flex: 1;
 }
 
 .job-description {
     background-color: whitesmoke;
     color: #1E1E1E;
     border-radius: 10px;
-    flex: 1; /* La boîte de la description occupe toute la largeur disponible */
-    margin-left: 20px; /* Ajoute une marge pour séparer la description du titre */
+    flex: 1; 
+    margin-left: 20px;
 }
 
 .pagination {
