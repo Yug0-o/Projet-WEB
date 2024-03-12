@@ -2,7 +2,8 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <link rel="icon" href="images\logo-classic.webp">
+        <link rel="preload" href="/images/logo-classic.webp" as="image">
+        <link rel="icon" href="images/logo-classic.webp" id="image">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Internship Etendard">
         <meta name="description" content="Internship Etendard est une plateforme de recherche de stage pour les étudiants.">
@@ -15,7 +16,7 @@
         <header>
             <div class="searchbar">
                 <a href="homepage.html">
-                    <img src="./images/Name-logo.webp" class="logo" height="20" alt="name-logo">
+                    <img src="./images/Name-logo.webp" class="logo" id="image" height="20" alt="name-logo">
                 </a>
                 <form class="search searchbar" action="search.html">
                     <input type="text" placeholder="Rechercher un stage" name="search_query">
@@ -77,11 +78,11 @@
         <footer>
             <div class="navbar">
                 <div class="text-center">
-                    <a href="homepage.html"> Internship Etendard &copy; <span class="year"></span> </a>
+                    <a href="homepage.html"> Internship Etendard &copy; <span id="year"></span> </a>
                     <span class="desktop">•</span>
                     <a href="about.html">Tous droits réservés</a>
                     <span class="desktop">•</span>
-                    <a href="">Mentions légales</a>
+                    <a href="legalmentions.html">Mentions légales</a>
                     <span class="desktop">•</span>
                     <a href="contact.html">Contact</a>
                 </div>

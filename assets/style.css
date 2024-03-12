@@ -35,12 +35,13 @@ a {
 
 article h2 {
     font-size: 2em;
+    text-decoration: underline;
 }
 
 body {
     color: #1E1E1E;
     opacity: 0;
-    background-color: #e6f6ff;
+    background-color: white;
     font-family: "Gotham SSm";
     display: flex;
     min-width: 350px;
@@ -379,6 +380,20 @@ h1.text-center-accueil{
 
 /* Container*/
 
+.legal_mention {
+    display: flex;
+    flex-direction:column;
+    gap: 5vh;
+}
+
+.legal_mention div, .legal_mention h2 {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction:column;
+    gap: 1  vh;
+}
+
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -392,8 +407,6 @@ h1.text-center-accueil{
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);*/
 
 }
-
-
 
 .container-bando {
     background-color: gainsboro;
@@ -847,7 +860,7 @@ footer .text-center a {
 }
 
 .card-carousel .card {
-  background: whitesmoke;
+  background: #fff;
   width: var(--card-width);
   max-width: var(--card-max-width);
   text-align: center;
