@@ -956,11 +956,11 @@ footer .text-center a {
         font-size: 2em !important;
     }
 
-    a {
+    /* a {
         padding: 10px;
         padding-inline: 0px;
         transition: padding 0.2s ease-in-out;
-    }
+    } */
 
     .logo{
         content: url("/images/logo-classic.webp");
@@ -1003,6 +1003,10 @@ footer .text-center a {
     .tds-icon-person {
         display: block;
     }
+
+    .job {
+        flex-direction: column;
+    }
 }
 
 /*---------------------------------------------------------------*/
@@ -1023,6 +1027,8 @@ footer .text-center a {
 
 .job-list {
     margin-bottom: 20px;
+    width: 80%;
+    min-width: 300px;
 }
 
 .job {
@@ -1030,7 +1036,27 @@ footer .text-center a {
     margin-bottom: 10px;
     background-color: #F85F6A;
     color: gainsboro;
-    border-radius: 20px 0 0 20px;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+    flex-direction: row;
+}
+
+.job h3, .job p {
+    margin: 5px 0;
+}
+
+.job-info {
+    max-width: 20%;
+    flex: 1; /* La boîte de l'information du poste occupe toute la largeur disponible */
+}
+
+.job-description {
+    background-color: whitesmoke;
+    color: #1E1E1E;
+    border-radius: 10px;
+    flex: 1; /* La boîte de la description occupe toute la largeur disponible */
+    margin-left: 20px; /* Ajoute une marge pour séparer la description du titre */
 }
 
 .pagination {
