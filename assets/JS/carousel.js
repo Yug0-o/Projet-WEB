@@ -364,7 +364,7 @@ class CardCarousel extends DraggingEvent {
                     });
                 }
             });
-        }, 1000); // 5000 milliseconds = 5 seconds
+        }, 5000); // 5000 milliseconds = 5 seconds
     }
 }
 

@@ -143,6 +143,7 @@ textarea {
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: all 0.33s ease-in-out;
   }
   
 .visuallyhidden {
@@ -700,7 +701,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .searchbutton:hover {
-    filter: brightness(1.1);
+    filter: brightness(1.2);
 }
 
 .searchbutton:active {
@@ -710,8 +711,8 @@ input[type="checkbox"], input[type="radio"] {
 .tds-icon-search {
     transform: scale(20);
     fill: #000;
-    width: 100px;
-    height: 100px;
+    width: 30px;
+    height: 30px;
 }
 
 
@@ -951,7 +952,7 @@ footer .text-center a {
 @media screen and (max-width: 500px) {
     .logo{
         content: url("/images/logo-classic.webp");
-        width: 30px;
+        margin-inline: 10px;
     }
 
     .searchbar {
@@ -981,4 +982,59 @@ footer .text-center a {
     .tds-icon-person {
         display: block;
     }
+}
+
+/*---------------------------------------------------------------*/
+
+/* Research */
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters button {
+    background-color: #F85F6A;
+}
+
+.filters button:hover {
+    background-color: #f0f0f0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+}
+
+.job-list {
+    margin-bottom: 20px;
+}
+
+.job {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #F85F6A;
+    color: gainsboro;
+    border-radius: 20px 0 0 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination button {
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #F85F6A;
+    color: gainsboro;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .1);
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    border-radius: 40px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
 }
