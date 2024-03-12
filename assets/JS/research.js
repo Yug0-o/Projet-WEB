@@ -1,49 +1,34 @@
-// Exemple de données d'emploi
+// Example job data
 const jobData = [
-    { title: 'Développeur Web 1', company: 'ABC Inc.', location: 'Paris', description: 'Description du stage 1' },
-    { title: 'Ingénieur logiciel 2', company: 'XYZ Corp.', location: 'Lyon', description: 'Description du stage 2' },
-    { title: 'Designer UI/UX 3', company: '123 Designs', location: 'Marseille', description: 'Description du stage 3' },
-    { title: 'Analyste des données 4', company: 'DataTech', location: 'Toulouse', description: 'Description du stage 4' },
-    { title: 'Chef de projet 5', company: 'ProManage', location: 'Nice', description: 'Description du stage 5' },
-    { title: 'Développeur Full Stack 6', company: 'TechCo', location: 'Nantes', description: 'Description du stage 6' },
-    { title: 'Ingénieur en sécurité 7', company: 'SecureSys', location: 'Strasbourg', description: 'Description du stage 7' },
-    { title: 'Spécialiste en marketing 8', company: 'MarketXpert', location: 'Bordeaux', description: 'Description du stage 8' },
-    { title: 'Développeur mobile 9', company: 'MobileTech', location: 'Lille', description: 'Description du stage 9' },
-    { title: 'Analyste financier 10', company: 'FinCorp', location: 'Rennes', description: 'Description du stage 10' },
-    { title: 'Graphiste 11', company: 'CreativeDesign', location: 'Paris', description: 'Description du stage 11' },
-    { title: 'Développeur Python 12', company: 'PyTech', location: 'Lyon', description: 'Description du stage 12' },
-    { title: 'Ingénieur réseau 13', company: 'NetSys', location: 'Marseille', description: 'Description du stage 13' },
-
+    { title: 'Web Developer 1', company: 'ABC Inc.', location: 'Paris', description: 'Internship description 1' },
+    { title: 'Software Engineer 2', company: 'XYZ Corp.', location: 'Lyon', description: 'Internship description 2' },
+    { title: 'UI/UX Designer 3', company: '123 Designs', location: 'Marseille', description: 'Internship description 3' },
+    { title: 'Data Analyst 4', company: 'DataTech', location: 'Toulouse', description: 'Internship description 4' },
+    { title: 'Project Manager 5', company: 'ProManage', location: 'Nice', description: 'Internship description 5' },
+    { title: 'Full Stack Developer 6', company: 'TechCo', location: 'Nantes', description: 'Internship description 6' },
+    { title: 'Security Engineer 7', company: 'SecureSys', location: 'Strasbourg', description: 'Internship description 7' },
+    { title: 'Marketing Specialist 8', company: 'MarketXpert', location: 'Bordeaux', description: 'Internship description 8' },
+    { title: 'Mobile Developer 9', company: 'MobileTech', location: 'Lille', description: 'Internship description 9' },
+    { title: 'Financial Analyst 10', company: 'FinCorp', location: 'Rennes', description: 'Internship description 10' },
+    { title: 'Graphic Designer 11', company: 'CreativeDesign', location: 'Paris', description: 'Internship description 11' },
+    { title: 'Python Developer 12', company: 'PyTech', location: 'Lyon', description: 'Internship description 12' },
+    { title: 'Network Engineer 13', company: 'NetSys', location: 'Marseille', description: 'Internship description 13' },
 ];
 
+// Number of jobs displayed per page
 const jobsPerPage = 6;
+// Starting page
 let currentPage = 1;
 
-function displayJobs() {
-    const jobList = document.getElementById('jobList');
-    jobList.innerHTML = '';
-
-    const startIndex = (currentPage - 1) * jobsPerPage;
-    const endIndex = startIndex + jobsPerPage;
-
-    for (let i = startIndex; i < endIndex && i < jobData.length; i++) {
-        const job = jobData[i];
-        const jobElement = document.createElement('div');
-        jobElement.classList.add('job');
-        jobElement.innerHTML = `<h3>${job.title}</h3><p>${job.company} - ${job.location}</p>`;
-        jobList.appendChild(jobElement);
-    }
-}
-
+// Function to display pagination
 function displayPagination() {
     const pagination = document.getElementById('pagination');
     pagination.innerHTML = '';
-
     const totalPages = Math.ceil(jobData.length / jobsPerPage);
 
     for (let i = 1; i <= totalPages; i++) {
         const button = document.createElement('button');
-        button.classList.add("enabled");    
+        button.classList.add("enabled");
         button.innerText = i;
         button.onclick = function () {
             currentPage = i;
@@ -54,15 +39,15 @@ function displayPagination() {
     }
 }
 
-function displayJobs() {
+// Function to display jobs on the page
+function displayJobs(jobsToDisplay = jobData) {
     const jobList = document.getElementById('jobList');
     jobList.innerHTML = '';
-
     const startIndex = (currentPage - 1) * jobsPerPage;
     const endIndex = startIndex + jobsPerPage;
 
-    for (let i = startIndex; i < endIndex && i < jobData.length; i++) {
-        const job = jobData[i];
+    for (let i = startIndex; i < endIndex && i < jobsToDisplay.length; i++) {
+        const job = jobsToDisplay[i];
         const jobElement = document.createElement('div');
         jobElement.classList.add('job');
 
@@ -70,8 +55,7 @@ function displayJobs() {
         jobInfoElement.classList.add('job-info');
         jobInfoElement.innerHTML = `
             <h3>${job.title}</h3>
-            <p>${job.company} - ${job.location}</p>
-        `;
+            <p>${job.company} - ${job.location}</p>`;
         jobElement.appendChild(jobInfoElement);
 
         const jobDescriptionElement = document.createElement('div');
@@ -83,13 +67,21 @@ function displayJobs() {
     }
 }
 
+// Function to search for jobs based on a keyword
 function searchJobs() {
-    // Ajoutez la logique de recherche en fonction des filtres
-    // (utilisez les valeurs des filtres pour filtrer jobData)
-    displayJobs();
+    const keyword = document.getElementById('keyword').value.toLowerCase();
+    const filteredJobs = jobData.filter(job => job.title.toLowerCase().includes(keyword));
+    currentPage = 1;
+    displayJobs(filteredJobs);
     displayPagination();
 }
 
-// Affichez les offres d'emploi lors du chargement initial de la page
+// Get the search input element
+const search = document.querySelector("input[type='text']");
+// Add an event listener to trigger search when typing
+search.addEventListener('input', searchJobs);
+
+// Display job listings on initial page load
 displayJobs();
+// Display initial pagination
 displayPagination();
