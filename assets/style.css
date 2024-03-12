@@ -29,7 +29,7 @@
 /* Others */
 
 a {
-    transition: padding 0.2s ease-in-out;
+    transition: padding 0.33s ease-in-out;
     text-decoration: none;
 }
 
@@ -48,7 +48,7 @@ body {
     min-height: 98vh;
     user-select: none;
     scroll-behavior: smooth;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.33s ease-in-out;
 }
 
  body.loginbackground{
@@ -59,7 +59,7 @@ body {
 }
 
 button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
-    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.3s ease, color 0.2s ease, filter 0.2s ease;
+    transition: transform 0.33s ease, background-color 0.33s ease, box-shadow 0.33s ease, color 0.33s ease, filter 0.33s ease;
 }
 
 div.bordure {
@@ -111,7 +111,7 @@ textarea {
     font-size: 3em;
     font-family: "Gotham SSm" ;
     font-weight: 500;
-    transition: opacity 0.1s ease-in-out, font-size 0.5s ease-in-out;
+    transition: opacity 0.33s ease-in-out, font-size 0.5s ease-in-out;
 }
 
 .horizontal-line {
@@ -258,7 +258,7 @@ button:active.enabled {
     color: #FFFFFF;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.33s ease;
   }
   
   .scroll-top-button:hover {
@@ -284,7 +284,7 @@ button:active.enabled {
     gap: 15px;
     font-size: 12px;
     font-weight: 500;
-    transition: gap 0.2s ease-in-out, font-size 0.2s ease-in-out, flex 0.2s ease-in-out;
+    transition: gap 0.33s ease-in-out, font-size 0.33s ease-in-out, flex 0.33s ease-in-out;
 }
 
 .text-center h1 {
@@ -653,7 +653,7 @@ input[type="checkbox"], input[type="radio"] {
 
 /*---------------------------------------------------------------*/
 
-/* Checkbox */
+/* searchbar */
 
 .searchbar {
     display: flex;
@@ -663,7 +663,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .searchbar * {
-    transition: all 0.2s ease-in-out;
+    transition: all 0.33s ease-in-out;
 }
 
 .searchbar input[type="text"] {
