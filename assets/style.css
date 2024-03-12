@@ -40,7 +40,7 @@ article h2 {
 body {
     color: #1E1E1E;
     opacity: 0;
-    background-color: #e6f6ff;
+    background-color: white;
     font-family: "Gotham SSm";
     display: flex;
     min-width: 350px;
@@ -136,15 +136,13 @@ textarea {
 /*---------------------------------------------------------------*/
 
 /* All pages*/
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: all 0.33s ease-in-out;
-  }
+}
   
 .visuallyhidden {
     position: absolute;
@@ -156,6 +154,12 @@ textarea {
 /*---------------------------------------------------------------*/
 
 /* All buttons */
+
+button {
+    font-family: "Gotham SSm";
+    font-weight: 500;
+    color: white;
+}
 
 button {
     font-family: "Gotham SSm";
@@ -507,12 +511,7 @@ h1.text-center-accueil{
 
 /* Navbar */
 
-.navbar {
-    color: #303030;
-    font-family: "Gotham SSm";
-}
-
-.homeNav{
+.homeNav {
     display: flex;
     justify-content: space-between;
     position: absolute;
@@ -520,6 +519,10 @@ h1.text-center-accueil{
     transform: translateX(-50%);
 }
 
+.navbar {
+    color: #303030;
+    font-family: "Gotham SSm";
+}
 
 .navbar a, .forgot-password a {
     color: #303030;
@@ -550,6 +553,7 @@ h1.text-center-accueil{
     visibility: visible;
     transform: scaleX(1);
 }
+
 
 /*---------------------------------------------------------------*/
 
@@ -801,6 +805,7 @@ footer {
     flex-direction: column;
     box-sizing: border-box;
     margin-top: auto;
+    transition: all 0.2s ease-in-out;
 }
 
 footer .text-center a {
@@ -842,7 +847,7 @@ footer .text-center a {
 }
 
 .card-carousel .card {
-  background: whitesmoke;
+  background: #fff;
   width: var(--card-width);
   max-width: var(--card-max-width);
   text-align: center;
@@ -870,10 +875,10 @@ footer .text-center a {
 
 
 .card:nth-of-type(1) .image-container {
-    background-image: url("/images/404.jpg")
+    background-image: url("/images/image_carousel_1.webp")
 }
 .card:nth-of-type(2) .image-container {
-    background-image: url("/images/404.jpg")
+    background-image: url("/images/image_carousel_2.webp")
 }
 .card:nth-of-type(3) .image-container {
     background-image: url("/images/404.jpg")
@@ -886,12 +891,12 @@ footer .text-center a {
 }
 
 .image-container {
-  width: 8em;
-  height: 8em;
+  width: 600px;
+  height: 600px;
   position: relative;
   background-size: cover;
   margin-bottom: 2em;
-  border-radius: 100%;
+  border-radius: 0%;
   padding: 1em;
   /* -webkit-box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3); */
   /* -moz-box-shadow: inset 0px 0px 17px 0px rgba(0,0,0,0.3); */
