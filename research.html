@@ -1,0 +1,42 @@
+<!doctype html> 
+<html lang="fr"> 
+    <head> 
+        <link rel="stylesheet" href="assets/style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Internship Etendard">
+        <meta name="description" content="Recherche">
+        <title>Recherche - Internship Etendard</title> 
+    </head> 
+    <body>
+        <header>
+            <div class="container-bando">
+                <a href="homepage.html">
+                    <img src="./images/Name-logo.webp" class="logo" height="20" alt="Name-logo">
+                </a>
+            </div>
+        </header>
+        
+        <div class="container">
+            <h1>Offres d'emploi</h1>
+
+            <div class="filters">
+                <label for="keyword">Mot-clé:</label>
+                <input type="text" id="keyword" placeholder="Rechercher par mot-clé">
+
+                <button onclick="searchJobs()">Rechercher</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="job-list" id="jobList"></div>
+        </div>
+
+        <div class="center-container">
+            <div class="pagination" id="pagination"></div>
+        </div>
+
+        <script src="assets/JS/research.js"></script>
+        <script src="assets\JS\global.js"async></script>
+    </body>
+</html>

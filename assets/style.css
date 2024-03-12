@@ -977,3 +977,58 @@ footer .text-center a {
         display: block;
     }
 }
+
+/*---------------------------------------------------------------*/
+
+/* Research */
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters button {
+    background-color: #F85F6A;
+}
+
+.filters button:hover {
+    background-color: #f0f0f0;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+}
+
+.job-list {
+    margin-bottom: 20px;
+}
+
+.job {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #F85F6A;
+    color: gainsboro;
+    border-radius: 20px 0 0 20px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination button {
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #F85F6A;
+    color: gainsboro;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, .1);
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    border-radius: 40px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+}
