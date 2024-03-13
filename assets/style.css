@@ -933,6 +933,22 @@ footer .text-center a {
 
 /*---------------------------------------------------------------*/
 
+/* Dashboard */
+
+.chart-container {
+    width: 20%; /* Adjust the width of the container */
+    float: left; /* Make the containers float next to each other */
+    border-color: #F85F6A ;
+}
+
+canvas {
+    width: 100%; /* Ensure the canvas takes up the full width of its container */
+    height: auto; /* Let the height adjust automatically based on the width */
+}
+
+
+/*---------------------------------------------------------------*/
+
 /* Carousel */
 
 

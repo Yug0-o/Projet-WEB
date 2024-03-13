@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <!-- Add your dashboard content here -->
+    <h1>Welcome to the Admin Dashboard</h1>
+    <div class="dashboard">
+        <h2>Number of Offers</h2>
+        <p>Display the number of offers here</p>
+        <h2>Students with Internship</h2>
+        <div class="chart-container">
+             <canvas id="piechart"></canvas>
+         </div>
+        <div class="chart-container">
+            <canvas id="lineChart"></canvas>
+        </div>          
+         <p>Display the number of students with internships here</p>
+        <!-- Add more widgets for other statistics as needed -->
+    </div>
+
+    <script src="assets/JS/dashboard.js"></script>
+    <script src="assets/JS/global.js"></script>
+</body>
+</html>
