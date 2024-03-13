@@ -40,7 +40,6 @@ article h2 {
 
 body {
     color: #1E1E1E;
-    opacity: 0;
     background-color: white;
     font-family: "Gotham SSm";
     display: flex;
@@ -60,7 +59,7 @@ body {
 }
 
 button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
-    transition: transform 0.33s ease, background-color 0.33s ease, box-shadow 0.33s ease, color 0.33s ease, filter 0.33s ease;
+    transition: transform 0.1s ease, all 0.33s ease;
 }
 
 div.bordure {
@@ -101,10 +100,6 @@ textarea {
     background-color: gainsboro;
 }
 
-.disabled {
-    cursor: not-allowed;
-    filter: opacity(50%);
-}
 
 .garde {
     color: #1E1E1E;
@@ -133,6 +128,73 @@ textarea {
     height: 260px;
     margin: 20px 20px;
 }
+
+#loading {
+    pointer-events: none;
+    user-select: none;
+    position: fixed;
+    opacity: 1;
+    background-color: rgb(200, 200, 200);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.33s ease-in-out, scale 0.33s ease-in-out;
+}
+
+#loading.done {
+    opacity: 0;
+    pointer-events: none;
+    display: none;
+    transform: scale(1.5);
+
+}
+
+.outerspinner {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    border-right: 5px solid white;
+    border-radius: 100%;
+    align-items: center;
+    animation: spin 2s linear infinite;
+
+}
+
+.innerspinner {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 130px;
+    height: 130px;
+    border-right: 5px solid white;
+    border-top: 5px solid white;
+    border-radius: 100%;
+    align-items: center;
+}
+
+.super-etendard{
+    width: 100px;
+    height: 100px;
+    transform: translate(-15px, 88px) rotate(5deg);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 
 /*---------------------------------------------------------------*/
 
@@ -165,6 +227,7 @@ button {
 button {
     font-family: "Gotham SSm";
     font-weight: 500;
+    font-size: 15px;
     color: white;
     filter: brightness(95%);
     margin: 10px 0px;
@@ -173,8 +236,9 @@ button {
     border-radius: 10px;
     cursor: pointer;
     width: 115px;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
     outline: none;
+    transition: all 0.33s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 button[type="login"] {
@@ -185,7 +249,6 @@ button[type="login"] {
     background-color: white;
     color: black;
     padding: 8px;
-    font-weight: bold;
     border-radius: 50px;
     margin: 10px;
     margin-inline: 20px;
@@ -203,26 +266,33 @@ button[type="login"]:active {
 
 .tds-icon-person {
     display: none;
-  width: 30px;
+    width: 30px;
 }
 
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: scale(0.95);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+}
 
 button[type="submit"] {
-    background-color: #F85F6A;
-    color: black;
-    padding: auto;
+    background-color: #bc474f;
+    color: white;
     width: 200%;
 }
 
 button[type="reset"] {
-    background-color: #998E8E;
-    padding: auto;
+    /* background-color: #998E8E; */
+    background-color: transparent;
+    color: black;
+    border: 3px solid #F85F6A;
     width: 200%;
 }
 
 button:hover.enabled {
-    transform: scale(1.05);
-    filter: brightness(100%);
+    /* transform: scale(1.03); */
+    filter: brightness(110%);
 }
 button:active.enabled {
     transform: scale(0.95);
@@ -240,7 +310,6 @@ button:active.enabled {
 }
 
 .bouton:hover {
-    background-color: #ccc;
     transform: scale(1.05);
 }
 
@@ -357,22 +426,34 @@ h1.text-center-accueil{
     margin-inline: 20px;
     transition: all 0s ease;
 }
+#logo-classic {
+    display: none;
+    width: auto;
+    height: auto;
+}
+
+#Name-logo {
+    display: block;
+    width: auto;
+    height: 20px;
+}
+
 
 .img_accueil{
     width: 600px;
-    height: 400px;
+    height: auto;
 }
 
 .img_legalmentions{
     width:200px;
-    height:200px;
+    height:auto;
     margin-top: 15px;
     margin-left : 35%;
 }
 
 .nom img {
     width: 500px;
-    height: 50px;
+    height: auto;
     margin-top: 25px;
 }
 
@@ -524,6 +605,32 @@ h1.text-center-accueil{
 
 /* Navbar */
 
+p a {
+    color: #393C41;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.15s ease-in-out;
+}
+
+p a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -1px;
+    left: 0;
+    background-color: #000000;
+    transform: scaleY(0.5);
+    transition: all 0.2s ease-in-out 0s;
+}
+
+
+p a:hover::before {
+    background-color: black;
+    transform: scaleY(1);
+}
+
 .homeNav {
     display: flex;
     justify-content: space-between;
@@ -542,7 +649,7 @@ h1.text-center-accueil{
     font-weight: 500;
     text-decoration: none;
     position: relative;
-    transition: color 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
 }
 
 .navbar a::before, .forgot-password a::before {
@@ -566,8 +673,6 @@ h1.text-center-accueil{
     visibility: visible;
     transform: scaleX(1);
 }
-
-
 /*---------------------------------------------------------------*/
 
 /* Categories list */
@@ -630,6 +735,7 @@ form .button-container {
 }
 
 form label {
+    pointer-events: none;
     color: #5c5e62;
     font-weight: 500;
     font-size: 14px;
@@ -640,20 +746,19 @@ form label {
 }
 
 /*---------------------------------------------------------------*/
-
 /* Input (+ select)*/
 
 input, select, textarea {
-    font-family: inherit;
+    font-family: "Gotham SSm";
+    font-weight: 400;
     border: none;
     border-radius: 10px;
     width : 240px;
     background-color: #f0f0f0;
-    border: none;
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
     outline: none;
 }
 
@@ -662,16 +767,13 @@ textarea {
     height: 100px;
 }
 
-/* On mouse-over, add a grey background color */
 input:hover {
     background-color: #e0e0e0;
-    box-shadow: inset -2px -2px 3px #e0e0e0, inset 2px 2px #e0e0e0, -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
 }
 
-/* When the input is focused, add a blue background */
 input:focus {
-    background-color: #f56a2a0f;
-    box-shadow: inset -2px -2px 3px rgba( 193, 84, 33, 0.4), inset 2px 2px 3px rgba(240, 119, 63, 0.4), -5px -5px 10px #ffffff, 5px 5px 10px #aeaec0; 
+    background-color: #f0f0f0;
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -688,6 +790,7 @@ input[type="checkbox"], input[type="radio"] {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    transition: all 0.33s ease-in-out;
 }
 
 .searchbar * {
@@ -850,11 +953,7 @@ footer .text-center a {
 }
  
 
-@media screen and (max-width: 640px) {
-  .card-carousel {
-    margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
-  }
-}
+
 
 .card-carousel.smooth-return {
   transition: all .2s ease;
@@ -950,6 +1049,7 @@ footer .text-center a {
     margin-bottom: 20px;
     width: 80%;
     min-width: 300px;
+    transition: all 0.2s ease-in-out;
 }
 
 .job {
@@ -959,15 +1059,21 @@ footer .text-center a {
     color: white;
     border-radius: 20px;
     display: flex;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
     flex-direction: row;
     filter: brightness(1);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 
 .job:hover {
     filter: brightness(1.1);
+    scale: 1.01;
+}
+
+.job:active {
+    filter: brightness(1);
+    scale: 0.99;
 }
 
 .job h3,
@@ -975,7 +1081,9 @@ footer .text-center a {
     margin: 5px 0;
 }
 
-
+.job h3 {
+    font-weight: 500;
+}
 
 .job-info {
     max-width: 20%;
@@ -1025,11 +1133,12 @@ footer .text-center a {
 
 /* Responsive */
 
+
 @media screen and (max-width: 650px) {
     .text-center {
         flex-direction: column-reverse;
         align-items: center;
-        gap: 0px;
+        gap: 15px;
     }
 
     .desktop {
@@ -1044,21 +1153,24 @@ footer .text-center a {
     .email-sent {
         font-size: 0.5em;
     }
-
-    .garde {
-        font-size: 2em !important;
+    footer.navbar a, .forgot-password a {
+        font-size: 1.4em;
     }
 
-    /* a {
-        padding: 10px;
-        padding-inline: 0px;
-        transition: padding 0.2s ease-in-out;
-    } */
+    .card-carousel {
+        margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+    }
 
     .logo{
-        content: url("/images/logo-classic.webp");
         width: 40px;
         height: auto;
+    }
+    #logo-classic {
+        display: block;
+        width: 40px;
+    }
+    #Name-logo {
+        display: none;
     }
 
     .job {
@@ -1082,7 +1194,6 @@ footer .text-center a {
 
 @media screen and (max-width: 500px) {
     .logo{
-        content: url("/images/logo-classic.webp");
         margin-inline: 10px;
     }
 

@@ -9,7 +9,9 @@ window.onload = function () {
 
     // Load the fonts and then update the body opacity
     Promise.all([document.fonts.ready]).then(() => {
-        document.body.style.opacity = "1";
+        // opacity of loading screen to 0
+        loading = document.getElementById('loading');
+        loading.classList.add('done');
     });
 
     var scrollButton = document.querySelector(".scroll-top-button");
@@ -32,4 +34,3 @@ window.onload = function () {
 
 // auto update the year in the footer
 document.getElementById('year').textContent = new Date().getFullYear();
-
