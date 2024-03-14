@@ -10,18 +10,37 @@
 <body>
     <!-- Add your dashboard content here -->
     <h1>Welcome to the Admin Dashboard</h1>
-    <div class="dashboard">
-        <h2>Number of Offers</h2>
-        <p>Display the number of offers here</p>
-        <h2>Students with Internship</h2>
-        <div class="chart-container">
-             <canvas id="piechart"></canvas>
-         </div>
-        <div class="chart-container">
-            <canvas id="lineChart"></canvas>
-        </div>          
-         <p>Display the number of students with internships here</p>
-        <!-- Add more widgets for other statistics as needed -->
+    <div class="dashboard-boxes">
+        <div class="container">
+            <h3>Number of Students with Internships</h3>
+            <p>Display the number of students with internships here</p>
+        </div>
+        <div class="container">
+            <h3>Number of Students without Internships</h3>
+            <p>Display the number of students without internships here</p>
+        </div>
+        <div class="container">
+            <h3>Number of Pending Requests</h3>
+            <p>Display the number of pending requests here</p>
+        </div>
+        <div class="container">
+            <h3>Number of Available Places</h3>
+            <p>Display the number of available places here</p>
+        </div>
+        <div class="container" >
+            <h3>Internship Distribution</h3>
+            <div class="chart-container" >
+                <canvas id="piechart" ></canvas>
+            </div>
+            <p>Display the internship distribution here</p>
+        </div>
+        <div class="container">
+            <h3>Information by Day</h3>
+            <div class="chart-container">
+                <canvas id="lineChart"></canvas>
+            </div>   
+            <p>Display the information by day graph here</p>
+        </div>
     </div>
 
     <script src="assets/JS/dashboard.js"></script>
