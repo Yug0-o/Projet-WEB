@@ -1,3 +1,5 @@
+/*Dougnut chart*/
+
 // Get the canvas element from the HTML
 const canvas = document.getElementById('piechart');
 
@@ -17,6 +19,7 @@ new Chart(canvas, {
     },
 });
 
+/* graph chart */
 
 const xValues = [100,200,300,400,500,600,700,800,900,1000];
 
