@@ -935,6 +935,42 @@ footer .text-center a {
 
 /*---------------------------------------------------------------*/
 
+/* Dashboard */
+
+.chart-container {
+    width: 100%; /* Adjust the width of the container */
+    border-color: #F85F6A ;
+}
+
+canvas {
+    width: 100%; /* Ensure the canvas takes up the full width of its container */
+    height: auto; /* Let the height adjust automatically based on the width */
+}
+
+.container_dashboard_line {
+    display: inline-block; /* Change display to inline-block */
+    width: 22%; /* Adjust the width of each container */
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    border-radius: 40px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+}
+
+
+.container_dashboard_chart {
+    display: inline-block;
+    width: 45%;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    border-radius: 40px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+    overflow: hidden; /* Add this line to prevent content overflow */
+}
+
+/*---------------------------------------------------------------*/
+
 /* Carousel */
 
 
