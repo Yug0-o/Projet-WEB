@@ -29,7 +29,7 @@
 /* Others */
 
 a {
-    transition: padding 0.33s ease-in-out;
+    transition: padding 0.33s ease;
     text-decoration: none;
 }
 
@@ -48,7 +48,7 @@ body {
     min-height: 98vh;
     user-select: none;
     scroll-behavior: smooth;
-    transition: all 0.33s ease-in-out;
+    transition: all 0.33s ease;
 }
 
  body.loginbackground{
@@ -92,7 +92,7 @@ textarea {
 .animate {
     opacity: 0;
     transform: translateY(5px);
-    animation: slideIn 0.3s ease-in-out forwards;
+    animation: slideIn 0.3s ease forwards;
 }
 
 .bando {
@@ -107,7 +107,7 @@ textarea {
     font-size: 3em;
     font-family: "Gotham SSm" ;
     font-weight: 500;
-    transition: opacity 0.33s ease-in-out, font-size 0.5s ease-in-out;
+    transition: opacity 0.33s ease, font-size 0.5s ease;
 }
 
 .horizontal-line {
@@ -143,7 +143,7 @@ textarea {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.33s ease-in-out, scale 0.33s ease-in-out;
+    transition: opacity 0.33s ease, scale 0.33s ease;
 }
 
 #loading.done {
@@ -299,9 +299,11 @@ button:active.enabled {
     filter: brightness(90%);
 }
 
+
 .bouton {
     border: 2px solid #F85F6A;
-    background-color: white;
+    /* background-color: white; */
+    background: radial-gradient(circle closest-side, white, transparent);
     color: black;
     padding: 8px 20px;
     font-weight: bold;
@@ -360,7 +362,7 @@ button:active.enabled {
     gap: 15px;
     font-size: 12px;
     font-weight: 500;
-    transition: gap 0.33s ease-in-out, font-size 0.33s ease-in-out, flex 0.33s ease-in-out;
+    transition: gap 0.33s ease, font-size 0.33s ease, flex 0.33s ease;
 }
 
 .text-center h1 {
@@ -587,7 +589,7 @@ h1.text-center-accueil{
     font-size: 0.8em;
     text-align: center;
     padding-top: 10vh;
-    transition: opacity 0.1s ease-in-out, font-size 0.5s ease-in-out;
+    transition: opacity 0.1s ease, font-size 0.5s ease;
 }
 
 .email-entry.visible, .email-sent.visible {
@@ -610,7 +612,7 @@ p a {
     font-weight: 500;
     text-decoration: none;
     position: relative;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease;
 }
 
 p a::before {
@@ -622,7 +624,7 @@ p a::before {
     left: 0;
     background-color: #000000;
     transform: scaleY(0.5);
-    transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease 0s;
 }
 
 
@@ -649,7 +651,7 @@ p a:hover::before {
     font-weight: 500;
     text-decoration: none;
     position: relative;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease;
 }
 
 .navbar a::before, .forgot-password a::before {
@@ -662,7 +664,7 @@ p a:hover::before {
     background-color: #F85F6A;
     visibility: hidden;
     transform: scaleX(0);
-    transition: all 0.15s ease-in-out 0s;
+    transition: all 0.15s ease 0s;
 }
 
 .navbar a:hover, .forgot-password a:hover {
@@ -690,13 +692,13 @@ p a:hover::before {
 .categories-list a {
     color: #DDDDDD;
     text-decoration: none;
-    transition: transform 0.1s ease-in-out
+    transition: transform 0.1s ease
 }
 
 .categories-list a:hover {
     text-decoration: underline;
     color: #F56B2A;
-    transition: transform 0.1s ease-in-out
+    transition: transform 0.1s ease
 }
 
 /*---------------------------------------------------------------*/
@@ -790,11 +792,11 @@ input[type="checkbox"], input[type="radio"] {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    transition: all 0.33s ease-in-out;
+    transition: all 0.33s ease;
 }
 
 .searchbar * {
-    transition: all 0.33s ease-in-out;
+    transition: all 0.33s ease;
 }
 
 .searchbar input[type="text"] {
@@ -922,7 +924,7 @@ footer {
     flex-direction: column;
     box-sizing: border-box;
     margin-top: auto;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 footer .text-center a {
@@ -1085,7 +1087,7 @@ canvas {
     margin-bottom: 20px;
     width: 80%;
     min-width: 300px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 .job {
@@ -1098,7 +1100,7 @@ canvas {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
     flex-direction: row;
     filter: brightness(1);
-    transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease;
 }
 
 
@@ -1125,7 +1127,7 @@ canvas {
     max-width: 20%;
     min-width: 150px;
     flex: 1;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 .job-description {
@@ -1135,7 +1137,7 @@ canvas {
     padding: 5px;
     flex: 1;
     margin-left: 20px;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
 .pagination {
