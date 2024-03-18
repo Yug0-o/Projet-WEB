@@ -150,26 +150,31 @@
                         <div class="box1">
                             <div class="container">
                                 <div class="box1">
-                                    <label>Nom *<input name="lastname" type="text" value="" size="100" required></label>
+                                    <label>Nom *</label>
+                                    <input name="lastname" type="text" value="" size="100" required>
                                 </div>
                                 <div class="box1">
-                                    <label>Prénom <input name="firstname" type="text" value="" size="100" required></label>
+                                    <label>Prénom </label>
+                                    <input name="firstname" type="text" value="" size="100" required>
                                 </div>
                             </div>
                             <div class="container">
                                 <div class="box1">
-                                    <label>Adresse mail *<input name="email" type="text" value="" size="100" required></label>
+                                    <label>Adresse mail *</label>
+                                    <input name="email" type="text" value="" size="100" required>
                                 </div>
                                 <div class="box1">
-                                    <label>Téléphone *<input id='tel' name="tel" type="text" value="" size="100" required maxlength="10"></label>
+                                    <label>Téléphone *</label>
+                                    <input id='tel' name="tel" type="text" value="" size="100" required maxlength="10">
                                 </div>
                             </div>
                             <div class="container">
                                 <div class="box1">
-                                    <label>Votre message<textarea name="feedbacks" rows="5" cols="100"></textarea></label>
+                                    <label>Votre message</label>
+                                    <textarea name="feedbacks" rows="5" cols="100"></textarea>
                                 </div>
                             </div>
-                            <p>* : obligatoires</p>
+                            <p><i>* : obligatoires</i></p>
                         </div>
                         
                         <div class="vertical-line"></div>
@@ -195,10 +200,10 @@
 
                     <div style="display: flex">
                         <div class="boxbutton">
-                            <button class="enabled" type="reset" aria-label="Effacer">Effacer</button>
+                            <button class="disabled" type="reset" aria-label="Effacer" disabled>Effacer</button>
                         </div>
                         <div class="boxbutton">
-                            <button class="enabled" type="submit" onclick="return verifData()" aria-label="Envoyer">Envoyer</button>
+                            <button class="disabled" type="submit" onclick="return verifData()" aria-label="Envoyer" disabled>Envoyer</button>
                         </div>
                     </div>
                 </form>
