@@ -332,7 +332,7 @@ button:active.enabled {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(to bottom right, #dd2295, #573b5e);
+    background: linear-gradient(to bottom right, #F85F6A, #C64C54);
     color: #FFFFFF;
     border: none;
     cursor: pointer;
@@ -340,7 +340,7 @@ button:active.enabled {
   }
   
   .scroll-top-button:hover {
-    background: linear-gradient(to bottom right, #d615b6, #3e0746);
+    background: linear-gradient(to bottom right, #df555f, #ad424a);
   }
   
   .scroll-top-button::before {
@@ -348,7 +348,7 @@ button:active.enabled {
     font-size: 35px;
     line-height: 50px;
     text-align: center;
-    color: #ffd900;
+    color: #fee7f0;
   }
 
 /*---------------------------------------------------------------*/
