@@ -65,6 +65,8 @@ function displayJobs(jobsToDisplay = jobData) {
         jobElement.appendChild(jobDescriptionElement);
 
         jobList.appendChild(jobElement);
+        // add delay to each job element
+        jobElement.style.animationDelay = `${i * 0.03}s`;
     }
 }
 
