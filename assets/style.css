@@ -731,7 +731,6 @@ form .button-container {
 }
 
 form label {
-    pointer-events: none;
     color: #5c5e62;
     font-weight: 500;
     font-size: 14px;
