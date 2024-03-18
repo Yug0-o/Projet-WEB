@@ -71,7 +71,7 @@ textarea {
     resize: none;
 }
 
-@keyframes slideIn {
+@keyframes slideInY {
     0% {
         opacity: 0;
         transform: translateY(5px);
@@ -84,6 +84,18 @@ textarea {
 }
 
 
+@keyframes slideInX {
+    0% {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 .align p
 {
     text-align: justify;
@@ -92,7 +104,13 @@ textarea {
 .animate {
     opacity: 0;
     transform: translateY(5px);
-    animation: slideIn 0.3s ease forwards;
+    animation: slideInY 0.3s ease forwards;
+}
+
+.animate.job {
+    opacity: 0;
+    transform: translateX(5px);
+    animation: slideInX 0.3s ease forwards;
 }
 
 .bando {
@@ -359,7 +377,7 @@ button:active.enabled {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     font-size: 12px;
     font-weight: 500;
     transition: gap 0.33s ease, font-size 0.33s ease, flex 0.33s ease;
@@ -560,7 +578,7 @@ h1.text-center-accueil{
 /* Login */
 
 .forgot-password {
-    font-size: 0.7em;
+    font-size: 0.8em;
     text-align: left;
     margin-bottom: 10px;
 }
@@ -805,9 +823,10 @@ input[type="checkbox"], input[type="radio"] {
     justify-content: center;
     flex-grow: 1;
     align-items: center;
-    min-width: 100px;
-    max-width: 40%;
-    max-width: 500px;
+    padding-right: 100px;
+    min-width: 150px;
+    max-width: 800px;
+    
 }
 
 .searchbutton {
@@ -1164,8 +1183,7 @@ canvas {
 
 /* Responsive */
 
-
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 850px) {
     .text-center {
         flex-direction: column-reverse;
         align-items: center;
@@ -1184,12 +1202,11 @@ canvas {
     .email-sent {
         font-size: 0.5em;
     }
-    footer.navbar a, .forgot-password a {
-        font-size: 1.4em;
-    }
 
-    .card-carousel {
-        margin-left: calc((100vw - var(--carousel-min-width) - 40px) / 2)
+
+    .search {
+        padding-right: 0px;
+        padding-left: 7%;
     }
 
     .logo{
@@ -1223,9 +1240,9 @@ canvas {
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 650px) {
     .logo{
-        margin-inline: 10px;
+        margin-inline: 25px;
     }
 
     .searchbar {
@@ -1233,6 +1250,8 @@ canvas {
     }
     .search {
         width: 15vh;
+        padding-left: 3%;
+        padding-right: 3%;
     }
     .searchbutton {
         margin-left: -40px;
