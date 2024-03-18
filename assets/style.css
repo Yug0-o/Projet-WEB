@@ -404,7 +404,7 @@ h1.text-center-accueil{
  } 
 
  .contact h2 span { 
-     background:#e6f6ff; 
+     background:white; 
      padding:0px 10px; 
  }
 
@@ -522,12 +522,6 @@ h1.text-center-accueil{
     flex: 1 0 30%; 
     text-align: left;
     margin-left: 10px;
-}
-
-.box2 {
-    /* flex: 1 0 50%;  */
-    /* text-align: left; */
-    margin-top: 15px;
 }
 
 .boxlegalmention {
