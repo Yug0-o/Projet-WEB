@@ -350,7 +350,7 @@ button:active.enabled {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(to bottom right, #dd2295, #573b5e);
+    background: linear-gradient(to bottom right, #F85F6A, #C64C54);
     color: #FFFFFF;
     border: none;
     cursor: pointer;
@@ -358,7 +358,7 @@ button:active.enabled {
   }
   
   .scroll-top-button:hover {
-    background: linear-gradient(to bottom right, #d615b6, #3e0746);
+    background: linear-gradient(to bottom right, #df555f, #ad424a);
   }
   
   .scroll-top-button::before {
@@ -366,7 +366,7 @@ button:active.enabled {
     font-size: 35px;
     line-height: 50px;
     text-align: center;
-    color: #ffd900;
+    color: #fee7f0;
   }
 
 /*---------------------------------------------------------------*/
@@ -422,7 +422,7 @@ h1.text-center-accueil{
  } 
 
  .contact h2 span { 
-     background:#e6f6ff; 
+     background:white; 
      padding:0px 10px; 
  }
 
@@ -540,12 +540,6 @@ h1.text-center-accueil{
     flex: 1 0 30%; 
     text-align: left;
     margin-left: 10px;
-}
-
-.box2 {
-    /* flex: 1 0 50%;  */
-    /* text-align: left; */
-    margin-top: 15px;
 }
 
 .boxlegalmention {
