@@ -67,6 +67,9 @@ main {
 }
 
 .container .flx2 .flx2_1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 95%; /* Adjust the width of the flexbox */
   height: 45%; 
   margin: 1%;
@@ -81,7 +84,6 @@ main {
   width: 20%; /* Adjust the width of the flexbox */
   height: 85%; 
   margin: 1%;
-  margin-left: 3%;
   position: relative;
   border-radius: 40px;
   border: 1px solid black;
@@ -89,11 +91,24 @@ main {
 }
 
 .container .flx2 .flx2_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 95%; /* Adjust the width of the flexbox */
   height: 45%; 
   margin: 1%;
   margin-left: 3%;
   margin-bottom: 3%;
+  position: relative;
+  border-radius: 40px;
+  border: 1px solid black;
+
+}
+
+.flx2_2 * {
+  width: 45%; /* Adjust the width of the flexbox */
+  height: 85%; 
+  margin: 1%;
   position: relative;
   border-radius: 40px;
   border: 1px solid black;
