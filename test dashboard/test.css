@@ -1,13 +1,12 @@
 body {
   font-family: "Nunito", sans-serif;
   display: flex;
-  padding: 4%;
+  padding: 3%;
   background-image: url("https://cdn.pixabay.com/photo/2015/06/20/07/24/color-815551_1280.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 91%;
   height: 100%;
-  border: 1px solid black;
 }
 
 /* MAIN MENU */
@@ -46,26 +45,59 @@ main {
   justify-content: center;
   align-items: center;
   border: 1px solid black;
+  background-color: #fff;
 }
 
-.container .flexbox1 {
-  width: 70%;
-  padding: 10px;
+.container .flx1 {
+  width: 20%;
   height: 92%;
-  margin: 10px;
+  margin: 1%;
   position: relative;
   border-radius: 40px;
-  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+  border: 1px solid black;
 }
 
-.container .flexbox2 {
-  width: 30%;
-  padding: 10px;
+.container .flx2 {
+  width: 80%;
   height: 92%;
-  margin: 10px;
+  margin: 1%;
   position: relative;
   border-radius: 40px;
-  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.5), 5px 5px 10px rgba(0, 0, 0, .2);
+  border: 1px solid black;
+}
+
+.container .flx2 .flx2_1 {
+  width: 95%; /* Adjust the width of the flexbox */
+  height: 45%; 
+  margin: 1%;
+  margin-left: 3%;
+  position: relative;
+  border-radius: 40px;
+  border: 1px solid black;
+}
+
+
+.flx2_1 * {
+  width: 20%; /* Adjust the width of the flexbox */
+  height: 85%; 
+  margin: 1%;
+  margin-left: 3%;
+  position: relative;
+  border-radius: 40px;
+  border: 1px solid black;
+
+}
+
+.container .flx2 .flx2_2 {
+  width: 95%; /* Adjust the width of the flexbox */
+  height: 45%; 
+  margin: 1%;
+  margin-left: 3%;
+  margin-bottom: 3%;
+  position: relative;
+  border-radius: 40px;
+  border: 1px solid black;
+
 }
 
 .chart-container {
