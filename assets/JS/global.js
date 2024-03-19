@@ -14,21 +14,43 @@ window.onload = function () {
         loading.classList.add('done');
     });
 
-    var scrollButton = document.querySelector(".scroll-top-button");
-    
-    scrollButton.addEventListener("click", function() {
+    const scrollButton = document.querySelector(".scroll-top-button");
+    let lastScrollTop = document.documentElement.scrollTop-1;
+    const header = document.querySelector('header');
+
+    scrollButton.classList.remove('animate');
+    header.classList.remove('animate');
+    if (window.pageYOffset || document.documentElement.scrollTop > 0) {
+        header.classList.remove('hidden');
+    }
+    scrollButton.classList.add('hidden');
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = document.documentElement.scrollTop;
+        
+
+        if (window.scrollY > 100) { 
+            scrollButton.classList.remove('hidden');
+        } else {
+            scrollButton.classList.add('hidden');
+            header.classList.remove('hidden');
+        }
+
+        if (scrollTop > lastScrollTop && scrollTop > 60) {
+            header.classList.add('hidden');
+        } else {
+            header.classList.remove('hidden');
+        }
+
+
+        lastScrollTop = scrollTop;
+    });
+
+    scrollButton.addEventListener("click", function () {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-    });
-
-    window.addEventListener("scroll", function() {
-        if (window.scrollY > 100) { 
-            scrollButton.style.display = "block";
-        } else {
-            scrollButton.style.display = "none";
-        }	
     });
 };
 

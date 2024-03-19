@@ -49,6 +49,7 @@ body {
     user-select: none;
     scroll-behavior: smooth;
     transition: all 0.33s ease;
+    padding-top: 60px;
 }
 
  body.loginbackground{
@@ -70,6 +71,26 @@ div.bordure {
 textarea {
     resize: none;
 }
+
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background: linear-gradient(to top, rgba(230, 230, 230, 0), rgba(230, 230, 230, 1));
+    backdrop-filter: blur(10px);
+    /* thin border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.15s ease;
+}
+
+header.hidden {
+    transform: translateY(-200%);
+    display: block;
+}
+
+
 
 @keyframes slideInY {
     0% {
@@ -213,7 +234,6 @@ textarea {
     }
 }
 
-
 /*---------------------------------------------------------------*/
 
 /* All pages*/
@@ -341,7 +361,7 @@ button:active.enabled {
 }
 
 .scroll-top-button {
-    display: none;
+    display: block;
     position: fixed;
     margin: 0;
     padding: 0;
@@ -354,20 +374,25 @@ button:active.enabled {
     color: #FFFFFF;
     border: none;
     cursor: pointer;
-    transition: background-color 0.33s ease;
-  }
-  
-  .scroll-top-button:hover {
+    transition: all 0.15s ease;
+}
+
+.scroll-top-button.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.scroll-top-button:hover {
     background: linear-gradient(to bottom right, #df555f, #ad424a);
-  }
-  
-  .scroll-top-button::before {
+}
+
+.scroll-top-button::before {
     content: "\2B99"; 
     font-size: 35px;
     line-height: 50px;
     text-align: center;
     color: #fee7f0;
-  }
+}
 
 /*---------------------------------------------------------------*/
 
@@ -396,8 +421,8 @@ button:active.enabled {
 }
 
 .text-center-accueil {
-    width: 800px;
-    padding: 10px;
+    max-width: 80%;
+    padding: 15px;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
