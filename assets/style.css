@@ -28,8 +28,11 @@
 
 :root {
     --primary-color: #F85F6A;
+    --primary-color-darker: #bc474f;
     --secondary-color: #000;
     --background-color: #fff;
+    --secondary-background-color: #fafafa;
+    --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
     --text-color: #303030;
     --hover-color: #e0e0e0;
     --checkbox-background: #f0f0f0;
@@ -46,6 +49,35 @@
     --center-container-background: rgba(0, 0, 0, .1);
 }
 
+.dark-mode {
+    --primary-color: rgba(248, 95,106, 0.6);
+    --primary-color-darker: #bc474f74;
+    --secondary-color: #fff;
+    --background-color: #1E1E1E;
+    --secondary-background-color: #303030;
+    --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
+    --text-color: #F0F0F0;
+    --hover-color: #404040;
+    --checkbox-background: #303030;
+    --checkbox-checked-background: #2196F3;
+    --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
+    --footer-text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    --dashboard-border-color: var(--primary-color);
+    --carousel-card-background: #303030;
+    --carousel-card-text-color: #fff;
+    --box-shadow: none;
+    --research-button-hover-background: #303030;
+    --job-color: #1E1E1E;
+    --pagination-button-color: #1E1E1E;
+    --center-container-background: rgba(255, 255, 255, .1);
+}
+
+body.dark-mode {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+
 /* Others */
 
 a {
@@ -60,7 +92,7 @@ article h2 {
 
 body {
     color: #1E1E1E;
-    background-color: white;
+    background-color: var(--background-color);
     font-family: "Gotham SSm";
     display: flex;
     min-width: 350px;
@@ -98,10 +130,10 @@ header {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: linear-gradient(to top, rgba(230, 230, 230, 0), rgba(230, 230, 230, 1));
+    background: var(--header-background);
     backdrop-filter: blur(10px);
     /* thin border */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--hover-color);
     transition: all 0.15s ease;
 }
 
@@ -110,7 +142,12 @@ header.hidden {
     display: block;
 }
 
-
+header div.theme-login{
+    display: flex;
+    width: 345px;
+    align-items: center;
+    justify-content: flex-end;
+}
 
 @keyframes slideInY {
     0% {
@@ -156,12 +193,12 @@ header.hidden {
 
 .bando {
     padding: 20px;
-    background-color: gainsboro;
+    background-color: var(--secondary-background-color);
 }
 
 
 .garde {
-    color: #1E1E1E;
+    color: var(--text-color);
     text-align: center;
     font-size: 3em;
     font-family: "Gotham SSm" ;
@@ -193,7 +230,7 @@ header.hidden {
     user-select: none;
     position: fixed;
     opacity: 1;
-    background-color: rgb(200, 200, 200);
+    background-color: var(--secondary-background-color);
     top: 0;
     left: 0;
     width: 100%;
@@ -304,7 +341,7 @@ button[type="login"] {
     justify-content: center;
     align-items: center;
     border: 2px solid var(--primary-color);
-    background-color: white;
+    background-color: var(--secondary-background-color);
     color: black;
     padding: 8px;
     border-radius: 50px;
@@ -335,15 +372,14 @@ button[type="login"]:active {
 }
 
 button[type="submit"] {
-    background-color: #bc474f;
+    background-color: var(--primary-color-darker);
     color: white;
     width: 200%;
 }
 
 button[type="reset"] {
-    /* background-color: #998E8E; */
     background-color: transparent;
-    color: black;
+    color: var(--text-color);
     border: 3px solid var(--primary-color);
     width: 200%;
 }
@@ -390,7 +426,7 @@ button:active.enabled {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: linear-gradient(to bottom right, var(--primary-color), #C64C54);
+    background: var(--primary-color);
     color: #FFFFFF;
     border: none;
     cursor: pointer;
@@ -403,7 +439,7 @@ button:active.enabled {
 }
 
 .scroll-top-button:hover {
-    background: linear-gradient(to bottom right, #df555f, #ad424a);
+    background:var(--primary-color-darker);
 }
 
 .scroll-top-button::before {
@@ -412,6 +448,56 @@ button:active.enabled {
     line-height: 50px;
     text-align: center;
     color: #fee7f0;
+}
+
+button.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px!important;
+    min-height: 40px!important;
+    width: 80px!important;
+    min-width: 80px!important;
+    border-radius: 20px;
+    margin-left: 20px;
+    padding: 0%;
+    cursor: pointer;
+    transition: all 0.33s ease;
+}
+button.theme-toggle div.theme-toggle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+
+button.light-theme {
+    background-color: #f0f0f0;
+    color: #303030;
+    border-radius: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.33s ease;
+
+}
+button.theme-toggle div.light-theme {
+    background-color: white;
+    border-radius: 50%;
+    transform: translateX(-60%);
+}
+
+button.dark-theme {
+    background-color: #303030;
+    color: #f0f0f0;
+    border-radius: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    transition: all 0.33s ease;
+}
+button.theme-toggle div.dark-theme {
+    background-color: #0d0d0d;
+    border-radius: 50%;
+    transform: translateX(60%);
 }
 
 /*---------------------------------------------------------------*/
@@ -453,7 +539,7 @@ button:active.enabled {
 
 h1.text-center-accueil{
     font-size: 200%;
-    color : white;
+    color : var(--text-color);
 }
 
 
@@ -552,7 +638,7 @@ h1.text-center-accueil{
 }
 
 .container-bando {
-    background-color: gainsboro;
+    background-color: var(--secondary-background-color);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -676,14 +762,14 @@ p a::before {
     height: 2px;
     bottom: -1px;
     left: 0;
-    background-color: #000000;
+    background-color: var(--secondary-color);
     transform: scaleY(0.5);
     transition: all 0.2s ease 0s;
 }
 
 
 p a:hover::before {
-    background-color: black;
+    background-color: var(--secondary-color);
     transform: scaleY(1);
 }
 
@@ -696,12 +782,12 @@ p a:hover::before {
 }
 
 .navbar {
-    color: #303030;
+    color: var(--text-color);
     font-family: "Gotham SSm";
 }
 
 .navbar a, .forgot-password a {
-    color: #303030;
+    color: var(--text-color);
     font-weight: 500;
     text-decoration: none;
     position: relative;
@@ -760,8 +846,8 @@ p a:hover::before {
 /* Table-articles */
 
 .table-articles thead {
-    background-color: #0d0d0d;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .table-articles {
@@ -769,7 +855,7 @@ p a:hover::before {
 }
 
 .table-articles tr:nth-child(even) {
-    background-color: #181818;
+    background-color: var(--text-color);
 }
 
 /*---------------------------------------------------------------*/
@@ -791,7 +877,7 @@ form .button-container {
 }
 
 form label {
-    color: #5c5e62;
+    color: var(--text-color);
     font-weight: 500;
     font-size: 14px;
     display: flex;
@@ -806,10 +892,11 @@ form label {
 input, select, textarea {
     font-family: "Gotham SSm";
     font-weight: 400;
+    color: var(--text-color);
     border: none;
     border-radius: 10px;
     width : 240px;
-    background-color: #f0f0f0;
+    background-color: var(--secondary-background-color);
     padding: 15px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -823,12 +910,12 @@ textarea {
 }
 
 input:hover {
-    background-color: #e0e0e0;
+    background-color: var(--hover-color);
     box-shadow: var(--box-shadow);
 }
 
 input:focus {
-    background-color: #f0f0f0;
+    background-color: var(--secondary-background-color);
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -865,7 +952,6 @@ input[type="checkbox"], input[type="radio"] {
     justify-content: center;
     flex-grow: 1;
     align-items: center;
-    padding-right: 100px;
     min-width: 150px;
     max-width: 800px;
     
@@ -926,7 +1012,7 @@ input[type="checkbox"], input[type="radio"] {
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: #f0f0f0;
+    background-color: var(--checkbox-background);
     border-radius: 5px;
     box-shadow: var(--box-shadow);
 }
@@ -982,7 +1068,7 @@ footer {
 }
 
 footer .text-center a {
-    color: #303030;
+    color: var(--text-color);
     text-shadow: var(--footer-text-shadow);
     font-weight: 550;
 }
@@ -1061,7 +1147,7 @@ canvas {
   height: var(--card-height);
   position: absolute;
   margin: 0 auto;
-  color: #454545;
+  color: var(--carousel-card-text-color);
   transition: inherit;
   -webkit-box-shadow: var(--box-shadow);
   -moz-box-shadow: var(--box-shadow);
@@ -1136,7 +1222,7 @@ canvas {
 }
 
 .filters button:hover {
-    background-color: #f0f0f0;
+    background-color: var(--secondary-background-color);
     box-shadow: var(--box-shadow);
 }
 
@@ -1151,10 +1237,10 @@ canvas {
     padding: 10px;
     margin-bottom: 10px;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-color);
     border-radius: 20px;
     display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
+    box-shadow: var(--box-shadow);
     flex-direction: row;
     filter: brightness(1);
     transition: all 0.1s ease;
@@ -1188,8 +1274,8 @@ canvas {
 }
 
 .job-description {
-    background-color: whitesmoke;
-    color: #1E1E1E;
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
     border-radius: 10px;
     padding: 5px;
     flex: 1;
@@ -1211,7 +1297,7 @@ canvas {
     cursor: pointer;
     padding: 5px 10px;
     background-color: var(--primary-color);
-    color: gainsboro;
+    color: var(--text-color);
 }
 
 .center-container {
@@ -1318,11 +1404,15 @@ canvas {
     button[type="login"] {
         width: 50px;
         height: 40px;
+        margin-inline: 10px;
     }
     input[type="text"] {
         width: 150px;
         margin-right: 0px;
         border-radius: 10px 0 0 10px;
+    }
+    button.theme-toggle {
+        margin-left: 5px;
     }
 
     .connexion-text {
@@ -1333,5 +1423,7 @@ canvas {
         display: block;
     }
 
-    
+    header div.theme-login {
+        width: auto;
+    }
 }

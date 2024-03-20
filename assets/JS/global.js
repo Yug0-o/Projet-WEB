@@ -52,6 +52,21 @@ window.onload = function () {
             behavior: "smooth"
         });
     });
+
+    const themeButton = document.querySelector(".theme-toggle");
+
+    themeButton.addEventListener("click", function () {
+        // get the current theme using the button class (light-theme or dark-theme)
+        const currentTheme = themeButton.classList.contains("light-theme") ? "light-theme" : "dark-theme";
+        // toggle the theme class for the button and it's children
+        themeButton.classList.toggle("light-theme");
+        themeButton.classList.toggle("dark-theme");
+        // it's children
+        themeButton.children[0].classList.toggle("light-theme");
+        themeButton.children[0].classList.toggle("dark-theme");
+        // toggle the theme class for the body
+        document.body.classList.toggle("dark-mode");
+    });
 };
 
 // auto update the year in the footer
