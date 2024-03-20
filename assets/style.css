@@ -28,13 +28,16 @@
 
 :root {
     --primary-color: #F85F6A;
-    --primary-color-darker: #bc474f;
+    --primary-color-darker: #B3444B;
     --secondary-color: #000;
     --background-color: #fff;
     --secondary-background-color: #fafafa;
     --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
     --text-color: #303030;
+    --inverted-text-color: #FAFAFA;
+    --logo-gradient: linear-gradient(to right, #BB2949 0%, #2f375e 80%);
     --hover-color: #e0e0e0;
+    --h1-background-color: #071739;
     --checkbox-background: #f0f0f0;
     --checkbox-checked-background: #2196F3;
     --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
@@ -50,14 +53,17 @@
 }
 
 .dark-mode {
-    --primary-color: rgba(248, 95,106, 0.6);
-    --primary-color-darker: #bc474f74;
+    --primary-color: #B3444B;
+    --primary-color-darker: #F85F6A;
     --secondary-color: #fff;
     --background-color: #1E1E1E;
     --secondary-background-color: #303030;
-    --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
+    --header-background: linear-gradient(to top, rgba(0, 0, 0, 0), var(--background-color));
     --text-color: #F0F0F0;
+    --inverted-text-color: var(--text-color);
+    --logo-gradient: linear-gradient(to right, #BB2949 0%, rgb(118, 133, 200) 80%);
     --hover-color: #404040;
+    --h1-background-color: #123581;
     --checkbox-background: #303030;
     --checkbox-checked-background: #2196F3;
     --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
@@ -112,7 +118,7 @@ body {
 }
 
 button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
-    transition: transform 0.1s ease, all 0.33s ease;
+    transition: all 0.33s ease, transform 0.1s ease;
 }
 
 div.bordure {
@@ -130,11 +136,11 @@ header {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: var(--header-background);
+    background: transparent;
     backdrop-filter: blur(10px);
     /* thin border */
     border-bottom: 1px solid var(--hover-color);
-    transition: all 0.15s ease;
+    transition: all 0.33s ease;
 }
 
 header.hidden {
@@ -144,7 +150,8 @@ header.hidden {
 
 header div.theme-login{
     display: flex;
-    width: 345px;
+    width: 300px;
+    padding-right: 10px;
     align-items: center;
     justify-content: flex-end;
 }
@@ -165,7 +172,6 @@ header div.theme-login{
 @keyframes slideInX {
     0% {
         opacity: 0;
-        transform: translateX(-10px);
     }
 
     100% {
@@ -173,6 +179,18 @@ header div.theme-login{
         transform: translateX(0);
     }
 }
+
+@keyframes slideInXinverted {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 
 .align p
 {
@@ -345,8 +363,7 @@ button[type="login"] {
     color: black;
     padding: 8px;
     border-radius: 50px;
-    margin: 10px;
-    margin-inline: 20px;
+    margin-left: 20px;
     width: 100px;
     height: 40px;
 }
@@ -362,6 +379,7 @@ button[type="login"]:active {
 .tds-icon-person {
     display: none;
     width: 30px;
+    transition: none;
 }
 
 .disabled {
@@ -427,13 +445,14 @@ button:active.enabled {
     height: 50px;
     border-radius: 50%;
     background: var(--primary-color);
-    color: #FFFFFF;
     border: none;
     cursor: pointer;
     transition: all 0.15s ease;
 }
 
 .scroll-top-button.hidden {
+    user-select: none;
+    pointer-events: none;
     opacity: 0;
     transform: translateY(20px);
 }
@@ -454,25 +473,30 @@ button.theme-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 40px!important;
-    min-height: 40px!important;
-    width: 80px!important;
-    min-width: 80px!important;
+    height: 35px!important;
+    min-height: 35px!important;
+    width: 60px!important;
+    min-width: 60px!important;
     border-radius: 20px;
     margin-left: 20px;
     padding: 0%;
-    cursor: pointer;
-    transition: all 0.33s ease;
+    cursor: none;
 }
+
+button.theme-toggle:hover {
+    filter: brightness(1.05);
+}
+
 button.theme-toggle div.theme-toggle {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
+    transition: all 0.33s ease;
 }
 
 
 button.light-theme {
-    background-color: #f0f0f0;
+    background-color: #D0D0D0;
     color: #303030;
     border-radius: 20px;
     margin-left: 20px;
@@ -483,7 +507,7 @@ button.light-theme {
 button.theme-toggle div.light-theme {
     background-color: white;
     border-radius: 50%;
-    transform: translateX(-60%);
+    transform: translateX(-50%);
 }
 
 button.dark-theme {
@@ -497,7 +521,7 @@ button.dark-theme {
 button.theme-toggle div.dark-theme {
     background-color: #0d0d0d;
     border-radius: 50%;
-    transform: translateX(60%);
+    transform: translateX(50%);
 }
 
 /*---------------------------------------------------------------*/
@@ -533,13 +557,14 @@ button.theme-toggle div.dark-theme {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    background-color: #071739;
+    background-color: var(--h1-background-color);
     border-radius: 50px;
+    transition: background-color 0.33s ease;
 }
 
 h1.text-center-accueil{
     font-size: 200%;
-    color : var(--text-color);
+    color : white;
 }
 
 
@@ -568,27 +593,50 @@ h1.text-center-accueil{
     height: auto;
 }
 
-.logo {
+.logo-container {
+    width: 300px;
+}
+
+#logo-classic {
     border-radius: 0px;
+    border: none;
     box-shadow: none;
-    height: 18px;
-    width: auto;
     margin: 10px;
     margin-inline: 20px;
     transition: all 0s ease;
-}
-#logo-classic {
     display: none;
     width: auto;
     height: auto;
 }
 
-#Name-logo {
-    display: block;
-    width: auto;
-    height: 20px;
+#logo-classic.animate {
+    opacity: 0;
+    transform: translateX(110px);
+    animation: slideInXinverted 0.3s ease forwards;
 }
 
+#Name-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Gotham SSm;
+    width: 300px;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+    pointer-events: none;
+    color: transparent;
+    background: var(--logo-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background 3s ease;
+}
+
+#Name-logo.animate{
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInX 0.3s ease forwards;
+}
 
 .img_accueil{
     width: 600px;
@@ -628,7 +676,7 @@ h1.text-center-accueil{
 
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     flex-wrap: nowrap;
     padding: 20px;
@@ -722,6 +770,11 @@ h1.text-center-accueil{
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.connexion-text {
+    color: var(--text-color);
+    transition: color 0.33s ease;
 }
 
 .email-entry, .email-sent {
@@ -915,7 +968,7 @@ input:hover {
 }
 
 input:focus {
-    background-color: var(--secondary-background-color);
+    background-color: var(--hover-color);
 }
 
 input[type="checkbox"], input[type="radio"] {
@@ -933,9 +986,9 @@ input[type="checkbox"], input[type="radio"] {
     align-items: center;
     flex-direction: row;
     transition: all 0.33s ease;
-}
+}   
 
-.searchbar * {
+.searchbar input, .searchbar button{
     transition: all 0.33s ease;
 }
 
@@ -944,7 +997,6 @@ input[type="checkbox"], input[type="radio"] {
     min-width: 150px;
     margin-right: 40px;
     flex: 1;
-    
 }
 
 .search {
@@ -1138,7 +1190,7 @@ canvas {
 }
 
 .card-carousel .card {
-  background: #fff;
+  background: var(--carousel-card-background);
   width: var(--card-width);
   max-width: var(--card-max-width);
   text-align: center;
@@ -1158,6 +1210,7 @@ canvas {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: background 0.3s ease;
 }
 
 .card.highlight {
@@ -1214,7 +1267,6 @@ canvas {
     margin-bottom: 20px;
     min-width: 200px;
     margin-inline: 20px;
-    transition: all 0.2s ease;
 }
 
 .filters button {
@@ -1237,7 +1289,7 @@ canvas {
     padding: 10px;
     margin-bottom: 10px;
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--inverted-text-color);
     border-radius: 20px;
     display: flex;
     box-shadow: var(--box-shadow);
@@ -1297,7 +1349,7 @@ canvas {
     cursor: pointer;
     padding: 5px 10px;
     background-color: var(--primary-color);
-    color: var(--text-color);
+    color: var(--inverted-text-color);
 }
 
 .center-container {
@@ -1339,9 +1391,8 @@ canvas {
     }
 
 
-    .search {
-        padding-right: 0px;
-        padding-left: 7%;
+    .logo-container {
+        width: auto;
     }
 
     .logo{
@@ -1375,7 +1426,7 @@ canvas {
     }
 
     .container {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .filters {
@@ -1385,18 +1436,20 @@ canvas {
 }
 
 @media screen and (max-width: 650px) {
-    .logo{
-        margin-inline: 25px;
+    .logo-container {
+        margin-inline: 0px;
+        width : auto;
     }
 
     .searchbar {
-        gap: 0px;
+        margin-right: 15px;
     }
-    .search {
-        width: 15vh;
-        padding-left: 3%;
-        padding-right: 3%;
+    .searchbar input[type="text"] {
+        min-width: 10px!important;
     }
+
+    
+    
     .searchbutton {
         margin-left: -40px;
         border-radius: 0 10px 10px 0;
@@ -1407,13 +1460,9 @@ canvas {
         margin-inline: 10px;
     }
     input[type="text"] {
-        width: 150px;
-        margin-right: 0px;
         border-radius: 10px 0 0 10px;
     }
-    button.theme-toggle {
-        margin-left: 5px;
-    }
+    
 
     .connexion-text {
         display: none;
@@ -1421,9 +1470,25 @@ canvas {
 
     .tds-icon-person {
         display: block;
+        fill: var(--text-color);
+    }
+
+    button.theme-toggle {
+        width: 35px !important;
+        min-width: 35px !important;
+    }
+
+    div.light-theme,
+    div.dark-theme {
+        transform: translateX(0) !important;
     }
 
     header div.theme-login {
         width: auto;
+        margin-left: 0px;
+        padding-right: 0px;
+    }
+    button.theme-toggle {
+        margin-left: 5px;
     }
 }

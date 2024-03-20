@@ -109,15 +109,29 @@
     <header>
         <div class="searchbar">
             <a href="homepage.html">
-                <div>
-                    <img class="logo animate" id="logo-classic" src="images/logo-classic.webp" alt="logo-classic" min-width="20px">
-                    <img class="logo animate" id="Name-logo" src="images/Name-logo.webp" alt="Name-logo" min-width="20px">
+                <div class="logo-container">
+                    <img class="logo animate" id="logo-classic" src="images/logo-classic.webp" alt="logo-classic"
+                        min-width="20px">
+                    <h1 class="logo animate" id="Name-logo" alt="Name-logo" min-width="20px">INTERNSHIP ETENDARD</h1>
                 </div>
             </a>
-            <button class="theme-toggle light-theme" id="theme-toggle" title="Toggles light & dark" aria-label="auto" style="margin-right: 20px;"
-                aria-live="polite">
-                <div class="theme-toggle light-theme"></div>
-            </button>
+            <form class="search searchbar" action="research.html">
+                <input type="text" placeholder="Rechercher un stage" name="search_query">
+                <button class="searchbutton" aria-label="Rechercher">
+                    <svg class="tds-icon-search animate" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m20.267 19.207-4.818-4.818A6.967 6.967 0 0 0 17 10a7 7 0 1 0-7 7 6.967 6.967 0 0 0 4.389-1.55l4.818 4.817a.748.748 0 0 0 1.06 0 .75.75 0 0 0 0-1.06zM4.5 10c0-3.033 2.467-5.5 5.5-5.5s5.5 2.467 5.5 5.5-2.467 5.5-5.5 5.5-5.5-2.467-5.5-5.5z">
+                        </path>
+                    </svg>
+                </button>
+            </form>
+    
+            <div class="theme-login">
+                <button class="theme-toggle light-theme" id="theme-toggle" title="Toggles light & dark" aria-label="auto"
+                    aria-live="polite">
+                    <div class="theme-toggle light-theme "></div>
+                </button>
+            </div>
         </div>
     </header>
     <main>
@@ -159,7 +173,7 @@
             </div>
         </div>
     </footer>
-    <button class="scroll-top-button" aria-label="Scroll to top"></button>
+    <button class="scroll-top-button hidden" aria-label="Scroll to top"></button>
     <script src="assets\JS\global.js"async></script>
     <script src="assets\JS\login.js"async></script>
 </body> 
