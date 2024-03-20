@@ -26,7 +26,7 @@
 
 /*---------------------------------------------------------------*/
 
-:root {
+/* :root {
     --primary-color: #F85F6A;
     --primary-color-darker: #B3444B;
     --secondary-color: #000;
@@ -34,10 +34,11 @@
     --secondary-background-color: #fafafa;
     --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
     --text-color: #303030;
+    --link-default-color: #393C41;
     --inverted-text-color: #FAFAFA;
     --logo-gradient: linear-gradient(to right, #BB2949 0%, #2f375e 80%);
     --hover-color: #e0e0e0;
-    --h1-background-color: #071739;
+    --h1-background-color: #0d2965;
     --checkbox-background: #f0f0f0;
     --checkbox-checked-background: #2196F3;
     --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
@@ -50,6 +51,34 @@
     --job-color: #fff;
     --pagination-button-color: gainsboro;
     --center-container-background: rgba(0, 0, 0, .1);
+} */
+
+
+.light-mode {
+    --primary-color: #F85F6A;
+    --primary-color-darker: #B3444B;
+    --secondary-color: #000;
+    --background-color: #fff;
+    --secondary-background-color: #fafafa;
+    --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
+    --text-color: #303030;
+    --link-default-color: #393C41;
+    --inverted-text-color: #FAFAFA;
+    --logo-gradient: linear-gradient(to right, #BB2949 0%, #2f375e 80%);
+    --hover-color: #e0e0e0;
+    --h1-background-color: #0d2965;
+    --checkbox-background: #f0f0f0;
+    --checkbox-checked-background: #2196F3;
+    --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
+    --footer-text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+    --dashboard-border-color: var(--primary-color);
+    --carousel-card-background: #fff;
+    --carousel-card-text-color: #454545;
+    --box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+    --research-button-hover-background: #f0f0f0;
+    --job-color: #fff;
+    --pagination-button-color: gainsboro;
+    --center-container-background: rgba(0, 0, 0, .15);
 }
 
 .dark-mode {
@@ -60,8 +89,9 @@
     --secondary-background-color: #303030;
     --header-background: linear-gradient(to top, rgba(0, 0, 0, 0), var(--background-color));
     --text-color: #F0F0F0;
+    --link-default-color: #e6e6e6;
     --inverted-text-color: var(--text-color);
-    --logo-gradient: linear-gradient(to right, #BB2949 0%, rgb(118, 133, 200) 80%);
+    --logo-gradient: linear-gradient(to right, #da375a 0%, rgb(118, 133, 200) 80%);
     --hover-color: #404040;
     --h1-background-color: #123581;
     --checkbox-background: #303030;
@@ -78,10 +108,6 @@
     --center-container-background: rgba(255, 255, 255, .1);
 }
 
-body.dark-mode {
-    color: var(--text-color);
-    background-color: var(--background-color);
-}
 
 
 /* Others */
@@ -89,6 +115,7 @@ body.dark-mode {
 a {
     transition: padding 0.33s ease;
     text-decoration: none;
+    color: var(--link-default-color);
 }
 
 article h2 {
@@ -154,6 +181,7 @@ header div.theme-login{
     padding-right: 10px;
     align-items: center;
     justify-content: flex-end;
+    transition: all 0.33s ease;
 }
 
 @keyframes slideInY {
@@ -191,6 +219,9 @@ header div.theme-login{
     }
 }
 
+h1, h2, h3, h4, p {
+    color: var(--text-color);
+}
 
 .align p
 {
@@ -248,7 +279,7 @@ header div.theme-login{
     user-select: none;
     position: fixed;
     opacity: 1;
-    background-color: var(--secondary-background-color);
+    background-color: #DDD;
     top: 0;
     left: 0;
     width: 100%;
@@ -469,59 +500,55 @@ button:active.enabled {
     color: #fee7f0;
 }
 
-button.theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 35px!important;
-    min-height: 35px!important;
-    width: 60px!important;
-    min-width: 60px!important;
-    border-radius: 20px;
-    margin-left: 20px;
-    padding: 0%;
-    cursor: none;
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    user-select: none;
+    margin-left: 10px;
 }
 
-button.theme-toggle:hover {
-    filter: brightness(1.05);
+.switch * {
+    user-select: none;
+    transition: background-color 0.33s ease;
 }
 
-button.theme-toggle div.theme-toggle {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    transition: all 0.33s ease;
-}
-
-
-button.light-theme {
+.slider.light-mode{
     background-color: #D0D0D0;
-    color: #303030;
-    border-radius: 20px;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: all 0.33s ease;
-
-}
-button.theme-toggle div.light-theme {
-    background-color: white;
-    border-radius: 50%;
-    transform: translateX(-50%);
 }
 
-button.dark-theme {
+.slider.dark-mode{
     background-color: #303030;
-    color: #f0f0f0;
-    border-radius: 20px;
-    margin-left: 20px;
-    cursor: pointer;
-    transition: all 0.33s ease;
 }
-button.theme-toggle div.dark-theme {
-    background-color: #0d0d0d;
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #CCCCCC;
+    border-radius: 34px;
+    transition: .1s;
+}
+
+.handle {
+    width: 26px;
+    height: 26px;
+    background: white;
+    position: absolute;
+    top: 4px;
+    left: 4px;
     border-radius: 50%;
-    transform: translateX(50%);
+}
+
+.handle.light-mode{
+    background-color: white;
+}
+
+.handle.dark-mode{
+    background-color: #161616;
 }
 
 /*---------------------------------------------------------------*/
@@ -682,7 +709,7 @@ h1.text-center-accueil{
     padding: 20px;
     margin: 20px;
     position: relative;
-
+    color: var(--text-color);
 }
 
 .container-bando {
@@ -726,7 +753,6 @@ h1.text-center-accueil{
 }
 
 .boxlegalmention h2 {
-    color: black;
     border-radius: 5px;
     padding: 2px;
 }
@@ -734,6 +760,7 @@ h1.text-center-accueil{
 .box1-accueil {
     flex: 1 0 30%; 
     padding: 10px;
+    color: var(--text-color);
     text-align: left;
     border-radius: 30px;
     box-shadow: inset 0 0 20px rgba(0,0,0,0), rgba(0, 0, 0, 0.5);
@@ -801,7 +828,6 @@ h1.text-center-accueil{
 /* Navbar */
 
 p a {
-    color: #393C41;
     font-weight: 500;
     text-decoration: none;
     position: relative;
@@ -1006,6 +1032,7 @@ input[type="checkbox"], input[type="radio"] {
     align-items: center;
     min-width: 150px;
     max-width: 800px;
+    transition: all 0.33s ease;
     
 }
 
@@ -1267,6 +1294,7 @@ canvas {
     margin-bottom: 20px;
     min-width: 200px;
     margin-inline: 20px;
+    color: var(--text-color);
 }
 
 .filters button {
@@ -1309,9 +1337,9 @@ canvas {
     scale: 0.99;
 }
 
-.job h3,
-.job p {
+.job h3, .job p {
     margin: 5px 0;
+    color: white;
 }
 
 .job h3 {
@@ -1335,9 +1363,9 @@ canvas {
     transition: all 0.2s ease;
 }
 
-/* .job-description p {
-    word-wrap: break-word;
-} */
+.job-description p {
+    color: var(--text-color)
+}
 
 .pagination {
     display: flex;
@@ -1433,6 +1461,9 @@ canvas {
         min-height: 60px;
     }
 
+    header div.theme-login {
+        width: 210px;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -1448,12 +1479,11 @@ canvas {
         min-width: 10px!important;
     }
 
-    
-    
     .searchbutton {
         margin-left: -40px;
         border-radius: 0 10px 10px 0;
     }
+
     button[type="login"] {
         width: 50px;
         height: 40px;
@@ -1463,7 +1493,6 @@ canvas {
         border-radius: 10px 0 0 10px;
     }
     
-
     .connexion-text {
         display: none;
     }
@@ -1473,22 +1502,12 @@ canvas {
         fill: var(--text-color);
     }
 
-    button.theme-toggle {
-        width: 35px !important;
-        min-width: 35px !important;
-    }
-
-    div.light-theme,
-    div.dark-theme {
-        transform: translateX(0) !important;
-    }
-
     header div.theme-login {
         width: auto;
         margin-left: 0px;
         padding-right: 0px;
     }
-    button.theme-toggle {
-        margin-left: 5px;
+    .switch {
+        margin-left: 0px;
     }
 }

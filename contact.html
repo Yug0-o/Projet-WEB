@@ -126,10 +126,10 @@
             </form>
     
             <div class="theme-login">
-                <button class="theme-toggle light-theme" id="theme-toggle" title="Toggles light & dark" aria-label="auto"
-                    aria-live="polite">
-                    <div class="theme-toggle light-theme "></div>
-                </button>
+                <div class="switch">
+                    <div class="slider"></div>
+                    <div class="handle ui-widget-content"></div>
+                </div>
                 <a href="login.html">
                     <button class="enabled animate" type="login" aria-label="Login">
                         <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -233,6 +233,8 @@
     </footer>
 
     <button class="scroll-top-button hidden" aria-label="Scroll to top"></button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="assets/JS/global.js" async></script>
     <script src="assets/JS/resriction.js" async></script>
 </body>

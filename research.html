@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Internship Etendard">
         <meta name="description" content="Recherche">
-        <title>Recherche - Internship Etendard</title> 
+        <title>Recherche - Internship Etendard</title>
     </head> 
     <body>
         <div id="loading">
@@ -114,22 +114,22 @@
                         <h1 class="logo animate" id="Name-logo" alt="Name-logo" min-width="20px">INTERNSHIP ETENDARD</h1>
                     </div>
                 </a>
-                <form class="search searchbar" action="research.html">
-                    <input type="text" placeholder="Rechercher un stage" name="search_query">
-                    <button class="searchbutton" aria-label="Rechercher">
+                <div class="search searchbar">
+                    <input type="text" id="keyword" placeholder="Rechercher un stage" name="search_query">
+                    <button class="searchbutton" onclick="searchJobs()" aria-label="Rechercher">
                         <svg class="tds-icon-search animate" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="m20.267 19.207-4.818-4.818A6.967 6.967 0 0 0 17 10a7 7 0 1 0-7 7 6.967 6.967 0 0 0 4.389-1.55l4.818 4.817a.748.748 0 0 0 1.06 0 .75.75 0 0 0 0-1.06zM4.5 10c0-3.033 2.467-5.5 5.5-5.5s5.5 2.467 5.5 5.5-2.467 5.5-5.5 5.5-5.5-2.467-5.5-5.5z">
                             </path>
                         </svg>
                     </button>
-                </form>
+                </div>
         
                 <div class="theme-login">
-                    <button class="theme-toggle light-theme" id="theme-toggle" title="Toggles light & dark" aria-label="auto"
-                        aria-live="polite">
-                        <div class="theme-toggle light-theme "></div>
-                    </button>
+                    <div class="switch">
+                        <div class="slider"></div>
+                        <div class="handle ui-widget-content"></div>
+                    </div>
                     <a href="login.html">
                         <button class="enabled animate" type="login" aria-label="Login">
                             <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -173,6 +173,8 @@
             </div>
         </footer>
         <button class="scroll-top-button hidden" aria-label="Scroll to top"></button>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
         <script src="assets/JS/global.js" async></script>
         <script src="assets/JS/research.js" async></script>
     </body>

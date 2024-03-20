@@ -53,21 +53,78 @@ window.onload = function () {
         });
     });
 
-    const themeButton = document.querySelector(".theme-toggle");
+    $(function () {
+        var handle = $(".handle");
+        var sliderElement = $(".slider");
 
-    themeButton.addEventListener("click", function () {
-        // get the current theme using the button class (light-theme or dark-theme)
-        const currentTheme = themeButton.classList.contains("light-theme") ? "light-theme" : "dark-theme";
-        // toggle the theme class for the button and it's children
-        themeButton.classList.toggle("light-theme");
-        themeButton.classList.toggle("dark-theme");
-        // it's children
-        themeButton.children[0].classList.toggle("light-theme");
-        themeButton.children[0].classList.toggle("dark-theme");
-        // toggle the theme class for the body
-        document.body.classList.toggle("dark-mode");
+        // Retrieve the theme from local storage
+        var theme = localStorage.getItem('theme');
+        if (theme) {
+            document.body.className = theme;
+            sliderElement.addClass(theme);
+            handle.addClass(theme);
+            handle.css('left', theme === 'dark-mode' ? '30px' : '4px');
+        } else {
+            document.body.className = 'light-mode';
+            sliderElement.addClass('light-mode');
+            handle.addClass('light-mode');
+            handle.css('left', '4px');
+        }
+
+        handle.draggable({
+            containment: "parent",
+            axis: "x",
+            start: function (event) {
+                event.stopPropagation();
+            },
+            drag: function (event, ui) {
+                if (ui.position.left < 4) {
+                    ui.position.left = 4;
+                }
+                if (ui.position.left > 30) {
+                    ui.position.left = 30;
+                }
+            },
+            stop: function () {
+                var left = handle.position().left;
+                if (left >= 15) {
+                    document.body.className = 'dark-mode';
+                    sliderElement.attr('class', 'slider dark-mode');
+                    handle.attr('class', 'handle dark-mode');
+                    handle.animate({ left: "30px" }, 200);
+                    localStorage.setItem('theme', 'dark-mode');
+                } else {
+                    document.body.className = 'light-mode';
+                    sliderElement.attr('class', 'slider light-mode');
+                    handle.attr('class', 'handle light-mode');
+                    handle.animate({ left: "4px" }, 200);
+                    localStorage.setItem('theme', 'light-mode');
+                }
+            }
+        });
+
+        $(".switch, .handle").click(function (e) {
+            e.stopPropagation();
+            var left = handle.position().left;
+            if (left >= 15) {
+                document.body.className = 'light-mode';
+                sliderElement.attr('class', 'slider light-mode');
+                handle.attr('class', 'handle light-mode');
+                handle.animate({ left: "4px" }, 200);
+                localStorage.setItem('theme', 'light-mode');
+            } else {
+                document.body.className = 'dark-mode';
+                sliderElement.attr('class', 'slider dark-mode');
+                handle.attr('class', 'handle dark-mode');
+                handle.animate({ left: "30px" }, 200);
+                localStorage.setItem('theme', 'dark-mode');
+            }
+        });
     });
 };
 
-// auto update the year in the footer
+
+
+
+// Auto update the year in the footer
 document.getElementById('year').textContent = new Date().getFullYear();

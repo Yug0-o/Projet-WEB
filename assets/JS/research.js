@@ -73,7 +73,7 @@ function displayJobs(jobsToDisplay = jobData) {
 // Function to search for jobs based on a keyword
 function searchJobs() {
     const keyword = document.getElementById('keyword').value.toLowerCase();
-    const filteredJobs = jobData.filter(job => job.title.toLowerCase().includes(keyword));
+    const filteredJobs = jobData.filter(job => job.title.toLowerCase().includes(keyword) || job.location.toLowerCase().includes(keyword));
     currentPage = 1;
     displayJobs(filteredJobs);
     displayPagination();
