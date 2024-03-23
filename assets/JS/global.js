@@ -1,22 +1,14 @@
 window.onload = function () {
-    // Select all the elements you want to animate
     const elements = document.querySelectorAll('body > *:not(footer)');
+    elements.forEach(element => element.classList.add('animate'));
 
-    // Add the animate class to these elements
-    elements.forEach(element => {
-        element.classList.add('animate');
-    });
-
-    // Load the fonts and then update the body opacity
-    Promise.all([document.fonts.ready]).then(() => {
-        // opacity of loading screen to 0
-        loading = document.getElementById('loading');
-        loading.classList.add('done');
+    document.fonts.ready.then(() => {
+        document.getElementById('loading').classList.add('done');
     });
 
     const scrollButton = document.querySelector(".scroll-top-button");
-    let lastScrollTop = document.documentElement.scrollTop-1;
     const header = document.querySelector('header');
+    let lastScrollTop = document.documentElement.scrollTop - 1;
 
     scrollButton.classList.remove('animate');
     header.classList.remove('animate');
@@ -27,8 +19,6 @@ window.onload = function () {
 
     window.addEventListener("scroll", function() {
         let scrollTop = document.documentElement.scrollTop;
-        
-
         if (window.scrollY > 100) { 
             scrollButton.classList.remove('hidden');
         } else {
@@ -41,90 +31,81 @@ window.onload = function () {
         } else {
             header.classList.remove('hidden');
         }
-
-
         lastScrollTop = scrollTop;
     });
 
     scrollButton.addEventListener("click", function () {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+        window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    $(function () {
-        var handle = $(".handle");
-        var sliderElement = $(".slider");
+    const handle = document.querySelector(".handle");
+    const sliderElement = document.querySelector(".slider");
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isLightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+    let mode = localStorage.getItem('theme') || (isDarkMode ? 'dark-mode' : isLightMode ? 'light-mode' : 'light-mode');
 
-        // Retrieve the theme from local storage
-        var theme = localStorage.getItem('theme');
-        if (theme) {
-            document.body.className = theme;
-            sliderElement.addClass(theme);
-            handle.addClass(theme);
-            handle.css('left', theme === 'dark-mode' ? '30px' : '4px');
-        } else {
-            document.body.className = 'light-mode';
-            sliderElement.addClass('light-mode');
-            handle.addClass('light-mode');
-            handle.css('left', '4px');
+    applyTheme(mode === 'dark-mode');
+
+    function applyTheme(isDark) {
+        const theme = isDark ? "dark-mode" : "light-mode";
+        document.body.className = theme;
+        sliderElement.className = `slider ${theme}`;
+        handle.className = `handle ${theme}`;
+        localStorage.setItem('theme', theme);
+    }
+
+    let isDragged = false;
+
+    handle.addEventListener("mousedown", function (event) {
+        event.stopPropagation();
+        const startX = event.clientX;
+        const startLeft = handle.offsetLeft;
+
+        function moveHandle(event) {
+            let newLeft = Math.min(Math.max(startLeft + event.clientX - startX, 4), 30);
+            handle.style.left = newLeft + "px";
+            isDragged = true;
+            if (newLeft >= 20) {
+                applyTheme(true);
+            } else if (newLeft <= 14){
+                applyTheme(false);
+            }
         }
 
-        handle.draggable({
-            containment: "parent",
-            axis: "x",
-            start: function (event) {
-                event.stopPropagation();
-            },
-            drag: function (event, ui) {
-                if (ui.position.left < 4) {
-                    ui.position.left = 4;
-                }
-                if (ui.position.left > 30) {
-                    ui.position.left = 30;
-                }
-            },
-            stop: function () {
-                var left = handle.position().left;
-                if (left >= 15) {
-                    document.body.className = 'dark-mode';
-                    sliderElement.attr('class', 'slider dark-mode');
-                    handle.attr('class', 'handle dark-mode');
-                    handle.animate({ left: "30px" }, 200);
-                    localStorage.setItem('theme', 'dark-mode');
-                } else {
-                    document.body.className = 'light-mode';
-                    sliderElement.attr('class', 'slider light-mode');
-                    handle.attr('class', 'handle light-mode');
-                    handle.animate({ left: "4px" }, 200);
-                    localStorage.setItem('theme', 'light-mode');
-                }
-            }
-        });
+        function releaseHandle() {
+            document.removeEventListener("mousemove", moveHandle);
+            document.removeEventListener("mouseup", releaseHandle);
 
-        $(".switch, .handle").click(function (e) {
-            e.stopPropagation();
-            var left = handle.position().left;
-            if (left >= 15) {
-                document.body.className = 'light-mode';
-                sliderElement.attr('class', 'slider light-mode');
-                handle.attr('class', 'handle light-mode');
-                handle.animate({ left: "4px" }, 200);
-                localStorage.setItem('theme', 'light-mode');
-            } else {
-                document.body.className = 'dark-mode';
-                sliderElement.attr('class', 'slider dark-mode');
-                handle.attr('class', 'handle dark-mode');
-                handle.animate({ left: "30px" }, 200);
-                localStorage.setItem('theme', 'dark-mode');
-            }
-        });
+            setTimeout(function () {
+                const left = parseInt(handle.style.left);
+                const isDark = left >= 17;
+                applyTheme(isDark);
+
+                handle.style.left = isDark ? "30px" : "4px";
+                isDragged = false; // Reset the flag when the mouse is released
+            }, 0);
+        }
+
+        document.addEventListener("mousemove", moveHandle);
+        document.addEventListener("mouseup", releaseHandle);
     });
+
+    handle.addEventListener("click", function (e) {
+        if (!isDragged) { // Only handle the click event if the handle hasn't been dragged
+            const isDark = handle.offsetLeft >= 17;
+            handle.style.left = isDark ? "4px" : "30px";
+            applyTheme(!isDark);
+        }
+    });
+
+    sliderElement.addEventListener("click", function (e) {
+        //get the current theme
+        const isDark = handle.offsetLeft >= 17;
+        handle.style.left = isDark ? "4px" : "30px";
+
+        applyTheme(!isDark);
+    });
+    
 };
 
-
-
-
-// Auto update the year in the footer
 document.getElementById('year').textContent = new Date().getFullYear();

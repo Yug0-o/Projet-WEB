@@ -26,94 +26,97 @@
 
 /*---------------------------------------------------------------*/
 
-/* :root {
-    --primary-color: #F85F6A;
-    --primary-color-darker: #B3444B;
+:root {
+    --primary-color: #000;
+    --primary-color-darker: #000;
     --secondary-color: #000;
-    --background-color: #fff;
-    --secondary-background-color: #fafafa;
-    --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
-    --text-color: #303030;
-    --link-default-color: #393C41;
-    --inverted-text-color: #FAFAFA;
-    --logo-gradient: linear-gradient(to right, #BB2949 0%, #2f375e 80%);
-    --hover-color: #e0e0e0;
-    --h1-background-color: #0d2965;
-    --checkbox-background: #f0f0f0;
-    --checkbox-checked-background: #2196F3;
-    --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
-    --footer-text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
-    --dashboard-border-color: var(--primary-color);
-    --carousel-card-background: #fff;
-    --carousel-card-text-color: #454545;
-    --box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
-    --research-button-hover-background: #f0f0f0;
-    --job-color: #fff;
-    --pagination-button-color: gainsboro;
-    --center-container-background: rgba(0, 0, 0, .1);
-} */
-
-
-.light-mode {
-    --primary-color: #F85F6A;
-    --primary-color-darker: #B3444B;
-    --secondary-color: #000;
-    --background-color: #fff;
-    --secondary-background-color: #fafafa;
-    --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
-    --text-color: #303030;
-    --link-default-color: #393C41;
-    --inverted-text-color: #FAFAFA;
-    --logo-gradient: linear-gradient(to right, #BB2949 0%, #2f375e 80%);
-    --hover-color: #e0e0e0;
-    --h1-background-color: #0d2965;
-    --checkbox-background: #f0f0f0;
-    --checkbox-checked-background: #2196F3;
-    --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
-    --footer-text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
-    --dashboard-border-color: var(--primary-color);
-    --carousel-card-background: #fff;
-    --carousel-card-text-color: #454545;
-    --box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
-    --research-button-hover-background: #f0f0f0;
-    --job-color: #fff;
-    --pagination-button-color: gainsboro;
-    --center-container-background: rgba(0, 0, 0, .15);
+    --background-color: #000;
+    --secondary-background-color: #000;
+    --header-background: #000;
+    --text-color: #000;
+    --link-default-color: #000;
+    --inverted-text-color: #000;
+    --logo-gradient: #000;
+    --hover-color: #000;
+    --h1-background-color: #000;
+    --checkbox-background: #000;
+    --checkbox-checked-background: #000;
+    --checkbox-checked-box-shadow: #000;
+    --footer-text-shadow: #000;
+    --dashboard-border-color:#000;
+    --carousel-card-background:#000;
+    --carousel-card-text-color:#000;
+    --box-shadow:#000;
+    --research-button-hover-background:#000;
+    --job-color:#000;
+    --pagination-button-color:#000;
+    --center-container-background:#000;
 }
 
-.dark-mode {
-    --primary-color: #B3444B;
-    --primary-color-darker: #F85F6A;
-    --secondary-color: #fff;
-    --background-color: #1E1E1E;
-    --secondary-background-color: #303030;
-    --header-background: linear-gradient(to top, rgba(0, 0, 0, 0), var(--background-color));
-    --text-color: #F0F0F0;
-    --link-default-color: #e6e6e6;
-    --inverted-text-color: var(--text-color);
-    --logo-gradient: linear-gradient(to right, #da375a 0%, rgb(118, 133, 200) 80%);
-    --hover-color: #404040;
-    --h1-background-color: #123581;
-    --checkbox-background: #303030;
-    --checkbox-checked-background: #2196F3;
-    --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
-    --footer-text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    --dashboard-border-color: var(--primary-color);
-    --carousel-card-background: #303030;
-    --carousel-card-text-color: #fff;
-    --box-shadow: none;
-    --research-button-hover-background: #303030;
-    --job-color: #1E1E1E;
-    --pagination-button-color: #1E1E1E;
-    --center-container-background: rgba(255, 255, 255, .1);
-}
+
+body.light-mode {
+        --primary-color: #F85F6A;
+        --primary-color-darker: #B3444B;
+        --secondary-color: #000;
+        --background-color: #fff;
+        --secondary-background-color: #fafafa;
+        --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
+        --text-color: #303030;
+        --link-default-color: #393C41;
+        --link-underlined-color: #F85F6A;
+        --inverted-text-color: #FAFAFA;
+        --logo-gradient: linear-gradient(to right, #BB2949 0%, #2f375e 80%);
+        --hover-color: #e0e0e0;
+        --h1-background-color: #0d2965;
+        --checkbox-background: #f0f0f0;
+        --checkbox-checked-background: #2196F3;
+        --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
+        --footer-text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
+        --dashboard-border-color: var(--primary-color);
+        --carousel-card-background: #fff;
+        --carousel-card-text-color: #454545;
+        --box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+        --research-button-hover-background: #f0f0f0;
+        --job-color: #fff;
+        --pagination-button-color: gainsboro;
+        --center-container-background: rgba(0, 0, 0, .15);
+    }
+
+
+body.dark-mode {
+        --primary-color: #B3444B;
+        --primary-color-darker: #F85F6A;
+        --secondary-color: #fff;
+        --background-color: #1E1E1E;
+        --secondary-background-color: #303030;
+        --header-background: linear-gradient(to top, rgba(0, 0, 0, 0), var(--background-color));
+        --text-color: #F0F0F0;
+        --link-default-color: #e6e6e6;
+        --link-underlined-color: #F85F6A;
+        --inverted-text-color: var(--text-color);
+        --logo-gradient: linear-gradient(to right, #da375a 0%, rgb(118, 133, 200) 80%);
+        --hover-color: #404040;
+        --h1-background-color: #123581;
+        --checkbox-background: #303030;
+        --checkbox-checked-background: #2196F3;
+        --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
+        --footer-text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        --dashboard-border-color: var(--primary-color);
+        --carousel-card-background: #303030;
+        --carousel-card-text-color: #fff;
+        --box-shadow: none;
+        --research-button-hover-background: #303030;
+        --job-color: #1E1E1E;
+        --pagination-button-color: #1E1E1E;
+        --center-container-background: rgba(255, 255, 255, .1);
+    }
 
 
 
 /* Others */
 
 a {
-    transition: padding 0.33s ease;
+    transition: padding 0.33s cubic-bezier(.19, 1, .22, 1);
     text-decoration: none;
     color: var(--link-default-color);
 }
@@ -133,7 +136,7 @@ body {
     min-height: 98vh;
     user-select: none;
     scroll-behavior: smooth;
-    transition: all 0.33s ease;
+    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
     padding-top: 60px;
 }
 
@@ -145,7 +148,7 @@ body {
 }
 
 button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
-    transition: all 0.33s ease, transform 0.1s ease;
+    transition: all 0.33s cubic-bezier(.19, 1, .22, 1), transform 0.1s cubic-bezier(.19, 1, .22, 1);
 }
 
 div.bordure {
@@ -167,7 +170,7 @@ header {
     backdrop-filter: blur(10px);
     /* thin border */
     border-bottom: 1px solid var(--hover-color);
-    transition: all 0.33s ease;
+    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 header.hidden {
@@ -181,7 +184,7 @@ header div.theme-login{
     padding-right: 10px;
     align-items: center;
     justify-content: flex-end;
-    transition: all 0.33s ease;
+    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 @keyframes slideInY {
@@ -231,13 +234,13 @@ h1, h2, h3, h4, p {
 .animate {
     opacity: 0;
     transform: translateY(5px);
-    animation: slideInY 0.3s ease forwards;
+    animation: slideInY 0.3s cubic-bezier(.19, 1, .22, 1) forwards;
 }
 
 .animate.job {
     opacity: 0;
     transform: translateX(5px);
-    animation: slideInX 0.3s ease forwards;
+    animation: slideInX 0.3s cubic-bezier(.19, 1, .22, 1) forwards;
 }
 
 .bando {
@@ -252,7 +255,7 @@ h1, h2, h3, h4, p {
     font-size: 3em;
     font-family: "Gotham SSm" ;
     font-weight: 500;
-    transition: opacity 0.33s ease, font-size 0.5s ease;
+    transition: opacity 0.33s cubic-bezier(.19, 1, .22, 1), font-size 0.5s cubic-bezier(.19, 1, .22, 1);
 }
 
 .horizontal-line {
@@ -279,7 +282,7 @@ h1, h2, h3, h4, p {
     user-select: none;
     position: fixed;
     opacity: 1;
-    background-color: #DDD;
+    background: radial-gradient(circle, rgba(50, 50, 50, 1), rgba(0, 0, 0, 1));
     top: 0;
     left: 0;
     width: 100%;
@@ -288,7 +291,6 @@ h1, h2, h3, h4, p {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.33s ease, scale 0.33s ease;
 }
 
 #loading.done {
@@ -296,7 +298,7 @@ h1, h2, h3, h4, p {
     pointer-events: none;
     display: none;
     transform: scale(1.5);
-
+    transition: opacity 2s cubic-bezier(.19, 1, .22, 1), transform 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .outerspinner {
@@ -382,7 +384,7 @@ button {
     width: 115px;
     box-shadow: var(--box-shadow);
     outline: none;
-    transition: all 0.33s ease, transform 0.1s ease, box-shadow 0.1s ease;
+    transition: all 0.33s cubic-bezier(.19, 1, .22, 1), transform 0.1s cubic-bezier(.19, 1, .22, 1), box-shadow 0.1s cubic-bezier(.19, 1, .22, 1);
 }
 
 button[type="login"] {
@@ -397,13 +399,7 @@ button[type="login"] {
     margin-left: 20px;
     width: 100px;
     height: 40px;
-}
-
-button[type="login"]:active {
-    box-shadow:
-    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
-    transform: scale(0.95);
+    pointer-events: none;
 }
 
 
@@ -478,7 +474,7 @@ button:active.enabled {
     background: var(--primary-color);
     border: none;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: all 0.15s cubic-bezier(.19, 1, .22, 1);
 }
 
 .scroll-top-button.hidden {
@@ -511,7 +507,7 @@ button:active.enabled {
 
 .switch * {
     user-select: none;
-    transition: background-color 0.33s ease;
+    transition: background-color 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .slider.light-mode{
@@ -528,27 +524,33 @@ button:active.enabled {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #CCCCCC;
+    background-color: transparent;
     border-radius: 34px;
-    transition: .1s;
+    transition: .1s cubic-bezier(.19, 1, .22, 1);
 }
 
 .handle {
     width: 26px;
     height: 26px;
-    background: white;
+    background: transparent;
     position: absolute;
     top: 4px;
-    left: 4px;
+    left: 17px;
     border-radius: 50%;
+    cursor: pointer;
+    transition: .33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .handle.light-mode{
     background-color: white;
+    left: 4px;
+    top: 4px;
 }
 
 .handle.dark-mode{
     background-color: #161616;
+    left: 30px;
+    top: 4px;
 }
 
 /*---------------------------------------------------------------*/
@@ -562,7 +564,7 @@ button:active.enabled {
     gap: 20px;
     font-size: 12px;
     font-weight: 500;
-    transition: gap 0.33s ease, font-size 0.33s ease, flex 0.33s ease;
+    transition: gap 0.33s cubic-bezier(.19, 1, .22, 1), font-size 0.33s cubic-bezier(.19, 1, .22, 1), flex 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .text-center h1 {
@@ -586,7 +588,7 @@ button:active.enabled {
     text-align: center;
     background-color: var(--h1-background-color);
     border-radius: 50px;
-    transition: background-color 0.33s ease;
+    transition: background-color 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 h1.text-center-accueil{
@@ -630,7 +632,7 @@ h1.text-center-accueil{
     box-shadow: none;
     margin: 10px;
     margin-inline: 20px;
-    transition: all 0s ease;
+    transition: all 0s cubic-bezier(.19, 1, .22, 1);
     display: none;
     width: auto;
     height: auto;
@@ -639,7 +641,7 @@ h1.text-center-accueil{
 #logo-classic.animate {
     opacity: 0;
     transform: translateX(110px);
-    animation: slideInXinverted 0.3s ease forwards;
+    animation: slideInXinverted 0.3s cubic-bezier(.19, 1, .22, 1) forwards;
 }
 
 #Name-logo {
@@ -656,13 +658,13 @@ h1.text-center-accueil{
     background: var(--logo-gradient);
     background-clip: text;
     -webkit-background-clip: text;
-    transition: background 3s ease;
+    transition: background 3s cubic-bezier(.19, 1, .22, 1);
 }
 
 #Name-logo.animate{
     opacity: 0;
     transform: translateX(-50px);
-    animation: slideInX 0.3s ease forwards;
+    animation: slideInX 0.3s cubic-bezier(.19, 1, .22, 1) forwards;
 }
 
 .img_accueil{
@@ -801,7 +803,7 @@ h1.text-center-accueil{
 
 .connexion-text {
     color: var(--text-color);
-    transition: color 0.33s ease;
+    transition: color 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .email-entry, .email-sent {
@@ -809,7 +811,7 @@ h1.text-center-accueil{
     font-size: 0.8em;
     text-align: center;
     padding-top: 10vh;
-    transition: opacity 0.1s ease, font-size 0.5s ease;
+    transition: opacity 0.1s cubic-bezier(.19, 1, .22, 1), font-size 0.5s cubic-bezier(.19, 1, .22, 1);
 }
 
 .email-entry.visible, .email-sent.visible {
@@ -831,7 +833,7 @@ p a {
     font-weight: 500;
     text-decoration: none;
     position: relative;
-    transition: all 0.15s ease;
+    transition: all 0.15s cubic-bezier(.19, 1, .22, 1);
 }
 
 p a::before {
@@ -843,7 +845,7 @@ p a::before {
     left: 0;
     background-color: var(--secondary-color);
     transform: scaleY(0.5);
-    transition: all 0.2s ease 0s;
+    transition: all 0.2s cubic-bezier(.19, 1, .22, 1) 0s;
 }
 
 
@@ -861,7 +863,6 @@ p a:hover::before {
 }
 
 .navbar {
-    color: var(--text-color);
     font-family: "Gotham SSm";
 }
 
@@ -870,30 +871,39 @@ p a:hover::before {
     font-weight: 500;
     text-decoration: none;
     position: relative;
-    transition: all 0.15s ease;
+    transition: all 0.15s cubic-bezier(.19, 1, .22, 1);
+    padding-bottom: 7px;
+    padding-top: 7px;
 }
 
-.navbar a::before, .forgot-password a::before {
-    content: "";
+.navbar a:after, .forgot-password a:after {
+    content: '';
     position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
+    bottom: 2px;
     left: 0;
-    background-color: var(--primary-color);
-    visibility: hidden;
+    width: 100%;
+    border-radius: 10px;
+    height: 2px;
+    background: var(--link-underlined-color);
+    -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    transition: all 0.15s ease 0s;
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+    -webkit-transition: -webkit-transform .6s cubic-bezier(.19, 1, .22, 1);
+    transition: -webkit-transform .6s cubic-bezier(.19, 1, .22, 1);
+    transition: transform .6s cubic-bezier(.19, 1, .22, 1);
+    transition: transform .6s cubic-bezier(.19, 1, .22, 1), -webkit-transform .6s cubic-bezier(.19, 1, .22, 1);
 }
 
-.navbar a:hover, .forgot-password a:hover {
-    color: var(--primary-color);
-}
-
-.navbar a:hover::before, .forgot-password a:hover::before {
-    visibility: visible;
+.navbar a:hover:after, .forgot-password a:hover:after {
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+    -webkit-transform: scaleX(1);
     transform: scaleX(1);
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
 }
+
 /*---------------------------------------------------------------*/
 
 /* Categories list */
@@ -911,13 +921,13 @@ p a:hover::before {
 .categories-list a {
     color: #DDDDDD;
     text-decoration: none;
-    transition: transform 0.1s ease
+    transition: transform 0.1s cubic-bezier(.19, 1, .22, 1)
 }
 
 .categories-list a:hover {
     text-decoration: underline;
     color: #F56B2A;
-    transition: transform 0.1s ease
+    transition: transform 0.1s cubic-bezier(.19, 1, .22, 1)
 }
 
 /*---------------------------------------------------------------*/
@@ -1011,11 +1021,11 @@ input[type="checkbox"], input[type="radio"] {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    transition: all 0.33s ease;
+    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
 }   
 
 .searchbar input, .searchbar button{
-    transition: all 0.33s ease;
+    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .searchbar input[type="text"] {
@@ -1032,7 +1042,7 @@ input[type="checkbox"], input[type="radio"] {
     align-items: center;
     min-width: 150px;
     max-width: 800px;
-    transition: all 0.33s ease;
+    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
     
 }
 
@@ -1143,13 +1153,18 @@ footer {
     flex-direction: column;
     box-sizing: border-box;
     margin-top: auto;
-    transition: all 0.2s ease;
+    transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
 }
 
-footer .text-center a {
+footer * {
     color: var(--text-color);
     text-shadow: var(--footer-text-shadow);
     font-weight: 550;
+    transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
+}
+
+footer .text-center {
+    align-items: center;
 }
 
 /*---------------------------------------------------------------*/
@@ -1203,7 +1218,7 @@ canvas {
   width: 98%;
   height: var(--card-height);
   min-width: var(--carousel-min-width);
-  transition: filter .3s ease;
+  transition: filter .3s cubic-bezier(.19, 1, .22, 1);
   justify-content: center;
   display: flex;
   -ms-flex-align: left;
@@ -1213,7 +1228,7 @@ canvas {
 
 
 .card-carousel.smooth-return {
-  transition: all .2s ease;
+  transition: all .2s cubic-bezier(.19, 1, .22, 1);
 }
 
 .card-carousel .card {
@@ -1237,7 +1252,7 @@ canvas {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease;
+  transition: background 0.3s cubic-bezier(.19, 1, .22, 1);
 }
 
 .card.highlight {
@@ -1310,7 +1325,7 @@ canvas {
     margin-bottom: 20px;
     width: 80%;
     min-width: 300px;
-    transition: all 0.2s ease;
+    transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
 }
 
 .job {
@@ -1323,7 +1338,7 @@ canvas {
     box-shadow: var(--box-shadow);
     flex-direction: row;
     filter: brightness(1);
-    transition: all 0.1s ease;
+    transition: all 0.1s cubic-bezier(.19, 1, .22, 1);
 }
 
 
@@ -1350,7 +1365,7 @@ canvas {
     max-width: 20%;
     min-width: 250px;
     flex: 1;
-    transition: all 0.2s ease;
+    transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
 }
 
 .job-description {
@@ -1360,7 +1375,7 @@ canvas {
     padding: 5px;
     flex: 1;
     margin-left: 20px;
-    transition: all 0.2s ease;
+    transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
 }
 
 .job-description p {
