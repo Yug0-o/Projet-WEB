@@ -9,29 +9,6 @@ navItems.forEach((navItem, i) => {
   });
 });
 
-/*Dougnut chart*/
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Your JavaScript code here
-  // Get the canvas element from the HTML
-  const canvas = document.getElementById('piechart');
-
-  // Create an array of group names and their corresponding values
-  const groups = ['Généraliste', 'Informatique', 'BTP'];
-  const values = [30, 50, 20];
-
-  // Create a new pie chart
-  new Chart(canvas, {
-      type: 'doughnut',
-      data: {
-          labels: groups,
-          datasets: [{
-              data: values,
-              backgroundColor: ['red', 'blue', 'green'], // Customize the colors of the slices
-          }],
-      },
-  });
-});
 
 /* graph chart */
 
@@ -61,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
           }],
       },
   });
+
   console.log("Pie Chart Initialized"); // Check if Chart initialization code is executed
 
   /*tab chart*/
@@ -109,4 +87,59 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Line Chart Initialized"); // Check if line chart initialization code is executed
   });
 });
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("DOM Content Loaded");
+
+  // Get the canvas element from the HTML
+  var canvas = document.getElementById('myPieChart');
+  var ctx = canvas.getContext('2d');
+
+  // Set canvas width and height to match its container size
+  canvas.width = canvas.parentNode.clientWidth;
+  canvas.height = canvas.parentNode.clientHeight;
+
+  // Define data
+  var data = {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+          label: 'My First Dataset',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: [
+              'red',
+              'blue',
+              'yellow',
+              'green',
+              'purple',
+              'orange'
+          ],
+          borderWidth: 1
+      }]
+  };
+
+  // Define options
+  var options = {
+      // Add any options you want here
+  };
+
+  // Create the pie chart
+  var myPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: data,
+      options: options
+  });
+
+  // Redraw the chart whenever the window is resized
+  window.addEventListener('resize', function() {
+      canvas.width = canvas.parentNode.clientWidth;
+      canvas.height = canvas.parentNode.clientHeight;
+      myPieChart.resize();
+      myPieChart.update();
+  });
+});
+
+
 
