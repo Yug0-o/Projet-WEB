@@ -7,7 +7,7 @@
                     </div>
                 </a>
                 <form class="search searchbar" action="research.php">
-                    <input type="text" placeholder="Rechercher un stage" name="search_query">
+                    <input type="text" id="keyword" placeholder="Rechercher un stage" name="search_query">
                     <button class="searchbutton" aria-label="Rechercher">
                         <svg class="tds-icon-search animate" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -22,7 +22,9 @@
                         <div class="slider"></div>
                         <div class="handle ui-widget-content"></div>
                     </div>
-                    <a href="login.php">
+
+                        {if $login == 'non'}
+                        <a href="login.php">
                         <button class="enabled animate" type="login" aria-label="Login">
                             <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -31,7 +33,8 @@
                             </svg>
                             <span class="connexion-text">Connexion</span>
                         </button>
-                    </a>
+                        </a>
+                        {/if}
                 </div>
             </div>
         </header>

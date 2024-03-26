@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-03-26 11:37:29
+/* Smarty version 3.1.48, created on 2024-03-26 13:57:58
   from 'C:\Users\Coline\Desktop\myPortfolio\projet\Projet-WEB\tpl\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6602a569e41c31_36457173',
+  'unifunc' => 'content_6602c656363cc4_45868329',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '95c80fa42090cf8ba7cca616fe90c6c11d12cac0' => 
     array (
       0 => 'C:\\Users\\Coline\\Desktop\\myPortfolio\\projet\\Projet-WEB\\tpl\\header.tpl',
-      1 => 1711448610,
+      1 => 1711457873,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6602a569e41c31_36457173 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6602c656363cc4_45868329 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
             <div class="searchbar">
                 <a href="homepage.php">
@@ -30,7 +30,7 @@ function content_6602a569e41c31_36457173 (Smarty_Internal_Template $_smarty_tpl)
                     </div>
                 </a>
                 <form class="search searchbar" action="research.php">
-                    <input type="text" placeholder="Rechercher un stage" name="search_query">
+                    <input type="text" id="keyword" placeholder="Rechercher un stage" name="search_query">
                     <button class="searchbutton" aria-label="Rechercher">
                         <svg class="tds-icon-search animate" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -45,7 +45,9 @@ function content_6602a569e41c31_36457173 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="slider"></div>
                         <div class="handle ui-widget-content"></div>
                     </div>
-                    <a href="login.php">
+
+                        <?php if ($_smarty_tpl->tpl_vars['login']->value == 'non') {?>
+                        <a href="login.php">
                         <button class="enabled animate" type="login" aria-label="Login">
                             <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -54,7 +56,8 @@ function content_6602a569e41c31_36457173 (Smarty_Internal_Template $_smarty_tpl)
                             </svg>
                             <span class="connexion-text">Connexion</span>
                         </button>
-                    </a>
+                        </a>
+                        <?php }?>
                 </div>
             </div>
         </header><?php }

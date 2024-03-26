@@ -16,7 +16,7 @@
     <body>
 
         <?php
-        define('SMARTY_DIR', 'C:\Users\Coline\Desktop\myPortfolio\projet\Projet-WEB\libs\\');
+        define('SMARTY_DIR', 'libs\\');
         require_once(SMARTY_DIR . 'Smarty.class.php');
 
         $smarty_loading = new Smarty();
@@ -27,6 +27,8 @@
 
 
         $smarty_header = new Smarty();
+
+        $smarty_header->assign('login', 'non');
 
         $smarty_header->setTemplateDir('tpl/');
         $smarty_header->display('header.tpl');
