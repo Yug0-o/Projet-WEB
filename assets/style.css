@@ -593,7 +593,7 @@ button:active.enabled {
 
 h1.text-center-accueil{
     font-size: 200%;
-    color : var(--background-color);
+    color : white;
 }
 
 
