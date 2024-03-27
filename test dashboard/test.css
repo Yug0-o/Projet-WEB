@@ -6,6 +6,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  margin: 20px;
   width: 90vw;
 }
 
@@ -42,7 +43,7 @@ main {
 .container {
   display: flex;
   width: 100%;
-  height: fit-content;
+  height: 85vh;
   justify-content: center;
   align-items: flex-start;
   border: 1px solid black;
@@ -63,6 +64,7 @@ main {
 .container .flx2 {
   width: 80%;
   margin: 1%;
+  height: 80vh;
   position: relative;
   border-radius: 40px;
   border: 1px solid black;
@@ -91,7 +93,8 @@ main {
   position: relative;
   border-radius: 40px;
   border: 1px solid black;
-
+  padding: 2%;
+  overflow: auto;
 }
 
 .container .flx2 .flx2_2 {
@@ -111,22 +114,30 @@ main {
 
 .flx2_2 * {
   width: 45%; /* Adjust the width of the flexbox */
-  height: 150px; 
+  justify-content: center;
+  align-items: center;
+  height: 25vh; 
   margin: 1%;
-  position: relative;
+  position: center;
   border-radius: 40px;
   border: 1px solid black;
+  padding: 2%;
+}
 
+#myPieChart {
+  flex: 1; /* Allow the canvas to grow and shrink to fill its container */
+  width: 90%; /* Ensure the canvas takes up full width of its container */
+  height: 90%; /* Ensure the canvas takes up full height of its container */
 }
 
 .chart-container {
   width: 100%; /* Adjust the width of the container */
-  border-color: #F85F6A ;
+  height: 100%; /* Adjust the height of the container */
 }
 
 canvas {
   width: 100%; /* Ensure the canvas takes up the full width of its container */
-  height: auto; /* Let the height adjust automatically based on the width */
+  height: 100%; /* Let the height adjust automatically based on the width */
 }
 
 .container_dashboard_line {
@@ -152,19 +163,28 @@ canvas {
 }
 
 @media screen and (max-width: 1000px) {
+  .flx2 {
+    height: 86vh!important;
+  }
   .flx2_1 {
     flex-direction: column!important;
-    height: 80%!important;
+    height: 42vh!important;
   }
   .flx2_1 * {
     width: 80%!important;
   }
   .flx2_2 {
     flex-direction: column !important;
-    height: 80% !important;
+    height: 42vh!important;
   }
-
   .flx2_2 * {
     width: 80% !important;
+    height: 40%;
+  }
+  .flx1 {
+    display: none;
+  }
+  .container {
+    height: 88vh;
   }
 }
