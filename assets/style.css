@@ -271,7 +271,7 @@ h1, h2, h3, h4, p {
 }
 
 .vertical-line{
-    border-left: 2px solid #000;
+    border-left: 2px solid var(--text-color);
     display: inline-block;
     height: 260px;
     margin: 20px 20px;
@@ -593,7 +593,7 @@ button:active.enabled {
 
 h1.text-center-accueil{
     font-size: 200%;
-    color : white;
+    color : var(--background-color);
 }
 
 
@@ -601,13 +601,13 @@ h1.text-center-accueil{
 .contact h2 {
     width: 100%; 
     text-align: center; 
-    border-bottom: 1px solid #000; 
+    border-bottom: 1px solid var(--text-color); 
     line-height: 0.1em;
     margin: 30px 0 20px; 
  } 
 
  .contact h2 span { 
-     background:white; 
+     background: var(--background-color); 
      padding:0px 10px; 
  }
 
