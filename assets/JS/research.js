@@ -78,10 +78,32 @@ function displayJobs(jobData, totalPages) {
 // Function to search for jobs based on a keyword
 function searchJobs() {
     const keyword = document.getElementById('keyword').value.toLowerCase();
-    const filteredJobs = jobData.filter(job => job.title.toLowerCase().includes(keyword) || job.location.toLowerCase().includes(keyword));
-    currentPage = 1;
-    const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
-    displayJobs(filteredJobs, totalPages);
+
+    // Make an AJAX request to fetch job data based on the keyword
+    $.ajax({
+        type: "GET",
+        url: 'get_job_data.php', // Assurez-vous que le chemin est correct
+        dataType: 'json',
+        success: function (jobData) {
+            // Les données ont été récupérées avec succès
+            console.log(jobData); // Affichez les données dans la console pour vérifier
+
+            // Filtrer les offres d'emploi basées sur le mot-clé
+            const filteredJobs = jobData.filter(job => 
+                (job.company_name && job.company_name.toLowerCase().includes(keyword)) ||
+                (job.location && job.location.toLowerCase().includes(keyword))
+            );
+            currentPage = 1;
+            const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+
+            // Affichez les offres d'emploi filtrées
+            displayJobs(filteredJobs, totalPages);
+        },
+        error: function (xhr, status, error) {
+            // Une erreur s'est produite lors de la récupération des données
+            console.error('Error fetching job data:', error);
+        }
+    });
 }
 
 // Get the search input element
