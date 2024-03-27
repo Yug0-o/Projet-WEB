@@ -852,45 +852,6 @@ h1.text-center-accueil{
 
 /* Navbar */
 
-/* p a {
-    color: var(--text-color);
-    border-radius: 10px;
-    font-weight: 500;
-    text-decoration: none;
-    position: relative;
-    transition: all 0.15s cubic-bezier(.19, 1, .22, 1);
-    padding-bottom: 4px;
-    padding-top: 4px;
-}
-
-p a:after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 100%;
-    border-radius: 10px;
-    height: 2px;
-    background: var(--text-color);
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: right center;
-    transform-origin: right center;
-    -webkit-transition: -webkit-transform .6s cubic-bezier(.19, 1, .22, 1);
-    transition: -webkit-transform .6s cubic-bezier(.19, 1, .22, 1);
-    transition: transform .6s cubic-bezier(.19, 1, .22, 1);
-    transition: transform .6s cubic-bezier(.19, 1, .22, 1), -webkit-transform .6s cubic-bezier(.19, 1, .22, 1);
-}
-
-p a:hover:after {
-    border-radius: 10px;
-    -webkit-transition-duration: .4s;
-    transition-duration: .4s;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-    -webkit-transform-origin: left center;
-    transform-origin: left center;
-} */
 
 .homeNav {
     display: flex;
@@ -931,6 +892,10 @@ p a:hover:after {
     transition: -webkit-transform .6s cubic-bezier(.19, 1, .22, 1);
     transition: transform .6s cubic-bezier(.19, 1, .22, 1);
     transition: transform .6s cubic-bezier(.19, 1, .22, 1), -webkit-transform .6s cubic-bezier(.19, 1, .22, 1);
+}
+
+p a:after {
+    background: var(--text-color);
 }
 
 .navbar a:hover:after, .forgot-password a:hover:after, p a:hover:after {
