@@ -12,8 +12,6 @@
         <meta name="author" content="Internship Etendard">
         <meta name="description" content="Internship Etendard est une plateforme de recherche de stage pour les étudiants.">
         <title>Accueil</title>
-        <link rel="stylesheet" href="assets/style.css">
-        
     </head>
     <body>
         
@@ -41,7 +39,7 @@
             <div class="box1-accueil">
                 <h2> La manière la plus simple de trouver un stage</h2>
                 <div id="textcontainer_accueil">
-                    <p><div id="scrollingText"></div></p>
+                    <div id="scrollingText"></div>
                 </div>
             </div>
         </div>

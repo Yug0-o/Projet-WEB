@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-03-27 11:51:05
+/* Smarty version 3.1.48, created on 2024-03-27 16:24:18
   from 'D:\Cesi\CPIA2\4 Dev Web\Projet\GitHub\Projet-WEB\tpl\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6603fa192bb569_29695448',
+  'unifunc' => 'content_66043a22ae7df4_94322766',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '962e095597d423ac11ab922fda3a841a0ce682fb' => 
     array (
       0 => 'D:\\Cesi\\CPIA2\\4 Dev Web\\Projet\\GitHub\\Projet-WEB\\tpl\\header.tpl',
-      1 => 1711536652,
+      1 => 1711553057,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6603fa192bb569_29695448 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66043a22ae7df4_94322766 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
     <div class="searchbar">
         <a href="homepage.php">
@@ -29,7 +29,7 @@ function content_6603fa192bb569_29695448 (Smarty_Internal_Template $_smarty_tpl)
                 <h1 class="logo animate" id="Name-logo" alt="Name-logo" min-width="20px">INTERNSHIP ETENDARD</h1>
             </div>
         </a>
-        <?php if ($_smarty_tpl->tpl_vars['login']->value == 'non') {?>
+        <?php if ($_smarty_tpl->tpl_vars['login']->value == 'non' || $_smarty_tpl->tpl_vars['login']->value == 'recherche') {?>
         <form class="search searchbar" action="research.php">
             <input type="text" id="keyword" placeholder="Rechercher un stage" name="search_query">
             <?php if ($_smarty_tpl->tpl_vars['login']->value == 'recherche') {?>
@@ -43,21 +43,21 @@ function content_6603fa192bb569_29695448 (Smarty_Internal_Template $_smarty_tpl)
                     </path>
                 </svg>
             </button>
-        </form>
+        </form> 
         <?php }?>
         <div class="theme-login">
             <div class="switch">
                 <div class="slider"></div>
                 <div class="handle ui-widget-content">
                     <div class="handle ui-widget-content">
-                        <svg class="theme-icon light-icon handle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
+                        <svg class="theme-icon dark-icon handle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="256" height="256" viewBox="0 0 256 256" xml:space="preserve">
                             <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
                                 <path d="M 87.823 60.7 c -0.463 -0.423 -1.142 -0.506 -1.695 -0.214 c -15.834 8.398 -35.266 2.812 -44.232 -12.718 c -8.966 -15.53 -4.09 -35.149 11.101 -44.665 c 0.531 -0.332 0.796 -0.963 0.661 -1.574 c -0.134 -0.612 -0.638 -1.074 -1.259 -1.153 c -9.843 -1.265 -19.59 0.692 -28.193 5.66 C 13.8 12.041 6.356 21.743 3.246 33.35 S 1.732 57.08 7.741 67.487 c 6.008 10.407 15.709 17.851 27.316 20.961 C 38.933 89.486 42.866 90 46.774 90 c 7.795 0 15.489 -2.044 22.42 -6.046 c 8.601 -4.966 15.171 -12.43 18.997 -21.586 C 88.433 61.79 88.285 61.123 87.823 60.7 z"
                                     style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: white; fill-rule: nonzero; opacity: 1;"
                                     transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                             </g>
                         </svg>
-                        <svg class="theme-icon dark-icon handle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="26" height="26" viewBox="0 0 256 256" xml:space="preserve">
+                        <svg class="theme-icon light-icon handle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="26" height="26" viewBox="0 0 256 256" xml:space="preserve">
                             <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
                                transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
                                <path
@@ -101,19 +101,18 @@ function content_6603fa192bb569_29695448 (Smarty_Internal_Template $_smarty_tpl)
                     </div>
                 </div>
             </div>
-
-                <?php if ($_smarty_tpl->tpl_vars['login']->value == 'non') {?>
-                <a href="login.php">
-                <button class="enabled animate" type="login" aria-label="Login">
-                    <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM6.858 18.752c.605-1.868 2.722-3.24 5.142-3.24 2.42 0 4.537 1.372 5.142 3.24C15.712 19.844 13.933 20.5 12 20.5s-3.712-.656-5.142-1.748zm11.469-1.095c-1.02-2.165-3.483-3.645-6.327-3.645s-5.307 1.48-6.327 3.645A8.456 8.456 0 0 1 3.5 12c0-4.687 3.813-8.5 8.5-8.5 4.687 0 8.5 3.813 8.5 8.5a8.456 8.456 0 0 1-2.173 5.657zM12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 5.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z">
-                        </path>
-                    </svg>
-                    <span class="connexion-text">Connexion</span>
-                </button>
-                </a>
-                <?php }?>
+            <?php if ($_smarty_tpl->tpl_vars['login']->value == 'non') {?>
+            <a href="login.php">
+            <button class="enabled animate" type="login" aria-label="Login">
+                <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM6.858 18.752c.605-1.868 2.722-3.24 5.142-3.24 2.42 0 4.537 1.372 5.142 3.24C15.712 19.844 13.933 20.5 12 20.5s-3.712-.656-5.142-1.748zm11.469-1.095c-1.02-2.165-3.483-3.645-6.327-3.645s-5.307 1.48-6.327 3.645A8.456 8.456 0 0 1 3.5 12c0-4.687 3.813-8.5 8.5-8.5 4.687 0 8.5 3.813 8.5 8.5a8.456 8.456 0 0 1-2.173 5.657zM12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 5.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z">
+                    </path>
+                </svg>
+                <span class="connexion-text">Connexion</span>
+            </button>
+            </a>
+            <?php }?>
         </div>
     </div>
 </header><?php }

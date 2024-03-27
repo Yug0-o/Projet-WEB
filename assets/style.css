@@ -111,12 +111,29 @@ body.dark-mode {
         --center-container-background: rgba(255, 255, 255, .1);
     }
 
+/*---------------------------------------------------------------*/
 
+/* All pages*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+}
+
+.visuallyhidden {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    opacity: 0;
+
+}
 
 /* Others */
 
 a {
-    transition: padding 0.33s cubic-bezier(.19, 1, .22, 1);
     text-decoration: none;
     color: var(--link-default-color);
 }
@@ -136,20 +153,16 @@ body {
     min-height: 98vh;
     user-select: none;
     scroll-behavior: smooth;
-    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
     padding-top: 60px;
 }
 
- body.loginbackground{
+body.loginbackground{
     background-image: url('background.gif');
     background-repeat: no-repeat;
     background-attachment: fixed; /* ou scroll si vous souhaitez que l'image défile avec le contenu */
     background-size: cover;  /* ou contain selon vos préférences */
 }
 
-button, label, br, form, input, select, textarea, .navbar, .categories-list a, .checkbox-container{
-    transition: all 0.33s cubic-bezier(.19, 1, .22, 1), transform 0.1s cubic-bezier(.19, 1, .22, 1);
-}
 
 div.bordure {
     border: 2px solid grey;
@@ -170,7 +183,11 @@ header {
     backdrop-filter: blur(10px);
     /* thin border */
     border-bottom: 1px solid var(--hover-color);
-    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
+}
+
+header.fixed {
+    position: fixed;
+    top: 0;
 }
 
 header.hidden {
@@ -186,10 +203,11 @@ header div.theme-login{
     padding-bottom: 5px;
     align-items: center;
     justify-content: flex-end;
-    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
-
+p .badapple{
+    white-space: pre;
+}
 
 @keyframes slideInY {
     0% {
@@ -259,7 +277,6 @@ h1, h2, h3, h4, p {
     font-size: 3em;
     font-family: "Gotham SSm" ;
     font-weight: 500;
-    transition: opacity 0.33s cubic-bezier(.19, 1, .22, 1), font-size 0.5s cubic-bezier(.19, 1, .22, 1);
 }
 
 .horizontal-line {
@@ -302,7 +319,6 @@ h1, h2, h3, h4, p {
     pointer-events: none;
     display: none;
     transform: scale(1.5);
-    transition: opacity 2s cubic-bezier(.19, 1, .22, 1), transform 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .outerspinner {
@@ -346,24 +362,7 @@ h1, h2, h3, h4, p {
     }
 }
 
-/*---------------------------------------------------------------*/
 
-/* All pages*/
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-  
-.visuallyhidden {
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    opacity: 0;
-
-}
 /*---------------------------------------------------------------*/
 
 /* All buttons */
@@ -388,7 +387,6 @@ button {
     width: 115px;
     box-shadow: var(--box-shadow);
     outline: none;
-    transition: all 0.33s cubic-bezier(.19, 1, .22, 1), transform 0.1s cubic-bezier(.19, 1, .22, 1), box-shadow 0.1s cubic-bezier(.19, 1, .22, 1);
 }
 
 button[type="login"] {
@@ -478,7 +476,6 @@ button:active.enabled {
     background: var(--primary-color);
     border: none;
     cursor: pointer;
-    transition: all 0.15s cubic-bezier(.19, 1, .22, 1);
 }
 
 .scroll-top-button.hidden {
@@ -513,7 +510,6 @@ button:active.enabled {
 
 .switch * {
     user-select: none;
-    transition: background-color 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .slider.light-mode{
@@ -545,7 +541,6 @@ button:active.enabled {
     position: absolute;
     border-radius: 50%;
     cursor: pointer;
-    transition: .33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .handle.light-mode{
@@ -563,15 +558,18 @@ button:active.enabled {
     width: 20px !important;
     height: 20px !important;
     opacity: 0;
-    transform: rotate(180deg);
+    transform: rotate(100deg);
+}
+.dark-icon {
+    transform: rotate(260deg);
 }
 
-.dark-mode .light-icon {
+.dark-mode .dark-icon {
     opacity: 1 !important;
-    transform: rotate(360deg);
+    transform: rotate(360deg); 
 }
 
-.light-mode .dark-icon {
+.light-mode .light-icon {
     opacity: 1 !important;
     transform: rotate(0deg);
 }
@@ -587,7 +585,6 @@ button:active.enabled {
     gap: 20px;
     font-size: 12px;
     font-weight: 500;
-    transition: gap 0.33s cubic-bezier(.19, 1, .22, 1), font-size 0.33s cubic-bezier(.19, 1, .22, 1), flex 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .text-center h1 {
@@ -611,7 +608,6 @@ button:active.enabled {
     text-align: center;
     background-color: var(--h1-background-color);
     border-radius: 50px;
-    transition: background-color 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 h1.text-center-accueil{
@@ -626,12 +622,12 @@ h1.text-center-accueil{
     text-align: center; 
     border-bottom: 1px solid var(--text-color); 
     line-height: 0.1em;
-    margin: 30px 0 20px; 
+    margin: 30px 0 20px;
  } 
 
  .contact h2 span { 
      background: var(--background-color); 
-     padding:0px 10px; 
+     padding:0px 10px;
  }
 
 /*---------------------------------------------------------------*/
@@ -681,7 +677,6 @@ h1.text-center-accueil{
     background: var(--logo-gradient);
     background-clip: text;
     -webkit-background-clip: text;
-    transition: background 3s cubic-bezier(.19, 1, .22, 1);
 }
 
 #Name-logo.animate{
@@ -826,7 +821,6 @@ h1.text-center-accueil{
 
 .connexion-text {
     color: var(--text-color);
-    transition: color 0.33s cubic-bezier(.19, 1, .22, 1);
 }
 
 .email-entry, .email-sent {
@@ -834,7 +828,6 @@ h1.text-center-accueil{
     font-size: 0.8em;
     text-align: center;
     padding-top: 10vh;
-    transition: opacity 0.1s cubic-bezier(.19, 1, .22, 1), font-size 0.5s cubic-bezier(.19, 1, .22, 1);
 }
 
 .email-entry.visible, .email-sent.visible {
@@ -870,7 +863,6 @@ h1.text-center-accueil{
     font-weight: 500;
     text-decoration: none;
     position: relative;
-    transition: all 0.15s cubic-bezier(.19, 1, .22, 1);
     padding-bottom: 7px;
     padding-top: 7px;
 }
@@ -1024,12 +1016,8 @@ input[type="checkbox"], input[type="radio"] {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
 }   
 
-.searchbar input, .searchbar button{
-    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
-}
 
 .searchbar input[type="text"] {
     height: 40px;
@@ -1045,7 +1033,6 @@ input[type="checkbox"], input[type="radio"] {
     align-items: center;
     min-width: 150px;
     max-width: 800px;
-    transition: all 0.33s cubic-bezier(.19, 1, .22, 1);
     
 }
 
@@ -1156,14 +1143,12 @@ footer {
     flex-direction: column;
     box-sizing: border-box;
     margin-top: auto;
-    transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
 }
 
 footer * {
     color: var(--text-color);
     text-shadow: var(--footer-text-shadow);
     font-weight: 550;
-    transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
 }
 
 footer .text-center {
@@ -1221,7 +1206,7 @@ canvas {
   width: 98%;
   height: var(--card-height);
   min-width: var(--carousel-min-width);
-  transition: filter .3s cubic-bezier(.19, 1, .22, 1);
+  transition: filter .3s cubic-bezier(.19, 1, .22, 1) !important;
   justify-content: center;
   display: flex;
   -ms-flex-align: left;
@@ -1231,7 +1216,7 @@ canvas {
 
 
 .card-carousel.smooth-return {
-  transition: all .2s cubic-bezier(.19, 1, .22, 1);
+  transition: all .2s cubic-bezier(.19, 1, .22, 1)!important;
 }
 
 .card-carousel .card {
@@ -1245,7 +1230,7 @@ canvas {
   position: absolute;
   margin: 0 auto;
   color: var(--carousel-card-text-color);
-  transition: inherit;
+  transition: inherit!important;
   -webkit-box-shadow: var(--box-shadow);
   -moz-box-shadow: var(--box-shadow);
   box-shadow: var(--box-shadow);
@@ -1255,7 +1240,7 @@ canvas {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s cubic-bezier(.19, 1, .22, 1);
+  transition: background 0.3s cubic-bezier(.19, 1, .22, 1)!important;
 }
 
 .card.highlight {

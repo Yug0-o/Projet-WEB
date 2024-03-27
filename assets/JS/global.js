@@ -12,7 +12,7 @@ window.onload = function () {
 
     scrollButton.classList.remove('animate');
     header.classList.remove('animate');
-    if (window.pageYOffset || document.documentElement.scrollTop > 0) {
+    if (document.documentElement.scrollTop > 0) {
         header.classList.remove('hidden');
     }
     scrollButton.classList.add('hidden');
@@ -38,6 +38,7 @@ window.onload = function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
+
     const handle = document.querySelector(".handle");
     const sliderElement = document.querySelector(".slider");
     const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -58,57 +59,67 @@ window.onload = function () {
     let light_pos = 6;
     let dark_pos = 25;
     let center = (light_pos + dark_pos) / 2;
+    if (!window.location.pathname.includes('Bad_Apple.php')){
+        handle.addEventListener("mousedown", function (event) {
+            event.stopPropagation();
+            const startX = event.clientX;
+            const startLeft = handle.offsetLeft;
 
-    handle.addEventListener("mousedown", function (event) {
-        event.stopPropagation();
-        const startX = event.clientX;
-        const startLeft = handle.offsetLeft;
-
-        function moveHandle(event) {
-            let newLeft = Math.min(Math.max(startLeft + event.clientX - startX, light_pos - 2), dark_pos+2);
-            handle.style.left = newLeft + "px";
-            isDragged = true;
-            if (newLeft >= center+3) {
-                applyTheme(true);
-            } else if (newLeft <= center-3){
-                applyTheme(false);
+            function moveHandle(event) {
+                let newLeft = Math.min(Math.max(startLeft + event.clientX - startX, light_pos - 2), dark_pos+2);
+                handle.style.left = newLeft + "px";
+                isDragged = true;
+                if (newLeft >= center+3) {
+                    applyTheme(true);
+                } else if (newLeft <= center-3){
+                    applyTheme(false);
+                }
             }
-        }
 
-        function releaseHandle() {
-            document.removeEventListener("mousemove", moveHandle);
-            document.removeEventListener("mouseup", releaseHandle);
+            function releaseHandle() {
+                document.removeEventListener("mousemove", moveHandle);
+                document.removeEventListener("mouseup", releaseHandle);
 
-            setTimeout(function () {
-                const left = parseInt(handle.style.left);
-                const isDark = left >= center;
-                applyTheme(isDark);
+                setTimeout(function () {
+                    const left = parseInt(handle.style.left);
+                    const isDark = left >= center;
+                    applyTheme(isDark);
 
-                handle.style.left = isDark ? dark_pos + "px" : light_pos + "px";
-                isDragged = false; // Reset the flag when the mouse is released
-            }, 0);
-        }
+                    handle.style.left = isDark ? dark_pos + "px" : light_pos + "px";
+                    isDragged = false; // Reset the flag when the mouse is released
+                }, 0);
+            }
 
-        document.addEventListener("mousemove", moveHandle);
-        document.addEventListener("mouseup", releaseHandle);
-    });
+            document.addEventListener("mousemove", moveHandle);
+            document.addEventListener("mouseup", releaseHandle);
+        });
 
-    handle.addEventListener("click", function (e) {
-        if (!isDragged) { // Only handle the click event if the handle hasn't been dragged
+        handle.addEventListener("click", function (e) {
+            if (!isDragged) { // Only handle the click event if the handle hasn't been dragged
+                const isDark = handle.offsetLeft >= center;
+                handle.style.left = isDark ? light_pos + "px" : dark_pos + "px";
+                applyTheme(!isDark);
+            }
+        });
+
+        sliderElement.addEventListener("click", function (e) {
+            //get the current theme
             const isDark = handle.offsetLeft >= center;
             handle.style.left = isDark ? light_pos + "px" : dark_pos + "px";
+
             applyTheme(!isDark);
-        }
-    });
+        });
+    } else {
+        applyTheme(true);
+        // make the cursor a interdicion sign for the slider( and every child)
+        sliderElement.style.cursor = "not-allowed";
+        sliderElement.childNodes.forEach(child => child.style.cursor = "not-allowed");
 
-    sliderElement.addEventListener("click", function (e) {
-        //get the current theme
-        const isDark = handle.offsetLeft >= center;
-        handle.style.left = isDark ? light_pos + "px" : dark_pos + "px";
+        handle.style.cursor = "not-allowed";
+        handle.style.pointerEvents = "none";
 
-        applyTheme(!isDark);
-    });
-    
+    }
+
 };
 
 document.getElementById('year').textContent = new Date().getFullYear();
