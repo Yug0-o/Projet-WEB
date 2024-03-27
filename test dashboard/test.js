@@ -27,17 +27,18 @@ document.addEventListener("DOMContentLoaded", function() {
   console.log("Groups:", groups);
   console.log("Values:", values);
   
+  /* renvoyé une erreur, 'canvas' est vide, il y a pas d'element avec l'id piechart */
   // Create a new pie chart
-  new Chart(canvas, {
-      type: 'doughnut',
-      data: {
-          labels: groups,
-          datasets: [{
-              data: values,
-              backgroundColor: ['red', 'blue', 'green'], // Customize the colors of the slices
-          }],
-      },
-  });
+  // new Chart(canvas, {
+  //     type: 'doughnut',
+  //     data: {
+  //         labels: groups,
+  //         datasets: [{
+  //             data: values,
+  //             backgroundColor: ['red', 'blue', 'green'], // Customize the colors of the slices
+  //         }],
+  //     },
+  // });
 
   /*tab chart*/
 
