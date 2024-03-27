@@ -104,9 +104,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Define data
   var data = {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ['colinne', 'gpt', 'hugo', 'charles', 'maxime', 'sam'],
       datasets: [{
-          label: 'My First Dataset',
+          label: 'people who fucked sam mother',
           data: [12, 19, 3, 5, 2, 3],
           backgroundColor: [
               'red',
@@ -122,12 +122,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Define options
   var options = {
-      // Add any options you want here
-  };
+    aspectRatio: 1,
+    maintainAspectRatio: false,
+    // Add any options you want here
+    plugins: {
+      legend: {
+        position: 'right',
+        onResize: function(chart, size) {
+          if (size.width < 1000) {
+            chart.options.plugins.legend.labels.fontSize = 20;
+          } else {
+            chart.options.plugins.legend.labels.fontSize = 12;
+          }
+        }
+      }
+    }
+  }
+
 
   // Create the pie chart
   var myPieChart = new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: data,
       options: options
   });
@@ -136,10 +151,13 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('resize', function() {
       canvas.width = canvas.parentNode.clientWidth;
       canvas.height = canvas.parentNode.clientHeight;
+      updateLegendPosition();
       myPieChart.resize();
+      myPieChart.options = options;
       myPieChart.update();
   });
 });
+
 
 
 
