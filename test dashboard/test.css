@@ -82,7 +82,6 @@ main {
   margin-left: 3%;
   position: relative;
   border-radius: 40px;
-  border: 1px solid black;
 }
 
 
@@ -108,8 +107,6 @@ main {
   margin-bottom: 3%;
   position: relative;
   border-radius: 40px;
-  border: 1px solid black;
-
 }
 
 .flx2_2 * {

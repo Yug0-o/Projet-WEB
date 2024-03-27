@@ -39,8 +39,6 @@ document.addEventListener("DOMContentLoaded", function() {
       },
   });
 
-  console.log("Pie Chart Initialized"); // Check if Chart initialization code is executed
-
   /*tab chart*/
 
   document.addEventListener("DOMContentLoaded", function() {
@@ -106,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function() {
   var data = {
       labels: ['colinne', 'gpt', 'hugo', 'charles', 'maxime', 'sam'],
       datasets: [{
-          label: 'people who fucked sam mother',
-          data: [12, 19, 3, 5, 2, 3],
+          label: "people who fucked sam'mother",
+          data: [12, 10, 3, 5, 2, 3],
           backgroundColor: [
               'red',
               'blue',
