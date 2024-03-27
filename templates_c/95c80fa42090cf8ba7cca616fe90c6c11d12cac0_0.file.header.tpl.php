@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-03-26 13:57:58
+/* Smarty version 3.1.48, created on 2024-03-27 10:36:39
   from 'C:\Users\Coline\Desktop\myPortfolio\projet\Projet-WEB\tpl\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_6602c656363cc4_45868329',
+  'unifunc' => 'content_6603e8a7126485_11090750',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '95c80fa42090cf8ba7cca616fe90c6c11d12cac0' => 
     array (
       0 => 'C:\\Users\\Coline\\Desktop\\myPortfolio\\projet\\Projet-WEB\\tpl\\header.tpl',
-      1 => 1711457873,
+      1 => 1711532177,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6602c656363cc4_45868329 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6603e8a7126485_11090750 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
             <div class="searchbar">
                 <a href="homepage.php">
@@ -31,7 +31,11 @@ function content_6602c656363cc4_45868329 (Smarty_Internal_Template $_smarty_tpl)
                 </a>
                 <form class="search searchbar" action="research.php">
                     <input type="text" id="keyword" placeholder="Rechercher un stage" name="search_query">
-                    <button class="searchbutton" aria-label="Rechercher">
+                    <?php if ($_smarty_tpl->tpl_vars['login']->value == 'recherche') {?>
+                    <button class="searchbutton" onclick="searchJobs()" aria-label="Rechercher">
+                    <?php } else { ?>
+                        <button class="searchbutton" aria-label="Rechercher">
+                    <?php }?>
                         <svg class="tds-icon-search animate" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="m20.267 19.207-4.818-4.818A6.967 6.967 0 0 0 17 10a7 7 0 1 0-7 7 6.967 6.967 0 0 0 4.389-1.55l4.818 4.817a.748.748 0 0 0 1.06 0 .75.75 0 0 0 0-1.06zM4.5 10c0-3.033 2.467-5.5 5.5-5.5s5.5 2.467 5.5 5.5-2.467 5.5-5.5 5.5-5.5-2.467-5.5-5.5z">

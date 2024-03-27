@@ -8,7 +8,11 @@
                 </a>
                 <form class="search searchbar" action="research.php">
                     <input type="text" id="keyword" placeholder="Rechercher un stage" name="search_query">
-                    <button class="searchbutton" aria-label="Rechercher">
+                    {if $login == 'recherche'}
+                    <button class="searchbutton" onclick="searchJobs()" aria-label="Rechercher">
+                    {else}
+                        <button class="searchbutton" aria-label="Rechercher">
+                    {/if}
                         <svg class="tds-icon-search animate" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="m20.267 19.207-4.818-4.818A6.967 6.967 0 0 0 17 10a7 7 0 1 0-7 7 6.967 6.967 0 0 0 4.389-1.55l4.818 4.817a.748.748 0 0 0 1.06 0 .75.75 0 0 0 0-1.06zM4.5 10c0-3.033 2.467-5.5 5.5-5.5s5.5 2.467 5.5 5.5-2.467 5.5-5.5 5.5-5.5-2.467-5.5-5.5z">

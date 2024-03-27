@@ -28,7 +28,7 @@
 
         $smarty_header = new Smarty();
 
-        $smarty_header->assign('login', 'non');
+        $smarty_header->assign('login', 'recherche');
 
         $smarty_header->setTemplateDir('tpl/');
         $smarty_header->display('header.tpl');
