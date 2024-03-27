@@ -55,6 +55,9 @@ window.onload = function () {
     }
 
     let isDragged = false;
+    let light_pos = 6;
+    let dark_pos = 25;
+    let center = (light_pos + dark_pos) / 2;
 
     handle.addEventListener("mousedown", function (event) {
         event.stopPropagation();
@@ -62,12 +65,12 @@ window.onload = function () {
         const startLeft = handle.offsetLeft;
 
         function moveHandle(event) {
-            let newLeft = Math.min(Math.max(startLeft + event.clientX - startX, 4), 30);
+            let newLeft = Math.min(Math.max(startLeft + event.clientX - startX, light_pos - 2), dark_pos+2);
             handle.style.left = newLeft + "px";
             isDragged = true;
-            if (newLeft >= 20) {
+            if (newLeft >= center+3) {
                 applyTheme(true);
-            } else if (newLeft <= 14){
+            } else if (newLeft <= center-3){
                 applyTheme(false);
             }
         }
@@ -78,10 +81,10 @@ window.onload = function () {
 
             setTimeout(function () {
                 const left = parseInt(handle.style.left);
-                const isDark = left >= 17;
+                const isDark = left >= center;
                 applyTheme(isDark);
 
-                handle.style.left = isDark ? "30px" : "4px";
+                handle.style.left = isDark ? dark_pos + "px" : light_pos + "px";
                 isDragged = false; // Reset the flag when the mouse is released
             }, 0);
         }
@@ -92,16 +95,16 @@ window.onload = function () {
 
     handle.addEventListener("click", function (e) {
         if (!isDragged) { // Only handle the click event if the handle hasn't been dragged
-            const isDark = handle.offsetLeft >= 17;
-            handle.style.left = isDark ? "4px" : "30px";
+            const isDark = handle.offsetLeft >= center;
+            handle.style.left = isDark ? light_pos + "px" : dark_pos + "px";
             applyTheme(!isDark);
         }
     });
 
     sliderElement.addEventListener("click", function (e) {
         //get the current theme
-        const isDark = handle.offsetLeft >= 17;
-        handle.style.left = isDark ? "4px" : "30px";
+        const isDark = handle.offsetLeft >= center;
+        handle.style.left = isDark ? light_pos + "px" : dark_pos + "px";
 
         applyTheme(!isDark);
     });

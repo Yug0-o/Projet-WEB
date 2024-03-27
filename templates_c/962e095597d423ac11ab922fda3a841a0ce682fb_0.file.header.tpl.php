@@ -1,4 +1,27 @@
-<header>
+<?php
+/* Smarty version 3.1.48, created on 2024-03-27 11:17:14
+  from 'D:\Cesi\CPIA2\4 Dev Web\Projet\GitHub\Projet-WEB\tpl\header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.48',
+  'unifunc' => 'content_6603f22a29d675_65476899',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '962e095597d423ac11ab922fda3a841a0ce682fb' => 
+    array (
+      0 => 'D:\\Cesi\\CPIA2\\4 Dev Web\\Projet\\GitHub\\Projet-WEB\\tpl\\header.tpl',
+      1 => 1711534632,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_6603f22a29d675_65476899 (Smarty_Internal_Template $_smarty_tpl) {
+?><header>
     <div class="searchbar">
         <a href="homepage.php">
             <div class="logo-container">
@@ -6,7 +29,7 @@
                 <h1 class="logo animate" id="Name-logo" alt="Name-logo" min-width="20px">INTERNSHIP ETENDARD</h1>
             </div>
         </a>
-        {if $login == 'non'}
+        <?php if ($_smarty_tpl->tpl_vars['login']->value == 'non') {?>
         <form class="search searchbar" action="research.php">
             <input type="text" id="keyword" placeholder="Rechercher un stage" name="search_query">
             <button class="searchbutton" aria-label="Rechercher">
@@ -17,7 +40,7 @@
                 </svg>
             </button>
         </form>
-        {/if}
+        <?php }?>
         <div class="theme-login">
             <div class="switch">
                 <div class="slider"></div>
@@ -75,7 +98,7 @@
                 </div>
             </div>
 
-                {if $login == 'non'}
+                <?php if ($_smarty_tpl->tpl_vars['login']->value == 'non') {?>
                 <a href="login.php">
                 <button class="enabled animate" type="login" aria-label="Login">
                     <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +109,8 @@
                     <span class="connexion-text">Connexion</span>
                 </button>
                 </a>
-                {/if}
+                <?php }?>
         </div>
     </div>
-</header>
+</header><?php }
+}
