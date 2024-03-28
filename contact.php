@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
     <link rel="preload" href="assets/fonts/GothamSSm-Medium_Web.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/GothamSSm-Book_Web.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/GothamSSm-Light_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="images/logo-classic.webp" as="image" >
+    <link rel="preload" href="images/logo-classic.webp" as="image">
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="assets/style.css">
     <meta charset="utf-8">
@@ -13,25 +14,26 @@
     <meta name="description" content="Contactez-nous en utilisant notre formulaire.">
     <title>Contact - Internship Etendard</title>
 </head>
+
 <body>
 
     <?php
-        define('SMARTY_DIR', 'libs\\');
-        require_once(SMARTY_DIR . 'Smarty.class.php');
+    define('SMARTY_DIR', 'libs\\');
+    require_once(SMARTY_DIR . 'Smarty.class.php');
 
-        $smarty_loading = new Smarty();
+    $smarty_loading = new Smarty();
 
-        $smarty_loading->setTemplateDir('tpl/');
-        $smarty_loading->display('loading.tpl');
+    $smarty_loading->setTemplateDir('tpl/');
+    $smarty_loading->display('loading.tpl');
 
 
 
-        $smarty_header = new Smarty();
+    $smarty_header = new Smarty();
 
-        $smarty_header->assign('login', 'non');
+    $smarty_header->assign('login', 'non');
 
-        $smarty_header->setTemplateDir('tpl/');
-        $smarty_header->display('header.tpl');
+    $smarty_header->setTemplateDir('tpl/');
+    $smarty_header->display('header.tpl');
     ?>
 
     <main>
@@ -74,7 +76,7 @@
                             </div>
                             <p><i style="color: #f83643;">* : obligatoires</i></p>
                         </div>
-                        
+
                         <div class="vertical-line"></div>
 
                         <div class="box1">
@@ -96,13 +98,9 @@
 
                     <div id="error-tel" style="display: none; color: red;">Veuillez entrer un numéro de téléphone correct.</div>
 
-                    <div style="display: flex">
-                        <div class="boxbutton">
-                            <button class="disabled" type="reset" aria-label="Effacer" disabled>Effacer</button>
-                        </div>
-                        <div class="boxbutton">
-                            <button class="disabled" type="submit" onclick="return verifData()" aria-label="Envoyer" disabled>Envoyer</button>
-                        </div>
+                    <div class="button-container">
+                        <button class="disabled" type="reset" aria-label="Effacer" disabled>Effacer</button>
+                        <button class="disabled" type="submit" onclick="return verifData()" aria-label="Envoyer" disabled>Envoyer</button>
                     </div>
                 </form>
             </article>
@@ -110,10 +108,10 @@
     </main>
 
     <?php
-        $smarty_footer = new Smarty();
+    $smarty_footer = new Smarty();
 
-        $smarty_footer->setTemplateDir('tpl/');
-        $smarty_footer->display('footer.tpl');
+    $smarty_footer->setTemplateDir('tpl/');
+    $smarty_footer->display('footer.tpl');
     ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -121,4 +119,5 @@
     <script src="assets/JS/global.js" async></script>
     <script src="assets/JS/resriction.js" async></script>
 </body>
+
 </html>

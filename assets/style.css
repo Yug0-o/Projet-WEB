@@ -25,16 +25,17 @@
 }
 
 /*---------------------------------------------------------------*/
-
 :root {
     --primary-color: #000;
     --primary-color-darker: #000;
     --secondary-color: #000;
     --background-color: #000;
     --secondary-background-color: #000;
+    --tertiary-background-color: #000;
     --header-background: #000;
     --text-color: #000;
     --link-default-color: #000;
+    --link-underlined-color: #000;
     --inverted-text-color: #000;
     --logo-gradient: #000;
     --hover-color: #000;
@@ -43,63 +44,64 @@
     --checkbox-checked-background: #000;
     --checkbox-checked-box-shadow: #000;
     --footer-text-shadow: #000;
-    --dashboard-border-color:#000;
-    --carousel-card-background:#000;
-    --carousel-card-text-color:#000;
-    --box-shadow:#000;
-    --research-button-hover-background:#000;
-    --job-color:#000;
-    --pagination-button-color:#000;
-    --center-container-background:#000;
+    --dashboard-border-color: #000;
+    --carousel-card-background: #000;
+    --carousel-card-text-color: #000;
+    --box-shadow: #000;
+    --research-button-hover-background: #000;
+    --job-color: #000;
+    --pagination-button-color: #000;
+    --center-container-background: #000;
 }
-
 
 body.light-mode {
         --primary-color: #F85F6A;
         --primary-color-darker: #B3444B;
         --secondary-color: #000;
-        --background-color: #fff;
-        --secondary-background-color: #fafafa;
+        --background-color: #FFFFFF;
+        --secondary-background-color: #E1E1E1;
+        --tertiary-background-color: #D0D0D0;
         --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
         --text-color: #303030;
         --link-default-color: #393C41;
         --link-underlined-color: #F85F6A;
         --inverted-text-color: #FAFAFA;
-        --logo-gradient: linear-gradient(to right, #BB2949 0%, #2f375e 80%);
-        --hover-color: #e0e0e0;
+        --logo-gradient: linear-gradient(to right, #BB2949 0%, #2F375E 80%);
+        --hover-color: #F1F1F1;
         --h1-background-color: #0d2965;
         --checkbox-background: #f0f0f0;
         --checkbox-checked-background: #2196F3;
-        --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
+        --checkbox-checked-box-shadow: inset -2px -2px 5px #1E87D8, inset 2px 2px 5px #23A5FF;
         --footer-text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
         --dashboard-border-color: var(--primary-color);
         --carousel-card-background: #fff;
         --carousel-card-text-color: #454545;
         --box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
-        --research-button-hover-background: #f0f0f0;
+        --research-button-hover-background: #F0F0F0;
         --job-color: #fff;
         --pagination-button-color: gainsboro;
         --center-container-background: rgba(0, 0, 0, .15);
-    }
+}
 
 
 body.dark-mode {
         --primary-color: #B3444B;
         --primary-color-darker: #F85F6A;
-        --secondary-color: #fff;
+        --secondary-color: #FFFFFF;
         --background-color: #1E1E1E;
         --secondary-background-color: #303030;
+        --tertiary-background-color: #404040;
         --header-background: linear-gradient(to top, rgba(0, 0, 0, 0), var(--background-color));
         --text-color: #F0F0F0;
-        --link-default-color: #e6e6e6;
+        --link-default-color: #E6E6E6;
         --link-underlined-color: #F85F6A;
         --inverted-text-color: var(--text-color);
-        --logo-gradient: linear-gradient(to right, #da375a 0%, rgb(118, 133, 200) 80%);
+        --logo-gradient: linear-gradient(to right, #DA375A 0%, rgb(118, 133, 200) 80%);
         --hover-color: #404040;
         --h1-background-color: #123581;
         --checkbox-background: #303030;
         --checkbox-checked-background: #2196F3;
-        --checkbox-checked-box-shadow: inset -2px -2px 5px #1e87d8, inset 2px 2px 5px #23a5ff;
+        --checkbox-checked-box-shadow: inset -2px -2px 5px #1E87D8, inset 2px 2px 5px #23A5FF;
         --footer-text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
         --dashboard-border-color: var(--primary-color);
         --carousel-card-background: #303030;
@@ -109,7 +111,7 @@ body.dark-mode {
         --job-color: #1E1E1E;
         --pagination-button-color: #1E1E1E;
         --center-container-background: rgba(255, 255, 255, .1);
-    }
+}
 
 /*---------------------------------------------------------------*/
 
@@ -179,9 +181,8 @@ header {
     top: 0;
     width: 100%;
     z-index: 100;
-    background: transparent;
+    background: var(--header-background);
     backdrop-filter: blur(10px);
-    /* thin border */
     border-bottom: 1px solid var(--hover-color);
 }
 
@@ -197,7 +198,7 @@ header.hidden {
 
 header div.theme-login{
     display: flex;
-    width: 300px;
+    width: 450px;
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -220,7 +221,6 @@ p .badapple{
         transform: translateY(0);
     }
 }
-
 
 @keyframes slideInX {
     0% {
@@ -248,8 +248,7 @@ h1, h2, h3, h4, p {
     color: var(--text-color);
 }
 
-.align p
-{
+.align p {
     text-align: justify;
 }
 
@@ -269,7 +268,6 @@ h1, h2, h3, h4, p {
     padding: 20px;
     background-color: var(--secondary-background-color);
 }
-
 
 .garde {
     color: var(--text-color);
@@ -382,7 +380,7 @@ button {
     margin: 10px 0px;
     padding: 12px 20px;
     border: none;
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
     width: 115px;
     box-shadow: var(--box-shadow);
@@ -398,17 +396,23 @@ button[type="login"] {
     color: black;
     padding: 8px;
     border-radius: 50px;
-    margin-left: 20px;
-    width: 100px;
+    margin-inline: 20px;
+    width: 40px;
     height: 40px;
-    pointer-events: none;
+    pointer-events: all;
+}
+
+button[type="login"]:hover {
+    filter: brightness(110%);
 }
 
 
 .tds-icon-person {
-    display: none;
-    width: 30px;
+    display: block;
+    width: 20px;
     transition: none;
+    fill: var(--text-color);
+    transform: scale(1.5);
 }
 
 .disabled {
@@ -512,12 +516,8 @@ button:active.enabled {
     user-select: none;
 }
 
-.slider.light-mode{
-    background-color: #D0D0D0;
-}
-
-.slider.dark-mode{
-    background-color: #303030;
+.slider{
+    background-color: var(--tertiary-background-color)!important
 }
 
 .slider {
@@ -538,18 +538,17 @@ button:active.enabled {
     width: 30px;
     height: 30px;
     background: transparent;
+    background-color: var(--background-color);
     position: absolute;
     border-radius: 50%;
     cursor: pointer;
 }
 
 .handle.light-mode{
-    background-color: white;
     left: 6px;
 }
 
 .handle.dark-mode{
-    background-color: #161616;
     left: 25px;
 }
 
@@ -642,7 +641,7 @@ h1.text-center-accueil{
 }
 
 .logo-container {
-    width: 300px;
+    width: 450px;
 }
 
 #logo-classic {
@@ -668,8 +667,8 @@ h1.text-center-accueil{
     align-items: center;
     justify-content: center;
     font-family: Gotham SSm;
-    width: 300px;
-    font-size: 20px;
+    width: 450px;
+    font-size: 30px;
     border: none;
     text-align: center;
     pointer-events: none;
@@ -678,6 +677,7 @@ h1.text-center-accueil{
     background-clip: text;
     -webkit-background-clip: text;
 }
+
 
 #Name-logo.animate{
     opacity: 0;
@@ -978,7 +978,7 @@ input, select, textarea {
     font-weight: 400;
     color: var(--text-color);
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     width : 240px;
     background-color: var(--secondary-background-color);
     padding: 15px;
@@ -993,12 +993,12 @@ textarea {
     height: 100px;
 }
 
-input:hover {
+input:hover, textarea:hover {
     background-color: var(--hover-color);
     box-shadow: var(--box-shadow);
 }
 
-input:focus {
+input:focus, textarea:focus {
     background-color: var(--hover-color);
 }
 
@@ -1021,7 +1021,7 @@ input[type="checkbox"], input[type="radio"] {
 
 .searchbar input[type="text"] {
     height: 40px;
-    min-width: 150px;
+    /* min-width: 150px; */
     margin-right: 40px;
     flex: 1;
 }
@@ -1401,6 +1401,34 @@ canvas {
 
 /* Responsive */
 
+@media screen and (max-width: 1000px) {
+    #Name-logo {
+        font-size: 20px;
+        width: 300px;
+    }
+
+    .logo-container {
+        width: 300px;
+    }
+
+    header div.theme-login {
+        width: 210px;
+    }
+
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .box1 .container {
+        flex-direction: row;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+}
+
+
 @media screen and (max-width: 850px) {
     .text-center {
         flex-direction: column-reverse;
@@ -1416,14 +1444,12 @@ canvas {
         display: inline;
     }
 
-    .email-entry,
-    .email-sent {
+    .email-entry, .email-sent {
         font-size: 0.5em;
     }
 
-
     .logo-container {
-        width: auto;
+        width: 80px;
     }
 
     .logo{
@@ -1456,61 +1482,52 @@ canvas {
         width: 100%;
     }
 
-    .container {
-        flex-direction: column;
-    }
-
     .filters {
         min-height: 60px;
-    }
-
-    header div.theme-login {
-        width: 210px;
     }
 }
 
 @media screen and (max-width: 650px) {
-    .logo-container {
-        margin-inline: 0px;
-        width : auto;
-    }
 
-    .searchbar {
-        margin-right: 15px;
-    }
     .searchbar input[type="text"] {
-        min-width: 10px!important;
+        min-width: 10px;
+        margin-right: 10px;
     }
 
     .searchbutton {
-        margin-left: -40px;
-        border-radius: 0 10px 10px 0;
+        margin-left: -70px;
+        box-shadow: none;
     }
 
     button[type="login"] {
-        width: 50px;
-        height: 40px;
         margin-inline: 10px;
-    }
-    input[type="text"] {
-        border-radius: 10px 0 0 10px;
-    }
-    
-    .connexion-text {
-        display: none;
-    }
-
-    .tds-icon-person {
-        display: block;
-        fill: var(--text-color);
+        margin-right: 5px;
     }
 
     header div.theme-login {
         width: auto;
-        margin-left: 0px;
+        margin-inline: 10px;
         padding-right: 0px;
     }
     .switch {
         margin-left: 0px;
+    }
+
+    .container {
+        flex-direction: column-reverse!important;
+    
+    }
+}
+
+
+@media screen and (max-width: 435px) {
+    .searchbutton {
+        opacity: 0;
+        transform: translateX(25px);
+        pointer-events: none;
+    }
+
+    .searchbar {
+        min-width: 110px!important;
     }
 }
