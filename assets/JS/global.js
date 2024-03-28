@@ -1,5 +1,5 @@
 window.onload = function () {
-    const elements = document.querySelectorAll('body > *:not(footer)');
+    const elements = document.querySelectorAll('body > *:not(footer):not(script)');
     elements.forEach(element => element.classList.add('animate'));
 
     document.fonts.ready.then(() => {
@@ -69,7 +69,7 @@ window.onload = function () {
                 let newLeft = Math.min(Math.max(startLeft + event.clientX - startX, light_pos - 2), dark_pos+2);
                 handle.style.left = newLeft + "px";
                 isDragged = true;
-                if (newLeft >= center+3) {
+                if (newLeft >= center+4) { //+4 due to the middle not being an integer 
                     applyTheme(true);
                 } else if (newLeft <= center-3){
                     applyTheme(false);
