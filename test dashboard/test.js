@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Define data
   var data = {
-      labels: ['colinne', 'gpt', 'hugo', 'charles', 'maxime', 'sam'],
+      labels: ['paul', 'gpt', 'hugo', 'charles', 'maxime', 'aurélien'],
       datasets: [{
           label: "people who fucked sam'mother",
           data: [12, 10, 3, 5, 2, 3],
@@ -150,13 +150,16 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener('resize', function() {
       canvas.width = canvas.parentNode.clientWidth;
       canvas.height = canvas.parentNode.clientHeight;
-      updateLegendPosition();
       myPieChart.resize();
       myPieChart.options = options;
       myPieChart.update();
   });
 });
 
+function toggleMenu() {
+  var nav = document.getElementById('mobile-nav');
+  nav.classList.toggle('show');
+}
 
 
 

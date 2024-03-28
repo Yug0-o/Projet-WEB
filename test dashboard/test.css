@@ -54,7 +54,7 @@ main {
 .container .flx1 {
   width: 20%;
   min-width: 150px;
-  height: 92%;
+  height: 80vh;
   margin: 1%;
   position: relative;
   border-radius: 40px;
@@ -86,14 +86,18 @@ main {
 
 
 .container .flx2 .flx2_1 * {
-  width: 20%; /* Adjust the width of the flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  width: 90%; /* Adjust the width of the flexbox */
   height: 150px; 
   margin: 1%;
   position: relative;
   border-radius: 40px;
   border: 1px solid black;
   padding: 2%;
-  overflow: auto;
+  overflow: hidden;
 }
 
 .container .flx2 .flx2_2 {
@@ -155,7 +159,8 @@ canvas {
   overflow: hidden; /* Add this line to prevent content overflow */
 }
 
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 775px) {
   .flx2 {
     height: 128vh!important;
     width: 95%!important;
@@ -184,7 +189,109 @@ canvas {
   }
   .container {
     height: 130vh!important;
+    width: 85vh!important;
     padding: 0%;
   }
-  
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    width: 40vh;
+  }
+  .flx2 {
+    height: 128vh!important;
+    width: 95%!important;
+    padding: 1%;
+  }
+  .flx2_1 {
+    flex-direction: column!important;
+    height: 60vh!important;
+  }
+  .flx2_1 * {
+    width: 80%!important;
+    height: 15vh!important;
+  }
+  .flx2_2 {
+    flex-direction: column !important;
+    height: 67vh!important;
+  }
+  .flx2_2 * {
+    width:95% !important;
+    height: 35vh!important;
+    display: flex;
+    justify-content: center; 
+  }
+  .flx1 {
+    display: none;
+  }
+  .container {
+    height: 130vh!important;
+    width: 43vh!important;
+    padding: 0%;
+  }
+}
+
+
+.burger {
+  display: none; /* Cacher le bouton sur les grands écrans */
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%; /* Faire en sorte que le bouton soit un cercle */
+  position: fixed; /* Faire en sorte que le bouton reste à une position fixe */
+  bottom: 20px; /* Positionner le bouton en bas de la page */
+  left: 20px; /* Positionner le bouton à gauche de la page */
+  background-color: #333; /* Ajouter une couleur de fond au bouton */
+  align-items: center; /* Centrer les lignes verticalement */
+  justify-content: center; /* Centrer les lignes horizontalement */
+  padding: 10px;
+}
+
+.burger .line {
+  width: 30px;
+  height: 2px;
+  background-color: #fff; /* Changer la couleur des lignes en blanc */
+  margin: 4px 0; /* Espacer les lignes */
+}
+
+#mobile-nav {
+  display: none; /* Cacher le menu par défaut */
+}
+
+#mobile-nav.show {
+  display: block; /* Afficher le menu quand la classe 'show' est ajoutée */
+}
+
+.menu {
+  display: none; /* Cacher le menu par défaut */
+  position: fixed; /* Positionner le menu par-dessus le contenu de la page */
+  top: 0; /* Positionner le menu en haut de la page */
+  left: 0; /* Positionner le menu à gauche de la page */
+  width: 30%; /* Faire en sorte que le menu prenne la moitié de la largeur de la page */
+  height: 100%; /* Faire en sorte que le menu prenne toute la hauteur de la page */
+  background-color: rgba(0, 0, 0, 0.86); /* Ajouter une couleur de fond semi-transparente au menu */
+  color: #fff; /* Changer la couleur du texte en blanc */
+  padding: 20px; /* Ajouter un peu d'espace autour du contenu du menu */
+}
+
+.menu.show {
+  display: block; /* Afficher le menu quand la classe 'show' est ajoutée */
+}
+
+.cancel {
+  position: absolute; /* Positionner le bouton par rapport au menu */
+  bottom: 50px; /* Positionner le bouton en bas du menu */
+  left: 50%; /* Centrer le bouton horizontalement */
+  transform: translateX(-50%); /* Décaler le bouton de moitié à gauche pour le centrer parfaitement */
+  background: none; /* Supprimer le fond du bouton */
+  border: none; /* Supprimer la bordure du bouton */
+  color: #fff; /* Changer la couleur du texte en blanc */
+  font-size: 14px; /* Augmenter la taille du texte */
+  cursor: pointer; /* Changer le curseur en main quand on survole le bouton */
+}
+
+@media (max-width: 775px) {
+  .burger {
+      display: block; /* Afficher le bouton sur les petits écrans */
+  }
 }

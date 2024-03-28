@@ -10,35 +10,49 @@
 <body>
   <div class="container">
     <div class="flx1"> 
-      <h1>test1</h1>
-      <h2>test1.1</h2>
-      <h3>test1.1.1</h3>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
+      <div>
+          test
+      </div>
     </div>
     <div class="flx2">
       <div class="flx2_1">
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
-        <div>test</div>
+        <div >
+          <div style="border: none;">nombre de gens avec stage</div> 
+            <div style="font-size: 3vh; border: none;">198</div>
+        </div>
+        <div>
+          <div style="border: none;">nombre de gens sans stage</div> 
+            <div style="font-size: 3vh; border: none;">958</div>
+        </div>
+        <div>
+          <div style="border: none;">stage en attente</div> 
+            <div style="border: none;"> btp : 458</div>
+            <div style="border: none;"> géné : 245</div>
+            <div style="border: none;"> info : 64</div>
+        </div>
+        <div>
+          <div style="border: none;">nombre de stage en favoris</div> 
+            <div style="font-size: 3vh; border: none;">458</div>
+        </div>
       </div>
       <div class="flx2_2">
         <div>
           <canvas id="myPieChart" class="#myPieChart"></canvas>
         </div>
-        <div>
-          <canvas id="lineChart"></canvas>
-        </div>
       </div>
     </div> 
   </div>
+  <button class="burger" onclick="toggleMenu()">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </button>
+
+  <div id="mobile-nav" class="menu">
+    <a href="page1.html">Page 1</a>
+    <a href="page2.html">Page 2</a>
+    <button class="cancel" onclick="toggleMenu()">✖ Annuler</button>
+</div>
   <script src="test.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
