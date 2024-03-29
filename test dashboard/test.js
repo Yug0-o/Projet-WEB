@@ -22,10 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
   // Create an array of group names and their corresponding values
   const groups = ['Généraliste', 'Informatique', 'BTP'];
   const values = [30, 50, 20];
-
-  // Check data arrays
-  console.log("Groups:", groups);
-  console.log("Values:", values);
   
   /* renvoyé une erreur, 'canvas' est vide, il y a pas d'element avec l'id piechart */
   // Create a new pie chart
@@ -46,12 +42,10 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("DOM Content Loaded"); // Check if DOMContentLoaded event is fired
     
     // Get the canvas element from the HTML
-    const canvas = document.getElementById('lineChart');
-    console.log("Canvas Element:", canvas); // Check if canvas element is correctly accessed
+    const canvas = document.getElementById('lineChart')
     
     // Create an array of x values
     const xValues = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
-    console.log("X Values:", xValues); // Check x values
     
     // Create datasets
     const dataset1 = {
@@ -162,4 +156,29 @@ function toggleMenu() {
 }
 
 
+function showStats() {
+  document.getElementById('stats').style.display = 'block';
+  document.getElementById('comptes').style.display = 'none';
+  document.getElementById('stages').style.display = 'none';
+  document.getElementById('nav-stats').classList.add('active');
+  document.getElementById('nav-comptes').classList.remove('active');
+  document.getElementById('nav-stages').classList.remove('active');
+}
 
+function showComptes() {
+  document.getElementById('comptes').style.display = 'block';
+  document.getElementById('stats').style.display = 'none';
+  document.getElementById('stages').style.display = 'none';
+  document.getElementById('nav-comptes').classList.add('active');
+  document.getElementById('nav-stats').classList.remove('active');
+  document.getElementById('nav-stages').classList.remove('active');
+}
+
+function showStages() {
+  document.getElementById('stages').style.display = 'block';
+  document.getElementById('comptes').style.display = 'none';
+  document.getElementById('stats').style.display = 'none';
+  document.getElementById('nav-stages').classList.add('active');
+  document.getElementById('nav-comptes').classList.remove('active');
+  document.getElementById('nav-stats').classList.remove('active');
+}

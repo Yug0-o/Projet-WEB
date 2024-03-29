@@ -10,6 +10,10 @@ body {
   width: 90vw;
 }
 
+#comptes, #stages {
+  display: none;
+}
+
 /* MAIN MENU */
 
 main {
@@ -61,6 +65,24 @@ main {
   border: 1px solid black;
 }
 
+.nav-logo {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 6vh;
+}
+
+.nav-items p {
+  cursor: pointer;
+  text-align: center;
+  font-size: 24px;
+  margin: 50px 0;
+}
+
+.nav-items .active {
+  text-decoration: underline;
+  font-size: 28px; /* adjust as needed */
+}
+
 .container .flx2 {
   width: 99%;
   margin: 1%;
@@ -69,6 +91,8 @@ main {
   border-radius: 40px;
   border: 1px solid black;
 }
+
+
 
 /*.flx2_1 ;)*/
 .container .flx2 .flx2_1 {
@@ -94,7 +118,7 @@ main {
   height: 150px; 
   margin: 1%;
   position: relative;
-  border-radius: 40px;
+  border-radius: 10px;
   border: 1px solid black;
   padding: 2%;
   overflow: hidden;
@@ -231,6 +255,7 @@ canvas {
   }
 }
 
+/* burger button */
 
 .burger {
   display: none; /* Cacher le bouton sur les grands écrans */
@@ -263,7 +288,7 @@ canvas {
 }
 
 .menu {
-  display: none; /* Cacher le menu par défaut */
+  display: flex; /* Cacher le menu par défaut */
   position: fixed; /* Positionner le menu par-dessus le contenu de la page */
   top: 0; /* Positionner le menu en haut de la page */
   left: 0; /* Positionner le menu à gauche de la page */
@@ -271,7 +296,7 @@ canvas {
   height: 100%; /* Faire en sorte que le menu prenne toute la hauteur de la page */
   background-color: rgba(0, 0, 0, 0.86); /* Ajouter une couleur de fond semi-transparente au menu */
   color: #fff; /* Changer la couleur du texte en blanc */
-  padding: 20px; /* Ajouter un peu d'espace autour du contenu du menu */
+  padding: 10px; /* Ajouter un peu d'espace autour du contenu du menu */
 }
 
 .menu.show {
@@ -294,4 +319,34 @@ canvas {
   .burger {
       display: block; /* Afficher le bouton sur les petits écrans */
   }
+}
+
+.nav-link {
+  color: white;
+  text-align: center;
+  display: block;
+}
+
+.nav-link, .nav-link:visited, .nav-link:active {
+  color: white;
+  text-align: center;
+  display: block;
+}
+
+.logo-container {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom:6vh;
+}
+
+.logo {
+  width: 8vh; /* adjust as needed */
+  height: 8vh; /* adjust as needed */
+}
+
+#mobile-nav a {
+  display: block;
+  color: white; /* adjust as needed */
+  text-decoration: none;
+  padding: 10px 0;
 }

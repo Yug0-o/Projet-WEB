@@ -10,37 +10,55 @@
 <body>
   <div class="container">
     <div class="flx1"> 
-      <div>
-          test
+      <div class="nav-logo">
+        <img src="/images/logo-classic.webp" alt="Logo" class="logo">
+      </div>
+      <div class="nav-items">
+        <p id="nav-stats" onclick="showStats()">Affichage des statistiques</p>
+        <p id="nav-comptes" onclick="showComptes()">Information comptes</p>
+        <p id="nav-stages" onclick="showStages()">Information stages</p>
       </div>
     </div>
-    <div class="flx2">
-      <div class="flx2_1">
-        <div >
-          <div style="border: none;">nombre de gens avec stage</div> 
-            <div style="font-size: 3vh; border: none;">198</div>
+    <div class="container flx2" id="stats">
+      <div class="flx2">
+        <div class="flx2_1">
+          <div >
+            <div style="border: none;">nombre de gens avec stage</div> 
+              <div style="font-size: 3vh; border: none;">198</div>
+          </div>
+          <div>
+            <div style="border: none;">nombre de gens sans stage</div> 
+              <div style="font-size: 3vh; border: none;">958</div>
+          </div>
+          <div>
+            <div style="border: none;">stage en attente</div> 
+              <div style="border: none;"> btp : 458</div>
+              <div style="border: none;"> géné : 245</div>
+              <div style="border: none;"> info : 64</div>
+          </div>
+          <div>
+            <div style="border: none;">nombre de stage en favoris</div> 
+              <div style="font-size: 3vh; border: none;">458</div>
+          </div>
         </div>
-        <div>
-          <div style="border: none;">nombre de gens sans stage</div> 
-            <div style="font-size: 3vh; border: none;">958</div>
+        <div class="flx2_2">
+          <div>
+            <canvas id="myPieChart" class="#myPieChart"></canvas>
+          </div>
         </div>
-        <div>
-          <div style="border: none;">stage en attente</div> 
-            <div style="border: none;"> btp : 458</div>
-            <div style="border: none;"> géné : 245</div>
-            <div style="border: none;"> info : 64</div>
-        </div>
-        <div>
-          <div style="border: none;">nombre de stage en favoris</div> 
-            <div style="font-size: 3vh; border: none;">458</div>
-        </div>
-      </div>
-      <div class="flx2_2">
-        <div>
-          <canvas id="myPieChart" class="#myPieChart"></canvas>
+      </div> 
+    </div>
+    <div class="container flx2" id="comptes"> 
+      <div class="flx2">
+        <div class="flx2_1">
+          <div>sfdsd</div>
+          <div>sfdsd</div>
+          <div>sfdsd</div>
+          <div>sfdsd</div>
         </div>
       </div>
     </div> 
+    <div class="container flx2" id="stages">
   </div>
   <button class="burger" onclick="toggleMenu()">
     <div class="line"></div>
@@ -49,8 +67,14 @@
   </button>
 
   <div id="mobile-nav" class="menu">
-    <a href="page1.html">Page 1</a>
-    <a href="page2.html">Page 2</a>
+    <div class="logo-container">
+        <img src="/images/logo-classic.webp" alt="Logo" class="logo">
+    </div>
+    <a class="nav-link" href="page1.html">Affichage des statistiques</a>
+    <hr>
+    <a class="nav-link" href="page2.html">Information comptes</a>
+    <hr>
+    <a class="nav-link" href="page3.html">Information stages</a>
     <button class="cancel" onclick="toggleMenu()">✖ Annuler</button>
 </div>
   <script src="test.js"></script>
