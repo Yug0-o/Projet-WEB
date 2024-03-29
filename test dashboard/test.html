@@ -50,6 +50,10 @@
     </div>
     <div class="container flx2" id="comptes"> 
       <div class="flx2">
+        <div class="top-container">
+          <div class="box65"></div>
+          <div class="box20"></div>
+        </div>
         <div class="flx2_1">
           <div>sfdsd</div>
           <div>sfdsd</div>
@@ -59,6 +63,17 @@
       </div>
     </div> 
     <div class="container flx2" id="stages">
+      <div class="flx2">
+        <div class="top-container">
+          <div class="box65"></div>
+          <div class="box20"></div>
+        </div>
+        <div class="flx2_1">
+          <div>sfdsd</div>
+          <div>sfdsd</div>
+        </div>
+      </div>
+    </div>
   </div>
   <button class="burger" onclick="toggleMenu()">
     <div class="line"></div>
@@ -70,12 +85,13 @@
     <div class="logo-container">
         <img src="/images/logo-classic.webp" alt="Logo" class="logo">
     </div>
-    <a class="nav-link" href="page1.html">Affichage des statistiques</a>
+    <p class="nav-link" onclick="showStats()">Affichage des statistiques</p>
     <hr>
-    <a class="nav-link" href="page2.html">Information comptes</a>
+    <p class="nav-link" onclick="showComptes()">Information comptes</p>
     <hr>
-    <a class="nav-link" href="page3.html">Information stages</a>
+    <p class="nav-link" onclick="showStages()">Information stages</p>
     <button class="cancel" onclick="toggleMenu()">✖ Annuler</button>
+  </div>
 </div>
   <script src="test.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

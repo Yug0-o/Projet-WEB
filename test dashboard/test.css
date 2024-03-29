@@ -74,13 +74,13 @@ main {
 .nav-items p {
   cursor: pointer;
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
   margin: 50px 0;
 }
 
 .nav-items .active {
   text-decoration: underline;
-  font-size: 28px; /* adjust as needed */
+  font-size: 26px; /* adjust as needed */
 }
 
 .container .flx2 {
@@ -89,7 +89,6 @@ main {
   height: 80vh;
   position: relative;
   border-radius: 40px;
-  border: 1px solid black;
 }
 
 
@@ -145,6 +144,26 @@ main {
   border: 1px solid black;
 }
 
+.top-container {
+  display: flex; /* This makes the children of top-container line up horizontally */
+}
+
+.box65 {
+  flex: 65; /* This makes box60 take up 60% of the width of top-container */
+  border: 1px solid black;
+  height: 45vh;
+  margin-right: 20px; /* Add some space between the boxes */
+  border-radius: 40px;
+}
+
+.box20 {
+  flex: 20; /* This makes box40 take up 40% of the width of top-container */
+  border: 1px solid black;
+  height: 45vh;
+  border-radius: 40px;
+}
+
+/* CHARTS */
 #myPieChart {
   flex: 1; /* Allow the canvas to grow and shrink to fill its container */
   width: 90%; /* Ensure the canvas takes up full width of its container */
