@@ -46,9 +46,9 @@
             </div>
             <article>
                 <form method="post">
-                    <div class="container">
+                    <div class="container_contact">
                         <div class="box1">
-                            <div class="container">
+                            <div class="container_contact">
                                 <div class="box1">
                                     <label>Nom *</label>
                                     <input name="lastname" type="text" value="" size="100" required>
@@ -58,7 +58,7 @@
                                     <input name="firstname" type="text" value="" size="100" required>
                                 </div>
                             </div>
-                            <div class="container">
+                            <div class="container_contact">
                                 <div class="box1">
                                     <label>Adresse mail *</label>
                                     <input name="email" type="text" value="" size="100" required>
@@ -68,7 +68,7 @@
                                     <input id='tel' name="tel" type="text" value="" size="100" required maxlength="10">
                                 </div>
                             </div>
-                            <div class="container">
+                            <div class="container_contact">
                                 <div class="box1">
                                     <label>Votre message</label>
                                     <textarea name="feedbacks" rows="5" cols="100"></textarea>
