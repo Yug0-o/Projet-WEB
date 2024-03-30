@@ -732,6 +732,17 @@ h1.text-center-accueil{
     color: var(--text-color);
 }
 
+.container_contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    color: var(--text-color);
+}
+
 .container-bando {
     background-color: var(--secondary-background-color);
     display: flex;
