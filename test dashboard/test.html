@@ -18,6 +18,11 @@
         <p id="nav-comptes" onclick="showComptes()">Information comptes</p>
         <p id="nav-stages" onclick="showStages()">Information stages</p>
       </div>
+      <div class="nav-items-bottom">
+        <p onclick="showAccountInfo()">Information du compte</p>
+        <p onclick="switchToStudentView()">Passage en vue étudiant</p>
+        <p onclick="logout()">Déconnexion</p>
+      </div>
     </div>
     <div class="container flx2" id="stats">
       <div class="flx2">
@@ -85,11 +90,18 @@
     <div class="logo-container">
         <img src="/images/logo-classic.webp" alt="Logo" class="logo">
     </div>
-    <p class="nav-link" onclick="showStats()">Affichage des statistiques</p>
-    <hr>
-    <p class="nav-link" onclick="showComptes()">Information comptes</p>
-    <hr>
-    <p class="nav-link" onclick="showStages()">Information stages</p>
+    <div class="nav-link">
+      <p id="nav-stats" onclick="showStats()">Affichage des statistiques</p>
+      <hr>
+      <p id="nav-comptes" onclick="showComptes()">Information comptes</p>
+      <hr>
+      <p id="nav-stages" onclick="showStages()">Information stages</p>
+    </div>
+    <div class="nav-link-bottom">
+      <p onclick="showAccountInfo()">Information du compte</p>
+      <p onclick="switchToStudentView()">Passage en vue étudiant</p>
+      <p onclick="logout()">Déconnexion</p>
+    </div>
     <button class="cancel" onclick="toggleMenu()">✖ Annuler</button>
   </div>
 </div>
