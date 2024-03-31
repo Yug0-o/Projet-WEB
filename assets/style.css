@@ -1067,8 +1067,7 @@ input[type="checkbox"], input[type="radio"] {
 }
 
 .tds-icon-search {
-    transform: scale(20);
-    fill: #000;
+    fill: var(--secondary-color);
     width: 30px;
     height: 30px;
 }
@@ -1533,12 +1532,17 @@ canvas {
 
 @media screen and (max-width: 435px) {
     .searchbutton {
-        opacity: 0;
-        transform: translateX(25px);
+        /* opacity: 0; */
+        transform: translateX(10px);
+        background-color: transparent;
         pointer-events: none;
     }
 
     .searchbar {
         min-width: 110px!important;
+    }
+
+    .searchbar input[type="text"] {
+        padding-right: 35px;
     }
 }
