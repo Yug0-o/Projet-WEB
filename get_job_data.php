@@ -4,7 +4,7 @@ try {
     $pass = '';
     $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
+} catch (PDOException) {
     echo "Connection failed: An error occurred while processing the request.";
     die();
 }
