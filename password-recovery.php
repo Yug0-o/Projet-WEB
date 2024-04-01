@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
     <link rel="preload" href="assets/fonts/GothamSSm-Medium_Web.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/GothamSSm-Book_Web.woff2" as="font" type="font/woff2" crossorigin>
@@ -7,30 +8,32 @@
     <link rel="preload" href="images/logo-classic.webp" as="image">
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="manifest" href="assets/manifest.json">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Internship Etendard">
     <meta name="description" content="Connectez-vous à votre espace.">
     <title>Oublié votre mot de passe? - Internship Etendard</title>
 </head>
+
 <body>
 
     <?php
-        define('SMARTY_DIR', 'libs\\');
-        require_once(SMARTY_DIR . 'Smarty.class.php');
+    define('SMARTY_DIR', 'libs\\');
+    require_once(SMARTY_DIR . 'Smarty.class.php');
 
-        $smarty_loading = new Smarty();
+    $smarty_loading = new Smarty();
 
-        $smarty_loading->setTemplateDir('tpl/');
-        $smarty_loading->display('loading.tpl');
+    $smarty_loading->setTemplateDir('tpl/');
+    $smarty_loading->display('loading.tpl');
 
 
 
-        $smarty_header = new Smarty();
-        $smarty_header->assign('login', 'non');
+    $smarty_header = new Smarty();
+    $smarty_header->assign('login', 'non');
 
-        $smarty_header->setTemplateDir('tpl/');
-        $smarty_header->display('header.tpl');
+    $smarty_header->setTemplateDir('tpl/');
+    $smarty_header->display('header.tpl');
     ?>
 
     <main>
@@ -59,10 +62,10 @@
     </main>
 
     <?php
-        $smarty_footer = new Smarty();
+    $smarty_footer = new Smarty();
 
-        $smarty_footer->setTemplateDir('tpl/');
-        $smarty_footer->display('footer.tpl');
+    $smarty_footer->setTemplateDir('tpl/');
+    $smarty_footer->display('footer.tpl');
     ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

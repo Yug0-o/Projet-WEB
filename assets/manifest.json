@@ -1,0 +1,16 @@
+{
+    "short_name": "Internship Etendard",
+    "name": "Internship Etendard",
+    "icons": [
+        {
+            "src": "/images/logo-classic.png",
+            "type": "image/png",
+            "sizes": "322x321"
+        }
+    ],
+    "start_url": "/",
+    "background_color": "#2F375E",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#F85F6A"
+}
