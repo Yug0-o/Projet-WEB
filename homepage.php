@@ -46,7 +46,7 @@
         <div class="card-carousel">
             <div class="card" id="1">
                 <div class="image-container"></div>
-                <p>Un site créé par les étudiants, pour les étudiants.</p>
+                <p>Un site créé par des étudiants, pour les étudiants.</p>
             </div>
             <div class="card" id="2">
                 <div class="image-container"></div>
@@ -54,15 +54,15 @@
             </div>
             <div class="card" id="3">
                 <div class="image-container"></div>
-                <p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
+                <p>Un partenariat avec plus d'une centaine d'entreprises</p>
             </div>
             <div class="card" id="4">
                 <div class="image-container"></div>
-                <p>4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
+                <p>Postuler directement depuis notre site pour vous simplifier la tâche</p>
             </div>
             <div class="card" id="5">
                 <div class="image-container"></div>
-                <p>5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
+                <p>Une liste de souhaits vous permet de suivre comment évolue chaque offre que vous désirez</p>
             </div>
         </div>
     </div>
