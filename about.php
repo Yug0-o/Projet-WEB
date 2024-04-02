@@ -49,13 +49,13 @@
                         <span class="vertical-line"></span>
                         <div class="boxlegalmention">
                             <h2>Nos engagements</h2>
-                            <p>Quisque quis malesuada augue. Nulla venenatis tellus sed felis accumsan maximus. Nunc sollicitudin risus molestie, tempus nibh eget, interdum justo. Curabitur non mauris eget nulla scelerisque malesuada. Aliquam iaculis, est id dignissim fermentum, enim tellus varius ex, sit amet gravida odio quam tempus odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras semper scelerisque turpis nec euismod. Proin arcu urna, vestibulum vitae sem ut, tristique varius ligula. Proin egestas lacinia sapien a dictum. Etiam laoreet tristique velit ut ultrices.</p>
+                            <p>Internship Etendard s'engage à soutenir et à guider les étudiants dans leur recherche du stage parfait pour leur parcours académique et professionnel. Nous nous engageons à ne présenter que des offres de stage de qualité vérifiées et approuvées, provenant d'entreprises reconnues et sérieuses. Nous visons à garantir que chaque étudiant trouve une opportunité correspondant à son domaine d'étude et à ses aspirations. En choisissant Internship Etendard, vous pouvez être assuré que vous bénéficiez d'un réseau de partenaires de qualité pour vous aider à réussir dans votre parcours professionnel.</p>
                         </div>
                     </div>
                     <div class="container_contact">
                         <div class="boxlegalmention">
                             <h2>Une satisfaction client reconnue</h2>
-                            <p>Duis lacinia est at libero auctor, eget commodo enim vehicula. Proin rhoncus, turpis quis scelerisque commodo, arcu nibh sagittis urna, vitae placerat eros massa id arcu. Praesent ultricies at eros quis bibendum. Vivamus eu nunc risus. Cras convallis, ligula lobortis bibendum pharetra, dolor augue vestibulum dui, sit amet sodales eros leo vulputate augue. Donec rhoncus hendrerit lobortis. In vehicula ullamcorper odio ut facilisis. Aliquam tincidunt tortor a blandit elementum. Etiam sodales facilisis ipsum ac semper. Sed volutpat luctus nulla non pellentesque. Pellentesque eget nisl quis sem dictum congue. Ut pharetra vehicula aliquam. Curabitur venenatis dictum augue, in molestie enim feugiat ut. Curabitur egestas, purus eu hendrerit consectetur, neque libero imperdiet ante, et suscipit libero leo non nisi.</p>
+                            <p>Grâce à notre passerelle, la communication entre étudiants et entreprises n'a jamais été aussi facile. Plusieurs centaines d'étudiants dans tous les domaines ont obtenus un stage grâce à notre plateforme. En partenariat avec une centaine d'entreprises, Internship Etendard regroupe toutes les offres du marché auxquelles vous pouvez postuler en un clic. Inscrivez-vous dès maintenant pour ne plus passer des heures à éplucher les sites d'annonces en tout genre à la recherche de la perle rare.</p>
                         </div>
                     </div>
                 </article>
