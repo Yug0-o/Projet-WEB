@@ -39,7 +39,7 @@
                     <span>Contactez-nous depuis ce formulaire</span>
                 </h2>
 
-                <div class="confirmation" id="confirmation">Merci pour votre demande, nous vous contacterons dans les plus bref délais.</div>
+                <div class="confirmation animate" id="confirmation">Merci pour votre demande, nous vous contacterons dans les plus bref délais.</div>
             </div>
             <article>
                 <form method="post">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-04-02 14:37:25
+/* Smarty version 3.1.48, created on 2024-04-02 14:38:46
   from 'C:\Users\Coline\Desktop\myPortfolio\projet\Projet-WEB\tpl\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_660bfc05e3df17_25667328',
+  'unifunc' => 'content_660bfc565f5521_52431801',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '95c80fa42090cf8ba7cca616fe90c6c11d12cac0' => 
     array (
       0 => 'C:\\Users\\Coline\\Desktop\\myPortfolio\\projet\\Projet-WEB\\tpl\\header.tpl',
-      1 => 1712061441,
+      1 => 1712061508,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660bfc05e3df17_25667328 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660bfc565f5521_52431801 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
     <div class="searchbar">
         <a href="homepage.php">
@@ -102,20 +102,15 @@ function content_660bfc05e3df17_25667328 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
             </div>
             <?php if ($_smarty_tpl->tpl_vars['login']->value == 'non' || $_smarty_tpl->tpl_vars['login']->value == 'recherche') {?>
-                <?php if ($_smarty_tpl->tpl_vars['logedin']->value == 'oui') {?>
-                <a href="account.php" class="login-button"></a>
-                <a href="account.php" style="pointer-events: none;">
-                <?php } else { ?>
-                <a href="login.php" class="login-button"></a>
-                <a href="login.php" style="pointer-events: none;">
-                <?php }?>
-            <button class="enabled animate" type="login" aria-label="Login">
-                <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM6.858 18.752c.605-1.868 2.722-3.24 5.142-3.24 2.42 0 4.537 1.372 5.142 3.24C15.712 19.844 13.933 20.5 12 20.5s-3.712-.656-5.142-1.748zm11.469-1.095c-1.02-2.165-3.483-3.645-6.327-3.645s-5.307 1.48-6.327 3.645A8.456 8.456 0 0 1 3.5 12c0-4.687 3.813-8.5 8.5-8.5 4.687 0 8.5 3.813 8.5 8.5a8.456 8.456 0 0 1-2.173 5.657zM12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 5.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z">
-                    </path>
-                </svg>
-                            </button>
+            <a href="login.php" class="login-button"></a>
+            <a href="login.php" style="pointer-events: none;">
+                <button class="enabled animate" type="login" aria-label="Login">
+                    <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM6.858 18.752c.605-1.868 2.722-3.24 5.142-3.24 2.42 0 4.537 1.372 5.142 3.24C15.712 19.844 13.933 20.5 12 20.5s-3.712-.656-5.142-1.748zm11.469-1.095c-1.02-2.165-3.483-3.645-6.327-3.645s-5.307 1.48-6.327 3.645A8.456 8.456 0 0 1 3.5 12c0-4.687 3.813-8.5 8.5-8.5 4.687 0 8.5 3.813 8.5 8.5a8.456 8.456 0 0 1-2.173 5.657zM12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm0 5.5c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z">
+                        </path>
+                    </svg>
+                                    </button>
             </a>
             <?php }?>
         </div>
