@@ -1,16 +1,12 @@
 {
     "short_name": "Internship Etendard",
     "name": "Internship Etendard",
+    "description": "Internship Etendard est une plateforme de recherche de stage pour les étudiants.",
     "icons": [
         {
             "src": "/images/logo-classic.png",
             "type": "image/png",
             "sizes": "320x320"
-        },
-        {
-            "src": "/images/logo.png",
-            "type": "image/png",
-            "sizes": "515x515"
         },
         {
             "src": "/images/logo-classic.png",
@@ -19,9 +15,22 @@
             "purpose": "maskable"
         }
     ],
+    "screenshots": [
+        {
+            "src": "/images/screenshot-desktop.png",
+            "type": "image/png",
+            "sizes": "1920x919",
+            "form_factor": "wide"
+        },
+        {
+            "src": "/images/screenshot-mobile.png",
+            "type": "image/png",
+            "sizes": "387x839"
+        }
+    ],
     "start_url": "/",
     "background_color": "#2F375E",
     "display": "standalone",
     "scope": "/",
     "theme_color": "#F85F6A"
-} 
+}
