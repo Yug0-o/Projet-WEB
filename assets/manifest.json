@@ -5,7 +5,18 @@
         {
             "src": "/images/logo-classic.png",
             "type": "image/png",
-            "sizes": "322x321"
+            "sizes": "320x320"
+        },
+        {
+            "src": "/images/logo.png",
+            "type": "image/png",
+            "sizes": "515x515"
+        },
+        {
+            "src": "/images/logo-classic.png",
+            "type": "image/png",
+            "sizes": "320x320",
+            "purpose": "maskable"
         }
     ],
     "start_url": "/",
@@ -13,4 +24,4 @@
     "display": "standalone",
     "scope": "/",
     "theme_color": "#F85F6A"
-}
+} 
