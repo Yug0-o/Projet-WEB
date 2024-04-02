@@ -18,68 +18,66 @@
         
         <?php
 
-        $smarty_loading = new Smarty();
+    $smarty_loading = new Smarty();
 
-        $smarty_loading->setTemplateDir('tpl/');
-        $smarty_loading->display('loading.tpl');
+    $smarty_loading->setTemplateDir('tpl/');
+    $smarty_loading->display('loading.tpl');
 
 
 
-        $smarty_header = new Smarty();
+    $smarty_header = new Smarty();
 
-        $smarty_header->assign('login', 'non');
+    $smarty_header->assign('login', 'non');
 
-        $smarty_header->setTemplateDir('tpl/');
-        $smarty_header->display('header.tpl');
+    $smarty_header->setTemplateDir('tpl/');
+    $smarty_header->display('header.tpl');
     ?>
 
-        <h1 class="text-center-accueil">Votre stage n'est plus un mirage</h1>
-        <div class="container">
-            <div class="box1-accueil">
-                <h2> La manière la plus simple de trouver un stage</h2>
-                <div id="textcontainer_accueil">
-                    <div id="scrollingText"></div>
-                </div>
+    <h1 class="text-center-accueil">Votre stage n'est plus un mirage</h1>
+    <div class="container">
+        <div class="box1-accueil">
+            <h2> La manière la plus simple de trouver un stage</h2>
+            <div id="textcontainer_accueil">
+                <div id="scrollingText"></div>
             </div>
         </div>
-        <div class="container">
-            <div class="card-carousel">
-                <div class="card" id="1">
-                    <div class="image-container"></div>
-                    <p>Un site créé par les étudiants, pour les étudiants.</p>
-                </div>
-                <div class="card" id="2">
-                    <div class="image-container"></div>
-                    <p>À la recherche d'un stage ? Un domaine vous semble plus intéressant qu'un autre ? Internship Etendard est là pour vous orienter.</p>
-                </div>
-                <div class="card" id="3">
-                    <div class="image-container"></div>
-                    <p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
-                </div>  
-                <div class="card" id="4">
-                    <div class="image-container"></div>
-                    <p>4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
-                </div>
-                <div class="card" id="5">
-                    <div class="image-container"></div>
-                    <p>5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
-                </div>
+    </div>
+    <div class="container">
+        <div class="card-carousel">
+            <div class="card" id="1">
+                <div class="image-container"></div>
+                <p>Un site créé par les étudiants, pour les étudiants.</p>
+            </div>
+            <div class="card" id="2">
+                <div class="image-container"></div>
+                <p>À la recherche d'un stage ? Un domaine vous semble plus intéressant qu'un autre ? Internship Etendard est là pour vous orienter.</p>
+            </div>
+            <div class="card" id="3">
+                <div class="image-container"></div>
+                <p>3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
+            </div>
+            <div class="card" id="4">
+                <div class="image-container"></div>
+                <p>4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
+            </div>
+            <div class="card" id="5">
+                <div class="image-container"></div>
+                <p>5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, explicabo!</p>
             </div>
         </div>
-        
-        <?php
-        $smarty_footer = new Smarty();
+    </div>
 
-        $smarty_footer->setTemplateDir('tpl/');
-        $smarty_footer->display('footer.tpl');
-        ?>
+    <?php
+    $smarty_footer = new Smarty();
 
-        
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-        <script src="assets/JS/homepage.js" async></script>
-        <script src="assets/JS/global.js" async></script>
-        <script src="assets/JS/carousel.js" async></script>
-        
-    </body>
+    $smarty_footer->setTemplateDir('tpl/');
+    $smarty_footer->display('footer.tpl');
+    ?>
+
+    <script src="assets/JS/homepage.js" async></script>
+    <script src="assets/JS/global.js" async></script>
+    <script src="assets/JS/carousel.js" async></script>
+
+</body>
+
 </html>
