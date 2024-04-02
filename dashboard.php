@@ -30,10 +30,10 @@
           $pass = '';
           $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
           $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      } catch (PDOException $e) {
+      } catch (PDOException) {
           // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
           http_response_code(500);
-          echo json_encode(array("error" => "Connection failed: " . $e->getMessage()));
+          echo json_encode(array("error" => "Connection failed: An error occurred while connecting to the database."));
           die();
       }
 
@@ -91,10 +91,10 @@
               $pass = '';
               $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
               $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          } catch (PDOException $e) {
+          } catch (PDOException) {
               // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
               http_response_code(500);
-              echo json_encode(array("error" => "Connection failed: " . $e->getMessage()));
+              echo json_encode(array("error" => "Connection failed: An error occurred while connecting to the database."));
               die();
           }
 

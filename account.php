@@ -37,19 +37,19 @@ $smarty_head->display('head.tpl');
     <div class="account-container">
         <div class="account-info">
 
-            <div class="profile-picture" id="name">
+            <div class="profile-picture">
                 <img src="images/logo-classic.webp" alt="profile picture">
-                <div class="profile-picture-text">Yousk2 BOZO</div>
+                <div class="profile-picture-text" id="name">Yousk2 BOZO</div>
             </div>
             <div class="profile-info">
-                <div class="info-container" id="email">Adresse mail
-                    <div class="info">Yousk2@bozo.com</div>
+                <div class="info-container">Adresse mail
+                    <div class="info" id="email">Yousk2@bozo.com</div>
                 </div>
-                <div class="info-container" id="promotion">Promotion
-                    <div class="info">Yousk2</div>
+                <div class="info-container">Promotion
+                    <div class="info" id="promotion">Yousk2</div>
                 </div>
-                <div class="info-container" id="cv">CV
-                    <a class="info" href="CV_Yousk2.pdf" target="_blank">CV_Yousk2.pdf</a>
+                <div class="info-container">CV
+                    <a class="info" href="CV_Yousk2.pdf" target="_blank" id="cv">CV_Yousk2.pdf</a>
                 </div>
             </div>
             <button class="enabled modify" type="modify" enabled>Modifier vos informations</button>

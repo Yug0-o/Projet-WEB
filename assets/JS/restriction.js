@@ -21,7 +21,7 @@ function verifData()
         return false;
     }
     document.getElementById("error-email").style.display = "none";
-    localStorage.setItem("sent", true);
+    localStorage.setItem("sent", "true");
     return true;
 }
 
@@ -38,6 +38,7 @@ function restrictToNumbers(inputField) {
 var telephoneField = document.getElementsByName('tel')[0];
 restrictToNumbers(telephoneField);
 
-if(localStorage.getItem("sent")) {
+if(localStorage.getItem("sent")==="true") {
     document.querySelector(".confirmation").style.display = "block";
+    localStorage.setItem("sent", "false");
 }
