@@ -165,6 +165,12 @@ body.loginbackground{
     background-size: cover;  /* ou contain selon vos préférences */
 }
 
+.confirmation{
+    color: green;
+    text-align: center;
+    display: none;
+}
+
 
 div.bordure {
     border: 2px solid grey;

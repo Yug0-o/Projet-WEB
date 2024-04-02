@@ -38,6 +38,8 @@
                 <h2>
                     <span>Contactez-nous depuis ce formulaire</span>
                 </h2>
+
+                <div class="confirmation" id="confirmation">Merci pour votre demande, nous vous contacterons dans les plus bref délais.</div>
             </div>
             <article>
                 <form method="post">
@@ -90,6 +92,8 @@
                             <img src="./images/logo.webp" class="img_legalmentions" alt="Logo">
                         </div>
                     </div>
+
+            
 
                     <div id="error-tel" style="display: none; color: red;">Veuillez entrer un numéro de téléphone correct.</div>
                     <div id="error-email" style="display: none; color: red;">Veuillez entrer une adresse-mail valide.</div>
