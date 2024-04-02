@@ -82,7 +82,7 @@ function searchJobs() {
     // Make an AJAX request to fetch job data based on the keyword
     $.ajax({
         type: "GET",
-        url: 'get_job_data.php', // Assurez-vous que le chemin est correct
+        url: 'get_job_data.php',
         dataType: 'json',
         success: function (jobData) {
             // Les données ont été récupérées avec succès
