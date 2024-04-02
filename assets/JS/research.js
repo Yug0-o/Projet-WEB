@@ -59,7 +59,7 @@ function displayJobs(jobData, totalPages) {
         const jobInfoElement = document.createElement('div');
         jobInfoElement.classList.add('job-info');
         jobInfoElement.innerHTML = `
-            <h3>${job.id_internship}</h3>
+            <h3>${job.title}</h3>
             <p>${job.company_name} - ${job.address}</p>`;
         jobElement.appendChild(jobInfoElement);
 
@@ -90,7 +90,7 @@ function searchJobs() {
 
             // Filtrer les offres d'emploi basées sur le mot-clé
             const filteredJobs = jobData.filter(job => 
-                (job.company_name && job.company_name.toLowerCase().includes(keyword)) ||
+                (job.title && job.title.toLowerCase().includes(keyword)) ||
                 (job.location && job.location.toLowerCase().includes(keyword))
             );
             currentPage = 1;
