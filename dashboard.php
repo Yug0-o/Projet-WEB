@@ -69,11 +69,10 @@
                 <div style="border: none;">Gene : <?php echo $data['not_internship_gene']; ?></div>
                 <div style="border: none;">BTP : <?php echo $data['not_internship_btp']; ?></div>
                 <div style="border: none;">Info : <?php echo $data['not_internship_info']; ?></div>
-                <!-- Ajout ici les autres catégories de stages en attente -->
             </div>
             <div>
               <div style="border: none;">Nombre de stages en favoris</div>
-                <!-- manque les données -->
+              <div style="font-size: 3vh; border: none;"><?php echo $data['nb_wishlist']; ?></div>
             </div>
           </div>
         <div class="flx2_2">
@@ -86,7 +85,54 @@
     <div class="container flx2" id="comptes"> 
       <div class="flx2">
         <div class="top-container">
-          <div class="box65"></div>
+        <?php
+          try {
+              $user = 'root';
+              $pass = '';
+              $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
+              $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+          } catch (PDOException $e) {
+              // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+              http_response_code(500);
+              echo json_encode(array("error" => "Connection failed: " . $e->getMessage()));
+              die();
+          }
+
+          // Requête SQL pour récupérer les informations des comptes
+          $sql = "SELECT * FROM account";
+          $stmt = $dbh->prepare($sql);
+          $stmt->execute();
+          $accounts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+          // Fermeture de la connexion
+          $dbh = null;
+        ?>
+          <div class="box65" style="overflow-y: scroll; height: 300px;">
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Identifiant</th>
+                          <th>Prénom</th>
+                          <th>Nom</th>
+                          <th>Email</th>
+                          <th>Rôle</th>
+                          <th>Promotion</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <?php foreach ($accounts as $account): ?>
+                          <tr>
+                              <td><?php echo $account['id_account']; ?></td>
+                              <td><?php echo $account['first_name']; ?></td>
+                              <td><?php echo $account['last_name']; ?></td>
+                              <td><?php echo $account['email']; ?></td>
+                              <td><?php echo $account['role_id']; ?></td>
+                              <td><?php echo $account['promotion_id']; ?></td>
+                          </tr>
+                      <?php endforeach; ?>
+                  </tbody>
+              </table>
+          </div>
           <div class="box20"></div>
         </div>
         <div class="flx2_1">
