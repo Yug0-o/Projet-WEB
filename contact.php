@@ -1,26 +1,20 @@
 <!doctype html>
 <html lang="fr">
 
-<head>
-    <link rel="preload" href="assets/fonts/GothamSSm-Medium_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/GothamSSm-Book_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/GothamSSm-Light_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="images/logo-classic.webp" as="image">
-    <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="manifest" href="assets/manifest.json">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Internship Etendard">
-    <meta name="description" content="Contactez-nous en utilisant notre formulaire.">
-    <title>Contact - Internship Etendard</title>
-</head>
+<?php
+        define('SMARTY_DIR', 'libs\\');
+        require_once(SMARTY_DIR . 'Smarty.class.php');
+
+        $smarty_head = new Smarty();
+
+        $smarty_head->assign('titre', 'Contact');
+        $smarty_head->setTemplateDir('tpl/');
+        $smarty_head->display('head.tpl');
+?>
 
 <body>
 
     <?php
-    define('SMARTY_DIR', 'libs\\');
-    require_once(SMARTY_DIR . 'Smarty.class.php');
 
     $smarty_loading = new Smarty();
 
@@ -56,13 +50,13 @@
                                 </div>
                                 <div class="box1">
                                     <label>Prénom </label>
-                                    <input name="firstname" type="text" value="" size="100" required>
+                                    <input name="firstname" type="text" value="" size="100">
                                 </div>
                             </div>
                             <div class="container_contact">
                                 <div class="box1">
                                     <label>Adresse mail *</label>
-                                    <input name="email" type="text" value="" size="100" required>
+                                    <input id="email" name="email" type="text" value="" size="100" required>
                                 </div>
                                 <div class="box1">
                                     <label>Téléphone *</label>
@@ -98,10 +92,11 @@
                     </div>
 
                     <div id="error-tel" style="display: none; color: red;">Veuillez entrer un numéro de téléphone correct.</div>
+                    <div id="error-email" style="display: none; color: red;">Veuillez entrer une adresse-mail valide.</div>
 
                     <div class="button-container">
-                        <button class="disabled" type="reset" aria-label="Effacer" disabled>Effacer</button>
-                        <button class="disabled" type="submit" onclick="return verifData()" aria-label="Envoyer" disabled>Envoyer</button>
+                        <button type="reset" aria-label="Effacer" >Effacer</button>
+                        <button type="submit" onclick="return verifData()" aria-label="Envoyer" >Envoyer</button>
                     </div>
                 </form>
             </article>
@@ -118,7 +113,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="assets/JS/global.js" async></script>
-    <script src="assets/JS/resriction.js" async></script>
+    <script src="assets/JS/restriction.js" async></script>
 </body>
 
 </html>

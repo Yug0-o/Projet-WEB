@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+        define('SMARTY_DIR', 'libs\\');
+        require_once(SMARTY_DIR . 'Smarty.class.php');
 
-<head>
-    <link rel="preload" href="assets/fonts/GothamSSm-Medium_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/GothamSSm-Book_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/GothamSSm-Light_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <!-- <link rel="preload" href="images/logo-classic.webp" as="image"> -->
-    <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="manifest" href="assets/manifest.json">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Internship Etendard">
-    <meta name="description" content="Internship Etendard est une plateforme de recherche de stage pour les étudiants.">
-    <title>Mentions légales</title>
-</head>
+        $smarty_head = new Smarty();
 
-<body>
+        $smarty_head->assign('titre', 'Mentions légales');
+        $smarty_head->setTemplateDir('tpl/');
+        $smarty_head->display('head.tpl');
+?>
+    <body>
 
-    <?php
-    define('SMARTY_DIR', 'libs\\');
-    require_once(SMARTY_DIR . 'Smarty.class.php');
+        <?php
 
     $smarty_loading = new Smarty();
 

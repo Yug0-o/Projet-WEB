@@ -1,26 +1,20 @@
-<!doctype html>
-<html lang="fr">
+<!doctype html> 
+<html lang="fr"> 
+    <head>
+    <?php
+        define('SMARTY_DIR', 'libs\\');
+        require_once(SMARTY_DIR . 'Smarty.class.php');
 
-<head>
-    <link rel="preload" href="assets/fonts/GothamSSm-Medium_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/GothamSSm-Book_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/GothamSSm-Light_Web.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="images/logo-classic.webp" as="image">
-    <link rel="icon" href="images/favicon.png">
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="manifest" href="assets/manifest.json">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Internship Etendard">
-    <meta name="description" content="Recherche">
-    <title>Recherche - Internship Etendard</title>
-</head>
+        $smarty_head = new Smarty();
 
-<body>
+        $smarty_head->assign('titre', 'Recherche');
+        $smarty_head->setTemplateDir('tpl/');
+        $smarty_head->display('head.tpl');
+    ?>
+    </head> 
+    <body>
 
     <?php
-    define('SMARTY_DIR', 'libs\\');
-    require_once(SMARTY_DIR . 'Smarty.class.php');
 
     $smarty_loading = new Smarty();
 
