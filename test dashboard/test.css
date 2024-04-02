@@ -68,7 +68,7 @@ main {
 .nav-logo {
   text-align: center;
   padding-top: 20px;
-  padding-bottom: 6vh;
+  padding-bottom: 3vh;
 }
 
 .nav-items p {
@@ -82,6 +82,25 @@ main {
   text-decoration: underline;
   font-size: 26px; /* adjust as needed */
 }
+
+.nav-items-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 90px;
+  width: 100%;
+}
+
+.nav-items-bottom p {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+
 
 .container .flx2 {
   width: 99%;
@@ -330,7 +349,7 @@ canvas {
   background: none; /* Supprimer le fond du bouton */
   border: none; /* Supprimer la bordure du bouton */
   color: #fff; /* Changer la couleur du texte en blanc */
-  font-size: 14px; /* Augmenter la taille du texte */
+  font-size: 12px; /* Augmenter la taille du texte */
   cursor: pointer; /* Changer le curseur en main quand on survole le bouton */
 }
 
@@ -344,6 +363,20 @@ canvas {
   color: white;
   text-align: center;
   display: block;
+}
+
+.nav-link-bottom {
+  position: absolute;
+  bottom: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Add this line */
+}
+
+.nav-link-bottom p {
+  color: white;
+  margin: 10px 0;
+  font-size: 12px; /* Add this line to add some space between the texts */
 }
 
 .nav-link, .nav-link:visited, .nav-link:active {

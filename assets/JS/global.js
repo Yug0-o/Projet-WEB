@@ -4,6 +4,8 @@ window.onload = function () {
 
     document.fonts.ready.then(() => {
         document.getElementById('loading').classList.add('done');
+    }).catch(error => {
+        console.error('Error: while loading fonts', error);
     });
 
     const scrollButton = document.querySelector(".scroll-top-button");
