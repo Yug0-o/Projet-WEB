@@ -21,7 +21,7 @@ function verifData()
         return false;
     }
     document.getElementById("error-email").style.display = "none";
-    alert("Formulaire soumis"); //Temporary --> once submitted, will reload the page and a green message will appear
+    localStorage.setItem("sent", true);
     return true;
 }
 
@@ -37,3 +37,7 @@ function restrictToNumbers(inputField) {
 //Function call to restraint the "Telephone" to numbers only
 var telephoneField = document.getElementsByName('tel')[0];
 restrictToNumbers(telephoneField);
+
+if(localStorage.getItem("sent")) {
+    document.querySelector(".confirmation").style.display = "block";
+}

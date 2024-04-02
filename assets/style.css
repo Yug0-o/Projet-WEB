@@ -165,6 +165,12 @@ body.loginbackground{
     background-size: cover;  /* ou contain selon vos préférences */
 }
 
+.confirmation{
+    color: green;
+    text-align: center;
+    display: none;
+}
+
 
 div.bordure {
     border: 2px solid grey;
@@ -294,6 +300,7 @@ h1, h2, h3, h4, p {
     display: inline-block;
     height: auto;
     margin: 20px 20px;
+    border-radius: 10px;
 }
 
 #loading {
@@ -433,6 +440,13 @@ button[type="reset"] {
     color: var(--text-color);
     border: 3px solid var(--primary-color);
     width: 200%;
+}
+
+
+button.modify {
+    background-color: var(--primary-color);
+    color: white;
+    width: 80%;
 }
 
 button:hover.enabled {
@@ -773,6 +787,86 @@ h1.text-center-accueil{
     border: 1px solid #ccc;
 }
 
+.account-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    align-items: center;
+    height: 85vh;
+    width: 100vw;
+    border-radius: 75px;
+    padding: 15px;
+    color: var(--text-color);
+}
+
+
+.account-info, .wishlist {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2%;
+    gap: 5%;
+    height: 90%;
+    width: 75%;
+    border-radius: 50px;
+    background-color: var(--secondary-background-color);
+
+}
+
+
+.account-info {
+    width: 300px;
+}
+
+.profile-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    user-select: text;
+    gap: 10px;
+    width: 150px;
+    border-radius: 100px;
+}
+
+.profile-picture-text {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+}
+
+.profile-info {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.info-container{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.info:not(a.info) {
+    font-weight: normal;
+    user-select: text;
+}
+
+a.info {
+    font-style: italic;
+}
+
+input.info{
+    background-color: var(--tertiary-background-color);
+}
+
+
 /*---------------------------------------------------------------*/
 
 /* Boxes */
@@ -876,7 +970,7 @@ h1.text-center-accueil{
     font-family: "Gotham SSm";
 }
 
-.navbar a, .forgot-password a, p a {
+.navbar a, .forgot-password a, p a, a.info {
     color: var(--text-color);
     font-weight: 500;
     text-decoration: none;
@@ -885,7 +979,8 @@ h1.text-center-accueil{
     padding-top: 7px;
 }
 
-.navbar a:after, .forgot-password a:after, p a:after {
+
+.navbar a:after, .forgot-password a:after, p a:after, a.info:after {
     content: '';
     position: absolute;
     bottom: 2px;
@@ -904,11 +999,11 @@ h1.text-center-accueil{
     transition: transform .6s cubic-bezier(.19, 1, .22, 1), -webkit-transform .6s cubic-bezier(.19, 1, .22, 1);
 }
 
-p a:after {
+p a:after, a.info:after {
     background: var(--text-color);
 }
 
-.navbar a:hover:after, .forgot-password a:hover:after, p a:hover:after {
+.navbar a:hover:after, .forgot-password a:hover:after, p a:hover:after,a.info:hover:after {
     -webkit-transition-duration: .4s;
     transition-duration: .4s;
     -webkit-transform: scaleX(1);
@@ -1501,6 +1596,34 @@ canvas {
     .filters {
         min-height: 60px;
     }
+
+    .account-container {
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .account-info {
+        width: 95vw;
+        height: max-content;
+        gap: 30px;
+    }
+
+    .profile-picture {
+        width: 75px;
+    }
+
+    .wishlist {
+        width: 95vw;
+        height: 50vh;
+    }
+
+    .profile-info {
+        flex-direction: row;
+    }
+
+    button.modify {
+        width: 145px;
+    }
 }
 
 @media screen and (max-width: 650px) {
@@ -1532,6 +1655,10 @@ canvas {
     .container {
         flex-direction: column-reverse!important;
     
+    }
+
+    .profile-info {
+        flex-direction: column;
     }
 }
 
