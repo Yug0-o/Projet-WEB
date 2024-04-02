@@ -1,3 +1,7 @@
+function validateEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
+}
+
 //Function to authorize or not the entered data
 function verifData()
 {
@@ -8,9 +12,20 @@ function verifData()
         return false;
     }
     document.getElementById("error-tel").style.display = "none";
+
+    const champemail = document.getElementById('email').value;
+    temp = validateEmail(champemail);
+    if (temp == false)
+    {
+        document.getElementById("error-email").style.display = "block";
+        return false;
+    }
+    document.getElementById("error-email").style.display = "none";
     alert("Formulaire soumis"); //Temporary --> once submitted, will reload the page and a green message will appear
     return true;
 }
+
+
 
 //Function to authorize numbers only in specified input
 function restrictToNumbers(inputField) {
