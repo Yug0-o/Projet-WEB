@@ -54,7 +54,12 @@ $smarty_head->display('head.tpl');
             </div>
             <button class="enabled modify" type="modify" enabled>Modifier vos informations</button>
         </div>
-        <div class="wishlist"></div>
+        <div class="wishlist">
+            <div class="job-list" id="jobList"></div>
+            <div class="center-container">
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </div>
     </div>
 
     <?php
@@ -64,6 +69,8 @@ $smarty_head->display('head.tpl');
     $smarty_footer->display('footer.tpl');
     ?>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="assets/JS/global.js" async></script>
     <script src="assets/JS/account.js" async></script>
 
