@@ -828,7 +828,10 @@ h1.text-center-accueil{
     user-select: text;
     gap: 10px;
     width: 150px;
-    border-radius: 100px;
+}
+
+.profile-picture img {
+    box-shadow: none;
 }
 
 .profile-picture-text {

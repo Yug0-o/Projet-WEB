@@ -36,9 +36,8 @@ $smarty_head->display('head.tpl');
 
     <div class="account-container">
         <div class="account-info">
-
             <div class="profile-picture">
-                <img src="images/logo-classic.webp" alt="profile picture">
+                <img src="images/person-icon.webp" alt="profile picture">
                 <div class="profile-picture-text" id="name">Yousk2 BOZO</div>
             </div>
             <div class="profile-info">
