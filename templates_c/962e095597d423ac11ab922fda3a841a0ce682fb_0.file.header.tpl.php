@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-03-31 16:58:48
+/* Smarty version 3.1.48, created on 2024-04-02 12:49:45
   from 'D:\Cesi\CPIA2\4 Dev Web\Projet\GitHub\Projet-WEB\tpl\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_66097a2892d633_98086913',
+  'unifunc' => 'content_660be2c910e045_77874326',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '962e095597d423ac11ab922fda3a841a0ce682fb' => 
     array (
       0 => 'D:\\Cesi\\CPIA2\\4 Dev Web\\Projet\\GitHub\\Projet-WEB\\tpl\\header.tpl',
-      1 => 1711897121,
+      1 => 1712054977,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66097a2892d633_98086913 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660be2c910e045_77874326 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
     <div class="searchbar">
         <a href="homepage.php">
@@ -102,7 +102,13 @@ function content_66097a2892d633_98086913 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
             </div>
             <?php if ($_smarty_tpl->tpl_vars['login']->value == 'non' || $_smarty_tpl->tpl_vars['login']->value == 'recherche') {?>
-            <a href="login.php" style="pointer-events: none;">
+                <?php if ($_smarty_tpl->tpl_vars['logedin']->value == 'oui') {?>
+                <a href="account.php" class="login-button"></a>
+                <a href="account.php" style="pointer-events: none;">
+                <?php } else { ?>
+                <a href="login.php" class="login-button"></a>
+                <a href="login.php" style="pointer-events: none;">
+                <?php }?>
             <button class="enabled animate" type="login" aria-label="Login">
                 <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path

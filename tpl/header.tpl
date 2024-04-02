@@ -79,7 +79,13 @@
                 </div>
             </div>
             {if $login == 'non' or $login == 'recherche'}
-            <a href="login.php" style="pointer-events: none;">
+                {if $logedin == 'oui'}
+                <a href="account.php" class="login-button"></a>
+                <a href="account.php" style="pointer-events: none;">
+                {else}
+                <a href="login.php" class="login-button"></a>
+                <a href="login.php" style="pointer-events: none;">
+                {/if}
             <button class="enabled animate" type="login" aria-label="Login">
                 <svg class="tds-icon-person" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
