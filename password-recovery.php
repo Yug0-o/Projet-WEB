@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="fr">
+
 <head>
 <?php
         define('SMARTY_DIR', 'libs\\');
@@ -16,18 +17,18 @@
 
     <?php
 
-        $smarty_loading = new Smarty();
+    $smarty_loading = new Smarty();
 
-        $smarty_loading->setTemplateDir('tpl/');
-        $smarty_loading->display('loading.tpl');
+    $smarty_loading->setTemplateDir('tpl/');
+    $smarty_loading->display('loading.tpl');
 
 
 
-        $smarty_header = new Smarty();
-        $smarty_header->assign('login', 'non');
+    $smarty_header = new Smarty();
+    $smarty_header->assign('login', 'non');
 
-        $smarty_header->setTemplateDir('tpl/');
-        $smarty_header->display('header.tpl');
+    $smarty_header->setTemplateDir('tpl/');
+    $smarty_header->display('header.tpl');
     ?>
 
     <main>
@@ -56,10 +57,10 @@
     </main>
 
     <?php
-        $smarty_footer = new Smarty();
+    $smarty_footer = new Smarty();
 
-        $smarty_footer->setTemplateDir('tpl/');
-        $smarty_footer->display('footer.tpl');
+    $smarty_footer->setTemplateDir('tpl/');
+    $smarty_footer->display('footer.tpl');
     ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

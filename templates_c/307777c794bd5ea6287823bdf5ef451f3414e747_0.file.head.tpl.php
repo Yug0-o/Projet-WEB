@@ -1,4 +1,27 @@
-<head>
+<?php
+/* Smarty version 3.1.48, created on 2024-04-02 11:21:25
+  from 'D:\Programme\Travail\Cesi\Cesi\A2\Web\Projet\Projet-WEB\tpl\head.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.48',
+  'unifunc' => 'content_660bce150cb899_67620637',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '307777c794bd5ea6287823bdf5ef451f3414e747' => 
+    array (
+      0 => 'D:\\Programme\\Travail\\Cesi\\Cesi\\A2\\Web\\Projet\\Projet-WEB\\tpl\\head.tpl',
+      1 => 1712049481,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_660bce150cb899_67620637 (Smarty_Internal_Template $_smarty_tpl) {
+?><head>
         <link rel="preload" href="assets/fonts/GothamSSm-Medium_Web.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="assets/fonts/GothamSSm-Book_Web.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="assets/fonts/GothamSSm-Light_Web.woff2" as="font" type="font/woff2" crossorigin>
@@ -11,5 +34,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Internship Etendard">
         <meta name="description" content="Internship Etendard est une plateforme de recherche de stage pour les étudiants.">
-        <title>{$titre}</title>
-</head>
+        <title><?php echo $_smarty_tpl->tpl_vars['titre']->value;?>
+</title>
+</head><?php }
+}
