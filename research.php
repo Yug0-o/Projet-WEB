@@ -16,46 +16,47 @@
 
     <?php
 
-        $smarty_loading = new Smarty();
+    $smarty_loading = new Smarty();
 
-        $smarty_loading->setTemplateDir('tpl/');
-        $smarty_loading->display('loading.tpl');
+    $smarty_loading->setTemplateDir('tpl/');
+    $smarty_loading->display('loading.tpl');
 
 
 
-        $smarty_header = new Smarty();
+    $smarty_header = new Smarty();
 
-        $smarty_header->assign('login', 'recherche');
+    $smarty_header->assign('login', 'recherche');
 
-        $smarty_header->setTemplateDir('tpl/');
-        $smarty_header->display('header.tpl');
+    $smarty_header->setTemplateDir('tpl/');
+    $smarty_header->display('header.tpl');
     ?>
 
-        <div class="container" style="flex-direction:row;">
-            <h1>Offres d'emploi</h1>
+    <div class="container" style="flex-direction:row;">
+        <h1>Offres d'emploi</h1>
+    </div>
+
+    <div class="container">
+        <div class="filters">
+            <h2 for="keyword">Mot-clé:</h2>
         </div>
-        
-        <div class="container">
-            <div class="filters">
-                <h2 for="keyword">Mot-clé:</h2>
-            </div>
-            <div class="job-list" id="jobList"></div>
-        </div>
+        <div class="job-list" id="jobList"></div>
+    </div>
 
-        <div class="center-container">
-            <div class="pagination" id="pagination"></div>
-        </div>
+    <div class="center-container">
+        <div class="pagination" id="pagination"></div>
+    </div>
 
-        <?php
-        $smarty_footer = new Smarty();
+    <?php
+    $smarty_footer = new Smarty();
 
-        $smarty_footer->setTemplateDir('tpl/');
-        $smarty_footer->display('footer.tpl');
-        ?>
+    $smarty_footer->setTemplateDir('tpl/');
+    $smarty_footer->display('footer.tpl');
+    ?>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-        <script src="assets/JS/global.js" async></script>
-        <script src="assets/JS/research.js" async></script>
-    </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="assets/JS/global.js" async></script>
+    <script src="assets/JS/research.js" async></script>
+</body>
+
 </html>

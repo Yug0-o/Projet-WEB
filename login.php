@@ -14,17 +14,17 @@
     
 <?php
 
-        $smarty_loading = new Smarty();
+    $smarty_loading = new Smarty();
 
-        $smarty_loading->setTemplateDir('tpl/');
-        $smarty_loading->display('loading.tpl');
+    $smarty_loading->setTemplateDir('tpl/');
+    $smarty_loading->display('loading.tpl');
 
 
-        $smarty_header = new Smarty();
-        $smarty_header->assign('login', 'oui');
+    $smarty_header = new Smarty();
+    $smarty_header->assign('login', 'oui');
 
-        $smarty_header->setTemplateDir('tpl/');
-        $smarty_header->display('header.tpl');
+    $smarty_header->setTemplateDir('tpl/');
+    $smarty_header->display('header.tpl');
     ?>
 
     <main>
@@ -32,7 +32,7 @@
             <div>
                 <h1 class="garde">Connexion</h1>
             </div>
-            <article>	
+            <article>
                 <form>
                     <div class="login-form">
                         <label for="email">E-mail</label>
@@ -40,7 +40,7 @@
 
                         <label for="password">Mot de passe</label>
                         <input id="password" name="password" type="password" size="30" value="" required autocomplete="current-password">
-                        
+
                         <div class="forgot-password">
                             <a href="password-recovery.php">Mot de passe oublié ?</a>
                         </div>
@@ -50,20 +50,21 @@
                         </div>
                     </div>
                 </form>
-            </article>					
+            </article>
         </section>
     </main>
 
     <?php
-        $smarty_footer = new Smarty();
+    $smarty_footer = new Smarty();
 
-        $smarty_footer->setTemplateDir('tpl/');
-        $smarty_footer->display('footer.tpl');
+    $smarty_footer->setTemplateDir('tpl/');
+    $smarty_footer->display('footer.tpl');
     ?>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-    <script src="assets\JS\global.js"async></script>
-    <script src="assets\JS\login.js"async></script>
-</body> 
+    <script src="assets\JS\global.js" async></script>
+    <script src="assets\JS\login.js" async></script>
+</body>
+
 </html>

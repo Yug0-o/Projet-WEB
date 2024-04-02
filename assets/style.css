@@ -482,6 +482,13 @@ button:active.enabled {
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+    .scroll-top-button {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
 .scroll-top-button.hidden {
     user-select: none;
     pointer-events: none;
@@ -1210,12 +1217,10 @@ canvas {
   --card-width: 80%;
   --card-max-width: 280px;
   --card-height: 450px;
-  --carousel-min-width: 400px;
   z-index: 1;
   position: relative;
   width: 98%;
   height: var(--card-height);
-  min-width: var(--carousel-min-width);
   transition: filter .3s cubic-bezier(.19, 1, .22, 1) !important;
   justify-content: center;
   display: flex;
@@ -1251,6 +1256,7 @@ canvas {
   align-items: center;
   justify-content: center;
   transition: background 0.3s cubic-bezier(.19, 1, .22, 1)!important;
+  transform: translateX();
 }
 
 .card.highlight {
@@ -1282,7 +1288,7 @@ canvas {
     background-repeat: no-repeat;
     background-position: center center;
     margin-bottom: 2em;
-    padding: 1em;
+    /* padding: 1em; */
     border-radius: 15px;
     overflow: hidden;
   }

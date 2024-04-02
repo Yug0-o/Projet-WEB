@@ -14,19 +14,19 @@
 
     <?php
 
-        $smarty_loading = new Smarty();
+    $smarty_loading = new Smarty();
 
-        $smarty_loading->setTemplateDir('tpl/');
-        $smarty_loading->display('loading.tpl');
+    $smarty_loading->setTemplateDir('tpl/');
+    $smarty_loading->display('loading.tpl');
 
 
 
-        $smarty_header = new Smarty();
+    $smarty_header = new Smarty();
 
-        $smarty_header->assign('login', 'non');
+    $smarty_header->assign('login', 'non');
 
-        $smarty_header->setTemplateDir('tpl/');
-        $smarty_header->display('header.tpl');
+    $smarty_header->setTemplateDir('tpl/');
+    $smarty_header->display('header.tpl');
     ?>
 
     <main>
@@ -40,7 +40,7 @@
                 <div class="boxlegalmention">
                     <img src="./images/logo.webp" class="img_legalmentions" alt="logo">
                 </div>
-                <article class ="align">
+                <article class="align">
                     <div class="container_contact">
                         <div class="boxlegalmention">
                             <h2>Histoire</h2>
@@ -62,16 +62,17 @@
             </div>
         </section>
     </main>
-    
-    <?php
-        $smarty_footer = new Smarty();
 
-        $smarty_footer->setTemplateDir('tpl/');
-        $smarty_footer->display('footer.tpl');
+    <?php
+    $smarty_footer = new Smarty();
+
+    $smarty_footer->setTemplateDir('tpl/');
+    $smarty_footer->display('footer.tpl');
     ?>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="assets\JS\global.js" async></script>
 </body>
+
 </html>
