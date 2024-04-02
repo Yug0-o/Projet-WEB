@@ -59,7 +59,7 @@ function displayJobs(jobData, totalPages) {
         const jobInfoElement = document.createElement('div');
         jobInfoElement.classList.add('job-info');
         jobInfoElement.innerHTML = `
-            <h3>${job.id_internship}</h3>
+            <h3>${job.title}</h3>
             <p>${job.company_name} - ${job.address}</p>`;
         jobElement.appendChild(jobInfoElement);
 
@@ -82,7 +82,7 @@ function searchJobs() {
     // Make an AJAX request to fetch job data based on the keyword
     $.ajax({
         type: "GET",
-        url: 'get_job_data.php', // Assurez-vous que le chemin est correct
+        url: 'get_job_data.php',
         dataType: 'json',
         success: function (jobData) {
             // Les données ont été récupérées avec succès
@@ -90,7 +90,7 @@ function searchJobs() {
 
             // Filtrer les offres d'emploi basées sur le mot-clé
             const filteredJobs = jobData.filter(job => 
-                (job.company_name && job.company_name.toLowerCase().includes(keyword)) ||
+                (job.title && job.title.toLowerCase().includes(keyword)) ||
                 (job.location && job.location.toLowerCase().includes(keyword))
             );
             currentPage = 1;

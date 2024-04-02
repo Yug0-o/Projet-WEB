@@ -292,7 +292,7 @@ h1, h2, h3, h4, p {
 .vertical-line{
     border-left: 2px solid var(--text-color);
     display: inline-block;
-    height: 260px;
+    height: auto;
     margin: 20px 20px;
     border-radius: 10px;
 }
@@ -1360,13 +1360,13 @@ canvas {
     background-image: url("/images/image_carousel_2.webp")
 }
 .card:nth-of-type(3) .image-container {
-    background-image: url("/images/404.jpg")
+    background-image: url("/images/image_carousel_3.webp")
 }
 .card:nth-of-type(4) .image-container {
-    background-image: url("/images/404.jpg")
+    background-image: url("/images/image_carousel_4.webp")
 }
 .card:nth-of-type(5) .image-container {
-    background-image: url("/images/404.jpg")
+    background-image: url("/images/image_carousel_5.webp")
 }
 
 .image-container {
