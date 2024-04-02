@@ -45,7 +45,7 @@
     --checkbox-checked-box-shadow: #000;
     --footer-text-shadow: #000;
     --dashboard-border-color: #000;
-    --carousel-card-background: #000;
+    --secondary-background-color: #000;
     --carousel-card-text-color: #000;
     --box-shadow: #000;
     --research-button-hover-background: #000;
@@ -74,7 +74,6 @@ body.light-mode {
         --checkbox-checked-box-shadow: inset -2px -2px 5px #1E87D8, inset 2px 2px 5px #23A5FF;
         --footer-text-shadow: 0 0 3px rgba(255, 255, 255, 0.2);
         --dashboard-border-color: var(--primary-color);
-        --carousel-card-background: #fff;
         --carousel-card-text-color: #454545;
         --box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
         --research-button-hover-background: #F0F0F0;
@@ -88,23 +87,22 @@ body.dark-mode {
         --primary-color: #B3444B;
         --primary-color-darker: #F85F6A;
         --secondary-color: #FFFFFF;
-        --background-color: #1E1E1E;
-        --secondary-background-color: #303030;
-        --tertiary-background-color: #404040;
+        --background-color: #000;
+        --secondary-background-color: #121212;
+        --tertiary-background-color: #242424;
         --header-background: linear-gradient(to top, rgba(0, 0, 0, 0), var(--background-color));
         --text-color: #F0F0F0;
         --link-default-color: #E6E6E6;
         --link-underlined-color: #F85F6A;
         --inverted-text-color: var(--text-color);
         --logo-gradient: linear-gradient(to right, #DA375A 0%, rgb(118, 133, 200) 80%);
-        --hover-color: #404040;
+        --hover-color: #1a1a1a;
         --h1-background-color: #123581;
         --checkbox-background: #303030;
         --checkbox-checked-background: #2196F3;
         --checkbox-checked-box-shadow: inset -2px -2px 5px #1E87D8, inset 2px 2px 5px #23A5FF;
         --footer-text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
         --dashboard-border-color: var(--primary-color);
-        --carousel-card-background: #303030;
         --carousel-card-text-color: #fff;
         --box-shadow: none;
         --research-button-hover-background: #303030;
@@ -116,13 +114,34 @@ body.dark-mode {
 /*---------------------------------------------------------------*/
 
 /* All pages*/
+
+/* For Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1);
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
 }
 
 .visuallyhidden {
@@ -156,6 +175,7 @@ body {
     user-select: none;
     scroll-behavior: smooth;
     padding-top: 60px;
+    -webkit-font-smoothing: antialiased;
 }
 
 body.loginbackground{
@@ -443,10 +463,29 @@ button[type="reset"] {
 }
 
 
-button.modify {
+button.modify, button.logout {
     background-color: var(--primary-color);
     color: white;
-    width: 80%;
+    width: auto;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+}
+
+button.logout {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 0.75em;
+    font-weight: 350;
+    cursor: pointer;
+    user-select: none ;
+    box-shadow: none;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1);
+}
+
+button.logout:active {
+    transform: scale(0.95); 
 }
 
 button:hover.enabled {
@@ -790,34 +829,94 @@ h1.text-center-accueil{
 .account-container {
     display: flex;
     justify-content: space-around;
-    gap: 15px;
+    gap: 30px;
     align-items: center;
-    height: 85vh;
+    height: 84vh;
     width: 100vw;
     border-radius: 75px;
-    padding: 15px;
+    padding-inline: 30px;
+    margin-top: 20px;
     color: var(--text-color);
 }
 
+.account-container * {
+    transition: none;
+}
 
 .account-info, .wishlist {
     display: flex;
-    overflow: auto;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    gap: 5%;
-    height: 90%;
-    width: 75%;
-    border-radius: 50px;
+    gap: 10px;
+    height: 100%;
+    width: 75vw;
+    border-radius: 20px;
     background-color: var(--secondary-background-color);
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1)!important;
 
+}
+
+.scroll-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    width: 100%!important;
+    margin-bottom: 0!important;
+}
+
+.wishlist {
+    padding: 0;
+    margin-right: 10px;
+    gap: 10px;
+    background-color: transparent;
+}
+
+.wishlist-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100px;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    border-radius: 30px;
+    background-color: var(--secondary-background-color);
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+}
+
+.wishlist .scroll-container .job-list {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 0;
+    border-radius: 30px;
+    background-color: var(--secondary-background-color);
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+}
+
+.job-list .job {
+    width: 90%;
 }
 
 
 .account-info {
-    width: 300px;
+    justify-content: flex-start;
+    width: 20vw;
+    min-width: fit-content;
+    gap: 50px;
+}
+
+.account-info input {
+    width: 15vw;
+    height: 50px;
 }
 
 .profile-picture {
@@ -844,7 +943,8 @@ h1.text-center-accueil{
     display: flex; 
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    overflow: scroll;
+    gap: 5vh;
 }
 
 .info-container{
@@ -863,6 +963,7 @@ h1.text-center-accueil{
 
 a.info {
     font-style: italic;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
 
 input.info{
@@ -1333,7 +1434,7 @@ canvas {
 }
 
 .card-carousel .card {
-  background: var(--carousel-card-background);
+  background: var(--secondary-background-color);
   width: var(--card-width);
   max-width: var(--card-max-width);
   text-align: center;
@@ -1617,16 +1718,33 @@ canvas {
 
     .wishlist {
         width: 95vw;
-        height: 50vh;
+        height: max-content;
+    }
+
+    .wishlist .scroll-container .job-list {
+        padding-top: 3%;
+        padding-bottom: 0%;
+    }
+
+    .wishlist-title {
+        width: 95vw;
+        height: 75px;
     }
 
     .profile-info {
         flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
     button.modify {
         width: 145px;
     }
+
+    .account-info input {
+    width: 60vw;
+    height: 50px;
+}
 }
 
 @media screen and (max-width: 650px) {

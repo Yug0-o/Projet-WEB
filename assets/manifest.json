@@ -28,9 +28,9 @@
             "sizes": "387x839"
         }
     ],
-    "start_url": "/",
+    "start_url": "/homepage.php",
     "background_color": "#2F375E",
     "display": "standalone",
     "scope": "/",
-    "theme_color": "#F85F6A"
+    "theme_color": "#000000"
 }

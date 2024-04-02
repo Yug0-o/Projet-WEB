@@ -42,3 +42,7 @@ if(localStorage.getItem("sent")==="true") {
     document.querySelector(".confirmation").style.display = "block";
     localStorage.setItem("sent", "false");
 }
+
+if (sessionStorage.getItem('email')) {
+    document.getElementById('email').value = sessionStorage.getItem('email');
+}

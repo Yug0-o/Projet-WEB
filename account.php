@@ -36,27 +36,58 @@ $smarty_head->display('head.tpl');
 
     <div class="account-container">
         <div class="account-info">
+
             <div class="profile-picture">
                 <img src="images/person-icon.webp" alt="profile picture">
                 <div class="profile-picture-text" id="name">Yousk2 BOZO</div>
+                <button class="logout" type="logout" enabled>Déconnexion</button>
             </div>
-            <div class="profile-info">
-                <div class="info-container">Adresse mail
-                    <div class="info" id="email">Yousk2@bozo.com</div>
-                </div>
-                <div class="info-container">Promotion
-                    <div class="info" id="promotion">Yousk2</div>
-                </div>
-                <div class="info-container">CV
-                    <a class="info" href="CV_Yousk2.pdf" target="_blank" id="cv">CV_Yousk2.pdf</a>
+            <div class="scroll-container">
+                <div class="profile-info">
+                    <div class="info-container">Adresse mail
+                        <div class="info" id="email"></div>
+                    </div>
+                    <div class="info-container">Promotion
+                        <div class="info" id="promotion">Yousk2</div>
+                    </div>
+                    <div class="info-container">CV
+                        <a class="info" href="CV_Yousk2.pdf" target="_blank" id="cv">CV_Yousk2.pdf</a>
+                    </div>
                 </div>
             </div>
-            <button class="enabled modify" type="modify" enabled>Modifier vos informations</button>
+            <button class="enabled modify" type="modify" enabled>Modifier</button>
         </div>
         <div class="wishlist">
-            <div class="job-list" id="jobList"></div>
-            <div class="center-container">
-                <div class="pagination" id="pagination"></div>
+            <div class="wishlist-title">Favoris</div>
+            <div class="scroll-container">
+                <div class="job-list" id="jobList">
+                    <!-- TEST DATA -->
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <div class="job">test</div>
+                    <!-- TEST DATA -->
+                </div>
             </div>
         </div>
     </div>

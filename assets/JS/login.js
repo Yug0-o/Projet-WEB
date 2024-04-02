@@ -24,6 +24,11 @@ function updateButtons() {
     const allow_reset = email || password;
     const allow_submit = isEmailValid && isPasswordValid;
 
+    if (email == "Bad@Apple.com" && password == "BadApple") {
+        // redirect to the bad apple page
+        window.location.href = 'bad_apple.php';
+    }
+
     // Toggle button states
     reset.classList.toggle('enabled', allow_reset);
     reset.classList.toggle('disabled', !allow_reset);
@@ -49,16 +54,25 @@ function verifyCredentials(email, password) {
     })
     .then(response => {
         if (response.ok) {
-            // Rediriger l'utilisateur vers la page suivante si les identifiants sont valides
-            window.location.href = 'research.php';
+            sessionStorage.setItem('email', email);
+            sessionStorage.setItem('loggedIn', 'true');
+            var callback = sessionStorage.getItem('callback');
+            if (callback) {
+                // Redirect to the sanitized callback URL and remove it from the storage
+                sessionStorage.removeItem('callback');
+                window.location.href = callback;
+            } else {
+                // Redirect to a default page
+                window.location.href = 'research.php';
+            }
         } else {
-            // Afficher un message d'erreur ou prendre une autre action en cas d'identifiants invalides
+            sessionStorage.setItem('email', ''); // Clear the email from the storage
+            sessionStorage.setItem('loggedIn', 'false');
+            // Display an error message or take another action in case of invalid credentials
             console.error('Invalid credentials');
         }
     })
-    .catch(error => {
-        console.error('Error:', error);
-    });
+    .catch(error => {console.error('Error:', error);});
 }
 
 // Event listener for form submission
@@ -68,7 +82,7 @@ submit.addEventListener('click', function(event) {
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
 
-    // Vérifier les identifiants de l'utilisateur côté serveur
+    // Verify user credentials on the server side
     verifyCredentials(email, password);
 });
 

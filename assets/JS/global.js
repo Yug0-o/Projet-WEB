@@ -1,24 +1,21 @@
 window.onload = function () {
+    // Add 'animate' class to all elements except footer and script tags
     const elements = document.querySelectorAll('body > *:not(footer):not(script)');
     elements.forEach(element => element.classList.add('animate'));
 
-    document.fonts.ready.then(() => {
-        document.getElementById('loading').classList.add('done');
-    }).catch(error => {
-        console.error('Error: while loading fonts', error);
-    });
-
+    // Wait for fonts to load and add 'done' class to the loading element
+    document.fonts.ready.then(() => {document.getElementById('loading').classList.add('done');
+    }).catch(error => {console.error('Error: while loading fonts', error);});
+    // Hide scroll button and header if page is scrolled to the top
     const scrollButton = document.querySelector(".scroll-top-button");
     const header = document.querySelector('header');
     let lastScrollTop = document.documentElement.scrollTop - 1;
 
     scrollButton.classList.remove('animate');
     header.classList.remove('animate');
-    if (document.documentElement.scrollTop > 0) {
-        header.classList.remove('hidden');
-    }
+    if (document.documentElement.scrollTop > 0) {header.classList.remove('hidden');}
     scrollButton.classList.add('hidden');
-
+    // Show/hide header and scroll button based on scroll position
     window.addEventListener("scroll", function() {
         let scrollTop = document.documentElement.scrollTop;
         if (window.scrollY > 100) { 
@@ -28,24 +25,16 @@ window.onload = function () {
             header.classList.remove('hidden');
         }
 
-        if (scrollTop > lastScrollTop && scrollTop > 60) {
-            header.classList.add('hidden');
-        } else {
-            header.classList.remove('hidden');
-        }
+        if (scrollTop > lastScrollTop && scrollTop > 60) {header.classList.add('hidden');
+        } else {header.classList.remove('hidden');}
         lastScrollTop = scrollTop;
     });
-
-    scrollButton.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-
+    // Scroll to top when scroll button is clicked
+    scrollButton.addEventListener("click", function () {window.scrollTo({ top: 0, behavior: "smooth" });});
+    // Handle theme switcher
     const handle = document.querySelector(".handle");
     const sliderElement = document.querySelector(".slider");
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const isLightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    let mode = localStorage.getItem('theme') || (isDarkMode ? 'dark-mode' : isLightMode ? 'light-mode' : 'light-mode');
+    let mode = localStorage.getItem('theme') || 'light-mode';
 
     applyTheme(mode === 'dark-mode');
 
@@ -57,6 +46,7 @@ window.onload = function () {
         localStorage.setItem('theme', theme);
     }
 
+    // Handle theme switcher drag event
     let isDragged = false;
     let light_pos = 6;
     let dark_pos = 25;
@@ -71,11 +61,8 @@ window.onload = function () {
                 let newLeft = Math.min(Math.max(startLeft + event.clientX - startX, light_pos - 2), dark_pos+2);
                 handle.style.left = newLeft + "px";
                 isDragged = true;
-                if (newLeft >= center+4) { //+4 due to the middle not being an integer 
-                    applyTheme(true);
-                } else if (newLeft <= center-3){
-                    applyTheme(false);
-                }
+                if (newLeft >= center+4) {applyTheme(true);
+                } else if (newLeft <= center-3){applyTheme(false);}
             }
 
             function releaseHandle() {
@@ -88,7 +75,7 @@ window.onload = function () {
                     applyTheme(isDark);
 
                     handle.style.left = isDark ? dark_pos + "px" : light_pos + "px";
-                    isDragged = false; // Reset the flag when the mouse is released
+                    isDragged = false;
                 }, 0);
             }
 
@@ -96,36 +83,31 @@ window.onload = function () {
             document.addEventListener("mouseup", releaseHandle);
         });
 
+        // Handle theme switcher click event
         handle.addEventListener("click", function (e) {
-            if (!isDragged) { // Only handle the click event if the handle hasn't been dragged
+            if (!isDragged) {
                 const isDark = handle.offsetLeft >= center;
                 handle.style.left = isDark ? light_pos + "px" : dark_pos + "px";
                 applyTheme(!isDark);
             }
         });
 
+        // Handle theme switcher slider click event
         sliderElement.addEventListener("click", function (e) {
-            //get the current theme
             const isDark = handle.offsetLeft >= center;
             handle.style.left = isDark ? light_pos + "px" : dark_pos + "px";
-
             applyTheme(!isDark);
         });
     } else {
+        // Apply dark mode and disable theme switcher for Bad_Apple.php page
         applyTheme(true);
-        // make the cursor a interdicion sign for the slider( and every child)
         sliderElement.style.cursor = "not-allowed";
         sliderElement.childNodes.forEach(child => child.style.cursor = "not-allowed");
-
         handle.style.cursor = "not-allowed";
         handle.style.pointerEvents = "none";
-
     }
-
 };
-
-document.getElementById('year').textContent = new Date().getFullYear();
-
+// Register service worker for offline support
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
         navigator.serviceWorker.register('assets/JS/service-worker.js').then(function (registration) {
@@ -135,3 +117,15 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
+// Handle login button click event
+document.querySelector('button[type="login"]').addEventListener('click', function (event) {
+    event.preventDefault();
+    sessionStorage.setItem('callback', window.location.href);
+    if (sessionStorage.getItem('loggedIn') === 'true') {
+        window.location.href = 'account.php';
+    } else {
+        window.location.href = 'login.php';
+    }
+});
+// Set current year in the element with id 'year'
+document.getElementById('year').textContent = new Date().getFullYear();

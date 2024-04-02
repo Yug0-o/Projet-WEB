@@ -1,17 +1,32 @@
-// Get the button element
+if (!sessionStorage.getItem('email')) {
+    window.location.href = 'homepage.php';
+}
+
+window.addEventListener('load', function() {
+    document.getElementById('email').textContent = sessionStorage.getItem('email');
+});
+
+const logoutButton = document.querySelector('.logout');
+
+logoutButton.addEventListener('click', function () {
+    console.log('Logging out');
+    sessionStorage.clear();
+    window.location.href = 'homepage.php';
+});
+
+
 const modifyButton = document.querySelector('.modify');
 
 // Add event listener to the button
 modifyButton.addEventListener('click', function() {
     // Toggle the text of the button
-    if (modifyButton.textContent === 'Modify Your Information') {
-        modifyButton.textContent = 'Save';
+    if (modifyButton.textContent === 'Modifier') {
+        modifyButton.textContent = 'Sauvegarder';
         // Transform div elements to input elements
         const infoDivs = document.querySelectorAll('.info');
         infoDivs.forEach(div => {
             const element = document.createElement('input');
-            if (div.tagName !== 'A') { // Check if the element is not a link
-                element.value = div.textContent;
+            if (div.tagName !== 'A') { element.value = div.textContent;
             } else {
                 // create a file upload element
                 element.type = 'file';
@@ -20,13 +35,15 @@ modifyButton.addEventListener('click', function() {
                 element.dataset.oldPath = div.href;
             }
             element.classList.add('info'); // Add the "info" class to the input
+            element.id = div.id; // Copy the id attribute from the div to the input
+            if (element.id === "promotion") {
+                element.disabled = true;
+                element.style = "user-select: none;"
+            }
             div.parentNode.replaceChild(element, div);
         });
-        // Change the gap to 25px for the div with class .profile-info
-        const profileInfoDiv = document.querySelector('.profile-info');
-        profileInfoDiv.style.gap = '25px';
     } else {
-        modifyButton.textContent = 'Modify Your Information';
+        modifyButton.textContent = 'Modifier';
         // Transform input elements back to div elements
         const infoInputs = document.querySelectorAll('.info');
         infoInputs.forEach(input => {
@@ -41,15 +58,13 @@ modifyButton.addEventListener('click', function() {
                 element.classList.add('info'); // Add the "info" class to the div
                 input.parentNode.replaceChild(element, input);
             } else {
+                if (input.id === "email") {sessionStorage.setItem('email', input.value);}
                 const element = document.createElement('div');
                 element.textContent = input.value;
                 element.classList.add('info'); // Add the "info" class to the div
                 input.parentNode.replaceChild(element, input);
             }
         });
-        // Reset the gap for the div with class .profile-info
-        const profileInfoDiv = document.querySelector('.profile-info');
-        profileInfoDiv.style.gap = '';
     }
 });
 
@@ -57,7 +72,6 @@ modifyButton.addEventListener('click', function() {
 const jobsPerPage = 6;
 // Starting page
 let currentPage = 1;
-
 // Function to display pagination
 function displayPagination(totalPages) {
     const pagination = document.getElementById('pagination');
@@ -73,7 +87,6 @@ function displayPagination(totalPages) {
         pagination.appendChild(button);
     }
 }
-
 // Function to fetch job data from server and display jobs
 function fetchAndDisplayJobs() {
     $.ajax({
@@ -96,7 +109,6 @@ function fetchAndDisplayJobs() {
         }
     });
 }
-
 // Function to display jobs on the page
 function displayJobs(jobData, totalPages) {
     const jobList = document.getElementById('jobList');
