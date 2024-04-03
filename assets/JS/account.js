@@ -123,6 +123,10 @@ function displayJobs(jobData, totalPages) {
     const jobsToDisplay = jobData.slice(startIndex, endIndex);
 
     for (const job of jobsToDisplay) {
+        const wishlistedjob = document.createElement('div');
+        wishlistedjob.classList.add('wishlistedjob');
+        wishlistedjob.classList.add('animate');
+
         const jobElement = document.createElement('div');
         jobElement.classList.add('job');
         jobElement.classList.add('animate');

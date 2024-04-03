@@ -69,6 +69,7 @@ function verifyCredentials(email, password) {
             sessionStorage.setItem('loggedIn', 'false');
             // Display an error message or take another action in case of invalid credentials
             console.error('Invalid credentials');
+            document.getElementById('wrong-credential').textContent = 'Invalid credentials';
         }
     })
     .catch(error => {console.error('Error:', error);});
