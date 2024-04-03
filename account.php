@@ -60,7 +60,7 @@ $smarty_head->display('head.tpl');
             <button class="enabled modify" type="modify" enabled>Modifier</button>
         </div>
         <div class="wishlist">
-            <div class="wishlist-title">Favoris</div>
+            <h1 class="text-center-accueil">Favoris</h1>
             <div class="scroll-container">
                 <div class="job-list" id="jobList">
                 </div>
