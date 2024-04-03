@@ -24,7 +24,6 @@
       <div class="nav-items-bottom">
         <p onclick="showAccountInfo()">Information du compte</p>
         <p onclick="switchToStudentView()">Passage en vue étudiant</p>
-        <p onclick="logout()">Déconnexion</p>
       </div>
     </div>
 
@@ -60,6 +59,7 @@
       $dbh = null;
     ?>
 
+    <!-- Affichage des stats -->
     <div class="container flx2" id="stats">
       <div class="flx2">
         <div class="flx2_1">
@@ -90,6 +90,8 @@
         </div>
       </div> 
     </div>
+
+    <!-- Informations comptes -->
     <div class="container flx2" id="comptes"> 
       <div class="flx2">
         <div class="top-container">
@@ -142,15 +144,23 @@
               </table>
           </div>
           <div class="box20">
-            <h2>Modification des comptes</h2>
+            <h2 class="underline">Modification des comptes</h2>
             <label for="first_name">Prénom :</label>
-            <input type="text" id="first_name" name="first_name"><br><br>
+            <div class="space"></div>
+            <input type="text" id="first_name" name="first_name">
+            <div class="space"></div>
             <label for="last_name">Nom :</label>
-            <input type="text" id="last_name" name="last_name"><br><br>
+            <div class="space"></div>
+            <input type="text" id="last_name" name="last_name">
+            <div class="space"></div>
             <label for="email">Email :</label>
-            <input type="text" id="email" name="email"><br><br>
+            <div class="space"></div>
+            <input type="text" id="email" name="email">
+            <div class="space"></div>
             <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="password"><br><br>
+            <div class="space"></div>
+            <input type="password" id="password" name="password">
+            <div class="space"></div>
             <!-- Ajoutez d'autres champs de texte pour role_id, promotion_id, center_id si nécessaire -->
             <button onclick="insertData()">Insérer les données</button>
             <button onclick="updateData()">Modifier les données</button>
@@ -158,14 +168,17 @@
             <button onclick="removeDuplicateAccounts()">Supprimer les doublons</button>
           </div>
         </div>
-        <div class="flx2_1">
-          <div>sfdsd</div>
-          <div>sfdsd</div>
-          <div>sfdsd</div>
-          <div>sfdsd</div>
+        <div class="flx2_1 underline">
+          <div>Nombre d'étudiant</div>
+          <div>Nombre de promotions</div>
+          <div>Stats</div>
+          <div>Stats</div>
         </div>
       </div>
     </div> 
+
+
+    <!-- Informations stages -->
     <div class="container flx2" id="stages">
       <div class="flx2">
         <div class="top-container">
@@ -197,8 +210,8 @@
       <p id="nav-stages" onclick="showStages()">Information stages</p>
     </div>
     <div class="nav-link-bottom">
-      <button onclick="showAccountInfo()">Information du compte</button>
-      <button onclick="switchToStudentView()">Passage en vue étudiant</button>
+      <p onclick="showAccountInfo()">Information du compte</p>
+      <p onclick="switchToStudentView()">Passage en vue étudiant</p>
     </div>
     <button class="cancel" onclick="toggleMenu()">✖ Annuler</button>
   </div>
