@@ -10,6 +10,10 @@ body {
   width: 90vw;
 }
 
+.space{
+  padding:3px;
+}
+
 .vertical-line{
   border-left: 2px solid black;
   display: inline-block;
@@ -27,6 +31,11 @@ body {
   text-decoration: underline;
   text-align: center;
   font-weight:bold;
+}
+
+label
+{
+  font-style: italic;
 }
 
 #comptes, #stages {
@@ -186,10 +195,8 @@ main {
 
 .box65 {
   flex: 65; /* This makes box60 take up 60% of the width of top-container */
-  border: 1px solid black;
   height: 45vh;
   margin-right: 20px; /* Add some space between the boxes */
-  border-radius: 40px;
   padding : 1vh;
 }
 
@@ -199,6 +206,7 @@ main {
   height: 45vh;
   border-radius: 40px;
   padding : 1vh;
+  background-color: #fdf6ec;
 }
 
 /* CHARTS */
@@ -420,4 +428,22 @@ canvas {
   color: white; /* adjust as needed */
   text-decoration: none;
   padding: 10px 0;
+}
+
+table{
+  width:100%; 
+}
+
+th, td{
+  padding:20px;
+  border : 2px solid black;
+}
+
+th{
+  background-color:   #5d6d7e;
+  color : white;
+}
+
+table tr:nth-child(even){
+  background-color: #E4E5E8;
 }

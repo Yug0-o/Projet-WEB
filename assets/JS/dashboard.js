@@ -1,3 +1,20 @@
+const ui_para = localStorage.getItem('ui');
+switch (ui_para) {
+  case 'showStages':
+    showStages(); 
+    break;
+  case 'showComptes':
+    showComptes(); 
+    break;
+  case 'showStats':
+    showStats(); 
+    break;
+
+  default:
+    break;
+}
+
+
 const navItems = document.querySelectorAll(".nav-item");
 
 navItems.forEach((navItem, i) => {
@@ -159,6 +176,7 @@ function showStats() {
   document.getElementById('nav-stats').classList.add('active');
   document.getElementById('nav-comptes').classList.remove('active');
   document.getElementById('nav-stages').classList.remove('active');
+  localStorage.setItem('ui', 'showStats');
 }
 
 function showComptes() {
@@ -168,6 +186,7 @@ function showComptes() {
   document.getElementById('nav-comptes').classList.add('active');
   document.getElementById('nav-stats').classList.remove('active');
   document.getElementById('nav-stages').classList.remove('active');
+  localStorage.setItem('ui', 'showComptes');
 }
 
 function showStages() {
@@ -177,7 +196,9 @@ function showStages() {
   document.getElementById('nav-stages').classList.add('active');
   document.getElementById('nav-comptes').classList.remove('active');
   document.getElementById('nav-stats').classList.remove('active');
+  localStorage.setItem('ui', 'showStages');
 }
+
 
 function showAccountInfo() {
   window.location.href = "account.php";
