@@ -466,11 +466,13 @@ table tr:nth-child(even){
   flex: 6;  
   flex-direction: column;
   height: 70vh;
+  border-color: #333;
 }
 
 .box_tableau {
   width: 100%;
   height: 40vh;
+  border-color: #333;
 }
 
 .box_tableau_stats .same_line_container {
@@ -482,10 +484,12 @@ table tr:nth-child(even){
   width: 40%;
   height: 20vh;
   margin: 10px;
+  border-color: #333;
 }
 
 .box_CRUD {
   flex: 4; /* This will take the rest of the container */
   height: 70vh;
   margin: 10px;
+  border-color: #333;
 }
