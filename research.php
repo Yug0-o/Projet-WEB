@@ -1,19 +1,21 @@
-<!doctype html> 
-<html lang="fr"> 
-    <head>
+<!doctype html>
+<html lang="fr">
+
+<head>
     <?php
-        define('SMARTY_DIR', 'libs\\');
-        require_once(SMARTY_DIR . 'Smarty.class.php');
+    define('SMARTY_DIR', 'libs\\');
+    require_once(SMARTY_DIR . 'Smarty.class.php');
 
-        $smarty_head = new Smarty();
+    $smarty_head = new Smarty();
 
-        $smarty_head->assign('dashboard','no');
-        $smarty_head->assign('titre', 'Recherche');
-        $smarty_head->setTemplateDir('tpl/');
-        $smarty_head->display('head.tpl');
+    $smarty_head->assign('dashboard', 'no');
+    $smarty_head->assign('titre', 'Recherche');
+    $smarty_head->setTemplateDir('tpl/');
+    $smarty_head->display('head.tpl');
     ?>
-    </head> 
-    <body>
+</head>
+
+<body>
 
     <?php
 
@@ -36,15 +38,12 @@
         <h1>Offres d'emploi</h1>
     </div>
 
-    <div class="container">
-        <div class="filters">
-            <h2 for="keyword">Mot-clé:</h2>
-        </div>
+    <div class="container internship-container">
+        <!-- <div class="filters">
+            <h2 for="location">Lieu:</h2>
+            <input type="text" id="location" name="location" placeholder="Recherche par lieu" required>
+        </div> -->
         <div class="job-list" id="jobList"></div>
-    </div>
-
-    <div class="center-container">
-        <div class="pagination" id="pagination"></div>
     </div>
 
     <?php

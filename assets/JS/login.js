@@ -66,15 +66,35 @@ function verifyCredentials(email, password) {
         console.log("Server Response:", data); // Log de la réponse du serveur
         // Stocker les données dans le sessionStorage
         sessionStorage.setItem('email', email);
-        sessionStorage.setItem('first_name', data.first_name); // Modification ici
-        sessionStorage.setItem('last_name', data.last_name); // Modification ici
-        sessionStorage.setItem('promotion', data.promotion_name); // Modification ici
-        sessionStorage.setItem('id_account', data.id_account);
+        sessionStorage.setItem('first_name', data[0].first_name); // Modification ici
+        sessionStorage.setItem('last_name', data[0].last_name); // Modification ici
+        sessionStorage.setItem('promotion', data[0].promotion_name); // Modification ici
+        sessionStorage.setItem('id_account', data[0].id_account);
+        
+        // loop through the data and store the id_internship (wished for) in the session storage (as a list)
+        var id_internship_list = [];
+        for (var i = 0; i < data.length; i++) {
+            if (!id_internship_list.includes(data[i].id_internship)) {
+                id_internship_list.push(data[i].id_internship);
+            }
+        }
+        sessionStorage.setItem('wishlist_ids', JSON.stringify(id_internship_list));
+
+        // loop through the data and store the internship_id (applied for) in the session storage (as a list)
+        var internship_id_list = [];
+        for (var i = 0; i < data.length; i++) {
+            if (!internship_id_list.includes(data[i].internship_id)) {
+                internship_id_list.push(data[i].internship_id);
+            }
+        }
+        sessionStorage.setItem('applied_for_ids', JSON.stringify(internship_id_list));
+
         sessionStorage.setItem('loggedIn', 'true');
         var callback = sessionStorage.getItem('callback');
         if (callback && callback !== window.location.href) {
             // Redirect to the sanitized callback URL and remove it from the storage
-            window.location.href = encodeURI(callback);
+            if (callback.includes('homepage.php')) {window.location.href = 'account.php'; //forward to account page
+            }else{window.location.href = encodeURI(callback);}
         } else {
             // Redirect to a default page
             window.location.href = 'research.php';

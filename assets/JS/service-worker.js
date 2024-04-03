@@ -3,13 +3,10 @@ const cacheName = 'v1';
 
 // Files to cache
 const cacheFiles = [
-    '/',
-    '/index.html',
-    '/css/style.css',
-    '/js/app.js',
-    '/images/logo-classic.png',
-    '/images/screenshot-desktop.png',
-    '/images/screenshot-mobile.png'
+    'assets/style.css',
+    'images/logo-classic.webp',
+    'images/screenshot-desktop.png',
+    'images/screenshot-mobile.png'
 ];
 
 // Call Install Event

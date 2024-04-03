@@ -55,7 +55,7 @@
 }
 
 body.light-mode {
-        --primary-color: #F85F6A;
+        --primary-color: #df545d;
         --primary-color-darker: #B3444B;
         --secondary-color: #000;
         --background-color: #FFFFFF;
@@ -286,7 +286,7 @@ h1, h2, h3, h4, p {
 
 .animate.job {
     opacity: 0;
-    transform: translateX(5px);
+    transform: translateX(-5px);
     animation: slideInX 0.3s cubic-bezier(.19, 1, .22, 1) forwards;
 }
 
@@ -831,7 +831,8 @@ h1.text-center-accueil{
     justify-content: space-around;
     gap: 30px;
     align-items: center;
-    height: 84vh;
+    height: 80vh;
+    min-height: 600px;
     width: 100vw;
     border-radius: 75px;
     padding-inline: 30px;
@@ -851,7 +852,6 @@ h1.text-center-accueil{
     padding: 20px;
     gap: 10px;
     height: 100%;
-    width: 75vw;
     border-radius: 30px;
     background-color: var(--secondary-background-color);
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1)!important;
@@ -862,18 +862,24 @@ h1.text-center-accueil{
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 30px;
+    border-radius: 25px;
     align-items: center;
     width: 100%!important;
     height: 100%;
     margin-bottom: 0!important;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1)!important;
 }
 
+.scroll-container * {
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+}
+
+
 .wishlist {
-    padding: 0;
+    padding: 5px;
     margin-right: 10px;
     gap: 10px;
-    background-color: transparent;
+    background-color: var(--primary-color);
 }
 
 .wishlist-title {
@@ -881,31 +887,31 @@ h1.text-center-accueil{
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100px;
+    min-height: 69px;
     font-size: 30px;
     font-weight: 500;
-    color: var(--text-color);
+    color: white;
     border-radius: 30px;
-    background-color: var(--secondary-background-color);
+    background-color: var(--primary-color);
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
 
-.wishlist .scroll-container .job-list {
+.job-list {
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    /* overflow: scroll; */
     align-items: flex-start;
-    gap: 20px;
     width: 100%;
     height: 100%;
     padding: 10px;
+    gap: 10px;
     margin-bottom: 0;
-    border-radius: 30px;
-    background-color: var(--secondary-background-color);
+    border-radius: 25px;
+    background-color: var(--tertiary-background-color);
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
 
-.wishlistedjob-divider {
+.job-container-divider {
     border-top: 2px solid var(--text-color);
     opacity: 0.5;
     border-radius: 10px;
@@ -913,22 +919,28 @@ h1.text-center-accueil{
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
 
-.wishlistedjob {
+.job-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--secondary-background-color);
     width: 100%;
     height:fit-content;
-    border-radius: 25px;
+    border-radius: 15px;
     padding: 0px;
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
-.button-container {
+.button-container.wishlist-action {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100%;
+    align-items: center;
+    height: 50px;
+    min-width: 50px;
+    margin: 10px;
     gap: 10px;
+    border-radius: 50px;
+    background-color: var(--background-color);
 }
 
 
@@ -939,31 +951,31 @@ h1.text-center-accueil{
     width: 150px;
     height: 30%;
     min-height: 30px;
-    border-radius: 30px;
-    margin:0;
-    margin-inline: 10px;
+    border-radius: 15px;
+    margin:5px;
     background-color: var(--primary-color);
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
 
-.removewish {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 150px;
-    height: 60%;
-    min-height: 40px;
-    border-radius: 30px;
-    margin:0;
-    margin-inline: 10px;
-    color: var(--text-color);
-    background-color: transparent;
-    border: 3px solid var(--primary-color);
+
+
+.favorite-icon {
+    width: 35px;
+    height: 30px;
+    stroke-width: 3px;
+    stroke: var(--tertiary-background-color);
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
+.favorite-icon.wished {
+    stroke: var(--primary-color);
+}
 
-.removewish:hover {
-    background-color: var(--hover-color);
+.favorite-icon:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.favorite-icon:active {
+    transform: scale(0.90);
 }
 
 .tds-applyjob {
@@ -977,25 +989,31 @@ h1.text-center-accueil{
 
 
 .job-list .job-info {
-    width: 90%;
-    max-width: 1000px;
-    min-width: 150px;
+    width: fit-content;
     height: 100%;
     margin-block: 0;
     transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
 }
 
-.wishlistedjob .job {
+.job-container .job {
     height: 100%;
     margin-bottom: 0;
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
+}
+
+.job-container .job-description {
+    background-color: var(--secondary-background-color);
     transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
 }
 
 .account-info {
     justify-content: flex-start;
     width: 20vw;
+    max-width: max-content;
     min-width: fit-content;
-    gap: 50px;
+    padding-inline: 50px;
+    gap: 10px;
 }
 
 .account-info input {
@@ -1009,6 +1027,7 @@ h1.text-center-accueil{
     align-items: center;
     font-size: 20px;
     user-select: text;
+    margin-bottom: 20px;
     gap: 10px;
     width: 150px;
 }
@@ -1031,8 +1050,10 @@ h1.text-center-accueil{
     flex-direction: column;
     align-items: center;
     overflow: scroll;
-    gap: 5vh;
+    width: 100%;
+    gap: 40px;
 }
+
 
 .info-container{
     display: flex; 
@@ -1269,6 +1290,7 @@ form .button-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 10px;
 }
 
 form label {
@@ -1603,10 +1625,17 @@ canvas {
 
 /* Research */
 .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 20px;
-    min-width: 200px;
+    min-width: fit-content;
+    height: 100%;
     margin-inline: 20px;
     color: var(--text-color);
+    border-radius: 30px;
+    padding: 10px;
+    background-color: var(--secondary-background-color);
 }
 
 .filters button {
@@ -1618,15 +1647,8 @@ canvas {
     box-shadow: var(--box-shadow);
 }
 
-.job-list {
-    margin-bottom: 20px;
-    width: 80%;
-    min-width: 300px;
-    transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
-}
-
 .job {
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 10px;
     background-color: var(--primary-color);
     color: var(--inverted-text-color);
@@ -1641,13 +1663,54 @@ canvas {
 
 .job:hover {
     filter: brightness(1.05);
-    scale: 1.01;
+    scale: 1.005;
 }
 
-.job:active {
-    filter: brightness(1);
-    scale: 0.99;
+
+.job-container.focused {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    height: 500px;
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
 }
+
+.focused .job {
+    width: 100%;
+    height: 100%;
+    /* user-select: text; */
+}
+
+.focused .job-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 50px;
+}
+
+.focused .job-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 50px;
+    height: 100%;
+}
+
+.focused .button-container{
+    height : 50px;
+    width: 50px;
+    margin-bottom: -50px;
+    margin-top: -8px;
+    margin-right: -8px;
+    border-radius: 25px;
+    background-color: var(--background-color);
+}
+
+.focused .button-container svg {
+    margin: 0;
+}
+
 
 .job h3, .job p {
     margin: 5px 0;
@@ -1660,7 +1723,7 @@ canvas {
 
 .job-info {
     max-width: 20%;
-    min-width: 250px;
+    min-width: 200px;
     flex: 1;
     transition: all 0.2s cubic-bezier(.19, 1, .22, 1);
 }
@@ -1710,6 +1773,16 @@ canvas {
 
 /* Responsive */
 
+@media screen and (max-width: 1200px) {
+    .job-container .job {
+        flex-direction: column;
+    }
+
+    .job-container .job-description {
+        margin-left: 0;
+    }
+}
+
 @media screen and (max-width: 1000px) {
     #Name-logo {
         font-size: 20px;
@@ -1728,6 +1801,10 @@ canvas {
         flex-direction: column-reverse;
     }
 
+    .internship-container {
+        flex-direction: column!important;
+    }
+
     .box1 .container {
         flex-direction: row;
     }
@@ -1736,12 +1813,7 @@ canvas {
         display: none;
     }
 
-    .wishlistedjob .job {
-        flex-direction: column;
-    }
-    .wishlistedjob .job-description {
-        margin-left: 0;
-    }
+    
 }
 
 
@@ -1810,6 +1882,7 @@ canvas {
     .account-info {
         width: 95vw;
         height: max-content;
+        max-width: none;
         gap: 69px;
     }
 
@@ -1820,11 +1893,6 @@ canvas {
     .wishlist {
         width: 95vw;
         height: max-content;
-    }
-
-    .wishlist .scroll-container .job-list {
-        padding-top: 2%;
-        padding-bottom: 2%;
     }
 
     .wishlist-title {
@@ -1875,12 +1943,25 @@ canvas {
     }
 
     .container {
-        flex-direction: column-reverse!important;
+        flex-direction: column-reverse;
     
     }
 
     .profile-info {
         flex-direction: column;
+    }
+
+    /* .job-container {
+        flex-direction: column;
+    } */
+    
+    
+    .favorite-icon {
+        margin-right: 10px;
+    }
+    .applyjob {
+        flex-direction: column;
+        width: fit-content;
     }
 }
 
