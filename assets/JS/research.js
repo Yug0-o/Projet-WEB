@@ -26,7 +26,7 @@ function displayPagination(totalPages) {
 function fetchAndDisplayJobs() {
     $.ajax({
         type: "GET",
-        url: 'get_job_data.php', // Assurez-vous que le chemin est correct
+        url: 'MVC/get_job_data.php', // Assurez-vous que le chemin est correct
         dataType: 'json',
         success: function (jobData) {
             // Les données ont été récupérées avec succès
@@ -82,7 +82,7 @@ function searchJobs() {
     // Make an AJAX request to fetch job data based on the keyword
     $.ajax({
         type: "GET",
-        url: 'get_job_data.php',
+        url: 'MVC/get_job_data.php',
         dataType: 'json',
         success: function (jobData) {
             // Les données ont été récupérées avec succès
