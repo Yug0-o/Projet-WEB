@@ -117,7 +117,7 @@
             // Fermeture de la connexion
             $dbh = null;
             ?>
-                <div class="box_tableau" style="overflow-y: scroll; height: 300px;">
+            <div class="box_tableau" style="overflow-y: scroll; height: 300px;">
                 <table>
                     <thead>
                         <tr>
@@ -147,32 +147,31 @@
                     <div class="box1">Nombre d'étudiant</div>
                     <div class="box2">Nombre de promotions</div>
                 </div>
+            </div> 
+            <div class="box_CRUD">
+                    <h2 class="underline">Modification des comptes</h2>
+                    <label for="first_name">Prénom :</label>
+                    <div class="space"></div>
+                    <input type="text" id="first_name" name="first_name">
+                    <div class="space"></div>
+                    <label for="last_name">Nom :</label>
+                    <div class="space"></div>
+                    <input type="text" id="last_name" name="last_name">
+                    <div class="space"></div>
+                    <label for="email">Email :</label>
+                    <div class="space"></div>
+                    <input type="text" id="email" name="email">
+                    <div class="space"></div>
+                    <label for="password">Mot de passe :</label>
+                    <div class="space"></div>
+                    <input type="password" id="password" name="password">
+                    <div class="space"></div>
+                    <!-- Ajoutez d'autres champs de texte pour role_id, promotion_id, center_id si nécessaire -->
+                    <button onclick="insertData()">Insérer les données</button>
+                    <button onclick="updateData()">Modifier les données</button>
+                    <button onclick="deleteAccount()">Supprimer le compte</button>
+                    <button onclick="removeDuplicateAccounts()">Supprimer les doublons</button>
             </div>
-        </div> 
-        <div class="box_CRUD">
-                <h2 class="underline">Modification des comptes</h2>
-                <label for="first_name">Prénom :</label>
-                <div class="space"></div>
-                <input type="text" id="first_name" name="first_name">
-                <div class="space"></div>
-                <label for="last_name">Nom :</label>
-                <div class="space"></div>
-                <input type="text" id="last_name" name="last_name">
-                <div class="space"></div>
-                <label for="email">Email :</label>
-                <div class="space"></div>
-                <input type="text" id="email" name="email">
-                <div class="space"></div>
-                <label for="password">Mot de passe :</label>
-                <div class="space"></div>
-                <input type="password" id="password" name="password">
-                <div class="space"></div>
-                <!-- Ajoutez d'autres champs de texte pour role_id, promotion_id, center_id si nécessaire -->
-                <button onclick="insertData()">Insérer les données</button>
-                <button onclick="updateData()">Modifier les données</button>
-                <button onclick="deleteAccount()">Supprimer le compte</button>
-                <button onclick="removeDuplicateAccounts()">Supprimer les doublons</button>
-        </div>
 
 
 
