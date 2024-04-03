@@ -8,6 +8,7 @@
 
         $smarty_head = new Smarty();
 
+        $smarty_head->assign('dashboard','no');
         $smarty_head->assign('titre', 'Mot de passe oublié ? - Internship Etendard');
         $smarty_head->setTemplateDir('tpl/');
         $smarty_head->display('head.tpl');

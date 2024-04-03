@@ -6,6 +6,7 @@
 
         $smarty_head = new Smarty();
 
+        $smarty_head->assign('dashboard','no');
         $smarty_head->assign('titre', 'Mentions légales');
         $smarty_head->setTemplateDir('tpl/');
         $smarty_head->display('head.tpl');

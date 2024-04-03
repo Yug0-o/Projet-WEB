@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="My Web Page">
-  <link rel="stylesheet" href="assets/dashboard.css">
-  <title>My Web Page</title>
-</head>
+<?php
+        define('SMARTY_DIR', 'libs\\');
+        require_once(SMARTY_DIR . 'Smarty.class.php');
+
+        $smarty_head = new Smarty();
+        $smarty_head->assign('dashboard','yes');
+        $smarty_head->assign('titre', 'Dashboard Admin');
+        $smarty_head->setTemplateDir('tpl/');
+        $smarty_head->display('head.tpl');
+    ?>
 <body>
   <div class="container">
     <div class="flx1"> 
@@ -24,6 +27,9 @@
         <p onclick="logout()">Déconnexion</p>
       </div>
     </div>
+
+    <div class="vertical-line"></div>
+
     <?php
       try {
           $user = 'root';
@@ -53,26 +59,28 @@
       // Fermeture de la connexion
       $dbh = null;
     ?>
+
     <div class="container flx2" id="stats">
       <div class="flx2">
         <div class="flx2_1">
           <div>
-            <div style="border: none;">Nombre de personnes avec un stage</div>
-              <div style="font-size: 3vh; border: none;"><?php echo $data['nb_with_internship']; ?></div>
+            <div class="underline">Nombre de personnes avec un stage</div>
+              <div class="stat"><?php echo $data['nb_with_internship']; ?></div>
             </div>
             <div>
-              <div style="border: none;">Nombre de personnes sans stage</div>
-                <div style="font-size: 3vh; border: none;"><?php echo $data['nb_without_internship']; ?></div>
+              <div class="underline">Nombre de personnes sans stage</div>
+                <div class="stat"><?php echo $data['nb_without_internship']; ?></div>
             </div>
             <div>
-              <div style="border: none;">Stage en attente</div>
-                <div style="border: none;">Gene : <?php echo $data['not_internship_gene']; ?></div>
-                <div style="border: none;">BTP : <?php echo $data['not_internship_btp']; ?></div>
-                <div style="border: none;">Info : <?php echo $data['not_internship_info']; ?></div>
+              <div class="underline">Stages en attente</div>
+                <div>Généraliste : <?php echo $data['not_internship_gene']; ?></div>
+                <div>BTP : <?php echo $data['not_internship_btp']; ?></div>
+                <div>Informatique : <?php echo $data['not_internship_info']; ?></div>
             </div>
             <div>
-              <div style="border: none;">Nombre de stages en favoris</div>
-              <div style="font-size: 3vh; border: none;"><?php echo $data['nb_wishlist']; ?></div>
+              <div class="underline">Nombre de stages en favoris</div>
+              <div class="stat"><?php echo $data['nb_wishlist']; ?> <?php echo "\u{1f496}";?></div>
+              
             </div>
           </div>
         <div class="flx2_2">
@@ -133,7 +141,22 @@
                   </tbody>
               </table>
           </div>
-          <div class="box20"></div>
+          <div class="box20">
+            <h2>Modification des comptes</h2>
+            <label for="first_name">Prénom :</label>
+            <input type="text" id="first_name" name="first_name"><br><br>
+            <label for="last_name">Nom :</label>
+            <input type="text" id="last_name" name="last_name"><br><br>
+            <label for="email">Email :</label>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password"><br><br>
+            <!-- Ajoutez d'autres champs de texte pour role_id, promotion_id, center_id si nécessaire -->
+            <button onclick="insertData()">Insérer les données</button>
+            <button onclick="updateData()">Modifier les données</button>
+            <button onclick="deleteAccount()">Supprimer le compte</button>
+            <button onclick="removeDuplicateAccounts()">Supprimer les doublons</button>
+          </div>
         </div>
         <div class="flx2_1">
           <div>sfdsd</div>
@@ -174,13 +197,14 @@
       <p id="nav-stages" onclick="showStages()">Information stages</p>
     </div>
     <div class="nav-link-bottom">
-      <p onclick="showAccountInfo()">Information du compte</p>
-      <p onclick="switchToStudentView()">Passage en vue étudiant</p>
-      <p onclick="logout()">Déconnexion</p>
+      <button onclick="showAccountInfo()">Information du compte</button>
+      <button onclick="switchToStudentView()">Passage en vue étudiant</button>
     </div>
     <button class="cancel" onclick="toggleMenu()">✖ Annuler</button>
   </div>
 </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="assets/JS/dashboard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
