@@ -182,12 +182,135 @@
     <div class="container flx2" id="stages">
       <div class="flx2">
         <div class="top-container">
-          <div class="box65"></div>
-          <div class="box20"></div>
+          <div class="box65" style="overflow-y: scroll;">
+          <?php
+            try {
+                $user = 'root';
+                $pass = '';
+                $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
+                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+                http_response_code(500);
+                echo json_encode(array("error" => "Connection failed: " . $e->getMessage()));
+                die();
+            }
+
+            // Requête SQL pour récupérer les informations des stages avec leurs compétences associées
+            $sql = "SELECT internship.id_internship, internship.title, internship.offer_date, internship.available_places, 
+                          GROUP_CONCAT(skills.skill_name SEPARATOR ', ') AS skills_required
+                    FROM internship 
+                    INNER JOIN internship_need_skill ON internship.id_internship = internship_need_skill.internship_id
+                    INNER JOIN skills ON internship_need_skill.skill_id = skills.id_skill
+                    GROUP BY internship.id_internship";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+            $internships = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Fermeture de la connexion
+            $dbh = null;
+            ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Identifiant</th>
+                            <th>Titre du stage</th>
+                            <th>Date de l'offre</th>
+                            <th>Places disponibles</th>
+                            <th>Compétences requises</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($internships as $internship): ?>
+                            <tr>
+                                <td><?php echo $internship['id_internship']; ?></td>
+                                <td><?php echo $internship['title']; ?></td>
+                                <td><?php echo $internship['offer_date']; ?></td>
+                                <td><?php echo $internship['available_places']; ?></td>
+                                <td><?php echo $internship['skills_required']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+          </div>
+          <div class="box65" style="overflow-y: scroll;">
+          <?php
+            try {
+                $user = 'root';
+                $pass = '';
+                $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
+                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+                http_response_code(500);
+                echo json_encode(array("error" => "Connection failed: " . $e->getMessage()));
+                die();
+            }
+
+            // Requête SQL pour récupérer les informations des entreprises avec leurs emplacements
+            $sql = "SELECT companies.id_company, companies.company_name, companies.sector, companies.student_visible, locations.address, country.country_name 
+                    FROM companies 
+                    INNER JOIN companies_has_locations ON companies.id_company = companies_has_locations.id_company
+                    INNER JOIN locations ON companies_has_locations.id_locations = locations.id_locations
+                    INNER JOIN country ON locations.country_id = country.id_country";
+            $stmt = $dbh->prepare($sql);
+            $stmt->execute();
+            $companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Fermeture de la connexion
+            $dbh = null;
+            ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Identifiant</th>
+                            <th>Nom de l'entreprise</th>
+                            <th>Secteur</th>
+                            <th>Visible pour les étudiants</th>
+                            <th>Adresse</th>
+                            <th>Pays</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($companies as $company): ?>
+                            <tr>
+                                <td><?php echo $company['id_company']; ?></td>
+                                <td><?php echo $company['company_name']; ?></td>
+                                <td><?php echo $company['sector']; ?></td>
+                                <td><?php echo $company['student_visible'] ? 'Oui' : 'Non'; ?></td>
+                                <td><?php echo $company['address']; ?></td>
+                                <td><?php echo $company['country_name']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
         <div class="flx2_1">
-          <div>sfdsd</div>
-          <div>sfdsd</div>
+          <div style="overflow-y: scroll;">sfdsd</div>
+          <div style="overflow-y: scroll;">
+            <h2>Modification des Entreprises</h2>
+            <label for="company_name">Nom de l'entreprise :</label>
+            <input type="text" id="company_name" name="company_name"><br><br>
+            <label for="sector">Secteur :</label>
+            <input type="text" id="sector" name="sector"><br><br>
+            <label for="student_visible">Visible pour les étudiants :</label>
+            <select id="student_visible" name="student_visible">
+              <option value="1">Oui</option>
+              <option value="0">Non</option>
+            </select>
+            <label for="address">Adresse :</label>
+            <input type="text" id="address" name="address"><br><br>
+            <label for="country_id">Pays :</label>
+            <select id="country_id" name="country_id">
+              <option value="1">France</option>
+              <option value="2">Germany</option>
+              <option value="3">USA</option>
+            </select>
+            <button onclick="insertDataCompanies()">Insérer les données</button>
+            <button onclick="updateDataCompanies()">Modifier les données</button>
+            <button onclick="deleteCompany()">Supprimer l'entreprise</button>
+          </div>
         </div>
       </div>
     </div>

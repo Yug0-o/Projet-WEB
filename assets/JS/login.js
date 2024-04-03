@@ -59,8 +59,7 @@ function verifyCredentials(email, password) {
             var callback = sessionStorage.getItem('callback');
             if (callback) {
                 // Redirect to the sanitized callback URL and remove it from the storage
-                sessionStorage.removeItem('callback');
-                window.location.href = callback;
+                window.location.href = encodeURI(callback);
             } else {
                 // Redirect to a default page
                 window.location.href = 'research.php';

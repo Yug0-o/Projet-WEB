@@ -1,5 +1,10 @@
 if (!sessionStorage.getItem('email')) {
-    window.location.href = 'homepage.php';
+    const callback = sessionStorage.getItem('callback');
+    if (!callback || callback === window.location.href) {
+        window.location.href = 'homepage.php';
+    }else {
+        window.location.href = encodeURI(callback);
+    }
 }
 
 window.addEventListener('load', function() {
@@ -13,7 +18,6 @@ logoutButton.addEventListener('click', function () {
     sessionStorage.clear();
     window.location.href = 'homepage.php';
 });
-
 
 const modifyButton = document.querySelector('.modify');
 
@@ -91,7 +95,7 @@ function displayPagination(totalPages) {
 function fetchAndDisplayJobs() {
     $.ajax({
         type: "GET",
-        url: 'get_wishlist_data.php', // Make sure the path is correct
+        url: 'MVC/get_wishlist_data.php', // Make sure the path is correct
         dataType: 'json',
         success: function (jobData) {
             // Data retrieved successfully

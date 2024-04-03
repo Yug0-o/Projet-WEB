@@ -120,7 +120,6 @@ if ('serviceWorker' in navigator) {
 // Handle login button click event
 document.querySelector('button[type="login"]').addEventListener('click', function (event) {
     event.preventDefault();
-    sessionStorage.setItem('callback', window.location.href);
     if (sessionStorage.getItem('loggedIn') === 'true') {
         window.location.href = 'account.php';
     } else {
@@ -129,3 +128,8 @@ document.querySelector('button[type="login"]').addEventListener('click', functio
 });
 // Set current year in the element with id 'year'
 document.getElementById('year').textContent = new Date().getFullYear();
+
+window.addEventListener('beforeunload', function() {
+    // Set callback to current page URL
+    sessionStorage.setItem('callback', window.location.href);
+});

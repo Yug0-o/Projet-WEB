@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function() {
   canvas.height = canvas.parentNode.clientHeight;
 
   // Effectuer une requête AJAX pour récupérer les données depuis l'API
-  fetch('/data_dashboard.php')
+  fetch('MVC/data_dashboard.php')
     .then(response => response.json())
     .then(data => {
       // Extraire les compétences et les nombres associés depuis les données reçues
@@ -124,7 +124,6 @@ document.addEventListener("DOMContentLoaded", function() {
           backgroundColor: [
             'red',
             'blue',
-            'yellow',
             'green',
             'purple',
             'orange'
@@ -218,7 +217,7 @@ function insertData() {
   // Effectuer une requête AJAX pour envoyer les données au script PHP
   $.ajax({
       type: "POST",
-      url: "CRUD_dashboard_1.php",
+      url: "MVC/CRUD_dashboard_1.php",
       data: { 
           first_name: firstName,
           last_name: lastName,
@@ -249,7 +248,7 @@ function updateData() {
   // Effectuer une requête AJAX pour envoyer les données au script PHP
   $.ajax({
       type: "POST",
-      url: "CRUD_dashboard_1.php",
+      url: "MVC/CRUD_dashboard_1.php",
       data: { 
           first_name: firstName,
           last_name: lastName,
@@ -278,7 +277,7 @@ function deleteAccount() {
   // Effectuer une requête AJAX pour envoyer l'e-mail au script PHP
   $.ajax({
       type: "POST",
-      url: "CRUD_dashboard_2.php",
+      url: "MVC/CRUD_dashboard_2.php",
       data: { 
           action: 'delete',
           email: email
@@ -300,7 +299,7 @@ function removeDuplicateAccounts() {
   // Effectuer une requête AJAX pour supprimer les doublons
   $.ajax({
       type: "POST",
-      url: "CRUD_dashboard_2.php",
+      url: "MVC/CRUD_dashboard_2.php",
       data: { 
           action: 'removeDuplicates'
       },
@@ -316,3 +315,92 @@ function removeDuplicateAccounts() {
   location.reload();
 }
 
+
+
+
+
+
+
+
+
+
+
+
+function insertDataCompanies() {
+  const companyName = document.getElementById('company_name').value;
+  const sector = document.getElementById('sector').value;
+  const studentVisible = document.getElementById('student_visible').value;
+  const address = document.getElementById('address').value;
+  const countryId = document.getElementById('country_id').value;
+
+  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  $.ajax({
+      type: "POST",
+      url: "MVC/CRUD_dashboard_1_companies.php",
+      data: { 
+          company_name: companyName,
+          sector: sector,
+          student_visible: studentVisible,
+          address: address,
+          country_id: countryId
+      },
+      success: function(response) {
+          console.log(response);
+          alert('Données insérées avec succès !');
+          // Vous pouvez ajouter ici d'autres actions à effectuer après l'insertion réussie
+      },
+      error: function(xhr, status, error) {
+          console.error('Erreur lors de l\'insertion des données :', error);
+          alert('Erreur lors de l\'insertion des données. Veuillez réessayer.');
+      }
+  });
+}
+
+function updateDataCompanies() {
+  const companyName = document.getElementById('company_name').value;
+  const sector = document.getElementById('sector').value;
+  const studentVisible = document.getElementById('student_visible').value;
+  const address = document.getElementById('address').value;
+  const countryId = document.getElementById('country_id').value;
+
+  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  $.ajax({
+      type: "POST",
+      url: "MVC/CRUD_dashboard_2_companies.php",
+      data: {
+          company_name: companyName,
+          sector: sector,
+          student_visible: studentVisible,
+          address: address,
+          country_id: countryId
+      },
+      success: function(response) {
+          console.log(response);
+          alert('Données mises à jour avec succès !');
+          // Vous pouvez ajouter ici d'autres actions à effectuer après la mise à jour réussie
+      },
+      error: function(xhr, status, error) {
+          console.error('Erreur lors de la mise à jour des données :', error);
+          alert('Erreur lors de la mise à jour des données. Veuillez réessayer.');
+      }
+  });
+}
+
+function deleteCompany() {
+  const companyName = document.getElementById('company_name').value;
+  if (confirm("Êtes-vous sûr de vouloir supprimer cette entreprise ?")) {
+      $.ajax({
+          type: "POST",
+          url: "MVC/CRUD_dashboard_3_companies.php",
+          data: { company_name: companyName },
+          success: function(response) {
+              console.log(response);
+              alert('Entreprise supprimée avec succès !');
+          },
+          error: function(xhr, status, error) {
+              console.error('Erreur lors de la suppression de l\'entreprise :', error);
+              alert('Erreur lors de la suppression de l\'entreprise. Veuillez réessayer.');
+          }
+      });
+  }
+}
