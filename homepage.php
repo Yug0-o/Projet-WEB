@@ -75,7 +75,7 @@
     $smarty_footer->setTemplateDir('tpl/');
     $smarty_footer->display('footer.tpl');
     ?>
-
+    <a href="test_dashboard.php" class="btn">Go to Dashboard</a>
     <script src="assets/JS/homepage.js" async></script>
     <script src="assets/JS/global.js" async></script>
     <script src="assets/JS/carousel.js" async></script>

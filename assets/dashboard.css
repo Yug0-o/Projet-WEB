@@ -448,3 +448,44 @@ th{
 table tr:nth-child(even){
   background-color: #E4E5E8;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* zone de test (m'engeule pas sam j'ai mis que ct un test)*/
+
+.box_tableau_stats {
+  display: flex;
+  flex: 6;  
+  flex-direction: column;
+  height: 70vh;
+}
+
+.box_tableau {
+  width: 100%;
+  height: 40vh;
+}
+
+.box_tableau_stats .same_line_container {
+  display: flex;
+}
+
+.box_tableau_stats .same_line_container .box1,
+.box_tableau_stats .same_line_container .box2 {
+  width: 40%;
+  height: 20vh;
+  margin: 10px;
+}
+
+.box_CRUD {
+  flex: 4; /* This will take the rest of the container */
+  height: 70vh;
+  margin: 10px;
+}
