@@ -74,13 +74,13 @@ main {
 .nav-items p {
   cursor: pointer;
   text-align: center;
-  font-size: 22px;
+  font-size: 2.5vh;
   margin: 50px 0;
 }
 
 .nav-items .active {
   text-decoration: underline;
-  font-size: 26px; /* adjust as needed */
+  font-size: 3vh; /* adjust as needed */
 }
 
 .nav-items-bottom {
@@ -97,7 +97,7 @@ main {
   text-align: center;
   margin: 10px 0;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 2vh;
 }
 
 
@@ -113,6 +113,7 @@ main {
 
 
 /*.flx2_1 ;)*/
+
 .container .flx2 .flx2_1 {
   display: flex;
   flex-direction: row;
