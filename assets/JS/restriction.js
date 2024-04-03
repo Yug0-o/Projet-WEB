@@ -43,6 +43,8 @@ if(localStorage.getItem("sent")==="true") {
     localStorage.setItem("sent", "false");
 }
 
-if (sessionStorage.getItem('email')) {
+if (sessionStorage.getItem('loggedIn')) {
     document.getElementById('email').value = sessionStorage.getItem('email');
+    document.getElementById('lastname').value = sessionStorage.getItem('last_name');
+    document.getElementById('firstname').value = sessionStorage.getItem('first_name');
 }

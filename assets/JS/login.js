@@ -66,11 +66,13 @@ function verifyCredentials(email, password) {
         console.log("Server Response:", data); // Log de la réponse du serveur
         // Stocker les données dans le sessionStorage
         sessionStorage.setItem('email', email);
-        sessionStorage.setItem('name', data.last_name); // Modification ici
+        sessionStorage.setItem('first_name', data.first_name); // Modification ici
+        sessionStorage.setItem('last_name', data.last_name); // Modification ici
         sessionStorage.setItem('promotion', data.promotion_name); // Modification ici
+        sessionStorage.setItem('id_account', data.id_account);
         sessionStorage.setItem('loggedIn', 'true');
         var callback = sessionStorage.getItem('callback');
-        if (callback) {
+        if (callback && callback !== window.location.href) {
             // Redirect to the sanitized callback URL and remove it from the storage
             window.location.href = encodeURI(callback);
         } else {
@@ -81,6 +83,7 @@ function verifyCredentials(email, password) {
     .catch(error => {
         sessionStorage.setItem('email', ''); // Clear the email from the storage
         sessionStorage.setItem('loggedIn', 'false');
+        document.getElementById('wrong-credential').textContent = 'Mot de passe ou email incorrect';
         console.error('Error:', error);
         // Display an error message or take another action in case of invalid credentials
     });

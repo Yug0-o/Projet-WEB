@@ -49,8 +49,8 @@ $smarty_head->display('head.tpl');
                             <button class="reset" type="reset">Reset</button> <!-- Modification 4 -->
                             <button class="submit" type="submit">Connexion</button> <!-- Modification 4 -->
                         </div>
-                        <div class="wrong-credential" id="wrong-credential"></div>
                     </div>
+                    <div class="wrong-credential" id="wrong-credential"></div>
                 </form>
             </article>
         </section>

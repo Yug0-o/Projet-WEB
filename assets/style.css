@@ -918,7 +918,7 @@ h1.text-center-accueil{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height:150px;
+    height:fit-content;
     border-radius: 25px;
     padding: 0px;
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
@@ -979,11 +979,17 @@ h1.text-center-accueil{
 .job-list .job-info {
     width: 90%;
     max-width: 1000px;
+    min-width: 150px;
     height: 100%;
     margin-block: 0;
     transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
 }
 
+.wishlistedjob .job {
+    height: 100%;
+    margin-bottom: 0;
+    transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
+}
 
 .account-info {
     justify-content: flex-start;
@@ -1728,6 +1734,13 @@ canvas {
 
     .vertical-line {
         display: none;
+    }
+
+    .wishlistedjob .job {
+        flex-direction: column;
+    }
+    .wishlistedjob .job-description {
+        margin-left: 0;
     }
 }
 

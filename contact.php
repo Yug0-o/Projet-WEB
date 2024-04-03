@@ -2,15 +2,15 @@
 <html lang="fr">
 
 <?php
-        define('SMARTY_DIR', 'libs\\');
-        require_once(SMARTY_DIR . 'Smarty.class.php');
+define('SMARTY_DIR', 'libs\\');
+require_once(SMARTY_DIR . 'Smarty.class.php');
 
-        $smarty_head = new Smarty();
+$smarty_head = new Smarty();
 
-        $smarty_head->assign('dashboard','no');
-        $smarty_head->assign('titre', 'Contact');
-        $smarty_head->setTemplateDir('tpl/');
-        $smarty_head->display('head.tpl');
+$smarty_head->assign('dashboard', 'no');
+$smarty_head->assign('titre', 'Contact');
+$smarty_head->setTemplateDir('tpl/');
+$smarty_head->display('head.tpl');
 ?>
 
 <body>
@@ -49,11 +49,11 @@
                             <div class="container_contact">
                                 <div class="box1">
                                     <label>Nom *</label>
-                                    <input name="lastname" type="text" value="" size="100" required>
+                                    <input name="lastname" id="lastname" type=" text" value="" size="100" required>
                                 </div>
                                 <div class="box1">
                                     <label>Prénom </label>
-                                    <input name="firstname" type="text" value="" size="100">
+                                    <input name="firstname" id="firstname" type="text" value="" size="100">
                                 </div>
                             </div>
                             <div class="container_contact">
@@ -94,14 +94,14 @@
                         </div>
                     </div>
 
-            
+
 
                     <div id="error-tel" style="display: none; color: red;">Veuillez entrer un numéro de téléphone correct.</div>
                     <div id="error-email" style="display: none; color: red;">Veuillez entrer une adresse-mail valide.</div>
 
                     <div class="button-container">
-                        <button type="reset" aria-label="Effacer" >Effacer</button>
-                        <button type="submit" onclick="return verifData()" aria-label="Envoyer" >Envoyer</button>
+                        <button type="reset" aria-label="Effacer">Effacer</button>
+                        <button type="submit" onclick="return verifData()" aria-label="Envoyer">Envoyer</button>
                     </div>
                 </form>
             </article>

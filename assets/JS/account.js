@@ -9,7 +9,7 @@ if (!sessionStorage.getItem('email')) {
 
 window.addEventListener('load', function() {
     document.getElementById('email').textContent = sessionStorage.getItem('email');
-    document.getElementById('name').textContent = sessionStorage.getItem('name');
+    document.getElementById('name').textContent = sessionStorage.getItem('first_name') + ' ' + sessionStorage.getItem('last_name');
     document.getElementById('promotion').textContent = sessionStorage.getItem('promotion');
 });
 
@@ -100,9 +100,6 @@ function fetchAndDisplayJobs() {
         url: 'MVC/get_wishlist_data.php', // Make sure the path is correct
         dataType: 'json',
         success: function (jobData) {
-            // Data retrieved successfully
-            console.log(jobData); // Display data in the console for verification
-
             // Calculate the total number of pages
             const totalPages = Math.ceil(jobData.length / jobsPerPage);
 
@@ -132,6 +129,7 @@ function displayJobs(jobData, totalPages) {
         const jobElement = document.createElement('div');
         jobElement.classList.add('job');
         jobElement.classList.add('animate');
+        wishlistedjob.appendChild(jobElement);
 
         const jobInfoElement = document.createElement('div');
         jobInfoElement.classList.add('job-info');
@@ -145,7 +143,29 @@ function displayJobs(jobData, totalPages) {
         jobDescriptionElement.innerHTML = `<p>${job.description}</p>`;
         jobElement.appendChild(jobDescriptionElement);
 
-        jobList.appendChild(jobElement);
+        const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('button-container');
+        wishlistedjob.appendChild(buttonContainer);
+
+        const applyButton = document.createElement('button');
+        applyButton.classList.add('applyjob');
+        applyButton.classList.add('enabled');
+        applyButton.setAttribute('enabled', '');
+        applyButton.innerHTML = `
+            Postuler
+            <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path d="m10 6h-4c-1.10457 0-2 .89543-2 2v10c0 1.1046.89543 2 2 2h10c1.1046 0 2-.8954 2-2v-4m-4-10h6m0 0v6m0-6-10 10" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+            </svg>`;
+        buttonContainer.appendChild(applyButton);
+
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('removewish');
+        removeButton.classList.add('enabled');
+        removeButton.setAttribute('enabled', '');
+        removeButton.textContent = 'Retirer des favoris';
+        buttonContainer.appendChild(removeButton);
+
+        jobList.appendChild(wishlistedjob);
     }
 
     // Display pagination
