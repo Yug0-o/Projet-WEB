@@ -159,7 +159,6 @@ main {
 .container .flx2 .flx2_1 * {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 90%; /* Adjust the width of the flexbox */
   height: 150px; 
   margin: 1%;
@@ -167,7 +166,6 @@ main {
   border-radius: 10px;
   background-color: #F9F6EE;
   padding: 2%;
-  overflow: hidden;
 }
 
 .container .flx2 .flx2_2 {
