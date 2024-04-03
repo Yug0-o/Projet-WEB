@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-04-03 01:08:14
+/* Smarty version 3.1.48, created on 2024-04-03 09:07:21
   from 'D:\Cesi\CPIA2\4 Dev Web\Projet\GitHub\Projet-WEB\tpl\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_660c8fde5ce044_77099767',
+  'unifunc' => 'content_660d0029b93e89_59799286',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '962e095597d423ac11ab922fda3a841a0ce682fb' => 
     array (
       0 => 'D:\\Cesi\\CPIA2\\4 Dev Web\\Projet\\GitHub\\Projet-WEB\\tpl\\header.tpl',
-      1 => 1712099292,
+      1 => 1712127972,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660c8fde5ce044_77099767 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660d0029b93e89_59799286 (Smarty_Internal_Template $_smarty_tpl) {
 ?><header>
     <div class="searchbar">
         <a href="homepage.php">

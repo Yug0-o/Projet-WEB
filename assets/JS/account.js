@@ -1,6 +1,4 @@
-if (!sessionStorage.getItem('email')) {
-    window.location.href = 'homepage.php';
-}
+if (!sessionStorage.getItem('email')) {window.location.href = encodeURI(sessionStorage.getItem('callback'));}
 
 window.addEventListener('load', function() {
     document.getElementById('email').textContent = sessionStorage.getItem('email');
@@ -13,7 +11,6 @@ logoutButton.addEventListener('click', function () {
     sessionStorage.clear();
     window.location.href = 'homepage.php';
 });
-
 
 const modifyButton = document.querySelector('.modify');
 
