@@ -9,11 +9,14 @@ try {
     die();
 }
 
+
 // Requête SQL pour récupérer les données des offres de stage avec des informations supplémentaires
-$sql = "SELECT i.*
-        FROM internship i
-        JOIN students_has_wish_listed wl ON i.id_internship = wl.id_internship
-        WHERE wl.account_id_account = (SELECT id_account FROM account WHERE email = 'John.Doe@gmail.com');";
+$sql = "SELECT internship.*, locations.*, companies.*
+        FROM internship 
+        JOIN locations ON internship.location_id = locations.id_locations
+        JOIN companies ON internship.company_id = companies.id_company
+        JOIN students_has_wish_listed ON internship.id_internship = students_has_wish_listed.id_internship
+        JOIN account ON students_has_wish_listed.account_id_account WHERE account.id_account = (SELECT account.id_account WHERE account.email = 'John.Doe@gmail.com');";
 
 // Utilisation de PDO pour exécuter la requête
 $stmt = $dbh->query($sql);

@@ -96,7 +96,7 @@ function searchJobs() {
 
     // Make an AJAX request to fetch job data based on the keyword
     $.ajax({
-        type: "GET",
+        type: "post",
         url: 'MVC/get_job_data.php',
         dataType: 'json',
         success: function (jobData) {

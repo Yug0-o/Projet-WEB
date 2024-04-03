@@ -85,8 +85,6 @@ function fetchAndDisplayJobs() {
         url: 'MVC/get_wishlist_data.php', // Make sure the path is correct
         dataType: 'json',
         success: function (jobData) {
-            // Calculate the total number of pages
-
             // Display job listings for the current page
             displayJobs(jobData);
         },
@@ -170,11 +168,7 @@ function displayJobs(jobData) {
 
         // Add an event listener to the job container
         jobElement.addEventListener('click', function () {
-            if (job_container.classList.contains('focused')) {
-                job_container.classList.remove('focused');
-            } else {
-                job_container.classList.add('focused');
-            }
+            job_container.classList.toggle('focused')
         });
     }
 }
