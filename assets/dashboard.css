@@ -10,6 +10,29 @@ body {
   width: 90vw;
 }
 
+/* For Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 transparent;
+} 
+
 #comptes, #stages {
   display: none;
 }
@@ -131,7 +154,6 @@ main {
 .container .flx2 .flx2_1 * {
   display: flex;
   flex-direction: column;
-  justify-content:center;
   align-items: center;
   width: 90%; /* Adjust the width of the flexbox */
   height: 150px; 
@@ -139,8 +161,7 @@ main {
   position: relative;
   border-radius: 10px;
   border: 1px solid black;
-  padding: 2%;
-  overflow: hidden;
+  padding: 2%;  
 }
 
 .container .flx2 .flx2_2 {

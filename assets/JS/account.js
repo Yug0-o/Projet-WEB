@@ -91,7 +91,7 @@ function displayPagination(totalPages) {
 function fetchAndDisplayJobs() {
     $.ajax({
         type: "GET",
-        url: 'get_wishlist_data.php', // Make sure the path is correct
+        url: 'MVC/get_wishlist_data.php', // Make sure the path is correct
         dataType: 'json',
         success: function (jobData) {
             // Data retrieved successfully
