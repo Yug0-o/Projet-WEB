@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-04-03 12:07:56
-  from 'D:\Cesi\CPIA2\4 Dev Web\Projet\GitHub\Projet-WEB\tpl\head.tpl' */
+/* Smarty version 3.1.48, created on 2024-04-02 12:04:42
+  from 'C:\www\Projet-WEB\tpl\head.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_660d2a7cab8c16_30912552',
+  'unifunc' => 'content_660bd83a2f72c5_79979168',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e20bc57ca0cdab18645a7dc65aeddae464eba72d' => 
+    'f30e8f7253a4fd8f48264386953c79e932c3e3bb' => 
     array (
-      0 => 'D:\\Cesi\\CPIA2\\4 Dev Web\\Projet\\GitHub\\Projet-WEB\\tpl\\head.tpl',
-      1 => 1712138871,
+      0 => 'C:\\www\\Projet-WEB\\tpl\\head.tpl',
+      1 => 1712051935,
       2 => 'file',
     ),
   ),
@@ -20,20 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660d2a7cab8c16_30912552 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660bd83a2f72c5_79979168 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
         <link rel="preload" href="assets/fonts/GothamSSm-Medium_Web.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="assets/fonts/GothamSSm-Book_Web.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="assets/fonts/GothamSSm-Light_Web.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="images/logo-classic.webp" as="image">
         <link rel="icon" href="images/favicon.png">
-
-        <?php if ($_smarty_tpl->tpl_vars['dashboard']->value == 'yes') {?>
-                <link rel="stylesheet" href="assets/dashboard.css">
-        <?php } else { ?>
-                <link rel="stylesheet" href="assets/style.css">
-        <?php }?>
-
+        <link rel="stylesheet" href="assets/style.css">
         <link rel="manifest" href="assets/manifest.json">
         <meta charset="utf-8">
         <meta name="theme-color" content="#F85F6A">

@@ -1,3 +1,7 @@
+if (!sessionStorage.getItem('email')) {
+    sessionStorage.setItem('callback', window.location.href);
+    window.location.href = 'login.php';
+}
 // Number of jobs displayed per page
 const jobsPerPage = 6;
 // Starting page
@@ -18,7 +22,6 @@ function displayPagination(totalPages) {
         pagination.appendChild(button);
     }
 }
-
 // Function to fetch job data from server and display jobs
 function fetchAndDisplayJobs() {
     $.ajax({
@@ -41,7 +44,6 @@ function fetchAndDisplayJobs() {
         }
     });
 }
-
 // Function to display jobs on the page
 function displayJobs(jobData, totalPages) {
     const jobList = document.getElementById('jobList');
@@ -70,11 +72,9 @@ function displayJobs(jobData, totalPages) {
 
         jobList.appendChild(jobElement);
     }
-
     // Affiche la pagination
     displayPagination(totalPages);
 }
-
 // Function to search for jobs based on a keyword
 function searchJobs() {
     const keyword = document.getElementById('keyword').value.toLowerCase();
@@ -105,11 +105,17 @@ function searchJobs() {
         }
     });
 }
-
 // Get the search input element
 const search = document.querySelector("input[type='text']");
 // Add an event listener to trigger search when typing
 search.addEventListener('input', searchJobs);
-
+// Get the search_query parameter from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const searchQuery = urlParams.get('search_query');
+// If search_query isn't empty, set it as the input value
+if (searchQuery) {
+    search.value = searchQuery;
+    searchJobs();
+}
 // Fetch job data and display jobs on initial page load
 fetchAndDisplayJobs();

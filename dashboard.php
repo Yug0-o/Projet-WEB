@@ -27,6 +27,9 @@
         <p onclick="logout()">Déconnexion</p>
       </div>
     </div>
+
+    <div class="vertical-line"></div>
+
     <?php
       try {
           $user = 'root';
@@ -56,26 +59,28 @@
       // Fermeture de la connexion
       $dbh = null;
     ?>
+
     <div class="container flx2" id="stats">
       <div class="flx2">
         <div class="flx2_1">
           <div>
-            <div style="border: none;">Nombre de personnes avec un stage</div>
-              <div style="font-size: 3vh; border: none;"><?php echo $data['nb_with_internship']; ?></div>
+            <div class="underline">Nombre de personnes avec un stage</div>
+              <div class="stat"><?php echo $data['nb_with_internship']; ?></div>
             </div>
             <div>
-              <div style="border: none;">Nombre de personnes sans stage</div>
-                <div style="font-size: 3vh; border: none;"><?php echo $data['nb_without_internship']; ?></div>
+              <div class="underline">Nombre de personnes sans stage</div>
+                <div class="stat"><?php echo $data['nb_without_internship']; ?></div>
             </div>
             <div>
-              <div style="border: none;">Stage en attente</div>
-                <div style="border: none;">Gene : <?php echo $data['not_internship_gene']; ?></div>
-                <div style="border: none;">BTP : <?php echo $data['not_internship_btp']; ?></div>
-                <div style="border: none;">Info : <?php echo $data['not_internship_info']; ?></div>
+              <div class="underline">Stages en attente</div>
+                <div>Généraliste : <?php echo $data['not_internship_gene']; ?></div>
+                <div>BTP : <?php echo $data['not_internship_btp']; ?></div>
+                <div>Informatique : <?php echo $data['not_internship_info']; ?></div>
             </div>
             <div>
-              <div style="border: none;">Nombre de stages en favoris</div>
-              <div style="font-size: 3vh; border: none;"><?php echo $data['nb_wishlist']; ?></div>
+              <div class="underline">Nombre de stages en favoris</div>
+              <div class="stat"><?php echo $data['nb_wishlist']; ?> <?php echo "\u{1f496}";?></div>
+              
             </div>
           </div>
         <div class="flx2_2">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.48, created on 2024-04-03 09:04:38
-  from 'D:\Cesi\CPIA2\4 Dev Web\Projet\GitHub\Projet-WEB\tpl\footer.tpl' */
+/* Smarty version 3.1.48, created on 2024-04-02 12:04:42
+  from 'C:\www\Projet-WEB\tpl\footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.48',
-  'unifunc' => 'content_660cff86f28782_85941027',
+  'unifunc' => 'content_660bd83a3709a9_13394351',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '8699acb88fb70a89614c2de7a82940245497f3b3' => 
+    '662d1ba4c5d44e80796a5c66fa7d5e4068018dbd' => 
     array (
-      0 => 'D:\\Cesi\\CPIA2\\4 Dev Web\\Projet\\GitHub\\Projet-WEB\\tpl\\footer.tpl',
-      1 => 1712127862,
+      0 => 'C:\\www\\Projet-WEB\\tpl\\footer.tpl',
+      1 => 1711464850,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_660cff86f28782_85941027 (Smarty_Internal_Template $_smarty_tpl) {
+function content_660bd83a3709a9_13394351 (Smarty_Internal_Template $_smarty_tpl) {
 ?><footer>
         <div class="navbar">
             <div class="text-center">

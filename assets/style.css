@@ -26,32 +26,32 @@
 
 /*---------------------------------------------------------------*/
 :root {
-    --primary-color: #000;
-    --primary-color-darker: #000;
-    --secondary-color: #000;
-    --background-color: #000;
-    --secondary-background-color: #000;
-    --tertiary-background-color: #000;
-    --header-background: #000;
-    --text-color: #000;
-    --link-default-color: #000;
-    --link-underlined-color: #000;
-    --inverted-text-color: #000;
-    --logo-gradient: #000;
-    --hover-color: #000;
-    --h1-background-color: #000;
-    --checkbox-background: #000;
-    --checkbox-checked-background: #000;
-    --checkbox-checked-box-shadow: #000;
-    --footer-text-shadow: #000;
-    --dashboard-border-color: #000;
-    --secondary-background-color: #000;
-    --carousel-card-text-color: #000;
-    --box-shadow: #000;
-    --research-button-hover-background: #000;
-    --job-color: #000;
-    --pagination-button-color: #000;
-    --center-container-background: #000;
+    --primary-color: grey;
+    --primary-color-darker: grey;
+    --secondary-color: grey;
+    --background-color: grey;
+    --secondary-background-color: grey;
+    --tertiary-background-color: grey;
+    --header-background: grey;
+    --text-color: grey;
+    --link-default-color: grey;
+    --link-underlined-color: grey;
+    --inverted-text-color: grey;
+    --logo-gradient: grey;
+    --hover-color: grey;
+    --h1-background-color: grey;
+    --checkbox-background: grey;
+    --checkbox-checked-background: grey;
+    --checkbox-checked-box-shadow: grey;
+    --footer-text-shadow: grey;
+    --dashboard-border-color: grey;
+    --secondary-background-color: grey;
+    --carousel-card-text-color: grey;
+    --box-shadow: grey;
+    --research-button-hover-background: grey;
+    --job-color: grey;
+    --pagination-button-color: grey;
+    --center-container-background: grey;
 }
 
 body.light-mode {
@@ -62,7 +62,7 @@ body.light-mode {
         --secondary-background-color: #E1E1E1;
         --tertiary-background-color: #D0D0D0;
         --header-background: linear-gradient(to top, rgba(230, 230, 230, 0), var(--background-color));
-        --text-color: #303030;
+        --text-color: #101010;
         --link-default-color: #393C41;
         --link-underlined-color: #F85F6A;
         --inverted-text-color: #FAFAFA;
@@ -450,16 +450,16 @@ button[type="login"]:hover {
 }
 
 button[type="submit"] {
-    background-color: var(--primary-color-darker);
+    background-color: var(--primary-color);
     color: white;
-    width: 200%;
+    width: 100%;
 }
 
 button[type="reset"] {
     background-color: transparent;
     color: var(--text-color);
     border: 3px solid var(--primary-color);
-    width: 200%;
+    width: 100%;
 }
 
 
@@ -839,7 +839,7 @@ h1.text-center-accueil{
     color: var(--text-color);
 }
 
-.account-container * {
+.account-container *:not(a) {
     transition: none;
 }
 
@@ -852,7 +852,7 @@ h1.text-center-accueil{
     gap: 10px;
     height: 100%;
     width: 75vw;
-    border-radius: 20px;
+    border-radius: 30px;
     background-color: var(--secondary-background-color);
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1)!important;
 
@@ -862,8 +862,10 @@ h1.text-center-accueil{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    border-radius: 30px;
     align-items: center;
     width: 100%!important;
+    height: 100%;
     margin-bottom: 0!important;
 }
 
@@ -895,6 +897,7 @@ h1.text-center-accueil{
     align-items: flex-start;
     gap: 20px;
     width: 100%;
+    height: 100%;
     padding: 10px;
     margin-bottom: 0;
     border-radius: 30px;
@@ -902,8 +905,83 @@ h1.text-center-accueil{
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
 
+.wishlistedjob-divider {
+    border-top: 2px solid var(--text-color);
+    opacity: 0.5;
+    border-radius: 10px;
+    width: 100%;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+}
+
+.wishlistedjob {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height:150px;
+    border-radius: 25px;
+    padding: 0px;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    gap: 10px;
+}
+
+
+.applyjob {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    height: 30%;
+    min-height: 30px;
+    border-radius: 30px;
+    margin:0;
+    margin-inline: 10px;
+    background-color: var(--primary-color);
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+}
+
+.removewish {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 150px;
+    height: 60%;
+    min-height: 40px;
+    border-radius: 30px;
+    margin:0;
+    margin-inline: 10px;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 3px solid var(--primary-color);
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+}
+
+.removewish:hover {
+    background-color: var(--hover-color);
+}
+
+.tds-applyjob {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    stroke: black;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
+
+}
+
+
 .job-list .job {
     width: 90%;
+    max-width: 1000px;
+    height: 100%;
+    margin-block: 0;
+    transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
 }
 
 
@@ -929,8 +1007,11 @@ h1.text-center-accueil{
     width: 150px;
 }
 
-.profile-picture img {
+.profile-picture .tds-icon-person {
     box-shadow: none;
+    width: 100px;
+    margin-top: 10px;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
 
 .profile-picture-text {
@@ -954,6 +1035,7 @@ h1.text-center-accueil{
     gap: 5px;
     font-size: 17px;
     font-weight: bold;
+    margin-inline: 5px;
 }
 
 .info:not(a.info) {
@@ -1173,8 +1255,8 @@ form {
 
 form .button-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    gap: 20px;
 }
 
 form label {
@@ -1541,7 +1623,7 @@ canvas {
     box-shadow: var(--box-shadow);
     flex-direction: row;
     filter: brightness(1);
-    transition: all 0.1s cubic-bezier(.19, 1, .22, 1);
+    transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
 }
 
 
@@ -1709,7 +1791,7 @@ canvas {
     .account-info {
         width: 95vw;
         height: max-content;
-        gap: 30px;
+        gap: 69px;
     }
 
     .profile-picture {
@@ -1722,8 +1804,8 @@ canvas {
     }
 
     .wishlist .scroll-container .job-list {
-        padding-top: 3%;
-        padding-bottom: 0%;
+        padding-top: 2%;
+        padding-bottom: 2%;
     }
 
     .wishlist-title {
