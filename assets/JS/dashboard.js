@@ -100,9 +100,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Définir les données pour le graphique
       const chartData = {
-        labels: labels,
+        labels: ['BTP', 'Généraliste', 'Informatique'],
         datasets: [{
-          label: "Nombre de compétences",
+          label: "Nombre de stages",
           data: dataCounts,
           backgroundColor: [
             'red',
@@ -179,3 +179,119 @@ function showStages() {
   document.getElementById('nav-comptes').classList.remove('active');
   document.getElementById('nav-stats').classList.remove('active');
 }
+
+function showAccountInfo() {
+  window.location.href = "account.php";
+}
+
+function switchToStudentView() {
+  window.location.href = "research.php";
+}
+
+function insertData() {
+  const firstName = document.getElementById('first_name').value;
+  const lastName = document.getElementById('last_name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  $.ajax({
+      type: "POST",
+      url: "CRUD_dashboard_1.php",
+      data: { 
+          first_name: firstName,
+          last_name: lastName,
+          email: email,
+          password: password,
+          role_id: 1, // Remplacez cette valeur par le rôle approprié
+          promotion_id: 1, // Remplacez cette valeur par l'identifiant de la promotion appropriée
+          center_id: 1 // Remplacez cette valeur par l'identifiant du centre approprié
+      },
+      success: function(response) {
+          console.log(response);
+          alert('Données insérées avec succès !');
+      },
+      error: function(xhr, status, error) {
+          console.error('Erreur lors de l\'insertion des données :', error);
+          alert('Erreur lors de l\'insertion des données. Veuillez réessayer.');
+      }
+  });
+  location.reload();
+}
+
+function updateData() {
+  const firstName = document.getElementById('first_name').value;
+  const lastName = document.getElementById('last_name').value;
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  $.ajax({
+      type: "POST",
+      url: "CRUD_dashboard_1.php",
+      data: { 
+          first_name: firstName,
+          last_name: lastName,
+          email: email,
+          password: password,
+          role_id: 1, // Remplacez cette valeur par le rôle approprié
+          promotion_id: 1, // Remplacez cette valeur par l'identifiant de la promotion appropriée
+          center_id: 1 // Remplacez cette valeur par l'identifiant du centre approprié
+      },
+      success: function(response) {
+          console.log(response);
+          alert('Données mises à jour avec succès !');
+      },
+      error: function(xhr, status, error) {
+          console.error('Erreur lors de la mise à jour des données :', error);
+          alert('Erreur lors de la mise à jour des données. Veuillez réessayer.');
+      }
+  });
+  location.reload();
+}
+
+// Fonction pour supprimer le compte basé sur l'adresse e-mail
+function deleteAccount() {
+  const email = document.getElementById('email').value;
+
+  // Effectuer une requête AJAX pour envoyer l'e-mail au script PHP
+  $.ajax({
+      type: "POST",
+      url: "CRUD_dashboard_2.php",
+      data: { 
+          action: 'delete',
+          email: email
+      },
+      success: function(response) {
+          console.log(response);
+          alert(response);
+      },
+      error: function(xhr, status, error) {
+          console.error('Erreur lors de la suppression du compte :', error);
+          alert('Erreur lors de la suppression du compte. Veuillez réessayer.');
+      }
+  });
+  location.reload();
+}
+
+// Fonction pour supprimer les doublons de la table "account"
+function removeDuplicateAccounts() {
+  // Effectuer une requête AJAX pour supprimer les doublons
+  $.ajax({
+      type: "POST",
+      url: "CRUD_dashboard_2.php",
+      data: { 
+          action: 'removeDuplicates'
+      },
+      success: function(response) {
+          console.log(response);
+          alert(response);
+      },
+      error: function(xhr, status, error) {
+          console.error('Erreur lors de la suppression des doublons :', error);
+          alert('Erreur lors de la suppression des doublons. Veuillez réessayer.');
+      }
+  });
+  location.reload();
+}
+

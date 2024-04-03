@@ -133,7 +133,22 @@
                   </tbody>
               </table>
           </div>
-          <div class="box20"></div>
+          <div class="box20">
+            <h2>Modification des comptes</h2>
+            <label for="first_name">Prénom :</label>
+            <input type="text" id="first_name" name="first_name"><br><br>
+            <label for="last_name">Nom :</label>
+            <input type="text" id="last_name" name="last_name"><br><br>
+            <label for="email">Email :</label>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="password"><br><br>
+            <!-- Ajoutez d'autres champs de texte pour role_id, promotion_id, center_id si nécessaire -->
+            <button onclick="insertData()">Insérer les données</button>
+            <button onclick="updateData()">Modifier les données</button>
+            <button onclick="deleteAccount()">Supprimer le compte</button>
+            <button onclick="removeDuplicateAccounts()">Supprimer les doublons</button>
+          </div>
         </div>
         <div class="flx2_1">
           <div>sfdsd</div>
@@ -174,13 +189,14 @@
       <p id="nav-stages" onclick="showStages()">Information stages</p>
     </div>
     <div class="nav-link-bottom">
-      <p onclick="showAccountInfo()">Information du compte</p>
-      <p onclick="switchToStudentView()">Passage en vue étudiant</p>
-      <p onclick="logout()">Déconnexion</p>
+      <button onclick="showAccountInfo()">Information du compte</button>
+      <button onclick="switchToStudentView()">Passage en vue étudiant</button>
     </div>
     <button class="cancel" onclick="toggleMenu()">✖ Annuler</button>
   </div>
 </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <script src="assets/JS/dashboard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>

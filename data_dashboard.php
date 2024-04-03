@@ -12,12 +12,11 @@ try {
 }
 
 // Requête SQL pour récupérer les compétences et le nombre associé
-$sql = "
-    SELECT s.skill_name, COUNT(*) AS count
-    FROM account_has_skill ahs
-    JOIN skills s ON ahs.id_skill = s.id_skill
-    GROUP BY s.skill_name
-";
+$sql = 'SELECT ins.internship_id, COUNT(*) AS count
+        FROM account_has_skill ahs
+        JOIN skills s ON ahs.id_skill = s.id_skill
+        JOIN internship_need_skill ins ON s.id_skill = ins.skill_id
+        GROUP BY s.skill_name';
 
 // Préparation de la requête
 $stmt = $dbh->prepare($sql);
