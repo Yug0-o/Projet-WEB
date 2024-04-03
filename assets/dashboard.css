@@ -10,6 +10,25 @@ body {
   width: 90vw;
 }
 
+.vertical-line{
+  border-left: 2px solid black;
+  display: inline-block;
+  height: 78vh;
+  margin: 20px 20px 20px 10px;
+  border-radius: 10px;
+}
+
+.stat{
+  font-size: 3vh;
+}
+
+.underline
+{
+  text-decoration: underline;
+  text-align: center;
+  font-weight:bold;
+}
+
 #comptes, #stages {
   display: none;
 }
@@ -50,19 +69,18 @@ main {
   height: 85vh;
   justify-content: center;
   align-items: flex-start;
-  border: 1px solid black;
   border-radius: 40px;
-  background-color: #fff;
+  background-color: white;
 }
 
 .container .flx1 {
+  /* display: flex; */
   width: 20%;
   min-width: 150px;
   height: 80vh;
   margin: 1%;
   position: relative;
   border-radius: 40px;
-  border: 1px solid black;
 }
 
 .nav-logo {
@@ -80,20 +98,20 @@ main {
 
 .nav-items .active {
   text-decoration: underline;
+  text-decoration-color: #F85F6A;
+  font-weight: bold;
   font-size: 3vh; /* adjust as needed */
 }
 
 .nav-items-bottom {
-  display: flex;
+  display :flex;
   flex-direction: column;
   align-items: center;
-  position: absolute;
-  bottom: 90px;
   width: 100%;
 }
 
 .nav-items-bottom p {
-  color: rgb(0, 0, 0);
+  color: grey;
   text-align: center;
   margin: 10px 0;
   cursor: pointer;
@@ -108,6 +126,7 @@ main {
   height: 80vh;
   position: relative;
   border-radius: 40px;
+  
 }
 
 
@@ -138,7 +157,7 @@ main {
   margin: 1%;
   position: relative;
   border-radius: 10px;
-  border: 1px solid black;
+  background-color: #F9F6EE;
   padding: 2%;
   overflow: hidden;
 }
@@ -154,6 +173,7 @@ main {
   margin-bottom: 3%;
   position: relative;
   border-radius: 40px;
+  background-color: #F9F6EE;
 }
 
 .flx2_2 * {
@@ -161,7 +181,6 @@ main {
   height: 35vh; 
   position: center;
   border-radius: 40px;
-  border: 1px solid black;
 }
 
 .top-container {
@@ -174,6 +193,7 @@ main {
   height: 45vh;
   margin-right: 20px; /* Add some space between the boxes */
   border-radius: 40px;
+  padding : 1vh;
 }
 
 .box20 {
@@ -181,6 +201,7 @@ main {
   border: 1px solid black;
   height: 45vh;
   border-radius: 40px;
+  padding : 1vh;
 }
 
 /* CHARTS */
