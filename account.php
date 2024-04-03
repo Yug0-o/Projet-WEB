@@ -7,6 +7,7 @@ require_once(SMARTY_DIR . 'Smarty.class.php');
 
 $smarty_head = new Smarty();
 
+$smarty_head->assign('dashboard','no');
 $smarty_head->assign('titre', 'Accueil');
 $smarty_head->setTemplateDir('tpl/');
 $smarty_head->display('head.tpl');

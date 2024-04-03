@@ -4,7 +4,13 @@
         <link rel="preload" href="assets/fonts/GothamSSm-Light_Web.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="preload" href="images/logo-classic.webp" as="image">
         <link rel="icon" href="images/favicon.png">
-        <link rel="stylesheet" href="assets/style.css">
+
+        {if $dashboard == 'yes'}
+                <link rel="stylesheet" href="assets/dashboard.css">
+        {else}
+                <link rel="stylesheet" href="assets/style.css">
+        {/if}
+
         <link rel="manifest" href="assets/manifest.json">
         <meta charset="utf-8">
         <meta name="theme-color" content="#F85F6A">

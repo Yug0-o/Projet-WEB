@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="My Web Page">
-  <link rel="stylesheet" href="assets/dashboard.css">
-  <title>My Web Page</title>
-</head>
+<?php
+        define('SMARTY_DIR', 'libs\\');
+        require_once(SMARTY_DIR . 'Smarty.class.php');
+
+        $smarty_head = new Smarty();
+        $smarty_head->assign('dashboard','yes');
+        $smarty_head->assign('titre', 'Dashboard Admin');
+        $smarty_head->setTemplateDir('tpl/');
+        $smarty_head->display('head.tpl');
+    ?>
 <body>
   <div class="container">
     <div class="flx1"> 
