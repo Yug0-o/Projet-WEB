@@ -289,24 +289,25 @@
         <div class="flx2_1">
           <div style="overflow-y: scroll;">sfdsd</div>
           <div style="overflow-y: scroll;">
-            <h2>Modification des Entreprises</h2>
+            <h2 class="underline">Modification des Entreprises</h2>
             <label for="company_name">Nom de l'entreprise :</label>
-            <input type="text" id="company_name" name="company_name"><br><br>
+            <input type="text" id="company_name" name="company_name">
             <label for="sector">Secteur :</label>
-            <input type="text" id="sector" name="sector"><br><br>
+            <input type="text" id="sector" name="sector">
             <label for="student_visible">Visible pour les étudiants :</label>
             <select id="student_visible" name="student_visible">
               <option value="1">Oui</option>
               <option value="0">Non</option>
             </select>
             <label for="address">Adresse :</label>
-            <input type="text" id="address" name="address"><br><br>
+            <input type="text" id="address" name="address">
             <label for="country_id">Pays :</label>
             <select id="country_id" name="country_id">
               <option value="1">France</option>
               <option value="2">Germany</option>
               <option value="3">USA</option>
             </select>
+            <div class="space"></div>
             <button onclick="insertDataCompanies()">Insérer les données</button>
             <button onclick="updateDataCompanies()">Modifier les données</button>
             <button onclick="deleteCompany()">Supprimer l'entreprise</button>

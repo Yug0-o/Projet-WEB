@@ -117,6 +117,7 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
+try {
 // Handle login button click event
 document.querySelector('button[type="login"]').addEventListener('click', function (event) {
     event.preventDefault();
@@ -125,7 +126,8 @@ document.querySelector('button[type="login"]').addEventListener('click', functio
     } else {
         window.location.href = 'login.php';
     }
-});
+});}
+catch (e) {}
 // Set current year in the element with id 'year'
 document.getElementById('year').textContent = new Date().getFullYear();
 
