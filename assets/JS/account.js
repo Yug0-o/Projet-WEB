@@ -9,6 +9,8 @@ if (!sessionStorage.getItem('email')) {
 
 window.addEventListener('load', function() {
     document.getElementById('email').textContent = sessionStorage.getItem('email');
+    document.getElementById('name').textContent = sessionStorage.getItem('name');
+    document.getElementById('promotion').textContent = sessionStorage.getItem('promotion');
 });
 
 const logoutButton = document.querySelector('.logout');

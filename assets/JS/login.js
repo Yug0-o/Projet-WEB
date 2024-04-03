@@ -41,8 +41,11 @@ function updateButtons() {
 
 // Function to verify credentials on server and redirect if valid
 function verifyCredentials(email, password) {
+    console.log(email);
+    console.log(password);
+
     // Effectuer une requête Ajax pour vérifier les identifiants côté serveur
-    fetch('check.php', {
+    fetch('MVC/check.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -54,25 +57,37 @@ function verifyCredentials(email, password) {
     })
     .then(response => {
         if (response.ok) {
-            sessionStorage.setItem('email', email);
-            sessionStorage.setItem('loggedIn', 'true');
-            var callback = sessionStorage.getItem('callback');
-            if (callback) {
-                // Redirect to the sanitized callback URL and remove it from the storage
-                window.location.href = encodeURI(callback);
-            } else {
-                // Redirect to a default page
-                window.location.href = 'research.php';
-            }
+            return response.json(); // Convertir la réponse en JSON
         } else {
-            sessionStorage.setItem('email', ''); // Clear the email from the storage
-            sessionStorage.setItem('loggedIn', 'false');
-            // Display an error message or take another action in case of invalid credentials
-            console.error('Invalid credentials');
+            throw new Error('Invalid credentials :', response);
         }
     })
-    .catch(error => {console.error('Error:', error);});
+    .then(data => {
+        console.log("Server Response:", data); // Log de la réponse du serveur
+        // Stocker les données dans le sessionStorage
+        sessionStorage.setItem('email', email);
+        sessionStorage.setItem('name', data.last_name); // Modification ici
+        sessionStorage.setItem('promotion', data.promotion_name); // Modification ici
+        sessionStorage.setItem('loggedIn', 'true');
+        var callback = sessionStorage.getItem('callback');
+        if (callback) {
+            // Redirect to the sanitized callback URL and remove it from the storage
+            window.location.href = encodeURI(callback);
+        } else {
+            // Redirect to a default page
+            window.location.href = 'research.php';
+        }
+    })
+    .catch(error => {
+        sessionStorage.setItem('email', ''); // Clear the email from the storage
+        sessionStorage.setItem('loggedIn', 'false');
+        console.error('Error:', error);
+        // Display an error message or take another action in case of invalid credentials
+    });
 }
+
+
+
 
 // Event listener for form submission
 submit.addEventListener('click', function(event) {
