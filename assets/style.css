@@ -1654,6 +1654,7 @@ canvas {
     color: var(--inverted-text-color);
     border-radius: 20px;
     display: flex;
+    width: 100%;
     box-shadow: var(--box-shadow);
     flex-direction: row;
     filter: brightness(1);
@@ -1671,7 +1672,7 @@ canvas {
     display: flex;
     flex-direction: column-reverse;
     align-items: flex-end;
-    height: 500px;
+    height: 300px;
     z-index: 100;
     transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
 }

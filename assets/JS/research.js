@@ -2,46 +2,14 @@ if (!sessionStorage.getItem('email')) {
     sessionStorage.setItem('callback', window.location.href);
     window.location.href = 'login.php';
 }
-// Number of jobs displayed per page
-const jobsPerPage = 6;
-// Starting page
-let currentPage = 1;
-
-// Function to display pagination
-function displayPagination(totalPages) {
-    const pagination = document.getElementById('pagination');
-    pagination.innerHTML = '';
-
-    for (let i = 1; i <= totalPages; i++) {
-        const button = document.createElement('button');
-        button.innerText = i;
-        button.onclick = function () {
-            currentPage = i;
-            fetchAndDisplayJobs();
-        };
-        pagination.appendChild(button);
-    }
-}
 // Function to fetch job data from server and display jobs
 function fetchAndDisplayJobs() {
     $.ajax({
         type: "GET",
         url: 'MVC/get_job_data.php', // Assurez-vous que le chemin est correct
         dataType: 'json',
-        success: function (jobData) {
-            // Les données ont été récupérées avec succès
-            console.log(jobData); // Affichez les données dans la console pour vérifier
-
-            // Calcule le nombre total de pages
-            const totalPages = Math.ceil(jobData.length / jobsPerPage);
-
-            // Affiche les offres d'emploi pour la page courante
-            displayJobs(jobData, totalPages);
-        },
-        error: function (xhr, status, error) {
-            // Une erreur s'est produite lors de la récupération des données
-            console.error('Error fetching job data:', error);
-        }
+        success: function (jobData) {displayJobs(jobData);},
+        error: function (xhr, status, error) {console.error('Error fetching job data:', error);}
     });
 }
 // Function to display jobs on the page
@@ -118,11 +86,7 @@ function displayJobs(jobData) {
 
         // Add an event listener to the job container
         jobElement.addEventListener('click', function () {
-            if (job_container.classList.contains('focused')) {
-                job_container.classList.remove('focused');
-            }else {
-                job_container.classList.add('focused');
-            }
+            job_container.classList.toggle('focused');
         });
     }
 }
@@ -136,24 +100,14 @@ function searchJobs() {
         url: 'MVC/get_job_data.php',
         dataType: 'json',
         success: function (jobData) {
-            // Les données ont été récupérées avec succès
-            console.log(jobData); // Affichez les données dans la console pour vérifier
-
             // Filtrer les offres d'emploi basées sur le mot-clé
             const filteredJobs = jobData.filter(job => 
                 (job.title && job.title.toLowerCase().includes(keyword)) ||
                 (job.location && job.location.toLowerCase().includes(keyword))
             );
-            currentPage = 1;
-            const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
-
-            // Affichez les offres d'emploi filtrées
-            displayJobs(filteredJobs, totalPages);
+            displayJobs(filteredJobs); // Pass only one argument to the displayJobs function
         },
-        error: function (xhr, status, error) {
-            // Une erreur s'est produite lors de la récupération des données
-            console.error('Error fetching job data:', error);
-        }
+        error: function (xhr, status, error) {console.error('Error fetching job data:', error);}
     });
 }
 // Get the search input element
