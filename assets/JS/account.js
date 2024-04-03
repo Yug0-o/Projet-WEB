@@ -1,4 +1,11 @@
-if (!sessionStorage.getItem('email')) {window.location.href = encodeURI(sessionStorage.getItem('callback'));}
+if (!sessionStorage.getItem('email')) {
+    const callback = sessionStorage.getItem('callback');
+    if (!callback || callback === window.location.href) {
+        window.location.href = 'homepage.php';
+    }else {
+        window.location.href = encodeURI(callback);
+    }
+}
 
 window.addEventListener('load', function() {
     document.getElementById('email').textContent = sessionStorage.getItem('email');

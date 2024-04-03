@@ -26,32 +26,32 @@
 
 /*---------------------------------------------------------------*/
 :root {
-    --primary-color: #000;
-    --primary-color-darker: #000;
-    --secondary-color: #000;
-    --background-color: #000;
-    --secondary-background-color: #000;
-    --tertiary-background-color: #000;
-    --header-background: #000;
-    --text-color: #000;
-    --link-default-color: #000;
-    --link-underlined-color: #000;
-    --inverted-text-color: #000;
-    --logo-gradient: #000;
-    --hover-color: #000;
-    --h1-background-color: #000;
-    --checkbox-background: #000;
-    --checkbox-checked-background: #000;
-    --checkbox-checked-box-shadow: #000;
-    --footer-text-shadow: #000;
-    --dashboard-border-color: #000;
-    --secondary-background-color: #000;
-    --carousel-card-text-color: #000;
-    --box-shadow: #000;
-    --research-button-hover-background: #000;
-    --job-color: #000;
-    --pagination-button-color: #000;
-    --center-container-background: #000;
+    --primary-color: grey;
+    --primary-color-darker: grey;
+    --secondary-color: grey;
+    --background-color: grey;
+    --secondary-background-color: grey;
+    --tertiary-background-color: grey;
+    --header-background: grey;
+    --text-color: grey;
+    --link-default-color: grey;
+    --link-underlined-color: grey;
+    --inverted-text-color: grey;
+    --logo-gradient: grey;
+    --hover-color: grey;
+    --h1-background-color: grey;
+    --checkbox-background: grey;
+    --checkbox-checked-background: grey;
+    --checkbox-checked-box-shadow: grey;
+    --footer-text-shadow: grey;
+    --dashboard-border-color: grey;
+    --secondary-background-color: grey;
+    --carousel-card-text-color: grey;
+    --box-shadow: grey;
+    --research-button-hover-background: grey;
+    --job-color: grey;
+    --pagination-button-color: grey;
+    --center-container-background: grey;
 }
 
 body.light-mode {
@@ -1011,6 +1011,7 @@ h1.text-center-accueil{
     box-shadow: none;
     width: 100px;
     margin-top: 10px;
+    transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
 }
 
 .profile-picture-text {
