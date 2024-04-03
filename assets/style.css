@@ -976,7 +976,7 @@ h1.text-center-accueil{
 }
 
 
-.job-list .job {
+.job-list .job-info {
     width: 90%;
     max-width: 1000px;
     height: 100%;
@@ -1115,6 +1115,12 @@ input.info{
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.wrong-credential {
+    color: var(--primary-color);
+    text-align: center;
+    /* font-weight: bold; */
 }
 
 .connexion-text {
