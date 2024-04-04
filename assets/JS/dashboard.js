@@ -294,8 +294,8 @@ function updateData() {
           last_name: lastName,
           email: email,
           password: password,
-          role_id: 1, // Replace this value with the appropriate role
-          promotion_id: 1, // Replace this value with the appropriate promotion ID
+          role_id: role_id, // Replace this value with the appropriate role
+          promotion_id: promotion_id, // Replace this value with the appropriate promotion ID
           center_id: 1 // Replace this value with the appropriate center identifier
       },
       success: function(response) {
