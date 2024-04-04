@@ -510,9 +510,8 @@ table tr:nth-child(even){
   width: 250px;
   height: 150px;
   margin: 10px;
-  border-radius: 69px;
-  border-color: #333;
-  background-color: whitesmoke;
+  border-radius: 10px;
+  background-color: #F9F6EE;
 }
 
 .box_CRUD {

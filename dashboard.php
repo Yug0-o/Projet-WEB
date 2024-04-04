@@ -173,8 +173,14 @@ $smarty_head->display('head.tpl');
             $dbh = null;
             ?>
 
-            <div class="box1">Nombre d'étudiants: <?php echo $student_count; ?></div>
-            <div class="box2">Nombre de promotions: <?php echo $promotion_count; ?></div>
+            <div class="box1">
+              <div class="underline">Nombre d'étudiants </div> 
+              <div class="stat"><?php echo $student_count; ?></div>
+            </div>
+            <div class="box2">
+              <div class="underline">Nombre de promotions </div>
+              <div class="stat"><?php echo $promotion_count; ?></div>
+            </div>
           </div>
         </div>
         <div class="box_CRUD">
