@@ -145,8 +145,36 @@ $smarty_head->display('head.tpl');
             </table>
           </div>
           <div class="same_line_container">
-            <div class="box1">Nombre d'étudiant</div>
-            <div class="box2">Nombre de promotions</div>
+          <?php
+            try {
+                $user = 'root';
+                $pass = '';
+                $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
+                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                // En cas d'échec de la connexion, afficher un message d'erreur
+                echo "Connection failed: " . $e->getMessage();
+                die();
+            }
+
+            // Requête SQL pour compter le nombre d'étudiants
+            $sql_students = "SELECT COUNT(*) AS student_count FROM account WHERE role_id = 1"; // On suppose que le rôle étudiant a l'ID 1
+            $stmt_students = $dbh->prepare($sql_students);
+            $stmt_students->execute();
+            $student_count = $stmt_students->fetch(PDO::FETCH_ASSOC)['student_count'];
+
+            // Requête SQL pour compter le nombre de promotions
+            $sql_promotions = "SELECT COUNT(*) AS promotion_count FROM promotions";
+            $stmt_promotions = $dbh->prepare($sql_promotions);
+            $stmt_promotions->execute();
+            $promotion_count = $stmt_promotions->fetch(PDO::FETCH_ASSOC)['promotion_count'];
+
+            // Fermeture de la connexion
+            $dbh = null;
+            ?>
+
+            <div class="box1">Nombre d'étudiants: <?php echo $student_count; ?></div>
+            <div class="box2">Nombre de promotions: <?php echo $promotion_count; ?></div>
           </div>
         </div>
         <div class="box_CRUD">
