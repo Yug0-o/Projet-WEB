@@ -37,13 +37,13 @@ $smarty_head->display('head.tpl');
       $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
       $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException) {
-      // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+      // If the connection fails, return a response with an error code
       http_response_code(500);
       echo json_encode(array("error" => "Connection failed: An error occurred while connecting to the database."));
       die();
     }
 
-    // Requête SQL pour récupérer les informations
+    // SQL query to retrieve information
     $sql = "SELECT
                   (SELECT COUNT(*) FROM student_applied_for) AS nb_with_internship,
                   (SELECT COUNT(*) FROM account WHERE id_account NOT IN (SELECT account_id FROM student_applied_for)) AS nb_without_internship,
@@ -56,11 +56,11 @@ $smarty_head->display('head.tpl');
     $stmt->execute();
     $data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Fermeture de la connexion
+    // Closing the connection
     $dbh = null;
     ?>
 
-    <!-- Affichage des stats -->
+    <!-- Stats display -->
     <div class="container flx2" id="stats">
       <div class="flx2">
         <div class="flx2_1">
@@ -92,7 +92,7 @@ $smarty_head->display('head.tpl');
       </div>
     </div>
 
-    <!-- Informations comptes -->
+    <!-- Account information -->
     <div class="container flx2 compte" id="comptes">
       <div class="flx2 compte">
         <div class="box_tableau_stats">
@@ -103,19 +103,19 @@ $smarty_head->display('head.tpl');
             $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
             $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
           } catch (PDOException) {
-            // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+            // If the connection fails, return a response with an error code
             http_response_code(500);
             echo json_encode(array("error" => "Connection failed: An error occurred while connecting to the database."));
             die();
           }
 
-          // Requête SQL pour récupérer les informations des comptes
+          // SQL query to retrieve account information
           $sql = "SELECT * FROM account";
           $stmt = $dbh->prepare($sql);
           $stmt->execute();
           $accounts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-          // Fermeture de la connexion
+          // Closing the connection
           $dbh = null;
           ?>
           <div class="box_tableau">
@@ -152,24 +152,24 @@ $smarty_head->display('head.tpl');
                 $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
                 $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (PDOException $e) {
-                // En cas d'échec de la connexion, afficher un message d'erreur
+                // If the connection fails, display an error message
                 echo "Connection failed: " . $e->getMessage();
                 die();
             }
 
-            // Requête SQL pour compter le nombre d'étudiants
+            // SQL query to count the number of students
             $sql_students = "SELECT COUNT(*) AS student_count FROM account WHERE role_id = 1"; // On suppose que le rôle étudiant a l'ID 1
             $stmt_students = $dbh->prepare($sql_students);
             $stmt_students->execute();
             $student_count = $stmt_students->fetch(PDO::FETCH_ASSOC)['student_count'];
 
-            // Requête SQL pour compter le nombre de promotions
+            // SQL query to count the number of promotions
             $sql_promotions = "SELECT COUNT(*) AS promotion_count FROM promotions";
             $stmt_promotions = $dbh->prepare($sql_promotions);
             $stmt_promotions->execute();
             $promotion_count = $stmt_promotions->fetch(PDO::FETCH_ASSOC)['promotion_count'];
 
-            // Fermeture de la connexion
+            // Closing the connection
             $dbh = null;
             ?>
 
@@ -210,7 +210,7 @@ $smarty_head->display('head.tpl');
     </div>
 
 
-        <!-- Informations stages -->
+        <!-- Course information -->
         <div class="container flx2" id="stages">
           <div class="flx2">
             <div class="top-container">
@@ -222,13 +222,13 @@ $smarty_head->display('head.tpl');
                   $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
                   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 } catch (PDOException) {
-                  // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+                  // If the connection fails, return a response with an error code
                   http_response_code(500);
                   echo json_encode(array("error" => "Connection failed"));
                   die();
                 }
 
-                // Requête SQL pour récupérer les informations des stages avec leurs compétences associées
+                // SQL query to retrieve internship information with their associated skills
                 $sql = "SELECT internship.id_internship, internship.title, internship.offer_date, internship.available_places, 
                           GROUP_CONCAT(skills.skill_name SEPARATOR ', ') AS skills_required
                     FROM internship 
@@ -239,7 +239,7 @@ $smarty_head->display('head.tpl');
                 $stmt->execute();
                 $internships = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                // Fermeture de la connexion
+                // Closing the connection
                 $dbh = null;
                 ?>
                 <table>
@@ -273,13 +273,13 @@ $smarty_head->display('head.tpl');
                   $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
                   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 } catch (PDOException) {
-                  // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+                  // If the connection fails, return a response with an error code
                   http_response_code(500);
                   echo json_encode(array("error" => "Connection failed"));
                   die();
                 }
 
-                // Requête SQL pour récupérer les informations des entreprises avec leurs emplacements
+                // SQL query to retrieve company information with their locations
                 $sql = "SELECT companies.id_company, companies.company_name, companies.sector, companies.student_visible, locations.address, country.country_name 
                     FROM companies 
                     INNER JOIN companies_has_locations ON companies.id_company = companies_has_locations.id_company
@@ -289,7 +289,7 @@ $smarty_head->display('head.tpl');
                 $stmt->execute();
                 $companies = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                // Fermeture de la connexion
+                // Closing the connection
                 $dbh = null;
                 ?>
                 <table>

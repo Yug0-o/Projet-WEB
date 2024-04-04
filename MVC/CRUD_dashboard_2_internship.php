@@ -5,15 +5,15 @@ try {
     $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+    // If connection fails, send a response with an error code
     http_response_code(500);
     echo json_encode(array("error" => "Connection failed"));
     die();
 }
 
-// Vérifier si toutes les données nécessaires sont présentes pour l'UPDATE
+// Check if all necessary data is present for UPDATE
 if (isset($_POST['internship_id'])) {
-    // Récupérer les données envoyées par la requête AJAX
+    // Retrieve data sent by AJAX request
     $internship_id = $_POST['internship_id'];
     $title = $_POST['title'];
     $offerDate = $_POST['offer_date'];
@@ -22,7 +22,7 @@ if (isset($_POST['internship_id'])) {
     $description = $_POST['description'];
     $company_id = $_POST['company_id'];
 
-    // Update des données dans la table internship
+    // Update data in the internship table
     $stmt = $dbh->prepare("UPDATE internship
                            SET title = :title, offer_date = :offer_date, available_places = :available_places, duration = :duration, description = :description, company_id = :company_id
                            WHERE internship_id = :internship_id");
@@ -35,8 +35,8 @@ if (isset($_POST['internship_id'])) {
     $stmt->bindParam(':company_id', $company_id);
     $stmt->execute();
 
-    echo "Données mises à jour avec succès !";
+    echo "Data updated successfully!";
 } else {
-    echo "Veuillez fournir toutes les informations nécessaires pour l'UPDATE.";
+    echo "Please provide all necessary information for UPDATE.";
 }
 ?>

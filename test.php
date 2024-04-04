@@ -10,12 +10,12 @@
 <body>
     <h1>Bienvenue !</h1>
     <?php
-    // Vérifier si le formulaire a été soumis
+    // Check if the form has been submitted
     if (isset($_POST['nom'])) {
       $nom = $_POST['nom'];
       echo "<p>Bonjour, $nom !</p>";
     } else {
-      // Formulaire pour saisir le nom
+      // Form to enter the name
       echo "<form method='post'>
               <label for='nom'>Entrez votre nom :</label>
               <input type='text' id='nom' name='nom' required>

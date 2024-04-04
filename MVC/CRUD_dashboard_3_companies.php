@@ -5,18 +5,18 @@ try {
     $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException) {
-    // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+    // If connection fails, send a response with an error code
     http_response_code(500);
     echo json_encode(array("error" => "Connection failed"));
     die();
 }
 
-// Vérifier si le nom de l'entreprise a été envoyé
+// Check if the company name has been sent
 if (isset($_POST['company_name'])) {
-    // Récupérer le nom de l'entreprise envoyé par la requête AJAX
+    // Retrieve the company name sent by the AJAX request
     $companyName = $_POST['company_name'];
 
-    // Récupérer l'identifiant de l'entreprise correspondant au nom
+    // Get the company ID corresponding to the name
     $stmt = $dbh->prepare("SELECT id_company FROM companies WHERE company_name = :company_name");
     $stmt->bindParam(':company_name', $companyName);
     $stmt->execute();
@@ -25,21 +25,21 @@ if (isset($_POST['company_name'])) {
     if ($result) {
         $companyId = $result['id_company'];
 
-        // Suppression des données dans la table companies_has_locations
+        // Delete data from the companies_has_locations table
         $stmt = $dbh->prepare("DELETE FROM companies_has_locations WHERE id_company = :company_id");
         $stmt->bindParam(':company_id', $companyId);
         $stmt->execute();
 
-        // Suppression des données dans la table companies
+        // Delete data from the companies table
         $stmt = $dbh->prepare("DELETE FROM companies WHERE id_company = :company_id");
         $stmt->bindParam(':company_id', $companyId);
         $stmt->execute();
 
-        echo "Entreprise supprimée avec succès !";
+        echo "Company deleted successfully!";
     } else {
-        echo "L'entreprise avec le nom fourni n'existe pas.";
+        echo "The company with the provided name does not exist.";
     }
 } else {
-    echo "Veuillez fournir le nom de l'entreprise.";
+    echo "Please provide the company name.";
 }
 ?>

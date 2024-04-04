@@ -5,56 +5,56 @@ try {
     $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException) {
-    // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+    // If connection fails, send a response with an error code
     http_response_code(500);
     echo json_encode(array("error" => "Connection failed"));
     die();
 }
 
-// Vérifier si les données nécessaires ont été envoyées
+// Check if necessary data has been sent
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 
-    // Si l'action est "delete", supprimer le compte
+    // If the action is "delete", delete the account
     if ($action === 'delete') {
         if (isset($_POST['email'])) {
             $email = $_POST['email'];
             deleteAccount($dbh, $email);
         } else {
-            echo "Veuillez fournir l'adresse e-mail pour supprimer le compte.";
+            echo "Please provide the email address to delete the account.";
         }
     } 
-    // Si l'action est "removeDuplicates", supprimer les doublons
+    // If the action is "removeDuplicates", remove duplicates
     elseif ($action === 'removeDuplicates') {
         removeDuplicateAccounts($dbh);
     } else {
-        echo "Action non valide.";
+        echo "Invalid action.";
     }
 } else {
-    echo "Veuillez fournir une action.";
+    echo "Please provide an action.";
 }
 
-// Fonction pour supprimer le compte basé sur l'adresse e-mail
+// Function to delete account based on email
 function deleteAccount($dbh, $email) {
     $sql = "DELETE FROM account WHERE email = :email";
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':email', $email);
     if ($stmt->execute()) {
-        echo "Compte supprimé avec succès !";
+        echo "Account deleted successfully!";
     } else {
-        echo "Erreur lors de la suppression du compte.";
+        echo "Error deleting account.";
     }
 }
 
-// Fonction pour supprimer les doublons de la table "account"
+// Function to remove duplicates from the "account" table
 function removeDuplicateAccounts($dbh) {
     $sql = "DELETE a1 FROM account a1 JOIN account a2 
             WHERE a1.id_account < a2.id_account AND a1.email = a2.email";
     $stmt = $dbh->prepare($sql);
     if ($stmt->execute()) {
-        echo "Doublons supprimés avec succès !";
+        echo "Duplicates removed successfully!";
     } else {
-        echo "Erreur lors de la suppression des doublons.";
+        echo "Error removing duplicates.";
     }
 }
 ?>

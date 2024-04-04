@@ -5,22 +5,22 @@ try {
     $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException) {
-    // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+    // If connection fails, send a response with an error code
     http_response_code(500);
     echo json_encode(array("error" => "Connection failed"));
     die();
 }
 
-// Vérifier si les données nécessaires ont été envoyées
+// Check if necessary data has been sent
 if (isset($_POST['company_name'], $_POST['sector'], $_POST['student_visible'], $_POST['address'], $_POST['country_id'])) {
-    // Récupérer les données envoyées par la requête AJAX
+    // Retrieve data sent by the AJAX request
     $companyName = $_POST['company_name'];
     $sector = $_POST['sector'];
     $studentVisible = $_POST['student_visible'];
     $address = $_POST['address'];
     $countryId = $_POST['country_id'];
 
-    // Mise à jour des données dans la table companies
+    // Update data in the companies table
     $stmt = $dbh->prepare("UPDATE companies 
                            SET sector = :sector, 
                                student_visible = :student_visible
@@ -30,7 +30,7 @@ if (isset($_POST['company_name'], $_POST['sector'], $_POST['student_visible'], $
     $stmt->bindParam(':company_name', $companyName);
     $stmt->execute();
 
-    // Mise à jour des données dans la table locations en fonction du nom de l'entreprise
+    // Update data in the locations table based on the company name
     $stmt = $dbh->prepare("UPDATE locations 
                            SET address = :address, 
                                country_id = :country_id
@@ -48,8 +48,8 @@ if (isset($_POST['company_name'], $_POST['sector'], $_POST['student_visible'], $
     $stmt->bindParam(':company_name', $companyName);
     $stmt->execute();
 
-    echo "Données mises à jour avec succès !";
+    echo "Data updated successfully!";
 } else {
-    echo "Veuillez fournir toutes les informations nécessaires.";
+    echo "Please provide all necessary information.";
 }
 ?>

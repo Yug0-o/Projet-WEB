@@ -107,15 +107,15 @@ document.addEventListener("DOMContentLoaded", function() {
   canvas.width = canvas.parentNode.clientWidth;
   canvas.height = canvas.parentNode.clientHeight;
 
-  // Effectuer une requête AJAX pour récupérer les données depuis l'API
+  // Make an AJAX request to retrieve data from the API
   fetch('MVC/data_dashboard.php')
     .then(response => response.json())
     .then(data => {
-      // Extraire les compétences et les nombres associés depuis les données reçues
+      // Extract the skills and associated numbers from the received data
       const labels = data.map(item => item.skill_name);
       const dataCounts = data.map(item => item.count);
 
-      // Définir les données pour le graphique
+      // Set data for chart
       const chartData = {
         labels: ['BTP', 'Généraliste', 'Informatique'],
         datasets: [{
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }]
       };
 
-      // Définir les options pour le graphique
+      // Set options for the chart
       const options = {
         aspectRatio: 1,
         maintainAspectRatio: false,
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       };
 
-      // Créer le graphique
+      // Create the chart
       new Chart(ctx, {
         type: 'pie',
         data: chartData,
@@ -238,7 +238,7 @@ function insertData() {
     return;
   }
 
-  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  // Make an AJAX request to send the data to the PHP script
   $.ajax({
       type: "POST",
       url: "MVC/CRUD_dashboard_1.php",
@@ -249,7 +249,7 @@ function insertData() {
           password: password,
           role_id: role_id,
           promotion_id: promotion_id,
-          center_id: 1 // Remplacez cette valeur par l'identifiant du centre approprié
+          center_id: 1 // Replace this value with the appropriate center identifier
       },
       success: function(response) {
           console.log(response);
@@ -285,7 +285,7 @@ function updateData() {
   }
 
 
-  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  // Make an AJAX request to send the data to the PHP script
   $.ajax({
       type: "POST",
       url: "MVC/CRUD_dashboard_1.php",
@@ -294,9 +294,9 @@ function updateData() {
           last_name: lastName,
           email: email,
           password: password,
-          role_id: 1, // Remplacez cette valeur par le rôle approprié
-          promotion_id: 1, // Remplacez cette valeur par l'identifiant de la promotion appropriée
-          center_id: 1 // Remplacez cette valeur par l'identifiant du centre approprié
+          role_id: 1, // Replace this value with the appropriate role
+          promotion_id: 1, // Replace this value with the appropriate promotion ID
+          center_id: 1 // Replace this value with the appropriate center identifier
       },
       success: function(response) {
           console.log(response);
@@ -310,7 +310,7 @@ function updateData() {
   location.reload();
 }
 
-// Fonction pour supprimer le compte basé sur l'adresse e-mail
+// Function to delete account based on email address
 function deleteAccount() {
   const email = document.getElementById('email').value.trim();
 
@@ -319,7 +319,7 @@ function deleteAccount() {
     return;
   }
 
-  // Effectuer une requête AJAX pour envoyer l'e-mail au script PHP
+  // Make an AJAX request to send the email to the PHP script
   $.ajax({
       type: "POST",
       url: "MVC/CRUD_dashboard_2.php",
@@ -339,9 +339,9 @@ function deleteAccount() {
   location.reload();
 }
 
-// Fonction pour supprimer les doublons de la table "account"
+// Function to remove duplicates from the "account" table
 function removeDuplicateAccounts() {
-  // Effectuer une requête AJAX pour supprimer les doublons
+  // Perform an AJAX request to remove duplicates
   $.ajax({
       type: "POST",
       url: "MVC/CRUD_dashboard_2.php",
@@ -376,7 +376,7 @@ function insertDataCompanies() {
   const address = document.getElementById('address').value;
   const countryId = document.getElementById('country_id').value;
 
-  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  // Make an AJAX request to send the data to the PHP script
   $.ajax({
       type: "POST",
       url: "MVC/CRUD_dashboard_1_companies.php",
@@ -390,7 +390,7 @@ function insertDataCompanies() {
       success: function(response) {
           console.log(response);
           alert('Données insérées avec succès !');
-          // Vous pouvez ajouter ici d'autres actions à effectuer après l'insertion réussie
+          // Here you can add other actions to be performed after successful insertion
       },
       error: function(xhr, status, error) {
           console.error('Erreur lors de l\'insertion des données :', error);
@@ -406,7 +406,7 @@ function updateDataCompanies() {
   const address = document.getElementById('address').value;
   const countryId = document.getElementById('country_id').value;
 
-  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  // Make an AJAX request to send the data to the PHP script
   $.ajax({
       type: "POST",
       url: "MVC/CRUD_dashboard_2_companies.php",
@@ -420,7 +420,7 @@ function updateDataCompanies() {
       success: function(response) {
           console.log(response);
           alert('Données mises à jour avec succès !');
-          // Vous pouvez ajouter ici d'autres actions à effectuer après la mise à jour réussie
+          // Here you can add other actions to be performed after the successful update
       },
       error: function(xhr, status, error) {
           console.error('Erreur lors de la mise à jour des données :', error);
@@ -466,7 +466,7 @@ function insertInternship() {
   const available_places = document.getElementById('available_places').value;
   const id_skill = document.getElementById('id_skill').value;
 
-  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  // Make an AJAX request to send the data to the PHP script
   $.ajax({
       type: "POST",
       url: "MVC/CRUD_dashboard_1_internship.php",
@@ -482,7 +482,7 @@ function insertInternship() {
       success: function(response) {
           console.log(response);
           alert('Données insérées avec succès !');
-          // Vous pouvez ajouter ici d'autres actions à effectuer après l'insertion réussie
+          // Here you can add other actions to be performed after successful insertion
       },
       error: function(xhr, status, error) {
           console.error('Erreur lors de l\'insertion des données :', error);
@@ -500,7 +500,7 @@ function updateInternship() {
   const description = document.getElementById('description').value;
   const companyId = document.getElementById('company_id').value;
 
-  // Effectuer une requête AJAX pour mettre à jour les données
+  // Perform an AJAX request to update the data
   $.ajax({
       type: "POST",
       url: "MVC/CRUD_dashboard_2_internship.php",
@@ -516,7 +516,7 @@ function updateInternship() {
       success: function(response) {
           console.log(response);
           alert('Données mises à jour avec succès !');
-          location.reload(); // Actualiser la page après la mise à jour
+          location.reload(); // Refresh page after deletion
       },
       error: function(xhr, status, error) {
           console.error('Erreur lors de la mise à jour des données :', error);
@@ -528,7 +528,7 @@ function updateInternship() {
 function deleteInternship() {
   const internship_id = document.getElementById('internship_id').value;
 
-  // Effectuer une requête AJAX pour supprimer les données
+  // Perform an AJAX request to delete the data
   $.ajax({
       type: "POST",
       url: "MVC/CRUD_dashboard_3_internship.php",
@@ -538,7 +538,7 @@ function deleteInternship() {
       success: function(response) {
           console.log(response);
           alert('Données supprimées avec succès !');
-          location.reload(); // Actualiser la page après la suppression
+          location.reload(); // Refresh page after deletion
       },
       error: function(xhr, status, error) {
           console.error('Erreur lors de la suppression des données :', error);

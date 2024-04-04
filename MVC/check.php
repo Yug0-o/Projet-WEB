@@ -12,16 +12,16 @@ try {
 
 //console.log(strtolower($_SERVER['HTTP_X_REQUESTED_WITH']));
 
-// Vérification si la requête est une requête Ajax
+// Check if the request is an Ajax request
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Récupération des données envoyées par la requête Ajax
+    // Retrieve data sent by the Ajax request
     $data = json_decode(file_get_contents("php://input"));
 
-    // Vérification des données du formulaire de connexion
+    // Check login form data
     $email = $data->email;
     $password = $data->password;
 
-    // Requête SQL pour vérifier l'existence de l'utilisateur dans la base de données
+    // SQL query to check user existence in the database
     $sql = "SELECT *, promotions.promotion_name FROM account
             LEFT JOIN promotions ON account.promotion_id = promotions.id_promotion
             LEFT JOIN student_applied_for ON account.id_account = student_applied_for.account_id
@@ -34,21 +34,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $stmt->fetchAll();
 
     if ($result) {
-        // L'utilisateur existe dans la base de données, renvoyez un code de statut 200 (OK)
+        // User exists in the database, return status code 200 (OK)
         http_response_code(200);
-        // Renvoyer les informations de l'utilisateur en tant que réponse JSON
+        // Return user information as JSON response
         echo json_encode($result);
     } else {
-        // L'utilisateur n'existe pas dans la base de données, renvoyez un code de statut 401 (Unauthorized)
+        // User does not exist in the database, return status code 401 (Unauthorized)
         http_response_code(401);
-        echo json_encode(array("error" => "Invalid credentials")); // Envoyer un message d'erreur JSON
+        echo json_encode(array("error" => "Invalid credentials")); // Send JSON error message
     }
 } else {
-    // Si la requête n'est pas une requête Ajax, renvoyez un code de statut 405 (Method Not Allowed)
+    // If the request is not an Ajax request, return status code 405 (Method Not Allowed)
     http_response_code(405);
-    echo json_encode(array("error" => "Method Not Allowed")); // Envoyer un message d'erreur JSON
+    echo json_encode(array("error" => "Method Not Allowed")); // Send JSON error message
 }
 
 $dbh = null;
 ?>
-
