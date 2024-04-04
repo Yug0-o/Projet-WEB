@@ -469,8 +469,8 @@ table tr:nth-child(even){
   border-color: #333;
 }
 
-.box_tableau {
-  width: 100%;
+.box.tableau_stats .box_tableau {
+  width: 60%;
   height: 40vh;
   border-color: #333;
 }
@@ -481,14 +481,16 @@ table tr:nth-child(even){
 
 .box_tableau_stats .same_line_container .box1,
 .box_tableau_stats .same_line_container .box2 {
-  width: 40%;
+  width: 25%;
   height: 20vh;
   margin: 10px;
   border-color: #333;
+  background-color: aqua;
 }
 
 .box_CRUD {
   flex: 4; /* This will take the rest of the container */
+  width: 30%;
   height: 70vh;
   margin: 10px;
   border-color: #333;
