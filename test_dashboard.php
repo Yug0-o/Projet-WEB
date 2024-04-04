@@ -93,7 +93,7 @@
 
     <!-- Informations comptes -->
     <div class="container flx2 compte" id="comptes"> 
-        <div class="flx2">
+        <div class="flx2 compte">
             <div class="box_tableau_stats">
               <?php
               try {
