@@ -136,7 +136,7 @@ main {
   margin: 1%;
   height: 80vh;
   border-radius: 40px;
-  
+  flex-direction: column;
 }
 
 .container .flx2 .compte {
