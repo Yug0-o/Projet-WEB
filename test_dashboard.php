@@ -95,58 +95,58 @@
     <div class="container flx2" id="comptes"> 
         <div class="flx2">
             <div class="box_tableau_stats">
-            <?php
-            try {
-                $user = 'root';
-                $pass = '';
-                $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
-                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOException) {
-                // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
-                http_response_code(500);
-                echo json_encode(array("error" => "Connection failed: An error occurred while connecting to the database."));
-                die();
-            }
+              <?php
+              try {
+                  $user = 'root';
+                  $pass = '';
+                  $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
+                  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              } catch (PDOException) {
+                  // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+                  http_response_code(500);
+                  echo json_encode(array("error" => "Connection failed: An error occurred while connecting to the database."));
+                  die();
+              }
 
-            // Requête SQL pour récupérer les informations des comptes
-            $sql = "SELECT * FROM account";
-            $stmt = $dbh->prepare($sql);
-            $stmt->execute();
-            $accounts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+              // Requête SQL pour récupérer les informations des comptes
+              $sql = "SELECT * FROM account";
+              $stmt = $dbh->prepare($sql);
+              $stmt->execute();
+              $accounts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            // Fermeture de la connexion
-            $dbh = null;
-            ?>
-            <div class="box_tableau" style="overflow-y: scroll; height: 300px;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Identifiant</th>
-                            <th>Prénom</th>
-                            <th>Nom</th>
-                            <th>Email</th>
-                            <th>Rôle</th>
-                            <th>Promotion</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($accounts as $account): ?>
-                            <tr>
-                                <td><?php echo $account['id_account']; ?></td>
-                                <td><?php echo $account['first_name']; ?></td>
-                                <td><?php echo $account['last_name']; ?></td>
-                                <td><?php echo $account['email']; ?></td>
-                                <td><?php echo $account['role_id']; ?></td>
-                                <td><?php echo $account['promotion_id']; ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+              // Fermeture de la connexion
+              $dbh = null;
+              ?>
+              <div class="box_tableau" style="overflow-y: scroll; height: 300px;">
+                  <table>
+                      <thead>
+                          <tr>
+                              <th>Identifiant</th>
+                              <th>Prénom</th>
+                              <th>Nom</th>
+                              <th>Email</th>
+                              <th>Rôle</th>
+                              <th>Promotion</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <?php foreach ($accounts as $account): ?>
+                              <tr>
+                                  <td><?php echo $account['id_account']; ?></td>
+                                  <td><?php echo $account['first_name']; ?></td>
+                                  <td><?php echo $account['last_name']; ?></td>
+                                  <td><?php echo $account['email']; ?></td>
+                                  <td><?php echo $account['role_id']; ?></td>
+                                  <td><?php echo $account['promotion_id']; ?></td>
+                              </tr>
+                          <?php endforeach; ?>
+                      </tbody>
+                  </table>
                 </div>
-                <div class="same_line_container">
-                    <div class="box1">Nombre d'étudiant</div>
-                    <div class="box2">Nombre de promotions</div>
-                </div>
+              <div class="same_line_container">
+                  <div class="box1">Nombre d'étudiant</div>
+                  <div class="box2">Nombre de promotions</div>
+              </div>
             </div> 
             <div class="box_CRUD">
                     <h2 class="underline">Modification des comptes</h2>
