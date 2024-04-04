@@ -81,6 +81,7 @@ main {
   align-items: flex-start;
   border-radius: 40px;
   background-color: white;
+  user-select: none;
 }
 
 .container .flx1 {
@@ -177,6 +178,7 @@ main {
   border-radius: 10px;
   background-color: #F9F6EE;
   padding: 2%;
+  align-items: center;
 }
 
 .container .flx2 .flx2_2 {
