@@ -79,10 +79,11 @@ modifyButton.addEventListener('click', function() {
 
 
 // Function to fetch job data from server and display jobs
-function fetchAndDisplayJobs() {
+function fetchAndDisplayJobs(email) {
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: 'MVC/get_wishlist_data.php', // Make sure the path is correct
+        data: { email: email },
         dataType: 'json',
         success: function (jobData) {
             // Display job listings for the current page
@@ -174,4 +175,4 @@ function displayJobs(jobData) {
 }
 
 // Fetch job data and display jobs on initial page load
-fetchAndDisplayJobs();
+fetchAndDisplayJobs(sessionStorage.getItem('email'));

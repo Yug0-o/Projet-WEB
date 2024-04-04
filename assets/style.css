@@ -925,7 +925,7 @@ h1.text-center-accueil{
     align-items: center;
     background-color: var(--secondary-background-color);
     width: 100%;
-    height:fit-content;
+    height:100px;
     border-radius: 15px;
     padding: 0px;
     transition: all 0.5s cubic-bezier(.19, 1, .22, 1) !important;
@@ -938,9 +938,12 @@ h1.text-center-accueil{
     height: 50px;
     min-width: 50px;
     margin: 10px;
+    margin-right: 10px;
     gap: 10px;
     border-radius: 50px;
     background-color: var(--background-color);
+    transform: translateX(0)!important;
+    transition: all 0.3s cubic-bezier(.19, 1, .22, 1) !important;
 }
 
 
@@ -1670,8 +1673,8 @@ canvas {
 
 .job-container.focused {
     display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
+    /* flex-direction: column-reverse; */
+    align-items: flex-start;
     height: 300px;
     z-index: 100;
     transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
@@ -1701,11 +1704,13 @@ canvas {
 .focused .button-container{
     height : 50px;
     width: 50px;
-    margin-bottom: -50px;
-    margin-top: -8px;
-    margin-right: -8px;
+    margin-bottom: -55px;
+    margin-top: 5px;
+    margin-right: -60px;
     border-radius: 25px;
-    background-color: var(--background-color);
+    transform: translateX(-65px)!important;
+    background-color: var(--secondary-background-color);
+    transition: all 0.3s cubic-bezier(.19, 1, .22, 1);
 }
 
 .focused .button-container svg {
@@ -1775,6 +1780,11 @@ canvas {
 /* Responsive */
 
 @media screen and (max-width: 1200px) {
+    .job-container {
+        overflow: hidden;
+        /* height: 150px; */
+    }
+
     .job-container .job {
         flex-direction: column;
     }

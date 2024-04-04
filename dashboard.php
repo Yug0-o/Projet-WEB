@@ -92,90 +92,79 @@
     </div>
 
     <!-- Informations comptes -->
-    <div class="container flx2" id="comptes"> 
-      <div class="flx2">
-        <div class="top-container">
-        <?php
-          try {
-              $user = 'root';
-              $pass = '';
-              $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
-              $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          } catch (PDOException) {
-              // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
-              http_response_code(500);
-              echo json_encode(array("error" => "Connection failed: An error occurred while connecting to the database."));
-              die();
-          }
+    <div class="container flx2 compte" id="comptes"> 
+        <div class="flx2 compte">
+            <div class="box_tableau_stats">
+              <?php
+              try {
+                  $user = 'root';
+                  $pass = '';
+                  $dbh = new PDO('mysql:host=localhost;dbname=projetweb', $user, $pass);
+                  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+              } catch (PDOException) {
+                  // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
+                  http_response_code(500);
+                  echo json_encode(array("error" => "Connection failed: An error occurred while connecting to the database."));
+                  die();
+              }
 
-          // Requête SQL pour récupérer les informations des comptes
-          $sql = "SELECT * FROM account";
-          $stmt = $dbh->prepare($sql);
-          $stmt->execute();
-          $accounts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+              // Requête SQL pour récupérer les informations des comptes
+              $sql = "SELECT * FROM account";
+              $stmt = $dbh->prepare($sql);
+              $stmt->execute();
+              $accounts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-          // Fermeture de la connexion
-          $dbh = null;
-        ?>
-          <div class="box65" style="overflow-y: scroll; height: 300px;">
-              <table>
-                  <thead>
-                      <tr>
-                          <th>Identifiant</th>
-                          <th>Prénom</th>
-                          <th>Nom</th>
-                          <th>Email</th>
-                          <th>Rôle</th>
-                          <th>Promotion</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <?php foreach ($accounts as $account): ?>
+              // Fermeture de la connexion
+              $dbh = null;
+              ?>
+              <div class="box_tableau" style="overflow-y: scroll; height: 300px;">
+                  <table>
+                      <thead>
                           <tr>
-                              <td><?php echo $account['id_account']; ?></td>
-                              <td><?php echo $account['first_name']; ?></td>
-                              <td><?php echo $account['last_name']; ?></td>
-                              <td><?php echo $account['email']; ?></td>
-                              <td><?php echo $account['role_id']; ?></td>
-                              <td><?php echo $account['promotion_id']; ?></td>
+                              <th>Identifiant</th>
+                              <th>Prénom</th>
+                              <th>Nom</th>
+                              <th>Email</th>
+                              <th>Rôle</th>
+                              <th>Promotion</th>
                           </tr>
-                      <?php endforeach; ?>
-                  </tbody>
-              </table>
-          </div>
-          <div class="box20">
-            <h2 class="underline">Modification des comptes</h2>
-            <label for="first_name">Prénom :</label>
-            <div class="space"></div>
-            <input type="text" id="first_name" name="first_name">
-            <div class="space"></div>
-            <label for="last_name">Nom :</label>
-            <div class="space"></div>
-            <input type="text" id="last_name" name="last_name">
-            <div class="space"></div>
-            <label for="email">Email :</label>
-            <div class="space"></div>
-            <input type="text" id="email" name="email">
-            <div class="space"></div>
-            <label for="password">Mot de passe :</label>
-            <div class="space"></div>
-            <input type="password" id="password" name="password">
-            <div class="space"></div>
-            <!-- Ajoutez d'autres champs de texte pour role_id, promotion_id, center_id si nécessaire -->
-            <button onclick="insertData()">Insérer les données</button>
-            <button onclick="updateData()">Modifier les données</button>
-            <button onclick="deleteAccount()">Supprimer le compte</button>
-            <button onclick="removeDuplicateAccounts()">Supprimer les doublons</button>
-          </div>
-        </div>
-        <div class="flx2_1 underline">
-          <div>Nombre d'étudiant</div>
-          <div>Nombre de promotions</div>
-          <div>Stats</div>
-          <div>Stats</div>
-        </div>
-      </div>
-    </div> 
+                      </thead>
+                      <tbody>
+                          <?php foreach ($accounts as $account): ?>
+                              <tr>
+                                  <td><?php echo $account['id_account']; ?></td>
+                                  <td><?php echo $account['first_name']; ?></td>
+                                  <td><?php echo $account['last_name']; ?></td>
+                                  <td><?php echo $account['email']; ?></td>
+                                  <td><?php echo $account['role_id']; ?></td>
+                                  <td><?php echo $account['promotion_id']; ?></td>
+                              </tr>
+                          <?php endforeach; ?>
+                      </tbody>
+                  </table>
+                </div>
+              <div class="same_line_container">
+                  <div class="box1">Nombre d'étudiant</div>
+                  <div class="box2">Nombre de promotions</div>
+              </div>
+            </div> 
+            <div class="box_CRUD">
+                    <h2 class="underline">Modification des comptes</h2>
+                    <label for="first_name">Prénom :</label>
+                    <input type="text" id="first_name" name="first_name">
+                    <label for="last_name">Nom :</label>
+                    <input type="text" id="last_name" name="last_name">
+                    <label for="email">Email :</label>
+                    <input type="text" id="email" name="email">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password">
+                    <!-- Ajoutez d'autres champs de texte pour role_id, promotion_id, center_id si nécessaire -->
+                    <button onclick="insertData()">Insérer les données</button>
+                    <button onclick="updateData()">Modifier les données</button>
+                    <button onclick="deleteAccount()">Supprimer le compte</button>
+                    <button onclick="removeDuplicateAccounts()">Supprimer les doublons</button>
+            </div>
+
 
 
     <!-- Informations stages -->

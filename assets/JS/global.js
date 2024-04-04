@@ -128,10 +128,46 @@ document.querySelector('button[type="login"]').addEventListener('click', functio
     }
 });}
 catch (e) {}
+
+function update_wishlist() {
+    const wishlist = sessionStorage.getItem('wishlist_ids');
+    const email = sessionStorage.getItem('email');
+
+    if (!email || !wishlist) {
+        console.error('Email or wishlist is not set');
+        return;
+    }
+
+    console.log('Email:', email);
+    console.log('Wishlist:', wishlist);
+
+    fetch('MVC/edit_wishlist_data.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({
+            email: email,
+            wishlist: JSON.stringify(wishlist)
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    }).catch(error => {
+        console.error('Error:', error);
+    });
+}
+
 // Set current year in the element with id 'year'
 document.getElementById('year').textContent = new Date().getFullYear();
 
 window.addEventListener('beforeunload', function() {
     // Set callback to current page URL
     sessionStorage.setItem('callback', window.location.href);
+    update_wishlist();
 });
+
+update_wishlist();
