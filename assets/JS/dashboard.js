@@ -209,10 +209,25 @@ function switchToStudentView() {
 }
 
 function insertData() {
-  const firstName = document.getElementById('first_name').value;
-  const lastName = document.getElementById('last_name').value;
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+  const firstName = document.getElementById('first_name').value.trim();
+  const lastName = document.getElementById('last_name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  
+  
+  if (!firstName || !lastName) {
+    alert('Veuillez entrer un prénom et un nom valides.');
+    return;
+  }
+  if (!email) {
+    alert('Veuillez entrer une adresse e-mail valide.');
+    return;
+  }
+  if (!password) {
+    alert('Veuillez entrer un mot de passe valide.');
+    return;
+  }
 
   // Effectuer une requête AJAX pour envoyer les données au script PHP
   $.ajax({
@@ -240,10 +255,24 @@ function insertData() {
 }
 
 function updateData() {
-  const firstName = document.getElementById('first_name').value;
-  const lastName = document.getElementById('last_name').value;
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+  const firstName = document.getElementById('first_name').value.trim();
+  const lastName = document.getElementById('last_name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim();
+
+  if (!firstName || !lastName) {
+    alert('Veuillez entrer un prénom et un nom valides.');
+    return;
+  }
+  if (!email) {
+    alert('Veuillez entrer une adresse e-mail valide.');
+    return;
+  }
+  if (!password) {
+    alert('Veuillez entrer un mot de passe valide.');
+    return;
+  }
+
 
   // Effectuer une requête AJAX pour envoyer les données au script PHP
   $.ajax({
@@ -272,7 +301,12 @@ function updateData() {
 
 // Fonction pour supprimer le compte basé sur l'adresse e-mail
 function deleteAccount() {
-  const email = document.getElementById('email').value;
+  const email = document.getElementById('email').value.trim();
+
+  if (!email) {
+    alert('Veuillez entrer une adresse e-mail valide.');
+    return;
+  }
 
   // Effectuer une requête AJAX pour envoyer l'e-mail au script PHP
   $.ajax({
