@@ -208,6 +208,15 @@ function switchToStudentView() {
   window.location.href = "research.php";
 }
 
+
+
+
+//------------------------------------------------------------
+//------------ACCOUNT
+
+
+
+
 function insertData() {
   const firstName = document.getElementById('first_name').value.trim();
   const lastName = document.getElementById('last_name').value.trim();
@@ -354,10 +363,8 @@ function removeDuplicateAccounts() {
 
 
 
-
-
-
-
+//------------------------------------------------------------
+//------------COMPANIES
 
 
 
@@ -439,4 +446,103 @@ function deleteCompany() {
           }
       });
   }
+}
+
+
+
+
+//------------------------------------------------------------
+//------------INTERNSHIP
+
+
+
+
+function insertInternship() {
+  const title = document.getElementById('title').value;
+  const duration = document.getElementById('duration').value;
+  const description = document.getElementById('description').value;
+  const company_id = document.getElementById('company_id').value;
+  const offer_date = document.getElementById('offer_date').value;
+  const available_places = document.getElementById('availablePlaces').value;
+  const id_skill = document.getElementById('id_skill').value;
+
+  // Effectuer une requête AJAX pour envoyer les données au script PHP
+  $.ajax({
+      type: "POST",
+      url: "MVC/CRUD_dashboard_1_internship.php",
+      data: { 
+          title: title,
+          offer_date: offer_date,
+          available_places: available_places,
+          duration: duration,
+          description: description,
+          company_id: company_id,
+          id_skill: id_skill
+      },
+      success: function(response) {
+          console.log(response);
+          alert('Données insérées avec succès !');
+          // Vous pouvez ajouter ici d'autres actions à effectuer après l'insertion réussie
+      },
+      error: function(xhr, status, error) {
+          console.error('Erreur lors de l\'insertion des données :', error);
+          alert('Erreur lors de l\'insertion des données. Veuillez réessayer.');
+      }
+  });
+}
+
+function updateInternship() {
+  const internship_id = document.getElementById('internship_id').value;
+  const title = document.getElementById('title').value;
+  const offerDate = document.getElementById('offer_date').value;
+  const availablePlaces = document.getElementById('available_places').value;
+  const duration = document.getElementById('duration').value;
+  const description = document.getElementById('description').value;
+  const companyId = document.getElementById('company_id').value;
+
+  // Effectuer une requête AJAX pour mettre à jour les données
+  $.ajax({
+      type: "POST",
+      url: "MVC/CRUD_dashboard_2_internship.php",
+      data: {
+          internship_id: internship_id,
+          title: title,
+          offer_date: offerDate,
+          available_places: availablePlaces,
+          duration: duration,
+          description: description,
+          company_id: companyId
+      },
+      success: function(response) {
+          console.log(response);
+          alert('Données mises à jour avec succès !');
+          location.reload(); // Actualiser la page après la mise à jour
+      },
+      error: function(xhr, status, error) {
+          console.error('Erreur lors de la mise à jour des données :', error);
+          alert('Erreur lors de la mise à jour des données. Veuillez réessayer.');
+      }
+  });
+}
+
+function deleteInternship() {
+  const internship_id = document.getElementById('internship_id').value;
+
+  // Effectuer une requête AJAX pour supprimer les données
+  $.ajax({
+      type: "POST",
+      url: "MVC/CRUD_dashboard_3_internship.php",
+      data: {
+          internship_id: internship_id
+      },
+      success: function(response) {
+          console.log(response);
+          alert('Données supprimées avec succès !');
+          location.reload(); // Actualiser la page après la suppression
+      },
+      error: function(xhr, status, error) {
+          console.error('Erreur lors de la suppression des données :', error);
+          alert('Erreur lors de la suppression des données. Veuillez réessayer.');
+      }
+  });
 }
