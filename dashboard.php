@@ -305,9 +305,9 @@ $smarty_head->display('head.tpl');
                     <input type="description" id="description" name="description">
                     <label for="company_id">ID de l'entreprise :</label>
                     <input type="text" id="company_id" name="company_id">
-                    <label for="availablePlaces">Places disponibles :</label>
-                    <input type="number" id="availablePlaces" name="availablePlaces" min="1">
-                    <label for="country_id">Compétences :</label>
+                    <label for="available_places">Places disponibles :</label>
+                    <input type="number" id="available_places" name="available_places" min="1">
+                    <label for="id_skill">Compétences :</label>
                     <select id="id_skill" name="id_skill">
                       <option value="1">Generaliste</option>
                       <option value="2">BTP</option>

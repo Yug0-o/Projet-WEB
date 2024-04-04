@@ -463,7 +463,7 @@ function insertInternship() {
   const description = document.getElementById('description').value;
   const company_id = document.getElementById('company_id').value;
   const offer_date = document.getElementById('offer_date').value;
-  const available_places = document.getElementById('availablePlaces').value;
+  const available_places = document.getElementById('available_places').value;
   const id_skill = document.getElementById('id_skill').value;
 
   // Effectuer une requête AJAX pour envoyer les données au script PHP
@@ -495,7 +495,7 @@ function updateInternship() {
   const internship_id = document.getElementById('internship_id').value;
   const title = document.getElementById('title').value;
   const offerDate = document.getElementById('offer_date').value;
-  const availablePlaces = document.getElementById('available_places').value;
+  const available_places = document.getElementById('available_places').value;
   const duration = document.getElementById('duration').value;
   const description = document.getElementById('description').value;
   const companyId = document.getElementById('company_id').value;
@@ -508,7 +508,7 @@ function updateInternship() {
           internship_id: internship_id,
           title: title,
           offer_date: offerDate,
-          available_places: availablePlaces,
+          available_places: available_places,
           duration: duration,
           description: description,
           company_id: companyId
