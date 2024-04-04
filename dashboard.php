@@ -15,7 +15,7 @@ $smarty_head->display('head.tpl');
   <div class="container">
     <div class="flx1">
       <div class="nav-logo">
-        <img src="/images/logo-classic.webp" alt="Logo" class="logo">
+        <a href="homepage.php"><img src="/images/logo-classic.webp" alt="Logo" class="logo"></a>
       </div>
       <div class="nav-items">
         <p id="nav-stats" onclick="showStats()">Affichage des statistiques</p>
