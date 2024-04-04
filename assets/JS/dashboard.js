@@ -213,8 +213,8 @@ function insertData() {
   const lastName = document.getElementById('last_name').value.trim();
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
-
-  
+  const role_id = document.getElementById('role_id').value.trim();
+  const promotion_id = document.getElementById('promotion_id').value.trim();  
   
   if (!firstName || !lastName) {
     alert('Veuillez entrer un prénom et un nom valides.');
@@ -238,8 +238,8 @@ function insertData() {
           last_name: lastName,
           email: email,
           password: password,
-          role_id: 1, // Remplacez cette valeur par le rôle approprié
-          promotion_id: 1, // Remplacez cette valeur par l'identifiant de la promotion appropriée
+          role_id: role_id,
+          promotion_id: promotion_id,
           center_id: 1 // Remplacez cette valeur par l'identifiant du centre approprié
       },
       success: function(response) {
@@ -259,6 +259,8 @@ function updateData() {
   const lastName = document.getElementById('last_name').value.trim();
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
+  const role_id = document.getElementById('role_id').value.trim();
+  const promotion_id = document.getElementById('promotion_id').value.trim();
 
   if (!firstName || !lastName) {
     alert('Veuillez entrer un prénom et un nom valides.');

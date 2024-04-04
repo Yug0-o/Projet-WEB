@@ -160,6 +160,16 @@ $smarty_head->display('head.tpl');
             <input type="text" id="email" name="email">
             <label for="password">Mot de passe :</label>
             <input type="password" id="password" name="password">
+            <select id="role_id" name="role_id">
+                  <option value="1">Eleve</option>
+                  <option value="2">Admin</option>
+                  <option value="3">Pilot</option>
+            </select>
+            <select id="promotion_id" name="promotion_id">
+                  <option value="1">2022</option>
+                  <option value="2">2023</option>
+                  <option value="3">2024</option>
+            </select>
           </div>
           <div class="CRUD_buttons">
             <button onclick="insertData()">Insérer les données</button>

@@ -18,8 +18,8 @@ if (isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['e
     $lastName = $_POST['last_name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $roleId = isset($_POST['role_id']) ? $_POST['role_id'] : null;
-    $promotionId = isset($_POST['promotion_id']) ? $_POST['promotion_id'] : null;
+    $roleId = $_POST['role_id'];
+    $promotionId = $_POST['promotion_id'];
     $centerId = isset($_POST['center_id']) ? $_POST['center_id'] : null;
 
     // Vérifier si l'utilisateur existe déjà dans la base de données
