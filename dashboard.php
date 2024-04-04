@@ -178,7 +178,8 @@ $smarty_head->display('head.tpl');
             <button onclick="removeDuplicateAccounts()">Supprimer les doublons</button>
           </div>
         </div>
-
+      </div>
+    </div>
 
 
         <!-- Informations stages -->
@@ -289,8 +290,38 @@ $smarty_head->display('head.tpl');
                 </table>
               </div>
             </div>
+
             <div class="flx2_1">
-              <div style="overflow-y: scroll;">sfdsd</div>
+              <div style="overflow-y: scroll;">
+                <h2 class="underline">Modification des stages</h2>
+                <form id="internshipForm">
+                    <label for="title">Titre :</label>
+                    <input type="text" id="title" name="title">
+                    <label for="offer_date">Date d'offre :</label>
+                    <input type="date" id="offer_date" name="offer_date">
+                    <label for="duration">Durée :</label>
+                    <input type="text" id="duration" name="duration">
+                    <label for="description">Description :</label>
+                    <input type="description" id="description" name="description">
+                    <label for="company_id">ID de l'entreprise :</label>
+                    <input type="text" id="company_id" name="company_id">
+                    <label for="availablePlaces">Places disponibles :</label>
+                    <input type="number" id="availablePlaces" name="availablePlaces" min="1">
+                    <label for="country_id">Compétences :</label>
+                    <select id="id_skill" name="id_skill">
+                      <option value="1">Generaliste</option>
+                      <option value="2">BTP</option>
+                      <option value="3">Informatique</option>
+                    </select>
+                    <div class="space"></div>
+                    <button onclick="insertInternship()">Insérer les données</button>
+                    <button onclick="updateInternship()">Modifier les données</button>
+                    <button onclick="deleteInternship()">Supprimer l'entreprise</button>
+                    <label for="internship_id">ID du stage :</label>
+                    <input type="number" id="internship_id" name="internship_id">
+                </form>
+              </div>
+
               <div style="overflow-y: scroll;">
                 <h2 class="underline">Modification des Entreprises</h2>
                 <label for="company_name">Nom de l'entreprise :</label>
