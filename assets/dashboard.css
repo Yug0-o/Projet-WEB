@@ -1,13 +1,13 @@
 body {
-  font-family: "Nunito", sans-serif;
   display: flex;
-  padding: 3%;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito", sans-serif;
+  /* padding: 3%; */
   background-image: url("https://cdn.pixabay.com/photo/2015/06/20/07/24/color-815551_1280.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  margin: 20px;
-  width: 90vw;
 }
 
 .space{
@@ -75,12 +75,13 @@ main {
 
 .container {
   display: flex;
-  width: 100%;
-  height: 85vh;
+  width: 95vw;
+  height: 95vh;
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 40px;
   background-color: white;
+  user-select: none;
 }
 
 .container .flx1 {
@@ -132,7 +133,7 @@ main {
 
 .container .flx2 {
   display: flex;
-  width: 99%;
+  width: fit-content;
   margin: 1%;
   height: 80vh;
   border-radius: 40px;
@@ -177,6 +178,7 @@ main {
   border-radius: 10px;
   background-color: #F9F6EE;
   padding: 2%;
+  align-items: center;
 }
 
 .container .flx2 .flx2_2 {
@@ -262,17 +264,17 @@ canvas {
 
 @media screen and (max-width: 775px) {
   .flx2 {
-    height: 128vh!important;
+    height: 95%!important;
     width: 95%!important;
     padding: 1%;
   }
   .flx2_1 {
     flex-direction: column!important;
-    height: 60vh!important;
+    height: 45%!important;
   }
   .flx2_1 * {
     width: 80%!important;
-    height: 15vh!important;
+    height: 10%!important;
   }
   .flx2_2 {
     flex-direction: column !important;
@@ -288,9 +290,12 @@ canvas {
     display: none;
   }
   .container {
-    height: 130vh!important;
+    height: 100%!important;
     width: 85vh!important;
-    padding: 0%;
+    padding: 1%;
+  }
+  .vertical-line {
+    display: none;
   }
 }
 
@@ -513,11 +518,12 @@ table tr:nth-child(even){
 .box_CRUD {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex: 4;
   width: 30%;
+  min-width: 250px;
   gap: 25px;
-  height: 70vh;
+  height: 100%;
   margin: 10px;
   border-color: #333;
 }
@@ -534,11 +540,15 @@ table tr:nth-child(even){
   user-select: none;
 }
 
-.CRUD_inputs input {
-  padding: 10px;
+.CRUD_inputs input, .CRUD_inputs select {
+  padding: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #333;
+}
+
+.CRUD_inputs #role_id {
+  margin-top: 20px;
 }
 
 .CRUD_inputs h2 {

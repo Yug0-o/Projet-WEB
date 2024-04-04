@@ -134,7 +134,7 @@ function update_wishlist() {
     const email = sessionStorage.getItem('email');
 
     if (!email || !wishlist) {
-        console.error('Email or wishlist is not set');
+        console.log('Favoris : Email or wishlist is not set');
         return;
     }
 
