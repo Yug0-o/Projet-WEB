@@ -264,17 +264,17 @@ canvas {
 
 @media screen and (max-width: 775px) {
   .flx2 {
-    height: 128vh!important;
+    height: 95%!important;
     width: 95%!important;
     padding: 1%;
   }
   .flx2_1 {
     flex-direction: column!important;
-    height: 60vh!important;
+    height: 45%!important;
   }
   .flx2_1 * {
     width: 80%!important;
-    height: 15vh!important;
+    height: 10%!important;
   }
   .flx2_2 {
     flex-direction: column !important;
@@ -290,9 +290,12 @@ canvas {
     display: none;
   }
   .container {
-    height: 130vh!important;
+    height: 100%!important;
     width: 85vh!important;
-    padding: 0%;
+    padding: 1%;
+  }
+  .vertical-line {
+    display: none;
   }
 }
 
