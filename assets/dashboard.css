@@ -131,12 +131,22 @@ main {
 
 
 .container .flx2 {
+  display: flex;
   width: 99%;
+  margin: 1%;
+  height: 80vh;
+  border-radius: 40px;
+  
+}
+
+.container .flx2 .compte {
+  width: 99%;
+  display: flex;
   margin: 1%;
   height: 80vh;
   position: relative;
   border-radius: 40px;
-  
+  flex-direction: row;
 }
 
 
@@ -489,9 +499,12 @@ table tr:nth-child(even){
 }
 
 .box_CRUD {
-  flex: 4; /* This will take the rest of the container */
+  display: flex;
+  flex: 4;
   width: 30%;
   height: 70vh;
   margin: 10px;
   border-color: #333;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
