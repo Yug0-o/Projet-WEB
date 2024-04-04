@@ -181,7 +181,7 @@
             } catch (PDOException) {
                 // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
                 http_response_code(500);
-                echo json_encode(array("error" => "Connection failed: " . $e->getMessage()));
+                echo json_encode(array("error" => "Connection failed"));
                 die();
             }
 
@@ -232,7 +232,7 @@
             } catch (PDOException) {
                 // En cas d'échec de la connexion, renvoyer une réponse avec un code d'erreur
                 http_response_code(500);
-                echo json_encode(array("error" => "Connection failed: " . $e->getMessage()));
+                echo json_encode(array("error" => "Connection failed"));
                 die();
             }
 
