@@ -155,10 +155,7 @@ function update_wishlist() {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
-        return response.json();
-    }).catch(error => {
-        console.error('Error:', error);
-    });
+    })
 }
 
 // Set current year in the element with id 'year'

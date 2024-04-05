@@ -1491,6 +1491,21 @@ footer .text-center {
 
 /*---------------------------------------------------------------*/
 
+/* legal mentions */
+
+.legal_mention {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+    position: relative;
+    color: var(--text-color);
+
+}
+
+
+
 /* Dashboard */
 
 .chart-container {
