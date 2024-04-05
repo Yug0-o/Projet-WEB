@@ -121,10 +121,14 @@ try {
 // Handle login button click event
 document.querySelector('button[type="login"]').addEventListener('click', function (event) {
     event.preventDefault();
-    if (sessionStorage.getItem('loggedIn') === 'true') {
-        window.location.href = 'account.php';
-    } else {
-        window.location.href = 'login.php';
+    if (sessionStorage.getItem('role_id') > 1) {
+        window.location.href = 'dashboard.php';
+    } else{
+        if (sessionStorage.getItem('loggedIn') === 'true') {
+            window.location.href = 'account.php';
+        } else {
+            window.location.href = 'login.php';
+        }
     }
 });}
 catch (e) {}

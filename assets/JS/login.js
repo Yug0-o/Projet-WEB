@@ -70,6 +70,7 @@ function verifyCredentials(email, password) {
         sessionStorage.setItem('last_name', data[0].last_name); // Modification ici
         sessionStorage.setItem('promotion', data[0].promotion_name); // Modification ici
         sessionStorage.setItem('id_account', data[0].id_account);
+        sessionStorage.setItem('role_id', data[0].role_id);
         
         // loop through the data and store the id_internship (wished for) in the session storage (as a list)
         var id_internship_list = [];

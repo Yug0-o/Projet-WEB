@@ -55,6 +55,9 @@ $smarty_head->display('head.tpl');
                     <div class="info-container">CV
                         <a class="info" href="CV_Yousk2.pdf" target="_blank" id="cv">CV_Yousk2.pdf</a>
                     </div>
+                    <div class="info-container">
+                        <a href="dashboard.php" class="info">Statistics</a>
+                    </div>
                 </div>
             </div>
             <button class="enabled modify" type="modify" enabled>Modifier</button>

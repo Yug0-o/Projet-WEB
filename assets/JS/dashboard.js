@@ -1,20 +1,3 @@
-const ui_para = localStorage.getItem('ui');
-switch (ui_para) {
-  case 'showStages':
-    showStages(); 
-    break;
-  case 'showComptes':
-    showComptes(); 
-    break;
-  case 'showStats':
-    showStats(); 
-    break;
-
-  default:
-    break;
-}
-
-
 const navItems = document.querySelectorAll(".nav-item");
 
 navItems.forEach((navItem, i) => {
@@ -27,33 +10,44 @@ navItems.forEach((navItem, i) => {
 });
 
 
+const ui_para = localStorage.getItem('ui');
+var role_id = sessionStorage.getItem('role_id');
+// convert to int
+if (role_id) {
+  role_id = parseInt(role_id);
+}
+
+if (role_id > 1) {
+  console.log('role_id:', role_id);
+  document.querySelector('#nav-comptes').style.display = 'block'; 
+  document.querySelector('#nav-stages').style.display = 'block';
+  switch (ui_para) {
+    case 'showStages':
+      showStages();
+      break;
+    case 'showComptes':
+      showComptes();
+      break;
+    case 'showStats':
+      showStats();
+      break;
+
+    default:
+      showStats();
+  }
+} else {
+  showStats();
+}
+
 /* graph chart */
 
 document.addEventListener("DOMContentLoaded", function() {
   console.log("DOM Content Loaded"); // Check if DOMContentLoaded event is fired
-  
+
   // Get the canvas element from the HTML
   const canvas = document.getElementById('piechart');
   console.log("Canvas Element:", canvas); // Check if canvas element is correctly accessed
   
-  // Create an array of group names and their corresponding values
-  const groups = ['Généraliste', 'Informatique', 'BTP'];
-  const values = [30, 50, 20];
-  
-  /* renvoyé une erreur, 'canvas' est vide, il y a pas d'element avec l'id piechart */
-  // Create a new pie chart
-  // new Chart(canvas, {
-  //     type: 'doughnut',
-  //     data: {
-  //         labels: groups,
-  //         datasets: [{
-  //             data: values,
-  //             backgroundColor: ['red', 'blue', 'green'], // Customize the colors of the slices
-  //         }],
-  //     },
-  // });
-
-  /*tab chart*/
 
   document.addEventListener("DOMContentLoaded", function() {
     console.log("DOM Content Loaded"); // Check if DOMContentLoaded event is fired
