@@ -165,37 +165,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function toggleMenu() {
   var nav = document.getElementById('mobile-nav');
+  var burger = document.querySelector('.burger');
+  burger.classList.toggle('active');
   nav.classList.toggle('show');
 }
 
 
 function showStats() {
-  document.getElementById('stats').style.display = 'block';
+  document.getElementById('stats').style.display = 'flex';
   document.getElementById('comptes').style.display = 'none';
   document.getElementById('stages').style.display = 'none';
-  document.getElementById('nav-stats').classList.add('active');
-  document.getElementById('nav-comptes').classList.remove('active');
-  document.getElementById('nav-stages').classList.remove('active');
+  document.querySelectorAll('#nav-stats').forEach(item => item.classList.add('active'));
+  document.querySelectorAll('#nav-comptes').forEach(item => item.classList.remove('active'));
+  document.querySelectorAll('#nav-stages').forEach(item => item.classList.remove('active'));
   localStorage.setItem('ui', 'showStats');
 }
 
 function showComptes() {
-  document.getElementById('comptes').style.display = 'block';
+  document.getElementById('comptes').style.display = 'flex';
   document.getElementById('stats').style.display = 'none';
   document.getElementById('stages').style.display = 'none';
-  document.getElementById('nav-comptes').classList.add('active');
-  document.getElementById('nav-stats').classList.remove('active');
-  document.getElementById('nav-stages').classList.remove('active');
+  document.querySelectorAll('#nav-comptes').forEach(item => item.classList.add('active'));
+  document.querySelectorAll('#nav-stats').forEach(item => item.classList.remove('active'));
+  document.querySelectorAll('#nav-stages').forEach(item => item.classList.remove('active'));
   localStorage.setItem('ui', 'showComptes');
 }
 
 function showStages() {
-  document.getElementById('stages').style.display = 'block';
+  document.getElementById('stages').style.display = 'flex';
   document.getElementById('comptes').style.display = 'none';
   document.getElementById('stats').style.display = 'none';
-  document.getElementById('nav-stages').classList.add('active');
-  document.getElementById('nav-comptes').classList.remove('active');
-  document.getElementById('nav-stats').classList.remove('active');
+  document.querySelectorAll('#nav-stages').forEach(item => item.classList.add('active'));
+  document.querySelectorAll('#nav-comptes').forEach(item => item.classList.remove('active'));
+  document.querySelectorAll('#nav-stats').forEach(item => item.classList.remove('active'));
   localStorage.setItem('ui', 'showStages');
 }
 
