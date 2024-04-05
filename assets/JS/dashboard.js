@@ -366,20 +366,76 @@ function removeDuplicateAccounts() {
 //------------------------------------------------------------
 //------------COMPANIES
 
+// Debounce function
+function debounce(func, wait) {
+  let timeout;
+  return function(...args) {
+      const context = this;
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(context, args), wait);
+  };
+}
 
+let lastValidAddress = '';
 
+// Event listener for address input
+document.getElementById('address').addEventListener('input', debounce(function() {
+  const address = this.value;
+  if(address.length > 3){
+      fetch('https://api-adresse.data.gouv.fr/search/?q='+address)
+          .then(response => response.json())
+          .then(data => {
+              if(data.features.length > 0){
+                  const dataList = document.getElementById('address-suggestions');
+                  dataList.innerHTML = ''; // Clear previous suggestions
+                  data.features.forEach(item => {
+                      // Create a new <option> element for each suggestion
+                      const option = document.createElement('option');
+                      option.value = item.properties.label;
+                      dataList.appendChild(option);
+                  });
+              }
+          });
+  }
+}, 500));
+
+// Event listener for address input change
+document.getElementById('address').addEventListener('change', function() {
+  const address = this.value;
+  const options = document.querySelectorAll('#address-suggestions option');
+  const optionsArray = Array.from(options).map(opt => opt.value);
+  if (!optionsArray.includes(address)) {
+    this.value = lastValidAddress;
+  } else {
+    lastValidAddress = address;
+  }
+});
 
 function insertDataCompanies() {
-  const companyName = document.getElementById('company_name').value;
-  const sector = document.getElementById('sector').value;
-  const studentVisible = document.getElementById('student_visible').value;
-  const address = document.getElementById('address').value;
-  const countryId = document.getElementById('country_id').value;
+  const companyName = document.getElementById('company_name').value.trim();
+  const sector = document.getElementById('sector').value.trim();
+  const studentVisible = document.getElementById('student_visible').value.trim();
+  const address = document.getElementById('address').value.trim();
+  const countryId = document.getElementById('country_id').value.trim();
+
+  if (!companyName || !sector || !studentVisible || !address || !countryId) {
+    alert('Veuillez remplir tous les champs.');
+    return;
+  }
+
+  // Use Nominatim API to get full address
+  if(address.length > 3){
+    $.getJSON('https://nominatim.openstreetmap.org/search?format=json&q='+address, function(data) {
+        if(data.length > 0){
+            $('#address').val(data[0].display_name);
+        }
+    });
+  }
 
   // Make an AJAX request to send the data to the PHP script
   $.ajax({
       type: "POST",
-      url: "MVC/CRUD_dashboard_1_companies.php",
+      url: "MVC/CRUD_dashboard_1.php",
       data: { 
           company_name: companyName,
           sector: sector,
@@ -390,13 +446,13 @@ function insertDataCompanies() {
       success: function(response) {
           console.log(response);
           alert('Données insérées avec succès !');
-          // Here you can add other actions to be performed after successful insertion
       },
       error: function(xhr, status, error) {
           console.error('Erreur lors de l\'insertion des données :', error);
           alert('Erreur lors de l\'insertion des données. Veuillez réessayer.');
       }
   });
+  location.reload();
 }
 
 function updateDataCompanies() {

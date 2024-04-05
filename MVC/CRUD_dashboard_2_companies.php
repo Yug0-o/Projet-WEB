@@ -20,6 +20,19 @@ if (isset($_POST['company_name'], $_POST['sector'], $_POST['student_visible'], $
     $address = $_POST['address'];
     $countryId = $_POST['country_id'];
 
+    // Use Adresse Data Gouv API to get full address
+    $url = "https://api-adresse.data.gouv.fr/search/?q=" . urlencode($address);
+    $response = file_get_contents($url);
+    $responseData = json_decode($response);
+    if (!empty($responseData->features)) {
+        $firstResult = $responseData->features[0];
+        $address = $firstResult->properties->label;
+    } else {
+        http_response_code(400);
+        echo json_encode(array("error" => "Invalid address"));
+        die();
+    }
+
     // Update data in the companies table
     $stmt = $dbh->prepare("UPDATE companies 
                            SET sector = :sector, 
@@ -47,9 +60,4 @@ if (isset($_POST['company_name'], $_POST['sector'], $_POST['student_visible'], $
     $stmt->bindParam(':country_id', $countryId);
     $stmt->bindParam(':company_name', $companyName);
     $stmt->execute();
-
-    echo "Data updated successfully!";
-} else {
-    echo "Please provide all necessary information.";
 }
-?>
