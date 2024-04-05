@@ -430,6 +430,7 @@ tbody tr.active-row {
     padding: 10px;
     gap: 15px;
     border-radius: 25px;
+    user-select: text;
     background-color: var(--tertiary-background-color);
     transition: all 0.2s ease;
 }
