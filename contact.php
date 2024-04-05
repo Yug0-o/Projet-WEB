@@ -86,7 +86,7 @@ $smarty_head->display('head.tpl');
                             <p> 80 avenue Edmund Halley Rouen Madrillet Innovation</p>
                             <p> Saint-Etienne du Rouvray</p>
                             <p> 76800 </p>
-                            <p> <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0">hugo.boudry@viacesi.fr</a></p>
+                            <p> <a href="">hugo.boudry@viacesi.fr</a></p>
 
                             <div class="space"></div>
 

@@ -40,7 +40,7 @@
             <h2> Editeur du site :</h2>
             <p> Adresse : CESI Rouen, 80 avenue Edmund Halley Rouen Madrillet Innovation, 76800 Saint-Étienne-du-Rouvray, France </p>
             <p> Téléphone : +33 1 23 45 67 89</p>
-            <p> Email : <a href="https://www.youtube.com/watch?v=xvFZjo5PgG0"> hugo.boudry@viacesi.fr </a></p>
+            <p> Email : <a href=""> hugo.boudry@viacesi.fr </a></p>
         </div>
         <div>
             <h2> Directeur de la publication : </h2>
@@ -49,7 +49,7 @@
         <div>
             <h2> Hébergement : </h2>
             <p> Le site est hébergé par <b>La compagnie des joyeuses grenouilles</b></p>
-            <p> Adresse : 123 Placeholder de Folie, 12345 Frogcity, Frogland</p>
+            <p> Adresse : 123 Rue des nénuphars, 76000 Rouen, France</p>
             <p> Téléphone : +33 9 87 65 43 21</p>
         </div>
         <div>
@@ -72,6 +72,14 @@
             <h2> Crédits : </h2>
             <p> Conception et développement du site : Internship Etendard</p>
         </div>
+
+        <div>
+            <h2> Cookies et autres données personnelles : </h2>
+            <p>Lors de votre visite sur ce site, des cookies peuvent être déposés sur votre ordinateur, tablette ou smartphone. Ces cookies sont utilisés pour améliorer votre expérience utilisateur et analyser le trafic du site. </p>
+            <p>Ces données sont utilisées uniquement dans le but pour lequel elles ont été collectées et ne sont pas partagées avec des tiers sans votre consentement préalable. </p>
+            <p>Conformément à la réglementation en vigueur, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données personnelles. Pour exercer ces droits ou pour toute question concernant la gestion de vos données personnelles, veuillez contacter notre Délégué à la Protection des Données (DPO) à l'adresse email : samuel.courtin@viacesi.fr </p>
+        </div>
+
     </article>
 
 

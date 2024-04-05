@@ -17,6 +17,9 @@ try {
 
         $wishlist = str_replace(array('[', ']', '"'), '', $_POST['wishlist']);
         $wishlisted = explode(',', $wishlist);
+        $wishlisted = array_filter($wishlisted, function($value) {
+            return $value !== 'null';
+        });
         echo ' - wishlist : ';
         print_r($wishlisted);
         echo ' ';
@@ -64,9 +67,9 @@ try {
 
                 $stmt->execute([':wishlisted' => $id_internship, ':accountId' => $accountId]);
             }
-        } catch (PDOException) {
+        } catch (PDOException $e) {
             http_response_code(500); // Internal Server Error
-            echo json_encode(array("error" => "An error occurred while executing the request."));
+            echo json_encode(array("error" => "An error occurred while executing the request.". $e->getMessage()));
             die();
         }
 
