@@ -12,8 +12,9 @@ try {
 // SQL query to retrieve internship job data with additional information
 $sql = "SELECT *
         FROM internship 
-        JOIN locations ON internship.location_id = locations.id_locations
-        JOIN companies ON internship.company_id = companies.id_company;";
+        JOIN companies ON internship.company_id = companies.id_company
+        JOIN companies_has_locations ON companies.id_company = companies_has_locations.id_company
+        JOIN locations ON companies_has_locations.id_locations = locations.id_locations;";
 
 // Use PDO to execute the query
 $stmt = $dbh->query($sql);
