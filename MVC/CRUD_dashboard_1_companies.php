@@ -26,7 +26,7 @@ if (isset($_POST['company_name'], $_POST['sector'], $_POST['student_visible'], $
     $responseData = json_decode($response);
     if (!empty($responseData->features)) {
         $firstResult = $responseData->features[0];
-        $address = $firstResult->properties->label;
+        $address = (string) $firstResult->properties->label;
     } else {
         http_response_code(400);
         echo json_encode(array("error" => "Invalid address"));
