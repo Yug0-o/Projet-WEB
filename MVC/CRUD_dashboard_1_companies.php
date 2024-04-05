@@ -20,22 +20,45 @@ if (isset($_POST['company_name'], $_POST['sector'], $_POST['student_visible'], $
     $address = $_POST['address'];
     $countryId = $_POST['country_id'];
 
-    // Insert data into the companies table
-    $stmt = $dbh->prepare("INSERT INTO companies (company_name, sector, student_visible)
-                           VALUES (:company_name, :sector, :student_visible)");
-    $stmt->bindParam(':company_name', $companyName);
+    // Use Adresse Data Gouv API to get full address
+    $url = "https://api-adresse.data.gouv.fr/search/?q=" . urlencode($address);
+    $response = file_get_contents($url);
+    $responseData = json_decode($response);
+    if (!empty($responseData->features)) {
+        $firstResult = $responseData->features[0];
+        $address = (string) $firstResult->properties->label;
+    } else {
+        http_response_code(400);
+        echo json_encode(array("error" => "Invalid address"));
+        die();
+    }
+
+    // Update data in the companies table
+    $stmt = $dbh->prepare("UPDATE companies 
+                           SET sector = :sector, 
+                               student_visible = :student_visible
+                           WHERE company_name = :company_name");
     $stmt->bindParam(':sector', $sector);
     $stmt->bindParam(':student_visible', $studentVisible);
+    $stmt->bindParam(':company_name', $companyName);
     $stmt->execute();
 
-    // Get the ID of the last inserted company
-    $idCompany = $dbh->lastInsertId();
-
-    // Insert data into the locations table
-    $stmt = $dbh->prepare("INSERT INTO locations (address, country_id)
-                           VALUES (:address, :country_id)");
+    // Update data in the locations table based on the company name
+    $stmt = $dbh->prepare("UPDATE locations 
+                           SET address = :address, 
+                               country_id = :country_id
+                           WHERE id_locations IN (
+                               SELECT id_locations
+                               FROM companies_has_locations
+                               WHERE id_company = (
+                                   SELECT id_company
+                                   FROM companies
+                                   WHERE company_name = :company_name
+                               )
+                           )");
     $stmt->bindParam(':address', $address);
     $stmt->bindParam(':country_id', $countryId);
+    $stmt->bindParam(':company_name', $companyName);
     $stmt->execute();
 
     // Get the ID of the last inserted location
