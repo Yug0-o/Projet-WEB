@@ -153,13 +153,13 @@ hr {
     height: fit-content;
 }
 
-.nav-items #nav-comptes, .nav-items #nav-stages {
+/* .nav-items #nav-comptes, .nav-items #nav-stages {
   display: none;
 }
 
 .nav-items hr {
   display: none;
-}
+} */
 
  .nav-items-bottom {
     display: flex;
